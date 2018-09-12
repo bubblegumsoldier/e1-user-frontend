@@ -1,0 +1,82 @@
+.header-content
+{
+    background-color: #4D88A6;
+    height: 88px;
+    display: flex;
+    align-items: center;
+}
+
+.logo
+{
+    width: auto;
+    background-image: url('/src/assets/logo.png');
+    height: 100%;
+    width: 200px;
+    margin-left: 30px;
+    margin-right: 30px;
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: center ;
+}
+
+.header-content e1-search-input
+{
+    width: 50%;
+    height: 50%;
+    max-width: 700px;
+}
+
+.header-content .spacer
+{
+    flex: 0.7;
+}
+
+
+/***********
+
+Design for large header
+
+***********/
+
+.header-content.large-header
+{
+    display: block;
+    height: auto;
+    position: relative;
+    width: 100%;
+    background-color: transparent;
+}
+
+.header-content.large-header .vertical-spacer
+{
+    display: block;
+    height: 30vh;
+}
+
+.header-content.large-header .logo
+{
+    height: 120px;
+    margin: auto;
+    display: block;
+    position: relative;
+    background-image: url('/src/assets/logo_dark.png');
+    margin-bottom: 20px;
+}
+
+
+.header-content.large-header e1-search-input
+{
+    width: 40%;
+    height: 44px;
+    display: block;
+    margin: auto;
+    position: relative;
+    max-width: 600px;
+}
+
+.header-content.large-header e1-account-quick-access
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}

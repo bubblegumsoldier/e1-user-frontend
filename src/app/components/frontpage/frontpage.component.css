@@ -1,0 +1,50 @@
+ul
+{
+    list-style: none;
+    margin: 0;
+    display: flex;
+    padding: 0;
+    margin:auto;
+}
+
+ul li
+{
+    margin-left: 20px;
+}
+
+ul li:first-child
+{
+    margin-left: 0;
+}
+
+ul li a
+{
+    color: #aaa;
+    text-decoration: none;
+}
+
+ul li a:hover
+{
+    color: #666;
+}
+
+.ul_wrapper
+{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-flow: column;
+    align-content: flex-end;
+    position: absolute;
+    bottom: 50px;
+
+}
+
+.copyright
+{
+    font-size: 14px;
+    width: auto;
+    margin: auto;
+    color: #aaa;
+    padding-top: 20px;
+}
