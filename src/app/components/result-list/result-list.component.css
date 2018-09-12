@@ -1,0 +1,80 @@
+ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+ul li
+{
+    display: grid;
+    width: 100%;
+    grid-column-gap: 20px;
+    grid-row-gap: 10px;
+    grid-template-areas:
+            "date publisher visibility ..."
+            "h3 h3 h3 h3";
+    background-color: #fff;
+    color: #666;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    margin-top: 20px;
+    animation-duration: 0.2s;
+    animation-name: slidein;
+    font-size: 14px;
+}
+
+ul li:hover
+{
+    color: #272727;
+
+}
+
+.date
+{
+    grid-area: date;
+}
+
+.publisher
+{
+    grid-area: publisher;
+}
+
+.visibility
+{
+    grid-area: visibility;
+    border: 1px solid #272727;
+    font-size: 11px;
+    padding: 3px;
+    text-transform: uppercase;
+}
+
+ul li h3
+{
+    grid-area: h3;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+@keyframes slidein {
+from {
+    transform: translateY(-30px);
+    opacity: 0;
+}
+
+to {
+    transform: translateY(0px);
+    opacity: 1;
+}
+}

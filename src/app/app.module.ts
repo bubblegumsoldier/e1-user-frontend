@@ -13,6 +13,9 @@ import { FrontpageComponent } from './components/frontpage/frontpage.component';
 import { ResultListComponent } from './components/result-list/result-list.component';
 import { GuidelineComponent } from './components/guideline/guideline.component';
 import { FormsModule } from '@angular/forms';
+import { LevelComponent } from './components/level/level.component';
+import { FreeTextRecommendationComponent } from './components/free-text-recommendation/free-text-recommendation.component';
+import { MedicationRecommendationComponent } from './components/medication-recommendation/medication-recommendation.component';
 
 
 const appRoutes :Routes = [
@@ -39,7 +42,10 @@ const appRoutes :Routes = [
     AccountQuickAccessComponent,
     FrontpageComponent,
     ResultListComponent,
-    GuidelineComponent
+    GuidelineComponent,
+    LevelComponent,
+    FreeTextRecommendationComponent,
+    MedicationRecommendationComponent
   ],
   imports: [
     BrowserModule,

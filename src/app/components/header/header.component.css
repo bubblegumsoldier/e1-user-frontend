@@ -66,6 +66,7 @@ Design for large header
     position: relative;
     background-image: url('/src/assets/logo_dark.png');
     margin-bottom: 20px;
+    width: 250px;
 }
 
 

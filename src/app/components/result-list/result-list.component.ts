@@ -9,6 +9,9 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 })
 export class ResultListComponent implements OnInit {
   query :string;
+
+  allPublic :boolean = true;
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
