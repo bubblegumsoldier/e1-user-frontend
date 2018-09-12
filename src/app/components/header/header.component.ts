@@ -27,4 +27,9 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  onLogoClicked()
+  {
+    this.router.navigateByUrl("/");
+  }
+
 }

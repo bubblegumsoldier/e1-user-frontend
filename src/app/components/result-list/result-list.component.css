@@ -1,3 +1,10 @@
+.result-wrapper
+{
+    margin-left: 260px;
+    width: 50%;
+    max-width: 700px;
+}
+
 ul
 {
     list-style: none;
@@ -6,6 +13,11 @@ ul
     display: block;
     width: 100%;
     margin-top: 20px;
+}
+
+ul a
+{
+    text-decoration: none;
 }
 
 ul li
@@ -21,15 +33,12 @@ ul li
     color: #666;
     border-bottom: 1px solid #ccc;
     padding-bottom: 30px;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
     margin-top: 20px;
-    animation-duration: 0.2s;
+    animation-duration: 0.5s;
     animation-name: slidein;
+    animation-timing-function: ease-in-out;
     font-size: 14px;
 }
 
@@ -69,7 +78,7 @@ ul li h3
 
 @keyframes slidein {
 from {
-    transform: translateY(-30px);
+    transform: translateY(-10px);
     opacity: 0;
 }
 

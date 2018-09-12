@@ -22,6 +22,7 @@
     background-size: 80%;
     background-repeat: no-repeat;
     background-position: center ;
+    cursor: pointer;
 }
 
 .header-content e1-search-input
@@ -33,7 +34,12 @@
 
 .header-content .spacer
 {
-    flex: 0.7;
+    flex: 1;
+}
+
+.header-content e1-account-quick-access
+{
+    margin-right: 20px;
 }
 
 

@@ -12,6 +12,8 @@ export class ResultListComponent implements OnInit {
 
   allPublic :boolean = true;
 
+  linkToGuidelineID :number = 123;
+
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
