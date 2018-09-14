@@ -33,18 +33,18 @@ router.get('/AllMedicalGuidelines', function(req, res){
     });
    });
 
-   router.get('/AllSearches', function(req, res)
-   {
-    console.log('get request for all the medical guideline');
-    guideline.find({$text: {$search: "cancer"}})
-    .exec(function(err, guideline)
-    {
+router.post('/Search', function(req, res){
+
+    console.log('get request for search method');
+    //console.log(req.body + "Bhavana");
+    //guideline.find({$text: { $search: "cancer" }})
+    guideline.find({$text: { $search: req.body.data }})
+    .exec(function(err, guideline){
         if(err)
         {
-            console.log('error retriveing guideline');
+            console.log('error in  search method');
         }
-        else
-        {
+        else{
             res.json(guideline);
         }
     });
