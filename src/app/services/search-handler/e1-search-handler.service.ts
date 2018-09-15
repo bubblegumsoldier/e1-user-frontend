@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpParams,HttpHeaders, HttpErrorResponse } from '@angular/common/http';
-import { Guideline } from '../app/guideline';
+import { Guideline } from '../../model/Guideline';
 import { Http, Response } from '@angular/http';
 
 const apiUrl = "/api";
@@ -10,7 +10,7 @@ const apiUrl = "/api";
   providedIn: 'root'
 })
 
-export class E1SearchhandlerService {
+export class SearchHandler {
 
   constructor(private http: HttpClient) {
 

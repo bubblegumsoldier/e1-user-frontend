@@ -18,6 +18,7 @@ import { FreeTextRecommendationComponent } from './components/free-text-recommen
 import { MedicationRecommendationComponent } from './components/medication-recommendation/medication-recommendation.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
+import { SearchHandler } from './services/search-handler/e1-search-handler.service';
 
 const appRoutes :Routes = [
   {
@@ -57,7 +58,10 @@ const appRoutes :Routes = [
     HttpClientModule,
     HttpModule
   ],
-  providers: [HttpClientModule,],
+  providers: [
+    HttpClientModule,
+    SearchHandler
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
