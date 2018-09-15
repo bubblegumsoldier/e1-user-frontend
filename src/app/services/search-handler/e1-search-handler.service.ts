@@ -4,6 +4,8 @@ import { HttpClient, HttpParams,HttpHeaders, HttpErrorResponse } from '@angular/
 import { Guideline } from '../../model/Guideline';
 import { Http, Response } from '@angular/http';
 
+import { environment } from '../../../environments/environment';
+
 const apiUrl = "/api";
 
 @Injectable({
@@ -26,7 +28,7 @@ export class SearchHandler {
       //console.log(queryString + "tttt");
       //const params = new HttpParams().set('queryString', queryString);
       //queryString=cancer
-      return this.http.post<Guideline[]>('http://localhost:3000/api/Search', {data: queryString});
+      return this.http.post<Guideline[]>(environment.configuration.apiUrl + 'api/Search', {data: queryString});
    
     }
 
