@@ -1,0 +1,135 @@
+ul.selection-box
+{
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    margin-top: 60px;
+}
+
+ul.selection-box li
+{
+    border-bottom: 1px solid #999;
+    display: flex;
+    box-sizing: border-box;
+    align-items: center;
+    opacity: 0.9;
+    color: #323232;
+    cursor: pointer;
+    height: auto;
+}
+
+
+ul.selection-box li .title:hover
+{
+    opacity: 1;
+    padding-left: 30px;
+}
+
+ul.selection-box li .title
+{
+    flex: 1;
+    box-sizing: border-box;
+    padding-left: 20px;
+    transition: all 0.2s ease-out;
+    height: 66px;
+    padding-top: 25px;
+}
+
+button
+{
+    outline: 0;
+    border: 0;
+    background-color: transparent;
+    font-size: 12px;
+    color: #474747;
+    height: 66px;
+    transition: all 0.2s ease-out;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+button:hover
+{
+    color: #000000;
+}
+
+ul.selection-box li.definition-visible
+{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+ul.selection-box li .definition
+{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+ul.selection-box
+{
+    margin-left: 260px;
+    width: 50%;
+    max-width: 700px;
+}
+
+div.level-container.selected
+{
+    background-color: #4D88A6;
+    padding-bottom: 40px;
+}
+
+div.level-container.selected ul li
+{
+    display: none;
+}
+
+div.level-container.selected ul li.selected-item
+{
+    display: block;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border: 0;
+}
+
+div.level-container
+{
+    transition: all 0.4s ease-out;
+}
+
+div.level-container.selected ul
+{
+    margin-top: 0;
+    background-position: top center;
+    background-size: 80px;
+    background-repeat: no-repeat;
+    background-image: url('/src/assets/level_down_arrow_dark.svg');
+}
+
+div.level-container.selected ul li.selected-item .title
+{
+    padding: 0;
+    text-align: center;
+    padding-top: 50px;
+    cursor: initial;
+    transition: none;
+}
+
+div.level-container.selected ul li.selected-item .title:hover
+{
+    padding-left: 0;
+}
+
+div.level-container.selected.is-dark
+{
+    background-color: #284D60;
+}
+
+div.level-container.selected.is-dark ul
+{
+    background-image: url('/src/assets/level_down_arrow_light.svg');
+}

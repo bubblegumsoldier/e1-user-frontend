@@ -2,6 +2,7 @@ import { Injectable, EventEmitter } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpParams,HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Guideline } from '../../model/Guideline';
+import { dummyGuideline } from '../../model/dummyGuideline';
 import { Http, Response } from '@angular/http';
 
 import { environment } from '../../../environments/environment';
@@ -32,5 +33,8 @@ export class SearchHandler {
    
     }
 
-
+    getDummyGuideline()
+    {
+      return dummyGuideline;
+    }
 }

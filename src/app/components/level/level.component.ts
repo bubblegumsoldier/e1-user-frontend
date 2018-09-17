@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit , Input} from '@angular/core';
 
 @Component({
   selector: 'e1-level',
@@ -7,9 +7,56 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LevelComponent implements OnInit {
 
-  constructor() { }
+  private _level = null;
+  private selectedSubLevel = null;
+  private selectedSubLevelID :number;
 
-  ngOnInit() {
+  private definitionVisible :number;
+
+  @Input() isDark :boolean = false;
+
+  constructor() {}
+  
+  get level() {
+    // transform value for display
+    return this._level;
+  }
+  
+  @Input()
+  set level(level) {
+    this._level = level;
+    console.log("setting level");
+    console.log(this._level);
   }
 
+  levelSelected(levelID)
+  {
+    if(this.definitionVisible >= 0)
+    {
+      this.closeDefinition();
+      return;
+    }
+    this.selectedSubLevel = this.level["level"][levelID];
+    this.selectedSubLevelID = levelID;
+  }
+
+  ngOnInit()
+  {
+
+  }
+
+  definitionClicked(id)
+  {
+    this.definitionVisible = id;
+  }
+
+  closeDefinition()
+  {
+    this.definitionVisible = -1;
+  }
+
+  subLevelSelected()
+  {
+    return this.selectedSubLevel !== null;
+  }
 }

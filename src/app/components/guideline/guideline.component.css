@@ -9,7 +9,7 @@
     position: relative;
 }
 
-.guideline-header::after {
+/* .guideline-header::after {
 	top: 100%;
 	left: 610px;
 	border: solid transparent;
@@ -25,7 +25,7 @@
     animation-duration: 0.5s;
     animation-name: opacityOnlyAnimation;
     animation-timing-function: ease-in-out;
-}
+} */
 
 
 @keyframes fadeInBGColorGuidelineHeader {
@@ -72,11 +72,7 @@
 {
     display: grid;
     width: 100%;
-    grid-column-gap: 20px;
-    grid-row-gap: 10px;
-    grid-template-areas:
-            "date publisher visibility ..."
-            "h3 h3 h3 h3";
+    display: block;
     color: white;
     padding-bottom: 30px;
     transition: all 0.2s ease-in-out;
@@ -89,28 +85,32 @@
 
 .date
 {
-    grid-area: date;
+    display: inline;
 }
 
 .publisher
 {
-    grid-area: publisher;
+    margin-left: 20px;
+    display: inline;
 }
 
 .visibility
 {
-    grid-area: visibility;
     border: 1px solid white;
+    margin-left: 20px;
     font-size: 11px;
     padding: 3px;
     text-transform: uppercase;
+    display: inline-block;
 }
 
 .guideline-description h3
 {
-    grid-area: h3;
     margin: 0;
     padding: 0;
+    margin-top: 10px;
+    display: block;
+    min-width: 100%;
     font-weight: 600;
     font-size: 16px;
 }

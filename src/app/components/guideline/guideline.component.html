@@ -3,9 +3,11 @@
     <button class="back-button" (click)="onBackButtonClicked()">&larr; &nbsp; &nbsp; Zurück</button>
     <div class="guideline-description">
       <span class="date">01.01.1999</span>
-      <span class="publisher">AWMF</span>
+      <span class="publisher">{{guideline.publisher}}</span>
       <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
-      <h3>Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie und Prävention – Update 2016</h3>
+      <h3>{{guideline.name_of_guideline}}</h3>
     </div>
   </div>
 </div>
+
+<e1-level *ngIf="levelSelectionInput !== null" [level]="levelSelectionInput" [isDark]="false"></e1-level>
