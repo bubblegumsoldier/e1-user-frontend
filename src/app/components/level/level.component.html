@@ -1,14 +1,17 @@
+<e1-medication-recommendation *ngFor="let medRecommendation of level['Medicine']" [medicationRecommendation]="medRecommendation"></e1-medication-recommendation>
+
 <div class="level-container" [class.selected]="this.subLevelSelected()" [class.is-dark]="this.isDark">
   <ul class="selection-box" *ngIf="_level !== null">
     <li *ngFor="let cLevel of _level['level']; let i = index" [class.definition-visible]="this.definitionVisible == i" [class.selected-item]="this.selectedSubLevelID == i">
       <span class="title" *ngIf="this.definitionVisible != i" (click)="this.levelSelected(i)" >
           {{cLevel.level_name}}
       </span>
-      <button (click)="this.definitionClicked(i)" *ngIf="this.definitionVisible != i && cLevel.definition !== undefined && cLevel.definition.length > 0">Definition</button>
+      <button (click)="this.definitionClicked(i)" *ngIf="this.definitionVisible != i && cLevel.definition !== undefined && cLevel.definition.length > 0 && !this.subLevelSelected()">Definition</button>
       <span class="definition" *ngIf="this.definitionVisible == i && cLevel.definition !== undefined && cLevel.definition.length > 0" (click)="this.closeDefinition()">
         {{cLevel.definition}}
       </span>
     </li>
   </ul>
 </div>
+
 <e1-level *ngIf="selectedSubLevel !== null" [level]="selectedSubLevel" [isDark]="!this.isDark"></e1-level>
