@@ -25,8 +25,6 @@ export class LevelComponent implements OnInit {
   @Input()
   set level(level) {
     this._level = level;
-    console.log("setting level");
-    console.log(this._level);
   }
 
   levelSelected(levelID)
@@ -55,7 +53,7 @@ export class LevelComponent implements OnInit {
     this.definitionVisible = -1;
   }
 
-  subLevelSelected()
+  get subLevelSelected()
   {
     return this.selectedSubLevel !== null;
   }

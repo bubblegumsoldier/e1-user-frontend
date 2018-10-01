@@ -1,0 +1,5 @@
+<div class="group-recommendation-wrapper" *ngIf="!(groupRecommendation['hideOnSublevelSelect'] == true && this.subLevelSelected)">
+  <div class="medication-recommendation-wrapper" *ngFor="let recommendation of groupRecommendation['recommendations']">
+    <e1-generic-recommendation *ngIf="!(recommendation['hideOnSublevelSelect'] == true && this.subLevelSelected)" [subLevelSelected]="this.subLevelSelected" [recommendation]="recommendation"></e1-generic-recommendation>
+  </div>
+</div>

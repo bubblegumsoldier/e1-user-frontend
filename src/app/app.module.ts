@@ -19,6 +19,8 @@ import { MedicationRecommendationComponent } from './components/medication-recom
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { SearchHandler } from './services/search-handler/e1-search-handler.service';
+import { GenericRecommendationComponent } from './components/generic-recommendation/generic-recommendation.component';
+import { GroupRecommendationComponent } from './components/group-recommendation/group-recommendation.component';
 
 const appRoutes :Routes = [
   {
@@ -47,7 +49,9 @@ const appRoutes :Routes = [
     GuidelineComponent,
     LevelComponent,
     FreeTextRecommendationComponent,
-    MedicationRecommendationComponent
+    MedicationRecommendationComponent,
+    GenericRecommendationComponent,
+    GroupRecommendationComponent
   ],
   imports: [
     BrowserModule,

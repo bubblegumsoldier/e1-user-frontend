@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'e1-free-text-recommendation',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./free-text-recommendation.component.css']
 })
 export class FreeTextRecommendationComponent implements OnInit {
+
+  @Input() freeTextRecommendation = null;
 
   constructor() { }
 
