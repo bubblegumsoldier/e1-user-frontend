@@ -11,7 +11,7 @@ export const dummyGuideline = {
     "name_of_guideline" : "Pnuemonia outside Hospital",
     "source" : "www.google.com",
     "valid_until" : new Date("2018-09-27T00:00:00Z"),
-    "internal_author" : "Johann rink",
+    "internal_author" : "Johann Rink",
     "level" : [
             {
                     "level" : [
@@ -35,7 +35,8 @@ export const dummyGuideline = {
                                                 "dosage_freq" : "2",
                                                 "dosage_duration" : "3",
                                                 "dosage_duration_unit" : "days",
-                                                "interaction_other_medicine" : "NA"
+                                                "interaction_other_medicine" : "NA",
+                                                "title": "aqsdlkj"
                                         },
                                         {
                                                 "type": "freeText",
@@ -98,20 +99,12 @@ export const dummyGuideline = {
                                 "dosage_freq" : "2",
                                 "dosage_duration" : "3",
                                 "dosage_duration_unit" : "days",
-                                "interaction_other_medicine" : "NA"
-                        },
-                        {
-                                "type": "freeText",
-                                "title": "",
-                                "content": "",
-                                "grade_of_evidence": "",
-                                "grade_of_recommendation": "",
-                                "primary_recommendation": "",
-                                "comment": ""
+                                "interaction_other_medicine" : "NA",
+                                "title": "lkjasd"
                         },
                         {
                                 "type": "group",
-                                "title": "",
+                                "title": "Bei Alternative usw.",
                                 "recommendations": [
                                         {
                                                 "type": "medication",
@@ -131,9 +124,27 @@ export const dummyGuideline = {
                                                 "dosage_duration" : "3",
                                                 "dosage_duration_unit" : "days",
                                                 "interaction_other_medicine" : "NA"
+                                        },
+                                        {
+                                                "type": "freeText",
+                                                "title": "",
+                                                "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                                                "grade_of_evidence": "",
+                                                "grade_of_recommendation": "",
+                                                "primary_recommendation": "",
+                                                "comment": ""
                                         }
                                 ],
                                 "hideOnSublevelSelect": true
+                        },
+                        {
+                                "type": "freeText",
+                                "title": "",
+                                "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
+                                "grade_of_evidence": "",
+                                "grade_of_recommendation": "",
+                                "primary_recommendation": "",
+                                "comment": ""
                         }
                     ],
                     "level_name" : "Level1",

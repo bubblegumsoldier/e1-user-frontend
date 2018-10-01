@@ -1,3 +1,12 @@
-<p>
-  Medication Recommendation works
-</p>
+<div class="medication-recommendation-wrapper">
+  <h3 class="title" *ngIf="medicationRecommendation.title?.length > 0">{{medicationRecommendation.title}}</h3>
+  <div class="medication-recommendation-inner-group">
+    <div class="loe-container">
+      <img src="./assets/{{medicationRecommendation.grade_of_recommendation}}{{medicationRecommendation.grade_of_evidence}}.png" />
+    </div>
+    <div class="medication-recommendation-right">
+      <h4 class="medication-recommendation-medication-title">{{medicationRecommendation.name}}</h4>
+
+    </div>
+  </div>
+</div>

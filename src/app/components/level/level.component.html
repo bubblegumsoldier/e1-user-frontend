@@ -1,4 +1,4 @@
-<e1-group-recommendation [groupRecommendation]="{recommendations: level['recommendations']}" [subLevelSelected]="this.subLevelSelected"></e1-group-recommendation>
+<e1-group-recommendation [isRoot]="true" [groupRecommendation]="{recommendations: level['recommendations']}" [subLevelSelected]="this.subLevelSelected"></e1-group-recommendation>
 
 <div class="level-container" [class.selected]="this.subLevelSelected" [class.is-dark]="this.isDark">
   <ul class="selection-box" *ngIf="_level !== null">

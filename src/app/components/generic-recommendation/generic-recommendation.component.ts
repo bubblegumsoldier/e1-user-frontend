@@ -10,6 +10,8 @@ export class GenericRecommendationComponent implements OnInit {
   @Input() recommendation = null;
 
   @Input() subLevelSelected = false;
+
+  @Input() backgroundGray :boolean = false;
   
 
   RECOMMENDATION_TYPE_MEDICATION :string = "medication";

@@ -1,0 +1,51 @@
+.medication-recommendation-wrapper
+{
+    margin-left: 260px;
+    width: 50%;
+    max-width: 700px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.medication-recommendation-wrapper h3.title
+{
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    display: block;
+    min-width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.medication-recommendation-inner-group
+{
+    display: flex;
+    align-items: flex-start;
+}
+
+.medication-recommendation-inner-group .loe-container
+{
+    width: 80px;
+    height: 80px;
+    background-color: #333;
+}
+
+.medication-recommendation-inner-group .medication-recommendation-right
+{
+    flex: 1;
+    height: 100%;
+    min-height: 80px;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.medication-recommendation-inner-group .medication-recommendation-right h4
+{
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0;
+}

@@ -1,3 +1,12 @@
-<p>
-  free-text-recommendation works!
-</p>
+<div class="ft-recommendation-wrapper">
+  <h3 class="title" *ngIf="freeTextRecommendation.title?.length > 0">{{freeTextRecommendation.title}}</h3>
+  <div class="ft-recommendation-inner-group">
+    <div class="loe-container">
+      <img src="./assets/{{freeTextRecommendation.grade_of_recommendation}}{{freeTextRecommendation.grade_of_evidence}}.png" />
+    </div>
+    <div class="ft-recommendation-right">
+      <p class="ft-recommendation-ft-content">{{freeTextRecommendation.content}}</p>
+
+    </div>
+  </div>
+</div>

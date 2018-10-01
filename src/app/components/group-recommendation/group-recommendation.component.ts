@@ -11,6 +11,7 @@ export class GroupRecommendationComponent implements OnInit {
 
   @Input() subLevelSelected = false;
   
+  @Input() isRoot :boolean = false;
 
   constructor() { }
 

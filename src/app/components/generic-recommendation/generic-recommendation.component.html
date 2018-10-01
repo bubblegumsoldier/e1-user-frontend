@@ -1,11 +1,13 @@
-<e1-medication-recommendation [medicationRecommendation]="this.recommendation" *ngIf="this.recommendation['type'] == RECOMMENDATION_TYPE_MEDICATION">
+<div class="generic-recommendation-wrapper" [class.is-gray]="this.backgroundGray">
+  <e1-medication-recommendation [medicationRecommendation]="this.recommendation" *ngIf="this.recommendation['type'] == RECOMMENDATION_TYPE_MEDICATION">
 
-</e1-medication-recommendation>
+  </e1-medication-recommendation>
 
-<e1-free-text-recommendation [freeTextRecommendation]="this.recommendation" *ngIf="this.recommendation['type'] == RECOMMENDATION_TYPE_FREETEXT">
-  
-</e1-free-text-recommendation>
+  <e1-free-text-recommendation [freeTextRecommendation]="this.recommendation" *ngIf="this.recommendation['type'] == RECOMMENDATION_TYPE_FREETEXT">
 
-<e1-group-recommendation [groupRecommendation]="this.recommendation" [subLevelSelected]="this.subLevelSelected" *ngIf="this.recommendation['type'] == RECOMMENDATION_TYPE_GROUP">
-  
-</e1-group-recommendation>
+  </e1-free-text-recommendation>
+
+  <e1-group-recommendation [groupRecommendation]="this.recommendation" [subLevelSelected]="this.subLevelSelected" *ngIf="this.recommendation['type'] == RECOMMENDATION_TYPE_GROUP">
+
+  </e1-group-recommendation>
+</div>
