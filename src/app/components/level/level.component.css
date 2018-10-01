@@ -104,8 +104,8 @@ div.level-container
 div.level-container.selected ul
 {
     margin-top: 0;
-    background-position: top center;
-    background-size: 80px;
+    background-position: top left;
+    background-size: 8%;
     background-repeat: no-repeat;
     background-image: url('/src/assets/level_down_arrow_dark.svg');
 }
@@ -113,7 +113,7 @@ div.level-container.selected ul
 div.level-container.selected ul li.selected-item .title
 {
     padding: 0;
-    text-align: center;
+    text-align: left;
     padding-top: 50px;
     cursor: initial;
     transition: none;
