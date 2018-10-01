@@ -1,4 +1,6 @@
-<e1-medication-recommendation *ngFor="let medRecommendation of level['Medicine']" [medicationRecommendation]="medRecommendation"></e1-medication-recommendation>
+<div class="medication-recommendation-wrapper" *ngFor="let medRecommendation of level['Medicine']">
+  <e1-medication-recommendation *ngIf="!(medRecommendation['hideOnSublevelSelect'] && this.subLevelSelected())" [medicationRecommendation]="medRecommendation"></e1-medication-recommendation>
+</div>
 
 <div class="level-container" [class.selected]="this.subLevelSelected()" [class.is-dark]="this.isDark">
   <ul class="selection-box" *ngIf="_level !== null">

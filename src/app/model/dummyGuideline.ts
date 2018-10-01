@@ -48,6 +48,7 @@ export const dummyGuideline = {
                             {
                                     "_id" : "5b9a24d03f94222d20e67da7",
                                     "name" : "Crocin",
+                                    "hideOnSublevelSelect": true,
                                     "grade_of_evidence" : "B",
                                     "grade_of_recommendation" : "A",
                                     "primary_recommendation" : "true",
