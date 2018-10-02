@@ -24,11 +24,6 @@ ul li
 {
     display: grid;
     width: 100%;
-    grid-column-gap: 20px;
-    grid-row-gap: 10px;
-    grid-template-areas:
-            "date publisher visibility ..."
-            "h3 h3 h3 h3";
     background-color: #fff;
     color: #666;
     border-bottom: 1px solid #ccc;
@@ -42,38 +37,46 @@ ul li
     font-size: 14px;
 }
 
+.result-header
+{
+    display: block;
+    width: 100%;
+}
+
+.result-header span
+{
+    display: inline-block;
+}
+
+.result-header .publisher
+{
+    margin-left: 20px;
+}
+
 ul li:hover
 {
     color: #272727;
 
 }
 
-.date
-{
-    grid-area: date;
-}
-
-.publisher
-{
-    grid-area: publisher;
-}
 
 .visibility
 {
-    grid-area: visibility;
     border: 1px solid #272727;
     font-size: 11px;
     padding: 3px;
     text-transform: uppercase;
+    margin-left: 20px;
+    display: inline-block;
 }
 
 ul li h3
 {
-    grid-area: h3;
     margin: 0;
     padding: 0;
     font-weight: 600;
     font-size: 16px;
+    margin-top: 20px;
 }
 
 @keyframes slidein {
@@ -86,4 +89,19 @@ to {
     transform: translateY(0px);
     opacity: 1;
 }
+}
+
+
+.loading-animation
+{
+    background-image: url(/src/assets/loadingAnimation.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    margin-top: 20px;
+    opacity: 0.7;
 }

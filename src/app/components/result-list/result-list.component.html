@@ -1,52 +1,17 @@
 <div class="result-wrapper">
+  <div class="loading-animation" *ngIf="guidelines.length <= 0"></div>
   <ul>
-    <a [routerLink]="['/guideline', this.linkToGuidelineID]" [preserveQueryParams]="true"><li>
-      <span class="date">01.01.1999</span>
-      <span class="publisher">AWMF</span>
-      <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
-      <h3>Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie und Prävention – Update 2016</h3>
-    </li></a>
-    <li>
-      <span class="date">01.01.1999</span>
-      <span class="publisher">AWMF</span>
-      <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
-      <h3>Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie und Prävention – Update 2016</h3>
-    </li>
-    <li>
-      <span class="date">01.01.1999</span>
-      <span class="publisher">AWMF</span>
-      <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
-      <h3>Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie und Prävention – Update 2016</h3>
-    </li>
-    <li>
-      <span class="date">01.01.1999</span>
-      <span class="publisher">AWMF</span>
-      <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
-      <h3>Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie und Prävention – Update 2016</h3>
-    </li>
-    <li>
-      <span class="date">01.01.1999</span>
-      <span class="publisher">AWMF</span>
-      <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
-      <h3>Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie und Prävention – Update 2016</h3>
-    </li>
-    <li>
-      <span class="date">01.01.1999</span>
-      <span class="publisher">AWMF</span>
-      <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
-      <h3>Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie und Prävention – Update 2016</h3>
-    </li>
-    <li>
-      <span class="date">01.01.1999</span>
-      <span class="publisher">AWMF</span>
-      <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
-      <h3>Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie und Prävention – Update 2016</h3>
-    </li>
-    <li>
-      <span class="date">01.01.1999</span>
-      <span class="publisher">AWMF</span>
-      <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
-      <h3>Behandlung von erwachsenen Patienten mit ambulant erworbener Pneumonie und Prävention – Update 2016</h3>
-    </li>
+    <div *ngFor="let guideline of guidelines; let i = index">
+      <a [routerLink]="['/guideline', guideline._id]" [preserveQueryParams]="true">
+        <li>
+          <div class="result-header">
+            <span class="date">Gültig bis {{guideline.valid_until | date:'dd. MMMM yyyy'}}</span>
+            <span class="publisher">{{guideline.publisher}}</span>
+            <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
+          </div>
+          <h3>{{guideline.name_of_guideline}}</h3>
+        </li>
+      </a>
+    </div>
   </ul>
 </div>

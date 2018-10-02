@@ -5,6 +5,7 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { SearchHandler } from '../../services/search-handler/e1-search-handler.service';
 
 import { Guideline } from '../../model/Guideline';
+import { dummyGuideline } from 'src/app/model/dummyGuideline';
 
 @Component({
   selector: 'e1-result-list',
@@ -19,16 +20,26 @@ export class ResultListComponent implements OnInit {
 
   linkToGuidelineID :number = 123;
 
-  guidelines :Guideline[] = [];
+  guidelines :any[] = [];
 
   constructor(private route: ActivatedRoute, private searchHandler :SearchHandler) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(queryParams => {
+        this.guidelines = [];
         this.query = queryParams['query'];
         console.log(queryParams);
-        this.retrieveGuidelineResults();
+        //this.retrieveGuidelineResults();
+    
+        setTimeout(() => {
+          this.initializeGuidelines([dummyGuideline, dummyGuideline, dummyGuideline]);
+        }, 1500);
     });
+  }
+
+  ngOnChanges()
+  {
+    this.guidelines = [];
   }
 
   retrieveGuidelineResults()
@@ -36,7 +47,7 @@ export class ResultListComponent implements OnInit {
     this.searchHandler.getSearchResultsFor(this.query).subscribe(this.initializeGuidelines);
   }
 
-  initializeGuidelines(guidelines :Guideline[])
+  initializeGuidelines(guidelines :any[])
   {
     this.guidelines = guidelines;
   }
