@@ -23,7 +23,7 @@ export const dummyGuideline = {
                                                 "name" : "MedicineB",
                                                 "grade_of_evidence" : "C",
                                                 "grade_of_recommendation" : "B",
-                                                "primary_recommendation" : true,
+                                                "primaryRecommendation" : true,
                                                 "comment" : "For kinder",
                                                 "active_substance" : "Penicillin",
                                                 "dosage_amount" : "20",
@@ -44,20 +44,20 @@ export const dummyGuideline = {
                                                 "content": "",
                                                 "grade_of_evidence": "",
                                                 "grade_of_recommendation": "",
-                                                "primary_recommendation": "",
+                                                "primaryRecommendation": true,
                                                 "comment": "",
                                                 "hideOnSublevelSelect": true
                                         },
                                         {
                                                 "type": "group",
                                                 "title": "medication rec",
+                                                "primaryRecommendation": true,
                                                 "recommendations": [
                                                         {
                                                                 "type": "medication",
                                                                 "name" : "MedicineB",
                                                                 "grade_of_evidence" : "C",
                                                                 "grade_of_recommendation" : "B",
-                                                                "primary_recommendation" : true,
                                                                 "comment" : "For kinder",
                                                                 "active_substance" : "Penicillin",
                                                                 "dosage_amount" : "20",
@@ -87,7 +87,7 @@ export const dummyGuideline = {
                                 "name" : "MedicineB",
                                 "grade_of_evidence" : "C",
                                 "grade_of_recommendation" : "B",
-                                "primary_recommendation" : true,
+                                "primaryRecommendation" : true,
                                 "comment" : "For kinder",
                                 "active_substance" : "Penicillin",
                                 "dosage_amount" : "20",
@@ -105,13 +105,15 @@ export const dummyGuideline = {
                         {
                                 "type": "group",
                                 "title": "Bei Alternative usw.",
+                                "primaryRecommendation": false,
+                                "hideOnSublevelSelect": true,
                                 "recommendations": [
                                         {
                                                 "type": "medication",
                                                 "name" : "MedicineB",
                                                 "grade_of_evidence" : "C",
                                                 "grade_of_recommendation" : "B",
-                                                "primary_recommendation" : true,
+                                                "primaryRecommendation" : true,
                                                 "comment" : "For kinder",
                                                 "active_substance" : "Penicillin",
                                                 "dosage_amount" : "20",
@@ -131,11 +133,10 @@ export const dummyGuideline = {
                                                 "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
                                                 "grade_of_evidence": "",
                                                 "grade_of_recommendation": "",
-                                                "primary_recommendation": "",
+                                                "primaryRecommendation": "",
                                                 "comment": ""
                                         }
-                                ],
-                                "hideOnSublevelSelect": true
+                                ]
                         },
                         {
                                 "type": "freeText",
@@ -143,7 +144,7 @@ export const dummyGuideline = {
                                 "content": "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.",
                                 "grade_of_evidence": "",
                                 "grade_of_recommendation": "",
-                                "primary_recommendation": "",
+                                "primaryRecommendation": true,
                                 "comment": ""
                         }
                     ],

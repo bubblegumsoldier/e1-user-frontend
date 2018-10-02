@@ -2,7 +2,7 @@
   <div class="group-recommendation-wrapper-title" *ngIf="groupRecommendation.title?.length > 0">
     <h3 class="title">{{groupRecommendation.title}}</h3>
   </div>
-  <div class="medication-recommendation-wrapper" *ngFor="let recommendation of groupRecommendation['recommendations']; let i = index">
+  <div class="medication-recommendation-wrapper" *ngFor="let recommendation of this.recommendationsToShow; let i = index">
     <div class="separator-wrapper" *ngIf="!this.isRoot && i > 0">
       <div class="separator-and">UND</div>
     </div>
@@ -13,7 +13,9 @@
         <div class="line-after"></div>
       </div>
     </div>
-    <e1-generic-recommendation [backgroundGray]="this.isRoot && i % 2 == 1" *ngIf="!(recommendation['hideOnSublevelSelect'] == true && this.subLevelSelected)"
+    <e1-generic-recommendation [backgroundGray]="this.isRoot && i % 2 == 1"
       [subLevelSelected]="this.subLevelSelected" [recommendation]="recommendation"></e1-generic-recommendation>
   </div>
 </div>
+
+<button class="show-alternatives" (click)="this.onShowAlternatives()" *ngIf="!this.alternativesShown && this.hasAlternatives && this.isRoot">Alternativen anzeigen &#8964;</button>

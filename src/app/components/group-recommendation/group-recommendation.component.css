@@ -11,6 +11,24 @@
 
 }
 
+button.show-alternatives
+{
+    margin-left: 260px;
+    width: 50%;
+    max-width: 700px;
+    background-color: transparent;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    height: 50px;
+    vertical-align: center;
+}
+
+button.show-alternatives:hover
+{
+    text-decoration: underline;
+}
+
 .separator-wrapper .separator-or
 {
     display: flex;
