@@ -1,6 +1,5 @@
-<e1-group-recommendation [isRoot]="true" [groupRecommendation]="{recommendations: level['recommendations']}" [subLevelSelected]="this.subLevelSelected"></e1-group-recommendation>
-
-<div class="level-container" [class.selected]="this.subLevelSelected" [class.is-dark]="this.isDark">
+<e1-group-recommendation [isRoot]="true" (arrowColorChanged)="this.arrowColorChanged($event)" [groupRecommendation]="{recommendations: level['recommendations']}" [subLevelSelected]="this.subLevelSelected"></e1-group-recommendation>
+<div class="level-container" [class.selected]="this.subLevelSelected" [class.is-dark]="this.isDark" [class.grey-arrow]="this.arrowColor == 'grey'" [class.white-arrow]="this.arrowColor == 'white'">
   <ul class="selection-box" *ngIf="_level !== null">
     <li *ngFor="let cLevel of _level['level']; let i = index" [class.definition-visible]="this.definitionVisible == i" [class.selected-item]="this.selectedSubLevelID == i">
       <span class="title" *ngIf="this.definitionVisible != i" (click)="this.levelSelected(i)" >

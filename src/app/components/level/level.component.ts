@@ -15,6 +15,8 @@ export class LevelComponent implements OnInit {
 
   @Input() isDark :boolean = false;
 
+  arrowColor :string = "";
+
   constructor() {}
   
   get level() {
@@ -56,5 +58,11 @@ export class LevelComponent implements OnInit {
   get subLevelSelected()
   {
     return this.selectedSubLevel !== null;
+  }
+
+  arrowColorChanged(changedToColor)
+  {
+    this.arrowColor = changedToColor;
+    console.log("arrow color changed to: " + changedToColor);
   }
 }
