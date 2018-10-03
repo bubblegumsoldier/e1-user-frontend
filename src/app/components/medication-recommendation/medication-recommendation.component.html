@@ -6,7 +6,7 @@
     </div>
     <div class="medication-recommendation-right">
       <h4 class="medication-recommendation-medication-title">{{medicationRecommendation.name}}</h4>
-      <div class="medication-recommendation-specific-dosage-schema" *ngIf="medicationRecommendation.use_specific_dosage_schema">
+      <div class="medication-recommendation-specific-dosage-schema" *ngIf="medicationRecommendation.use_specific_dosage_schema && medicationRecommendation.dosage_amount > 0">
         <table>
           <tr>
             <td>Morgens</td>

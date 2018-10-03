@@ -18,6 +18,11 @@ export class MedicationRecommendationComponent implements OnInit {
   {
     let text = "";
 
+    if(this.medicationRecommendation["dosage_amount"] <= 0)
+    {
+      return "";
+    }
+
     if(!this.medicationRecommendation["use_specific_dosage_schema"] && this.medicationRecommendation["dosage_amount"] > 0)
     {
       text += this.medicationRecommendation["dosage_amount"] + this.medicationRecommendation["dosage_unit"] + " ";
