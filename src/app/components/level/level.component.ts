@@ -43,6 +43,7 @@ export class LevelComponent implements OnInit {
     if(this.definitionVisible >= 0)
     {
       this.closeDefinition();
+      event.stopPropagation();
       return;
     }
     if(this.subLevelSelected)
@@ -59,9 +60,10 @@ export class LevelComponent implements OnInit {
 
   }
 
-  definitionClicked(id)
+  definitionClicked(event, id)
   {
     this.definitionVisible = id;
+    event.stopPropagation();
   }
 
   closeDefinition()

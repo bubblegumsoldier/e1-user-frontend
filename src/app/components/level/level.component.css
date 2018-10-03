@@ -32,8 +32,9 @@ ul.selection-box li .title
     box-sizing: border-box;
     padding-left: 20px;
     transition: all 0.2s ease-out;
-    height: 66px;
+    min-height: 66px;
     padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 button
@@ -128,7 +129,7 @@ div.level-container.selected ul li.selected-item .title:hover
 div.level-container.selected.is-dark
 {
     background-color: #284D60;
-    
+
 }
 
 div.level-container.selected.is-dark ul
