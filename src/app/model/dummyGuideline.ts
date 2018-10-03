@@ -62,6 +62,7 @@ export const dummyGuideline = {
                                                                 "active_substance" : "Penicillin",
                                                                 "dosage_amount" : "20",
                                                                 "dosage_unit" : "ml",
+                                                                "use_specific_dosage_schema": true,
                                                                 "morning_dosage" : "1",
                                                                 "noon_dosage" : "0",
                                                                 "evening_dosage" : "0",
@@ -69,6 +70,7 @@ export const dummyGuideline = {
                                                                 "dosage_freq" : "2",
                                                                 "dosage_duration" : "3",
                                                                 "dosage_duration_unit" : "days",
+                                                                "unlimited_application_duration": true,
                                                                 "interaction_other_medicine" : "NA"
                                                         }
                                                 ],

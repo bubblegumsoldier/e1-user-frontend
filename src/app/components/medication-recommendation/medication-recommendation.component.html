@@ -6,7 +6,29 @@
     </div>
     <div class="medication-recommendation-right">
       <h4 class="medication-recommendation-medication-title">{{medicationRecommendation.name}}</h4>
+      <div class="medication-recommendation-specific-dosage-schema" *ngIf="medicationRecommendation.use_specific_dosage_schema">
+        <table>
+          <tr>
+            <td>Morgens</td>
+            <td>Mittags</td>
+            <td>Abends</td>
+            <td>Nachts</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>{{medicationRecommendation.morning_dosage}}</td>
+            <td>{{medicationRecommendation.noon_dosage}}</td>
+            <td>{{medicationRecommendation.evening_dosage}}</td>
+            <td>{{medicationRecommendation.night_dosage}}</td>
+            <td>x {{medicationRecommendation.dosage_amount}}{{medicationRecommendation.dosage_unit}}</td>
+          </tr>
+        </table>
 
+        <span class="medication-recommendation-specific-text">({{this.descriptionText}})</span>
+      </div>
+      <div class="medication-recommendation-simple-dosage-schema" *ngIf="!medicationRecommendation.use_specific_dosage_schema">
+        ({{this.descriptionText}})
+      </div>
     </div>
   </div>
 </div>
