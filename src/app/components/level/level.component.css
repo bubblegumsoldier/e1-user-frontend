@@ -117,7 +117,6 @@ div.level-container.selected ul li.selected-item .title
     padding: 0;
     text-align: left;
     padding-top: 50px;
-    cursor: initial;
     transition: none;
 }
 
@@ -129,6 +128,7 @@ div.level-container.selected ul li.selected-item .title:hover
 div.level-container.selected.is-dark
 {
     background-color: #284D60;
+    
 }
 
 div.level-container.selected.is-dark ul
