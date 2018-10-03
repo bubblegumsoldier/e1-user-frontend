@@ -1,4 +1,4 @@
-<div class="guideline-header">
+<div class="guideline-header" (click)="resetSelections()">
   <div class="guideline-inner-wrapper">
     <button class="back-button" (click)="onBackButtonClicked()">&larr; &nbsp; &nbsp; Zurück</button>
     <div class="guideline-description">
@@ -10,4 +10,4 @@
   </div>
 </div>
 
-<e1-level *ngIf="levelSelectionInput !== null" [level]="levelSelectionInput" [isDark]="false"></e1-level>
+<e1-level #firstlevel *ngIf="levelSelectionInput !== null" [level]="levelSelectionInput" [isDark]="false"></e1-level>

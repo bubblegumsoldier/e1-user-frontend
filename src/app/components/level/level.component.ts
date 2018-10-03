@@ -1,4 +1,4 @@
-import { Component, OnInit , Input} from '@angular/core';
+import { Component, OnInit , Input, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'e1-level',
@@ -17,8 +17,16 @@ export class LevelComponent implements OnInit {
 
   arrowColor :string = "";
 
+  @ViewChild('nextlevel') nextLevel;
+
   constructor() {}
   
+  resetSelections()
+  {
+    this.selectedSubLevel = null;
+    this.selectedSubLevelID = -1;
+  }
+
   get level() {
     // transform value for display
     return this._level;
@@ -29,15 +37,21 @@ export class LevelComponent implements OnInit {
     this._level = level;
   }
 
-  levelSelected(levelID)
+  levelSelected(event, levelID)
   {
+    console.log(levelID);
     if(this.definitionVisible >= 0)
     {
       this.closeDefinition();
       return;
     }
+    if(this.subLevelSelected)
+    {
+      return;
+    }
     this.selectedSubLevel = this.level["level"][levelID];
     this.selectedSubLevelID = levelID;
+    event.stopPropagation();
   }
 
   ngOnInit()
@@ -64,5 +78,11 @@ export class LevelComponent implements OnInit {
   {
     this.arrowColor = changedToColor;
     console.log("arrow color changed to: " + changedToColor);
+  }
+
+  selectedUl()
+  {
+    console.log("selected ul");
+    this.nextLevel.resetSelections();
   }
 }

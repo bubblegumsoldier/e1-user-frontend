@@ -145,3 +145,13 @@ div.level-container.selected.white-arrow ul
 {
     background-image: url('/src/assets/level_down_arrow_grey.svg');
 }
+
+.level-container.selected:hover .title
+{
+    text-decoration: underline;
+}
+
+.level-container.selected
+{
+    cursor: pointer;
+}

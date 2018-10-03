@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { SearchHandler } from '../../services/search-handler/e1-search-handler.service';
 
@@ -15,6 +15,8 @@ export class GuidelineComponent implements OnInit {
   guideline = null;
 
   levelSelectionInput = null;
+
+  @ViewChild('firstlevel') firstLevel;
 
   constructor(private route: ActivatedRoute, private router :Router, private searchHandler :SearchHandler)
   { }
@@ -40,6 +42,11 @@ export class GuidelineComponent implements OnInit {
       level: this.guideline.level
     };
     console.log(this.levelSelectionInput);
+  }
+
+  resetSelections()
+  {
+    this.firstLevel.resetSelections();
   }
 
 }

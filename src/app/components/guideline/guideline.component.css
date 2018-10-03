@@ -148,3 +148,14 @@
         opacity: 1;
     }
 }
+
+.guideline-header
+{
+    cursor: pointer;
+}
+
+.guideline-header:hover h3
+{
+    text-decoration: underline;
+    text-decoration-color: white;
+}
