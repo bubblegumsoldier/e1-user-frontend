@@ -18,7 +18,6 @@ export class SearchHandlerService {
   constructor(private http: HttpClient) {
 
     
-      console.log("inside the search service");
    }
 
    getSearchResultsFor(queryString: string) : Observable<Guideline[]>

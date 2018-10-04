@@ -21,11 +21,7 @@ export class SyntaxRecommendationComponent implements OnInit {
 
   get contentHtml() :string
   {
-    console.log("------------");
-    console.log(this.syntaxRecommendation.content);
-    console.log(this.syntaxRecommendation.preDefs);
     let html = this.syntaxParser.getHtmlForSyntax(this.syntaxRecommendation.content, this.syntaxRecommendation.preDefs);
-    console.log(html);
     return html;
   }
 

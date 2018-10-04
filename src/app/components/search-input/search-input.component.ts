@@ -30,12 +30,10 @@ export class SearchInputComponent implements OnInit {
 
   onSearch(query: string) {
     this.searchUpdated.next(query);
-    console.log(query);
   }
 
   onSearchDebounced(query: string)
   {
-    console.log("changed to " + query);
     if(query.length <= 0)
     {
       this.router.navigateByUrl('/');

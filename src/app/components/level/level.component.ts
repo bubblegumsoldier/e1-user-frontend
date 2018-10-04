@@ -39,9 +39,12 @@ export class LevelComponent implements OnInit {
 
   levelSelected(event, levelID)
   {
-    console.log(levelID);
+    console.log(this);
+    console.log(this.definitionVisible);
+    
     if(this.definitionVisible >= 0)
     {
+      console.log("closing definition");
       this.closeDefinition();
       event.stopPropagation();
       return;
@@ -63,11 +66,16 @@ export class LevelComponent implements OnInit {
   definitionClicked(event, id)
   {
     this.definitionVisible = id;
+    console.log(this.definitionVisible);
     event.stopPropagation();
   }
 
-  closeDefinition()
+  closeDefinition(event = null)
   {
+    if(event)
+    {
+      event.stopPropagation();
+    }
     this.definitionVisible = -1;
   }
 
@@ -79,12 +87,11 @@ export class LevelComponent implements OnInit {
   arrowColorChanged(changedToColor)
   {
     this.arrowColor = changedToColor;
-    console.log("arrow color changed to: " + changedToColor);
   }
 
   selectedUl()
   {
-    console.log("selected ul");
+    console.log("Selected UL");
     this.nextLevel.resetSelections();
   }
 }

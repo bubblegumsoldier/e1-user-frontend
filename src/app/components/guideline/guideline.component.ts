@@ -41,7 +41,6 @@ export class GuidelineComponent implements OnInit {
     this.levelSelectionInput = {
       level: this.guideline.level
     };
-    console.log(this.levelSelectionInput);
   }
 
   resetSelections()

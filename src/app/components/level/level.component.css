@@ -59,12 +59,15 @@ ul.selection-box li.definition-visible
 {
     padding-top: 15px;
     padding-bottom: 15px;
+    background-color: #284D60;
+    color: white;
 }
 
 ul.selection-box li .definition
 {
     padding-left: 20px;
     padding-right: 20px;
+    font-size: 14px;
 }
 
 

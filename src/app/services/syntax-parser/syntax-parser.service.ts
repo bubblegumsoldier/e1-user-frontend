@@ -17,7 +17,6 @@ export class SyntaxParserService {
 
     var regexForDefaultWithNoAttribute = /\{[0-9]+\}/g;
 
-    console.log("before: " + outputHTML);
 
     outputHTML = outputHTML.replace(regexForDefaultWithNoAttribute, (a, b) => {
       return this.replaceUnspecificDefinitionWithSpecificDefinition(a, SyntaxParserService.DEFAULT_ATTRIBUTE);
@@ -30,13 +29,9 @@ export class SyntaxParserService {
     
     let match;
     outputHTML = outputHTML.replace(regexForSpecificRef, (a, b) => {
-      console.log(a);
       return this.referenceToHTML(a, preDefs);
     });
 
-    console.log("getHtmlForSyntax(syntax: string, preDefs: any[]): string");
-    console.log(results); // abc
-    console.log(outputHTML);
 
     return outputHTML;
   }
@@ -44,7 +39,6 @@ export class SyntaxParserService {
   replaceUnspecificDefinitionWithSpecificDefinition(unspecificDefinition: string, defaultAttribute: string): string {
     let numberRegex = /[0-9]+/;
     let number = numberRegex.exec(unspecificDefinition);
-    console.log(unspecificDefinition);
     return "{" + number[0] + "|" + defaultAttribute + "}";
   }
 
@@ -73,8 +67,6 @@ export class SyntaxParserService {
 
   getMedicationInPreDef(id :number, preDefs :any) :any
   {
-    console.log(preDefs);
-    console.log(id);
     for(var i = 0;i < preDefs.length; ++i)
     {
       if(preDefs[i].refId == id) return preDefs[i];

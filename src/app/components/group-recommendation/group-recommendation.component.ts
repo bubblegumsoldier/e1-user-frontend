@@ -37,15 +37,12 @@ export class GroupRecommendationComponent implements OnInit {
       this.recommendationsToShow = [];
       return;
     }
-    console.log("updating recommendations to show");
-    console.log(this.groupRecommendation['recommendations']);
 
     this.recommendationsToShow = [];
     this.groupRecommendation['recommendations'].forEach(recommendation => {
       if(this.recommendationIsCurrentlyShown(recommendation)) this.recommendationsToShow.push(recommendation);
     });
 
-    console.log(this.recommendationsToShow);
     
     this.recommendationsToShow.sort(this.sortPrimaryRecommendationsFirst);
   }
@@ -69,7 +66,6 @@ export class GroupRecommendationComponent implements OnInit {
     {
       return true;
     }
-    console.log("is root");
     if (this.alternativesShown) {
       return true;
     } else if (recommendation["primaryRecommendation"] == true) {
@@ -79,8 +75,6 @@ export class GroupRecommendationComponent implements OnInit {
   }
 
   ngOnChanges() {
-    console.log(this.subLevelSelected);
-    console.log(this.groupRecommendation);
     this.arrowColorChanged.emit(this.getNextArrowColor());
     this.updateRecommendationsToShow();
   }
@@ -88,7 +82,6 @@ export class GroupRecommendationComponent implements OnInit {
   getNextArrowColor(): string {
     let counter: number = 0;
     if (!this.recommendationsToShow) return "blue";
-    console.log(this.recommendationsToShow);
     this.recommendationsToShow.forEach(recommendation => {
       let isShownRightNow = !(recommendation['hideOnSublevelSelect'] == true && this.subLevelSelected);
       if (isShownRightNow) {

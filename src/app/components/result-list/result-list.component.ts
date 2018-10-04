@@ -28,7 +28,6 @@ export class ResultListComponent implements OnInit {
     this.route.queryParams.subscribe(queryParams => {
         this.guidelines = [];
         this.query = queryParams['query'];
-        console.log(queryParams);
         //this.retrieveGuidelineResults();
     
         setTimeout(() => {
