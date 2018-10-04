@@ -426,6 +426,7 @@ export const dummyGuideline = {
                     "primaryRecommendation": true,
                     "hideOnSublevelSelect": true,
                     "comment": "",
+                    "hideAnd": true,
                     "recommendations": 
                     [
                         {
