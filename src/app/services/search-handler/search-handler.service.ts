@@ -13,7 +13,7 @@ const apiUrl = "/api";
   providedIn: 'root'
 })
 
-export class SearchHandler {
+export class SearchHandlerService {
 
   constructor(private http: HttpClient) {
 

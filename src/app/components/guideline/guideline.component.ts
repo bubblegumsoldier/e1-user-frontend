@@ -1,12 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { SearchHandler } from '../../services/search-handler/e1-search-handler.service';
+import { SearchHandlerService } from '../../services/search-handler/search-handler.service';
 
 @Component({
   selector: 'e1-guideline',
   templateUrl: './guideline.component.html',
   styleUrls: ['./guideline.component.css'],
-  providers: [SearchHandler]
+  providers: [SearchHandlerService]
 })
 export class GuidelineComponent implements OnInit {
 
@@ -18,7 +18,7 @@ export class GuidelineComponent implements OnInit {
 
   @ViewChild('firstlevel') firstLevel;
 
-  constructor(private route: ActivatedRoute, private router :Router, private searchHandler :SearchHandler)
+  constructor(private route: ActivatedRoute, private router :Router, private searchHandler :SearchHandlerService)
   { }
 
   ngOnInit() {

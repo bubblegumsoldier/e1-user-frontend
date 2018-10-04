@@ -2,32 +2,27 @@
   <h3 class="title" *ngIf="medicationRecommendation.title?.length > 0">{{medicationRecommendation.title}}</h3>
   <div class="medication-recommendation-inner-group">
     <div class="loe-container">
-      <img src="./assets/{{medicationRecommendation.grade_of_recommendation}}{{medicationRecommendation.grade_of_evidence}}.png" />
+      <img src="./assets/loe_icons/{{medicationRecommendation.grade_of_recommendation}}{{medicationRecommendation.grade_of_evidence}}.svg" />
     </div>
     <div class="medication-recommendation-right">
       <h4 class="medication-recommendation-medication-title">{{medicationRecommendation.name}}</h4>
       <div class="medication-recommendation-specific-dosage-schema" *ngIf="medicationRecommendation.use_specific_dosage_schema && medicationRecommendation.dosage_amount > 0">
-        <table>
-          <tr>
-            <td>Morgens</td>
-            <td>Mittags</td>
-            <td>Abends</td>
-            <td>Nachts</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>{{medicationRecommendation.morning_dosage}}</td>
-            <td>{{medicationRecommendation.noon_dosage}}</td>
-            <td>{{medicationRecommendation.evening_dosage}}</td>
-            <td>{{medicationRecommendation.night_dosage}}</td>
-            <td>x {{medicationRecommendation.dosage_amount}}{{medicationRecommendation.dosage_unit}}</td>
-          </tr>
-        </table>
+        <div class="medication-distribution">
+            <span>{{medicationRecommendation.dosage_amount}}{{medicationRecommendation.dosage_unit}}</span>
+            <span></span>
+            <span>{{medicationRecommendation.morning_dosage}}</span>
+            <span>-</span>
+            <span>{{medicationRecommendation.noon_dosage}}</span>
+            <span>-</span>            
+            <span>{{medicationRecommendation.evening_dosage}}</span>
+            <span>-</span>            
+            <span>{{medicationRecommendation.night_dosage}}</span>
+        </div>
 
-        <span class="medication-recommendation-specific-text">({{this.descriptionText}})</span>
+        <span class="medication-recommendation-specific-text">{{this.descriptionText}}</span>
       </div>
       <div class="medication-recommendation-simple-dosage-schema" *ngIf="!medicationRecommendation.use_specific_dosage_schema">
-        ({{this.descriptionText}})
+        {{this.descriptionText}}
       </div>
     </div>
   </div>

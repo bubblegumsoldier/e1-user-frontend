@@ -1,0 +1,79 @@
+.syntax-recommendation-wrapper
+{
+    margin-left: 260px;
+    width: 50%;
+    max-width: 700px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.syntax-recommendation-wrapper h3.title
+{
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    display: block;
+    min-width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.syntax-recommendation-inner-group
+{
+    display: flex;
+    align-items: center;
+}
+
+.syntax-recommendation-inner-group .loe-container
+{
+    width: 40px;
+    height: 40px;
+}
+
+.syntax-recommendation-inner-group .syntax-recommendation-right
+{
+    flex: 1;
+    height: 100%;
+    /*min-height: 80px*/;
+    display: flex;
+    flex-flow: column;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.syntax-recommendation-inner-group .syntax-recommendation-right p
+{
+    font-size: 16px;
+    font-weight: 400;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.medication_attribute.name
+{
+    border: 1px solid #bbb;
+    cursor: pointer;
+    color: white;
+    padding: 10;
+    display: inline-bock;
+    display: inline-block;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    margin-top: 0px;
+    font-weight: 400;
+    width: auto;
+    color: black;
+    border-radius: 3px;
+    color: #333;
+    margin-left: 5px;
+    
+}
+
+.medication_attribute.name:hover
+{
+    background-color: #eee;
+}

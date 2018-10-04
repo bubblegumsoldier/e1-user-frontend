@@ -28,19 +28,16 @@ export class MedicationRecommendationComponent implements OnInit {
       text += this.medicationRecommendation["dosage_amount"] + this.medicationRecommendation["dosage_unit"] + " ";
     }
 
-    text += "jeden ";
-
-    if(this.medicationRecommendation["dosage_freq"] > 1)
-    {
-      text += this.medicationRecommendation["dosage_freq"] + ". ";
-    }
-
-    text += "Tag";
-
     if(!this.medicationRecommendation["unlimited_application_duration"])
     {
       text += " über " + this.medicationRecommendation["dosage_duration"] + " " + this.getDosageDurationUnitText(this.medicationRecommendation["dosage_duration_unit"]); 
     }
+
+
+    if(this.medicationRecommendation["dosage_freq"] <= 1) return text;
+    text += "(jeden ";
+    text += this.medicationRecommendation["dosage_freq"] + ". ";
+    text += "Tag)";
 
     return text;
 

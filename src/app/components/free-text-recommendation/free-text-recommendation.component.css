@@ -22,21 +22,20 @@
 .ft-recommendation-inner-group
 {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .ft-recommendation-inner-group .loe-container
 {
-    width: 80px;
-    height: 80px;
-    background-color: #333;
+    width: 40px;
+    height: 40px;
 }
 
 .ft-recommendation-inner-group .ft-recommendation-right
 {
     flex: 1;
     height: 100%;
-    min-height: 80px;
+    /*min-height: 80px*/;
     display: flex;
     flex-flow: column;
     justify-content: flex-start;
@@ -48,4 +47,5 @@
     font-size: 16px;
     font-weight: 400;
     margin-top: 0;
+    margin-bottom: 0;
 }

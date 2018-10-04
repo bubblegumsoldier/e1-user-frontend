@@ -33,8 +33,8 @@ export const dummyGuideline = {
                             "type": "freeText",
                             "title": "",
                             "content": "Strukturiertes, evaluiertes Zielgruppen und Themenspezifisches Schulungs- und Behandlungszentrum",
-                            "grade_of_evidence": "",
-                            "grade_of_recommendation": "",
+                            "grade_of_evidence": "a",
+                            "grade_of_recommendation": "2",
                             "primaryRecommendation": true,
                             "comment": "",
                             "hideOnSublevelSelect": false
@@ -43,8 +43,8 @@ export const dummyGuideline = {
                             "type": "freeText",
                             "title": "",
                             "content": "Ernährungsempfehlungen (gesunde, ausgewogene Kostform, keine Diabetesnahrung)",
-                            "grade_of_evidence": "",
-                            "grade_of_recommendation": "",
+                            "grade_of_evidence": "a",
+                            "grade_of_recommendation": "2",
                             "primaryRecommendation": true,
                             "comment": "",
                             "hideOnSublevelSelect": false
@@ -53,8 +53,8 @@ export const dummyGuideline = {
                             "type": "freeText",
                             "title": "",
                             "content": "Ernährungsberatung: Individuelle Ernährungsberatung anbieten",
-                            "grade_of_evidence": "",
-                            "grade_of_recommendation": "",
+                            "grade_of_evidence": "a",
+                            "grade_of_recommendation": "2",
                             "primaryRecommendation": true,
                             "comment": "",
                             "hideOnSublevelSelect": false
@@ -63,8 +63,8 @@ export const dummyGuideline = {
                             "type": "freeText",
                             "title": "",
                             "content": "Ausarbeitung eines individuellen Selbstmanagementplans",
-                            "grade_of_evidence": "",
-                            "grade_of_recommendation": "",
+                            "grade_of_evidence": "a",
+                            "grade_of_recommendation": "2",
                             "primaryRecommendation": true,
                             "comment": "",
                             "hideOnSublevelSelect": false
@@ -73,8 +73,8 @@ export const dummyGuideline = {
                             "type": "freeText",
                             "title": "",
                             "content": "Körperliche Aktivität: Individuelle Zielfestlegung",
-                            "grade_of_evidence": "",
-                            "grade_of_recommendation": "",
+                            "grade_of_evidence": "a",
+                            "grade_of_recommendation": "2",
                             "primaryRecommendation": true,
                             "comment": "",
                             "hideOnSublevelSelect": false
@@ -83,8 +83,8 @@ export const dummyGuideline = {
                             "type": "freeText",
                             "title": "",
                             "content": "Tabakentwöhnung",
-                            "grade_of_evidence": "",
-                            "grade_of_recommendation": "",
+                            "grade_of_evidence": "a",
+                            "grade_of_recommendation": "2",
                             "primaryRecommendation": true,
                             "comment": "",
                             "hideOnSublevelSelect": false
@@ -95,8 +95,8 @@ export const dummyGuideline = {
                     "type": "freeText",
                     "title": "",
                     "content": "Kein Erfolg zu erwarten: Direkt Stufe 2",
-                    "grade_of_evidence": "",
-                    "grade_of_recommendation": "",
+                    "grade_of_evidence": "a",
+                    "grade_of_recommendation": "2",
                     "primaryRecommendation": true,
                     "comment": "",
                     "hideOnSublevelSelect": false
@@ -105,8 +105,8 @@ export const dummyGuideline = {
                     "type": "freeText",
                     "title": "",
                     "content": "Minimale Wirkstoffdosis erfolgreich: Auslassversuch unter HbA1C Kontrolle",
-                    "grade_of_evidence": "",
-                    "grade_of_recommendation": "",
+                    "grade_of_evidence": "a",
+                    "grade_of_recommendation": "2",
                     "primaryRecommendation": true,
                     "comment": "",
                     "hideOnSublevelSelect": false
@@ -115,8 +115,8 @@ export const dummyGuideline = {
                     "type": "freeText",
                     "title": "",
                     "content": "Indikation für Plasmaglukose-Selbstmessung prüfen (Link S. 33)",
-                    "grade_of_evidence": "",
-                    "grade_of_recommendation": "",
+                    "grade_of_evidence": "a",
+                    "grade_of_recommendation": "2",
                     "primaryRecommendation": true,
                     "comment": "",
                     "hideOnSublevelSelect": false
@@ -134,63 +134,28 @@ export const dummyGuideline = {
                     "definition": "",
                     "recommendations": [
                         {
-                            "type": "group",
+                            "type": "freeText",
                             "title": "Empfohlen von DEGAM/AkdÄ",
                             "primaryRecommendation": true,
                             "hideOnSublevelSelect": true,
-                            "recommendations": 
-                            [
-                                {
-                                    "type": "freeText",
-                                    "title": "",
-                                    "content": "Basistherapie",
-                                    "grade_of_evidence": "",
-                                    "grade_of_recommendation": "",
-                                    "primaryRecommendation": true,
-                                    "comment": ""
-                                },
-                                {
-                                    "type": "medication",
-                                    "name" : "Humaninsulin",
-                                    "grade_of_evidence" : "C",
-                                    "grade_of_recommendation" : "B",
-                                    "comment" : "(positiver Nutzennachweiß)",
-                                    "active_substance" : "Insulin",
-                                    "dosage_amount" : "0",
-                                    "dosage_unit" : "ml",
-                                    "use_specific_dosage_schema": true,
-                                    "morning_dosage" : "0",
-                                    "noon_dosage" : "0",
-                                    "evening_dosage" : "0",
-                                    "night_dosage" : "0",
-                                    "dosage_freq" : "0",
-                                    "dosage_duration" : "0",
-                                    "dosage_duration_unit" : "days",
-                                    "unlimited_application_duration": true
-                            }
-                            ]
+                            "content": "Basistherapie mit Humaninsulin",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2"
                         },
                         {
-                            "type": "group",
+                            "type": "syntax",
                             "title": "Empfohlen von DEGAM/AkdÄ",
                             "primaryRecommendation": true,
                             "hideOnSublevelSelect": true,
-                            "recommendations": 
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
+                            "content": "Basistherapie mit {0}",
+                            "preDefs": 
                             [
-                                {
-                                    "type": "freeText",
-                                    "title": "",
-                                    "content": "Basistherapie",
-                                    "grade_of_evidence": "",
-                                    "grade_of_recommendation": "",
-                                    "primaryRecommendation": true,
-                                    "comment": ""
-                                },
                                 {
                                     "type": "medication",
                                     "name" : "Glibenclamid (Sulfonylharnstoff)",
-                                    "grade_of_evidence" : "C",
-                                    "grade_of_recommendation" : "B",
+                                    "refId": 0,
                                     "comment" : "(positiver Nutzennachweiß)",
                                     "active_substance" : "",
                                     "dosage_amount" : "0",
@@ -204,289 +169,86 @@ export const dummyGuideline = {
                                     "dosage_duration" : "0",
                                     "dosage_duration_unit" : "days",
                                     "unlimited_application_duration": true
-                            }
+                                }
                             ]
                         },
                         {
-                            "type": "group",
+                            "type": "syntax",
                             "title": "Empfohlen von DEGAM/AkdÄ",
                             "primaryRecommendation": false,
                             "hideOnSublevelSelect": true,
-                            "recommendations": 
-                            [
-                                {
-                                    "type": "freeText",
-                                    "title": "",
-                                    "content": "Basistherapie",
-                                    "grade_of_evidence": "",
-                                    "grade_of_recommendation": "",
-                                    "primaryRecommendation": true,
-                                    "comment": ""
-                                },
-                                {
-                                    "type": "medication",
-                                    "name" : "DPP-4-Inhibitor",
-                                    "grade_of_evidence" : "C",
-                                    "grade_of_recommendation" : "B",
-                                    "comment" : "(kein Nutzennachweiß)",
-                                    "active_substance" : "",
-                                    "dosage_amount" : "0",
-                                    "dosage_unit" : "ml",
-                                    "use_specific_dosage_schema": true,
-                                    "morning_dosage" : "0",
-                                    "noon_dosage" : "0",
-                                    "evening_dosage" : "0",
-                                    "night_dosage" : "0",
-                                    "dosage_freq" : "0",
-                                    "dosage_duration" : "0",
-                                    "dosage_duration_unit" : "days",
-                                    "unlimited_application_duration": true
-                            }
-                            ]
+                            "content": "Basistherapie mit DPP-4-Inhibitor",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2"
                         },
                         {
-                            "type": "group",
+                            "type": "syntax",
                             "title": "Empfohlen von DEGAM/AkdÄ",
                             "primaryRecommendation": false,
                             "hideOnSublevelSelect": true,
-                            "recommendations": 
-                            [
-                                {
-                                    "type": "freeText",
-                                    "title": "",
-                                    "content": "Basistherapie",
-                                    "grade_of_evidence": "",
-                                    "grade_of_recommendation": "",
-                                    "primaryRecommendation": true,
-                                    "comment": ""
-                                },
-                                {
-                                    "type": "medication",
-                                    "name" : "weitere Sulfonylharnstoffe / Glinid",
-                                    "grade_of_evidence" : "C",
-                                    "grade_of_recommendation" : "B",
-                                    "comment" : "(kein Nutzennachweiß)",
-                                    "active_substance" : "",
-                                    "dosage_amount" : "0",
-                                    "dosage_unit" : "ml",
-                                    "use_specific_dosage_schema": true,
-                                    "morning_dosage" : "0",
-                                    "noon_dosage" : "0",
-                                    "evening_dosage" : "0",
-                                    "night_dosage" : "0",
-                                    "dosage_freq" : "0",
-                                    "dosage_duration" : "0",
-                                    "dosage_duration_unit" : "days",
-                                    "unlimited_application_duration": true
-                            }
-                            ]
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
+                            "content": "Basistherapie mit weitere Sulfonylharnstoffe / Glinid"
                         },
                         {
-                            "type": "group",
+                            "type": "syntax",
                             "title": "Empfohlen von DDG/DGIM",
                             "primaryRecommendation": true,
                             "hideOnSublevelSelect": true,
-                            "recommendations": 
-                            [
-                                {
-                                    "type": "freeText",
-                                    "title": "",
-                                    "content": "Basistherapie",
-                                    "grade_of_evidence": "",
-                                    "grade_of_recommendation": "",
-                                    "primaryRecommendation": true,
-                                    "comment": ""
-                                },
-                                {
-                                    "type": "medication",
-                                    "name" : "DPP-4-Inhibitor",
-                                    "grade_of_evidence" : "C",
-                                    "grade_of_recommendation" : "B",
-                                    "comment" : "",
-                                    "active_substance" : "Metformin",
-                                    "dosage_amount" : "0",
-                                    "dosage_unit" : "ml",
-                                    "use_specific_dosage_schema": true,
-                                    "morning_dosage" : "0",
-                                    "noon_dosage" : "0",
-                                    "evening_dosage" : "0",
-                                    "night_dosage" : "0",
-                                    "dosage_freq" : "0",
-                                    "dosage_duration" : "0",
-                                    "dosage_duration_unit" : "days",
-                                    "unlimited_application_duration": true
-                            }
-                            ]
+                            "content": "Basistherapie mit DPP-4-Inhibitor",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2"
                         },
                         {
-                            "type": "group",
+                            "type": "syntax",
                             "title": "Empfohlen von DDG/DGIM",
                             "primaryRecommendation": true,
                             "hideOnSublevelSelect": true,
-                            "recommendations": 
-                            [
-                                {
-                                    "type": "freeText",
-                                    "title": "",
-                                    "content": "Basistherapie",
-                                    "grade_of_evidence": "",
-                                    "grade_of_recommendation": "",
-                                    "primaryRecommendation": true,
-                                    "comment": ""
-                                },
-                                {
-                                    "type": "medication",
-                                    "name" : "Insulin (häufig Verzögerungsinsuline)",
-                                    "grade_of_evidence" : "C",
-                                    "grade_of_recommendation" : "B",
-                                    "comment" : "",
-                                    "active_substance" : "Metformin",
-                                    "dosage_amount" : "0",
-                                    "dosage_unit" : "ml",
-                                    "use_specific_dosage_schema": true,
-                                    "morning_dosage" : "0",
-                                    "noon_dosage" : "0",
-                                    "evening_dosage" : "0",
-                                    "night_dosage" : "0",
-                                    "dosage_freq" : "0",
-                                    "dosage_duration" : "0",
-                                    "dosage_duration_unit" : "days",
-                                    "unlimited_application_duration": true
-                            }
-                            ]
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
+                            "content": "Basistherapie mit Insulin (häufig Verzögerungsinsuline)"
                         },
                         {
-                            "type": "group",
+                            "type": "syntax",
                             "title": "Empfohlen von DDG/DGIM",
                             "primaryRecommendation": true,
                             "hideOnSublevelSelect": true,
-                            "recommendations": 
-                            [
-                                {
-                                    "type": "freeText",
-                                    "title": "",
-                                    "content": "Basistherapie",
-                                    "grade_of_evidence": "",
-                                    "grade_of_recommendation": "",
-                                    "primaryRecommendation": true,
-                                    "comment": ""
-                                },
-                                {
-                                    "type": "medication",
-                                    "name" : "SGLT-2-Inhibitor",
-                                    "grade_of_evidence" : "C",
-                                    "grade_of_recommendation" : "B",
-                                    "comment" : "",
-                                    "active_substance" : "Metformin",
-                                    "dosage_amount" : "0",
-                                    "dosage_unit" : "ml",
-                                    "use_specific_dosage_schema": true,
-                                    "morning_dosage" : "0",
-                                    "noon_dosage" : "0",
-                                    "evening_dosage" : "0",
-                                    "night_dosage" : "0",
-                                    "dosage_freq" : "0",
-                                    "dosage_duration" : "0",
-                                    "dosage_duration_unit" : "days",
-                                    "unlimited_application_duration": true
-                                }
-                            ]
+                            "content": "Basistherapie mit SGLT-2-Inhibitor",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2"
                         },
                         {
-                            "type": "group",
+                            "type": "syntax",
                             "title": "Empfohlen von DDG/DGIM",
                             "primaryRecommendation": true,
                             "hideOnSublevelSelect": true,
-                            "recommendations": 
-                            [
-                                {
-                                    "type": "freeText",
-                                    "title": "",
-                                    "content": "Basistherapie",
-                                    "grade_of_evidence": "",
-                                    "grade_of_recommendation": "",
-                                    "primaryRecommendation": true,
-                                    "comment": ""
-                                },
-                                {
-                                    "type": "medication",
-                                    "name" : "Sulfonylharnstoff / Glinid",
-                                    "grade_of_evidence" : "C",
-                                    "grade_of_recommendation" : "B",
-                                    "comment" : "",
-                                    "active_substance" : "Metformin",
-                                    "dosage_amount" : "0",
-                                    "dosage_unit" : "ml",
-                                    "use_specific_dosage_schema": true,
-                                    "morning_dosage" : "0",
-                                    "noon_dosage" : "0",
-                                    "evening_dosage" : "0",
-                                    "night_dosage" : "0",
-                                    "dosage_freq" : "0",
-                                    "dosage_duration" : "0",
-                                    "dosage_duration_unit" : "days",
-                                    "unlimited_application_duration": true
-                                }
-                            ]
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
+                            "content": "Basistherapie mit Sulfonylharnstoff / Glinid"
                         },
                         {
-                            "type": "group",
+                            "type": "syntax",
                             "title": "Empfohlen von DDG/DGIM",
                             "primaryRecommendation": false,
                             "hideOnSublevelSelect": true,
-                            "recommendations": 
-                            [
-                                {
-                                    "type": "freeText",
-                                    "title": "",
-                                    "content": "Basistherapie",
-                                    "grade_of_evidence": "",
-                                    "grade_of_recommendation": "",
-                                    "primaryRecommendation": true,
-                                    "comment": ""
-                                },
-                                {
-                                    "type": "medication",
-                                    "name" : "Glukosidasehemmer",
-                                    "grade_of_evidence" : "C",
-                                    "grade_of_recommendation" : "B",
-                                    "comment" : "",
-                                    "active_substance" : "Metformin",
-                                    "dosage_amount" : "0",
-                                    "dosage_unit" : "ml",
-                                    "use_specific_dosage_schema": true,
-                                    "morning_dosage" : "0",
-                                    "noon_dosage" : "0",
-                                    "evening_dosage" : "0",
-                                    "night_dosage" : "0",
-                                    "dosage_freq" : "0",
-                                    "dosage_duration" : "0",
-                                    "dosage_duration_unit" : "days",
-                                    "unlimited_application_duration": true
-                                }
-                            ]
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
+                            "content": "Basistherapie mit Glukosidasehemmer"
                         },
                         {
-                            "type": "group",
+                            "type": "syntax",
                             "title": "Empfohlen von DDG/DGIM",
                             "primaryRecommendation": false,
                             "hideOnSublevelSelect": true,
-                            "recommendations": 
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
+                            "content": "Basistherapie mit {0}",
+                            "preDefs": 
                             [
                                 {
-                                    "type": "freeText",
-                                    "title": "",
-                                    "content": "Basistherapie",
-                                    "grade_of_evidence": "",
-                                    "grade_of_recommendation": "",
-                                    "primaryRecommendation": true,
-                                    "comment": ""
-                                },
-                                {
+                                    "refId": 0,
                                     "type": "medication",
                                     "name" : "Pioglitazon",
-                                    "grade_of_evidence" : "C",
-                                    "grade_of_recommendation" : "B",
                                     "comment" : "",
                                     "active_substance" : "Metformin",
                                     "dosage_amount" : "0",
@@ -508,26 +270,21 @@ export const dummyGuideline = {
             ],
             "recommendations" : [
                 {
-                    "type": "group",
+                    "type": "syntax",
                     "title": "",
                     "primaryRecommendation": true,
                     "hideOnSublevelSelect": true,
-                    "recommendations": 
+                    "grade_of_evidence" : "a",
+                    "grade_of_recommendation" : "2",
+                    "content": "Basistherapie mit {0}",
+                    "preDefs": 
                     [
                         {
-                            "type": "freeText",
-                            "title": "",
-                            "content": "Basistherapie",
-                            "grade_of_evidence": "",
-                            "grade_of_recommendation": "",
-                            "primaryRecommendation": true,
-                            "comment": ""
-                        },
-                        {
+                            "refId": 0,
                             "type": "medication",
                             "name" : "Metformin",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
                             "comment" : "",
                             "active_substance" : "Metformin",
                             "dosage_amount" : "0",
@@ -557,8 +314,8 @@ export const dummyGuideline = {
                 {
                     "type": "medication",
                     "name" : "Insulin",
-                    "grade_of_evidence" : "C",
-                    "grade_of_recommendation" : "B",
+                    "grade_of_evidence" : "a",
+                    "grade_of_recommendation" : "2",
                     "comment" : "",
                     "active_substance" : "Metformin",
                     "dosage_amount" : "0",
@@ -584,136 +341,82 @@ export const dummyGuideline = {
                         {
                             "type": "medication",
                             "name" : "Metformin",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
                             "comment" : "",
                             "active_substance" : "Metformin",
-                            "dosage_amount" : "0",
-                            "dosage_unit" : "ml",
+                            "dosage_amount" : "20",
+                            "dosage_unit" : "mg",
                             "use_specific_dosage_schema": true,
-                            "morning_dosage" : "0",
+                            "morning_dosage" : "1",
                             "noon_dosage" : "0",
-                            "evening_dosage" : "0",
-                            "night_dosage" : "0",
-                            "dosage_freq" : "0",
-                            "dosage_duration" : "0",
+                            "evening_dosage" : "1.5",
+                            "night_dosage" : "1",
+                            "dosage_freq" : "1",
+                            "dosage_duration" : "10",
                             "dosage_duration_unit" : "days",
-                            "unlimited_application_duration": true
+                            "unlimited_application_duration": false
                         },
                         {
-                            "type": "medication",
-                            "name" : "Insulin",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
+                            "type": "syntax",
+                            "preDefs": [
+                                {
+                                    "type": "medication",
+                                    "name" : "Insulin",
+                                    "active_substance" : "",
+                                    "dosage_amount" : "0",
+                                    "dosage_unit" : "ml",
+                                    "use_specific_dosage_schema": true,
+                                    "morning_dosage" : "0",
+                                    "noon_dosage" : "0",
+                                    "evening_dosage" : "0",
+                                    "night_dosage" : "0",
+                                    "dosage_freq" : "0",
+                                    "dosage_duration" : "0",
+                                    "dosage_duration_unit" : "days",
+                                    "unlimited_application_duration": true,
+                                    "refId": 0
+                                },
+                                {
+                                    "type": "medication",
+                                    "name" : "Glibenclamid",
+                                    "active_substance" : "",
+                                    "dosage_amount" : "0",
+                                    "dosage_unit" : "ml",
+                                    "use_specific_dosage_schema": true,
+                                    "morning_dosage" : "0",
+                                    "noon_dosage" : "0",
+                                    "evening_dosage" : "0",
+                                    "night_dosage" : "0",
+                                    "dosage_freq" : "0",
+                                    "dosage_duration" : "0",
+                                    "dosage_duration_unit" : "days",
+                                    "unlimited_application_duration": true,
+                                    "refId": 1
+                                },
+                                {
+                                    "type": "medication",
+                                    "name" : "DPP-4-Inhibitor",
+                                    "active_substance" : "",
+                                    "dosage_amount" : "200",
+                                    "dosage_unit" : "ml",
+                                    "use_specific_dosage_schema": true,
+                                    "morning_dosage" : "0",
+                                    "noon_dosage" : "0",
+                                    "evening_dosage" : "0",
+                                    "night_dosage" : "0",
+                                    "dosage_freq" : "0",
+                                    "dosage_duration" : "0",
+                                    "dosage_duration_unit" : "days",
+                                    "unlimited_application_duration": true,
+                                    "refId": 2
+                                }
+                            ],
+                            
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
                             "comment" : "",
-                            "active_substance" : "",
-                            "dosage_amount" : "0",
-                            "dosage_unit" : "ml",
-                            "use_specific_dosage_schema": true,
-                            "morning_dosage" : "0",
-                            "noon_dosage" : "0",
-                            "evening_dosage" : "0",
-                            "night_dosage" : "0",
-                            "dosage_freq" : "0",
-                            "dosage_duration" : "0",
-                            "dosage_duration_unit" : "days",
-                            "unlimited_application_duration": true
-                        }
-                    ]
-                },
-                {
-                    "type": "group",
-                    "title": "Empfohlen von DEGAM/AkdÄ",
-                    "primaryRecommendation": true,
-                    "hideOnSublevelSelect": true,
-                    "comment": "Vorteil: Orale Gabe, Nachteil: höhere CVD Mortalität in method. nicht sehr guten Studien, Hypoglykämie, Gewichtszunahme",
-                    "recommendations": 
-                    [
-                        {
-                            "type": "medication",
-                            "name" : "Metformin",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
-                            "comment" : "",
-                            "active_substance" : "Metformin",
-                            "dosage_amount" : "0",
-                            "dosage_unit" : "ml",
-                            "use_specific_dosage_schema": true,
-                            "morning_dosage" : "0",
-                            "noon_dosage" : "0",
-                            "evening_dosage" : "0",
-                            "night_dosage" : "0",
-                            "dosage_freq" : "0",
-                            "dosage_duration" : "0",
-                            "dosage_duration_unit" : "days",
-                            "unlimited_application_duration": true
-                        },
-                        {
-                            "type": "medication",
-                            "name" : "Glibenclamid",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
-                            "comment" : "",
-                            "active_substance" : "",
-                            "dosage_amount" : "0",
-                            "dosage_unit" : "ml",
-                            "use_specific_dosage_schema": true,
-                            "morning_dosage" : "0",
-                            "noon_dosage" : "0",
-                            "evening_dosage" : "0",
-                            "night_dosage" : "0",
-                            "dosage_freq" : "0",
-                            "dosage_duration" : "0",
-                            "dosage_duration_unit" : "days",
-                            "unlimited_application_duration": true
-                        }
-                    ]
-                },
-                {
-                    "type": "group",
-                    "title": "Empfohlen von DEGAM/AkdÄ",
-                    "primaryRecommendation": true,
-                    "hideOnSublevelSelect": true,
-                    "comment": "Vorteil: Orale Gabe, kaum Hypoglykämien, Gewichtsneutral, Nachteil: Keine Daten zu klinischen Endpunkten, Studien mit Hinweisen auf Zunahme von Pankreatitis, Pankreastumoren",
-                    "recommendations": 
-                    [
-                        {
-                            "type": "medication",
-                            "name" : "Metformin",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
-                            "comment" : "",
-                            "active_substance" : "Metformin",
-                            "dosage_amount" : "0",
-                            "dosage_unit" : "ml",
-                            "use_specific_dosage_schema": true,
-                            "morning_dosage" : "0",
-                            "noon_dosage" : "0",
-                            "evening_dosage" : "0",
-                            "night_dosage" : "0",
-                            "dosage_freq" : "0",
-                            "dosage_duration" : "0",
-                            "dosage_duration_unit" : "days",
-                            "unlimited_application_duration": true
-                        },
-                        {
-                            "type": "medication",
-                            "name" : "DPP-4-Inhibitor",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
-                            "comment" : "",
-                            "active_substance" : "",
-                            "dosage_amount" : "0",
-                            "dosage_unit" : "ml",
-                            "use_specific_dosage_schema": true,
-                            "morning_dosage" : "0",
-                            "noon_dosage" : "0",
-                            "evening_dosage" : "0",
-                            "night_dosage" : "0",
-                            "dosage_freq" : "0",
-                            "dosage_duration" : "0",
-                            "dosage_duration_unit" : "days",
-                            "unlimited_application_duration": true
+                            "content": "Entweder Insulin, {1|name} oder DPP-4-Inhibitor"
                         }
                     ]
                 },
@@ -727,9 +430,9 @@ export const dummyGuideline = {
                     [
                         {
                             "type": "medication",
-                            "name" : "DPP-4-Inhibator",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
+                            "name" : "DPP-4-Inhibitor",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
                             "comment" : "",
                             "active_substance" : "",
                             "dosage_amount" : "0",
@@ -747,8 +450,8 @@ export const dummyGuideline = {
                         {
                             "type": "medication",
                             "name" : "GLP-1-Rezeptoragonist",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
                             "comment" : "",
                             "active_substance" : "",
                             "dosage_amount" : "0",
@@ -766,8 +469,8 @@ export const dummyGuideline = {
                         {
                             "type": "medication",
                             "name" : "Glukosidasehemmer",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
                             "comment" : "",
                             "active_substance" : "",
                             "dosage_amount" : "0",
@@ -785,8 +488,8 @@ export const dummyGuideline = {
                         {
                             "type": "medication",
                             "name" : "Insulin (häufig Verzögerungsinsulin)",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
                             "comment" : "",
                             "active_substance" : "",
                             "dosage_amount" : "0",
@@ -804,8 +507,8 @@ export const dummyGuideline = {
                         {
                             "type": "medication",
                             "name" : "SGLT2-Inhibtor",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
                             "comment" : "",
                             "active_substance" : "",
                             "dosage_amount" : "0",
@@ -823,8 +526,8 @@ export const dummyGuideline = {
                         {
                             "type": "medication",
                             "name" : "Sulfonylharnstoff / Glinid",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
                             "comment" : "",
                             "active_substance" : "",
                             "dosage_amount" : "0",
@@ -852,8 +555,8 @@ export const dummyGuideline = {
                     "type": "freeText",
                     "title": "",
                     "content": "(Intensivierte) Insulintherapie (SIT, CT, ICT, CSII, Verzögerungsinsulin)",
-                    "grade_of_evidence": "",
-                    "grade_of_recommendation": "",
+                    "grade_of_evidence": "a",
+                    "grade_of_recommendation": "2",
                     "primaryRecommendation": true,
                     "comment": "",
                     "hideOnSublevelSelect": true
@@ -870,16 +573,39 @@ export const dummyGuideline = {
                             "type": "freeText",
                             "title": "",
                             "content": "(Intensivierte) Insulintherapie (SIT, CT, ICT, CSII, Verzögerungsinsulin)",
-                            "grade_of_evidence": "",
-                            "grade_of_recommendation": "",
+                            "grade_of_evidence": "a",
+                            "grade_of_recommendation": "2",
                             "primaryRecommendation": true,
                             "comment": ""
                         },
                         {
-                            "type": "medication",
-                            "name" : "Orale Antidiabetika (Metformin, Dpp-4-Inhibtor, SGLT-2-Inhibitor)",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
+                            "type": "syntax",
+                            "preDefs": 
+                            [
+                                {
+                                    "refId": 0,
+                                    "type": "medication",
+                                    "name" : "Metformin",
+                                    "grade_of_evidence" : "a",
+                                    "grade_of_recommendation" : "2",
+                                    "comment" : "",
+                                    "active_substance" : "Metformin",
+                                    "dosage_amount" : "0",
+                                    "dosage_unit" : "ml",
+                                    "use_specific_dosage_schema": true,
+                                    "morning_dosage" : "0",
+                                    "noon_dosage" : "0",
+                                    "evening_dosage" : "0",
+                                    "night_dosage" : "0",
+                                    "dosage_freq" : "0",
+                                    "dosage_duration" : "0",
+                                    "dosage_duration_unit" : "days",
+                                    "unlimited_application_duration": true
+                                }
+                            ],
+                            "content" : "Orale Antidiabetika ({0}, Dpp-4-Inhibtor, SGLT-2-Inhibitor)",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
                             "comment" : "",
                             "active_substance" : "",
                             "dosage_amount" : "0",
@@ -908,29 +634,17 @@ export const dummyGuideline = {
                             "type": "freeText",
                             "title": "",
                             "content": "Verzögerungsinsulin",
-                            "grade_of_evidence": "",
-                            "grade_of_recommendation": "",
+                            "grade_of_evidence": "a",
+                            "grade_of_recommendation": "2",
                             "primaryRecommendation": true,
                             "comment": ""
                         },
                         {
-                            "type": "medication",
-                            "name" : "GLP-1-Rezeptorantagonist",
-                            "grade_of_evidence" : "C",
-                            "grade_of_recommendation" : "B",
-                            "comment" : "",
-                            "active_substance" : "",
-                            "dosage_amount" : "0",
-                            "dosage_unit" : "ml",
-                            "use_specific_dosage_schema": true,
-                            "morning_dosage" : "0",
-                            "noon_dosage" : "0",
-                            "evening_dosage" : "0",
-                            "night_dosage" : "0",
-                            "dosage_freq" : "0",
-                            "dosage_duration" : "0",
-                            "dosage_duration_unit" : "days",
-                            "unlimited_application_duration": true
+                            "type": "freeText",
+                            "content" : "GLP-1-Rezeptorantagonist",
+                            "grade_of_evidence" : "a",
+                            "grade_of_recommendation" : "2",
+                            "comment" : ""
                         }
                     ]
                 }
@@ -953,16 +667,16 @@ export const dummyGuideline = {
                                     "type": "freeText",
                                     "title": "",
                                     "content": "Insulin (SIT, CT, ICT)",
-                                    "grade_of_evidence": "",
-                                    "grade_of_recommendation": "",
+                                    "grade_of_evidence": "a",
+                                    "grade_of_recommendation": "2",
                                     "primaryRecommendation": true,
                                     "comment": ""
                                 },
                                 {
                                     "type": "medication",
                                     "name" : "Metformin",
-                                    "grade_of_evidence" : "C",
-                                    "grade_of_recommendation" : "B",
+                                    "grade_of_evidence" : "a",
+                                    "grade_of_recommendation" : "2",
                                     "comment" : "",
                                     "active_substance" : "Metformin",
                                     "dosage_amount" : "0",

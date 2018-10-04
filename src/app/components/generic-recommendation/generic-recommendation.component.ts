@@ -17,6 +17,7 @@ export class GenericRecommendationComponent implements OnInit {
   RECOMMENDATION_TYPE_MEDICATION :string = "medication";
   RECOMMENDATION_TYPE_FREETEXT :string = "freeText";
   RECOMMENDATION_TYPE_GROUP :string = "group";
+  RECOMMENDATION_TYPE_SYNTAX :string = "syntax";
 
   constructor() { }
 

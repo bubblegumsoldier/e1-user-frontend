@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-import { SearchHandler } from '../../services/search-handler/e1-search-handler.service';
+import { SearchHandlerService } from '../../services/search-handler/search-handler.service';
 
 import { Guideline } from '../../model/Guideline';
 import { dummyGuideline } from 'src/app/model/dummyGuideline';
@@ -11,7 +11,7 @@ import { dummyGuideline } from 'src/app/model/dummyGuideline';
   selector: 'e1-result-list',
   templateUrl: './result-list.component.html',
   styleUrls: ['./result-list.component.css'],
-  providers: [SearchHandler]
+  providers: [SearchHandlerService]
 })
 export class ResultListComponent implements OnInit {
   query :string;
@@ -22,7 +22,7 @@ export class ResultListComponent implements OnInit {
 
   guidelines :any[] = [];
 
-  constructor(private route: ActivatedRoute, private searchHandler :SearchHandler) { }
+  constructor(private route: ActivatedRoute, private searchHandler :SearchHandlerService) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(queryParams => {
@@ -33,7 +33,7 @@ export class ResultListComponent implements OnInit {
     
         setTimeout(() => {
           this.initializeGuidelines([dummyGuideline, dummyGuideline, dummyGuideline]);
-        }, 1500);
+        }, 100);
     });
   }
 

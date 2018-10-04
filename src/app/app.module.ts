@@ -18,9 +18,11 @@ import { FreeTextRecommendationComponent } from './components/free-text-recommen
 import { MedicationRecommendationComponent } from './components/medication-recommendation/medication-recommendation.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
-import { SearchHandler } from './services/search-handler/e1-search-handler.service';
+import { SearchHandlerService } from './services/search-handler/search-handler.service';
+import { SyntaxParserService } from './services/syntax-parser/syntax-parser.service';
 import { GenericRecommendationComponent } from './components/generic-recommendation/generic-recommendation.component';
 import { GroupRecommendationComponent } from './components/group-recommendation/group-recommendation.component';
+import { SyntaxRecommendationComponent } from './components/syntax-recommendation/syntax-recommendation.component';
 
 const appRoutes :Routes = [
   {
@@ -51,7 +53,8 @@ const appRoutes :Routes = [
     FreeTextRecommendationComponent,
     MedicationRecommendationComponent,
     GenericRecommendationComponent,
-    GroupRecommendationComponent
+    GroupRecommendationComponent,
+    SyntaxRecommendationComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,8 @@ const appRoutes :Routes = [
   ],
   providers: [
     HttpClientModule,
-    SearchHandler
+    SearchHandlerService,
+    SyntaxParserService
   ],
   bootstrap: [AppComponent]
 })
