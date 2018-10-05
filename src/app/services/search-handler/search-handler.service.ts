@@ -4,7 +4,6 @@ import { HttpClient, HttpParams,HttpHeaders, HttpErrorResponse } from '@angular/
 import { Guideline } from '../../model/Guideline';
 import { dummyGuideline } from '../../model/dummyGuideline';
 import { Http, Response } from '@angular/http';
-
 import { environment } from '../../../environments/environment';
 
 const apiUrl = "/api";
@@ -20,16 +19,17 @@ export class SearchHandlerService {
     
    }
 
-   getSearchResultsFor(queryString: string) : Observable<Guideline[]>
+   getGuidelinesBySearch(queryString: string) : Observable<Guideline[]>
    {
-      // return this.http.get('/api/Search' + '/' + 'queryString')
-      //  .toPromise()
-      // .then(Response => response.json() as Guideline)
-      //console.log(queryString + "tttt");
-      //const params = new HttpParams().set('queryString', queryString);
-      //queryString=cancer
-      return this.http.post<Guideline[]>(environment.configuration.apiUrl + 'api/Search', {data: queryString});
-   
+       console.log(queryString + "logging query string");
+       return this.http.get<Guideline[]>('http://localhost:3000/api/SearchByString?queryString={queryString}');
+               
+    }
+
+    getAllMedicalGuidelines() : Observable<Guideline[]>
+    {
+      return this.http.get<Guideline[]>('http://localhost:3000/api/AllMedicalGuidelines');
+               
     }
 
     getDummyGuideline()
