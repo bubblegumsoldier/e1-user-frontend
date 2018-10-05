@@ -159,3 +159,31 @@
     text-decoration: underline;
     text-decoration-color: white;
 }
+
+
+@media only screen and (max-width: 1100px) {
+    .guideline-header .guideline-inner-wrapper
+    {
+        max-width: none;
+        width: 90%;
+        margin-left: 5%;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .guideline-description span.date,
+    .guideline-description span.publisher,
+    .guideline-description .visibility    
+    {
+        font-size: 12px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .guideline-description .visibility    
+    {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+    }
+}
