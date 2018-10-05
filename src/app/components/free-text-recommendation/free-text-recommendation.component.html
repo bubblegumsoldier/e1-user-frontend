@@ -6,7 +6,7 @@
     </div>
     <div class="ft-recommendation-right">
       <p class="ft-recommendation-ft-content">{{freeTextRecommendation.content}}</p>
-      <p class="ft-recommendation-ft-comment" *ngIf="this.commentShown" [innerHtml]="freeTextRecommendation.comment"></p>
+      <p class="ft-recommendation-ft-comment" *ngIf="this.commentShown && this.freeTextRecommendation.comment?.length > 0" [innerHtml]="freeTextRecommendation.comment"></p>
     </div>
     <button class="definition-toggler" *ngIf="this.freeTextRecommendation.comment?.length > 0" [class.toggled]="this.commentShown"></button>
   </div>

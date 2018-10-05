@@ -24,7 +24,7 @@
       <div class="medication-recommendation-simple-dosage-schema" *ngIf="!medicationRecommendation.use_specific_dosage_schema">
         {{this.descriptionText}}
       </div>
-      <p class="medication-recommendation-comment" *ngIf="this.commentShown" [innerHtml]="medicationRecommendation.comment"></p>
+      <p class="medication-recommendation-comment" *ngIf="this.commentShown && this.medicationRecommendation.comment?.length > 0" [innerHtml]="medicationRecommendation.comment"></p>
     </div>
     <button class="definition-toggler" *ngIf="this.medicationRecommendation.comment?.length > 0" [class.toggled]="this.commentShown"></button>
   </div>

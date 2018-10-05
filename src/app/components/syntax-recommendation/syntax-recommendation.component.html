@@ -6,7 +6,7 @@
     </div>
     <div class="syntax-recommendation-right">
       <p class="syntax-recommendation-syntax-content" [innerHTML]="contentHtml"></p>
-      <p class="syntax-recommendation-comment" *ngIf="this.commentShown" [innerHtml]="syntaxRecommendation.comment"></p>
+      <p class="syntax-recommendation-comment" *ngIf="this.commentShown && this.syntaxRecommendation.comment?.length > 0" [innerHtml]="syntaxRecommendation.comment"></p>
       
     </div>
     <button class="definition-toggler" *ngIf="this.syntaxRecommendation.comment?.length > 0" [class.toggled]="this.commentShown"></button>
