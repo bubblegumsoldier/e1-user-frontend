@@ -69,3 +69,12 @@ ul li a:hover
         text-align: center;
     }    
 }
+
+@media only screen and (max-height: 500px)
+{
+    .ul_wrapper
+    {
+        position: absolute;
+        top: 300px;
+    }
+}
