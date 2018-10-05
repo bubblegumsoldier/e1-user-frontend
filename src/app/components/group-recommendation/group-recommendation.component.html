@@ -13,9 +13,9 @@
         <div class="line-after"></div>
       </div>
     </div>
-    <e1-generic-recommendation [backgroundGray]="this.isRoot && i % 2 == 1"
-      [subLevelSelected]="this.subLevelSelected" [recommendation]="recommendation"></e1-generic-recommendation>
+    <e1-generic-recommendation [backgroundGray]="this.isRoot && i % 2 == 1" [subLevelSelected]="this.subLevelSelected" [recommendation]="recommendation"></e1-generic-recommendation>
   </div>
 </div>
-
-<button class="show-alternatives" (click)="this.onShowAlternatives()" *ngIf="!this.alternativesShown && this.hasAlternatives && this.isRoot">Alternativen anzeigen &#8964;</button>
+<div class="show-alternatives-wrapper">
+  <button class="show-alternatives" (click)="this.onShowAlternatives()" *ngIf="!this.alternativesShown && this.hasAlternatives && this.isRoot">Alternativen anzeigen &#8964;</button>
+</div>

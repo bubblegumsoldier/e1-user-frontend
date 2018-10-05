@@ -94,3 +94,12 @@
 {
     transform: rotateZ(180deg);
 }
+
+@media only screen and (max-width: 1100px) {
+    .ft-recommendation-wrapper
+    {
+        width: 90%;
+        margin-left: 5%;
+        max-width: none;
+    }
+}
