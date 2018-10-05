@@ -13,7 +13,7 @@ export class SyntaxRecommendationComponent implements OnInit {
 
   @Input() syntaxRecommendation = null;
 
-  commentshown :boolean = false;
+  commentShown :boolean = false;
 
   constructor(private syntaxParser :SyntaxParserService) { }
 
