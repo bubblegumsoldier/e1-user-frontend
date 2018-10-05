@@ -153,3 +153,26 @@ Design for large header
         right: 5%;
     }
 }
+
+
+@media only screen and (max-height: 800px) {
+    .header-content.large-header .vertical-spacer
+    {
+        height: 20vh;
+    }
+    .header-content.large-header e1-search-input
+    {
+        top: 20px;
+    }
+}
+
+@media only screen and (max-height: 550px) {
+    .header-content.large-header .vertical-spacer
+    {
+        height: 5vh;
+    }
+    .header-content.large-header e1-search-input
+    {
+        top: 0px;
+    }
+}
