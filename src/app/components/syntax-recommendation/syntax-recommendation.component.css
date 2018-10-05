@@ -77,3 +77,55 @@
 {
     background-color: #eee;
 }
+
+@keyframes slidein {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.syntax-recommendation-inner-group .syntax-recommendation-right p.syntax-recommendation-comment
+{
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 15px;
+    padding-left: 20px;
+    border-left: 1px solid #ccc;
+    animation: slidein;
+    animation-duration: 0.2s;
+}
+
+.definition-toggler
+{
+    background-image: url(/src/assets/down-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    outline: 0;
+    border : 0;
+    opacity: 0.8;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+
+.definition-toggler:hover
+{
+    opacity: 1;
+}
+
+.definition-toggler.toggled
+{
+    transform: rotateZ(180deg);
+}

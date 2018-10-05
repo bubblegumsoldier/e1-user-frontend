@@ -140,6 +140,7 @@ export const dummyGuideline = {
                             "hideOnSublevelSelect": true,
                             "content": "Basistherapie mit Humaninsulin",
                             "grade_of_evidence" : "a",
+                            "comment": "(positiver Nutzennachweiß)",
                             "grade_of_recommendation" : "2"
                         },
                         {
@@ -150,6 +151,7 @@ export const dummyGuideline = {
                             "grade_of_evidence" : "a",
                             "grade_of_recommendation" : "2",
                             "content": "Basistherapie mit {0}",
+                            "comment": "(positiver Nutzennachweiß)",
                             "preDefs": 
                             [
                                 {
@@ -179,7 +181,8 @@ export const dummyGuideline = {
                             "hideOnSublevelSelect": true,
                             "content": "Basistherapie mit DPP-4-Inhibitor",
                             "grade_of_evidence" : "a",
-                            "grade_of_recommendation" : "2"
+                            "grade_of_recommendation" : "2",
+                            "comment": "(Kein Nutzennachweiß)"
                         },
                         {
                             "type": "syntax",
@@ -415,7 +418,7 @@ export const dummyGuideline = {
                             
                             "grade_of_evidence" : "a",
                             "grade_of_recommendation" : "2",
-                            "comment" : "",
+                            "comment" : "<b>Bei Insulin</b>: Methodisch zuverlässige klinische Endpunktstudien, Nachteil Hypoglykämie, Gewichtszunahme<br><br><b>Bei Glibenclamid</b>: Vorteil: Orale Gabe, Nachteil: höhere CVD Mortalität in methodisch nicht sehr guten Studien, Hypoglykämie, Gewichtszunahme<br><br><b>Bei DPP4-Inhibitor</b>: Vorteil: Orale Gabe, kaum Hypoglykämien, Gewichtsneutral, Nachteil: Keine Daten zu klinischen Endpunkten, Studien mit Hinweisen auf Zunahme von Pankreatitis, Pankreastumoren",
                             "content": "Entweder Insulin, {1|name} oder DPP-4-Inhibitor"
                         }
                     ]
@@ -607,19 +610,7 @@ export const dummyGuideline = {
                             "content" : "Orale Antidiabetika ({0}, Dpp-4-Inhibtor, SGLT-2-Inhibitor)",
                             "grade_of_evidence" : "a",
                             "grade_of_recommendation" : "2",
-                            "comment" : "",
-                            "active_substance" : "",
-                            "dosage_amount" : "0",
-                            "dosage_unit" : "ml",
-                            "use_specific_dosage_schema": true,
-                            "morning_dosage" : "0",
-                            "noon_dosage" : "0",
-                            "evening_dosage" : "0",
-                            "night_dosage" : "0",
-                            "dosage_freq" : "0",
-                            "dosage_duration" : "0",
-                            "dosage_duration_unit" : "days",
-                            "unlimited_application_duration": true
+                            "comment" : ""
                         }
                     ]
                 },

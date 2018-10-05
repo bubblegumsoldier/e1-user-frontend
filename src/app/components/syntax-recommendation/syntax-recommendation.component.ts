@@ -13,6 +13,8 @@ export class SyntaxRecommendationComponent implements OnInit {
 
   @Input() syntaxRecommendation = null;
 
+  commentshown :boolean = false;
+
   constructor(private syntaxParser :SyntaxParserService) { }
 
   ngOnInit() {
@@ -23,6 +25,11 @@ export class SyntaxRecommendationComponent implements OnInit {
   {
     let html = this.syntaxParser.getHtmlForSyntax(this.syntaxRecommendation.content, this.syntaxRecommendation.preDefs);
     return html;
+  }
+
+  toggleComment()
+  {
+    this.commentShown = !this.commentShown;
   }
 
 }

@@ -9,9 +9,15 @@ export class FreeTextRecommendationComponent implements OnInit {
 
   @Input() freeTextRecommendation = null;
 
+  commentShown :boolean = false;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  toggleComment()
+  {
+    this.commentShown = !this.commentShown;
+  }
 }

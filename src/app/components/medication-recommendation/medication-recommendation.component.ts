@@ -9,6 +9,8 @@ export class MedicationRecommendationComponent implements OnInit {
 
   @Input() medicationRecommendation = null;
 
+  commentShown :boolean = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -55,4 +57,8 @@ export class MedicationRecommendationComponent implements OnInit {
     return a[dosage_duration_unit];
   }
 
+  toggleComment()
+  {
+    this.commentShown = !this.commentShown;
+  }
 }

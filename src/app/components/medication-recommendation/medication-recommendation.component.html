@@ -1,6 +1,6 @@
 <div class="medication-recommendation-wrapper">
   <h3 class="title" *ngIf="medicationRecommendation.title?.length > 0">{{medicationRecommendation.title}}</h3>
-  <div class="medication-recommendation-inner-group">
+  <div class="medication-recommendation-inner-group" (click)="this.toggleComment()">
     <div class="loe-container">
       <img src="./assets/loe_icons/{{medicationRecommendation.grade_of_recommendation}}{{medicationRecommendation.grade_of_evidence}}.svg" />
     </div>
@@ -24,6 +24,8 @@
       <div class="medication-recommendation-simple-dosage-schema" *ngIf="!medicationRecommendation.use_specific_dosage_schema">
         {{this.descriptionText}}
       </div>
+      <p class="medication-recommendation-comment" *ngIf="this.commentShown" [innerHtml]="medicationRecommendation.comment"></p>
     </div>
+    <button class="definition-toggler" *ngIf="this.medicationRecommendation.comment?.length > 0" [class.toggled]="this.commentShown"></button>
   </div>
 </div>

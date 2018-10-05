@@ -1,12 +1,14 @@
 <div class="syntax-recommendation-wrapper">
   <h3 class="title" *ngIf="syntaxRecommendation.title?.length > 0">{{syntaxRecommendation.title}}</h3>
-  <div class="syntax-recommendation-inner-group">
+  <div class="syntax-recommendation-inner-group" (click)="this.toggleComment()">
     <div class="loe-container">
       <img src="./assets/loe_icons/{{syntaxRecommendation.grade_of_recommendation}}{{syntaxRecommendation.grade_of_evidence}}.svg" />
     </div>
     <div class="syntax-recommendation-right">
       <p class="syntax-recommendation-syntax-content" [innerHTML]="contentHtml"></p>
-
+      <p class="syntax-recommendation-comment" *ngIf="this.commentShown" [innerHtml]="syntaxRecommendation.comment"></p>
+      
     </div>
+    <button class="definition-toggler" *ngIf="this.syntaxRecommendation.comment?.length > 0" [class.toggled]="this.commentShown"></button>
   </div>
 </div>
