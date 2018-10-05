@@ -24,3 +24,18 @@ a.register
 {
     color: rgba(255, 255, 255, 1);
 }
+
+@media only screen and (max-width: 400px) {
+    .account-quick-access-wrapper a,
+    .account-quick-access-wrapper a.register
+    {
+        margin: 0;
+        display: block;
+        text-align: right;
+    }
+
+    .account-quick-access-wrapper a.login
+    {
+        margin-top: 5px;
+    }
+}

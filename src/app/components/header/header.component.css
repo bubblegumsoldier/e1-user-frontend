@@ -117,3 +117,39 @@ Design for large header
         width: 90%;
     }
 }
+
+
+@media only screen and (max-width: 1100px) {
+    .header-content.small-header
+    {
+        display:block;
+        height: 160px;
+        position: relative;
+    }
+    .header-content .logo
+    {
+        height: 80px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        margin-left: 5%;
+    }
+
+    .header-content e1-search-input
+    {
+        height: 44px;
+        position: absolute;
+        top: 80px;
+        width: 90%;
+        margin-left: 5%;
+        margin-top: 10px;
+        max-width: none;
+    }
+
+    .header-content e1-account-quick-access
+    {
+        position: absolute;
+        top: 30px;
+        right: 5%;
+    }
+}
