@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { SearchHandlerService } from '../../services/search-handler/search-handler.service';
+import { Guideline } from '../../model/Guideline';
 
 @Component({
   selector: 'e1-guideline',
@@ -10,7 +11,7 @@ import { SearchHandlerService } from '../../services/search-handler/search-handl
 })
 export class GuidelineComponent implements OnInit {
 
-  id :number = -1;
+  id :String = "";
 
   guideline = null;
 
@@ -19,11 +20,13 @@ export class GuidelineComponent implements OnInit {
   @ViewChild('firstlevel') firstLevel;
 
   constructor(private route: ActivatedRoute, private router :Router, private searchHandler :SearchHandlerService)
-  { }
+  {
+   }
 
   ngOnInit() {
       this.route.params.subscribe(params => {
           this.id = params['id'];
+          console.log(this.id);
           this.initializeGuideline();
       });
   }
@@ -35,12 +38,21 @@ export class GuidelineComponent implements OnInit {
     });
   }
 
+  setGuideline(guideline :Guideline){
+    console.log(guideline);
+    this.guideline = guideline;
+    this.levelSelectionInput = {
+      levels: this.guideline.levels
+    };
+  }
+
   initializeGuideline()
   {
-    this.guideline = this.searchHandler.getDummyGuideline();
-    this.levelSelectionInput = {
-      level: this.guideline.level
-    };
+   // this.guideline = this.searchHandler.getGuidelineFor(this.id);
+    this.searchHandler.getGuidelineFor(this.id).subscribe((guideline :Guideline) => this.setGuideline(guideline));
+   
+    
+    console.log("Added the levels");
   }
 
   resetSelections()

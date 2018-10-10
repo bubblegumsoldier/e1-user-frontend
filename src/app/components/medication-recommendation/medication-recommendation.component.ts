@@ -20,25 +20,25 @@ export class MedicationRecommendationComponent implements OnInit {
   {
     let text = "";
 
-    if(this.medicationRecommendation["dosage_amount"] <= 0)
+    if(this.medicationRecommendation["dosageAmount"] <= 0)
     {
       return "";
     }
 
-    if(!this.medicationRecommendation["use_specific_dosage_schema"] && this.medicationRecommendation["dosage_amount"] > 0)
+    if(!this.medicationRecommendation["useSpecificDosageSchema"] && this.medicationRecommendation["dosageAmount"] > 0)
     {
-      text += this.medicationRecommendation["dosage_amount"] + this.medicationRecommendation["dosage_unit"] + " ";
+      text += this.medicationRecommendation["dosageAmount"] + this.medicationRecommendation["dosageUnit"] + " ";
     }
 
-    if(!this.medicationRecommendation["unlimited_application_duration"])
+    if(!this.medicationRecommendation["unlimitedApplicationDuration"])
     {
-      text += " über " + this.medicationRecommendation["dosage_duration"] + " " + this.getDosageDurationUnitText(this.medicationRecommendation["dosage_duration_unit"]); 
+      text += " über " + this.medicationRecommendation["dosageDuration"] + " " + this.getDosageDurationUnitText(this.medicationRecommendation["dosageDurationUnit"]); 
     }
 
 
-    if(this.medicationRecommendation["dosage_freq"] <= 1) return text;
+    if(this.medicationRecommendation["dosageFrequency"] <= 1) return text;
     text += "(jeden ";
-    text += this.medicationRecommendation["dosage_freq"] + ". ";
+    text += this.medicationRecommendation["dosageFrequency"] + ". ";
     text += "Tag)";
 
     return text;

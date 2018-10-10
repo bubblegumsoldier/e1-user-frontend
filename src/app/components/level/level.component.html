@@ -1,9 +1,9 @@
 <e1-group-recommendation [isRoot]="true" (arrowColorChanged)="this.arrowColorChanged($event)" [groupRecommendation]="{recommendations: level['recommendations']}" [subLevelSelected]="this.subLevelSelected"></e1-group-recommendation>
 <div class="level-container" [class.selected]="this.subLevelSelected" [class.is-dark]="this.isDark" [class.grey-arrow]="this.arrowColor == 'grey'" [class.white-arrow]="this.arrowColor == 'white'" (click)="this.selectedUl()">
   <ul class="selection-box" *ngIf="_level !== null">
-    <li *ngFor="let cLevel of _level['level']; let i = index" [class.definition-visible]="this.definitionVisible == i" [class.selected-item]="this.selectedSubLevelID == i" (click)="this.levelSelected($event, i)">
+    <li *ngFor="let cLevel of _level['levels']; let i = index" [class.definition-visible]="this.definitionVisible == i" [class.selected-item]="this.selectedSubLevelID == i" (click)="this.levelSelected($event, i)">
       <span class="title" *ngIf="this.definitionVisible != i">
-          {{cLevel.level_name}}
+          {{cLevel.levelName}}
       </span>
       <button (click)="this.definitionClicked($event, i)" *ngIf="this.definitionVisible != i && cLevel.definition !== undefined && cLevel.definition.length > 0 && !this.subLevelSelected">Definition</button>
       <span class="definition" *ngIf="this.definitionVisible == i && cLevel.definition !== undefined && cLevel.definition.length > 0" (click)="this.closeDefinition($event)">

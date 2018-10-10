@@ -2,10 +2,10 @@
   <div class="guideline-inner-wrapper">
     <button class="back-button" (click)="onBackButtonClicked()">&larr; &nbsp; &nbsp; Zurück</button>
     <div class="guideline-description">
-      <span class="date">Gültig bis {{guideline.valid_until | date:'dd. MMMM yyyy'}}</span>
-      <span class="publisher">{{guideline.publisher}}</span>
+      <span class="date">Gültig bis {{guideline?.validity | date:'dd. MMMM yyyy'}}</span>
+      <span class="publisher">{{guideline?.publisher}}</span>
       <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
-      <h3>{{guideline.name_of_guideline}}</h3>
+      <h3>{{guideline?.nameOfGuideline}}</h3>
     </div>
   </div>
 </div>

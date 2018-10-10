@@ -28,8 +28,18 @@ export class SearchHandlerService {
       //console.log(queryString + "tttt");
       //const params = new HttpParams().set('queryString', queryString);
       //queryString=cancer
-      return this.http.post<Guideline[]>(environment.configuration.apiUrl + 'api/Search', {data: queryString});
+      
+      return this.http.get<Guideline[]>(environment.configuration.apiUrl + 'api/Search/'+queryString);
+      
+      //, {data: queryString}
    
+    }
+
+    getGuidelineFor(id :String) : Observable<Guideline>
+    {
+      console.log("Executing this");
+      console.log(environment.configuration.apiUrl + 'api/'+id);
+      return this.http.get<Guideline>(environment.configuration.apiUrl + 'api/'+id);
     }
 
     getDummyGuideline()

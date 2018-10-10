@@ -53,7 +53,7 @@ export class LevelComponent implements OnInit {
     {
       return;
     }
-    this.selectedSubLevel = this.level["level"][levelID];
+    this.selectedSubLevel = this.level.levels[levelID];
     this.selectedSubLevelID = levelID;
     event.stopPropagation();
   }

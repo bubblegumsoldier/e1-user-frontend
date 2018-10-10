@@ -28,11 +28,11 @@ export class ResultListComponent implements OnInit {
     this.route.queryParams.subscribe(queryParams => {
         this.guidelines = [];
         this.query = queryParams['query'];
-        //this.retrieveGuidelineResults();
+        this.retrieveGuidelineResults();
     
-        setTimeout(() => {
+        /*setTimeout(() => {
           this.initializeGuidelines([dummyGuideline, dummyGuideline, dummyGuideline]);
-        }, 100);
+        }, 100);*/
     });
   }
 
@@ -43,7 +43,12 @@ export class ResultListComponent implements OnInit {
 
   retrieveGuidelineResults()
   {
-    this.searchHandler.getSearchResultsFor(this.query).subscribe(this.initializeGuidelines);
+    //this.searchHandler.getSearchResultsFor(this.query).subscribe(this.initializeGuidelines);
+    this.searchHandler.getSearchResultsFor(this.query).subscribe(
+      (data:Guideline[])=>{
+        this.guidelines=data;
+      }
+    );
   }
 
   initializeGuidelines(guidelines :any[])
