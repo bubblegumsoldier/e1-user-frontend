@@ -1,5 +1,5 @@
-import {CommonRec} from './CommonRec';
-export class drug extends CommonRec{
+import {CommonRecommendation} from './CommonRecommendation';
+export class Medicine extends CommonRecommendation{
     /*Name?:String;
     GradeOfEvidence?:String;
     LevelOfRecommendation?:String;

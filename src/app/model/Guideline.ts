@@ -1,5 +1,5 @@
-import {levels} from './levels';
-import { FreeText } from './freeText';
+import { Level } from './Level';
+import { FreeText } from './FreeText';
 export class Guideline{
     active?: String;
     institutionName?:String;
@@ -11,7 +11,7 @@ export class Guideline{
     source?:String;
     validity?:Date;
     internalAuthor?:String;
-    levels?:[levels];
+    levels?:[Level];
 }
 
 

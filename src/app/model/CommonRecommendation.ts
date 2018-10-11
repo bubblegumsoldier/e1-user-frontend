@@ -1,4 +1,4 @@
-export class CommonRec{
+export class CommonRecommendation{
     name?:String;
     gradeOfEvidence?:String;
     gradeOfRecommendation?:String;
