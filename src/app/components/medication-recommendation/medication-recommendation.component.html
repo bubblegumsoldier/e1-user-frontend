@@ -2,11 +2,11 @@
   <h3 class="title" *ngIf="medicationRecommendation.title?.length > 0">{{medicationRecommendation.title}}</h3>
   <div class="medication-recommendation-inner-group" (click)="this.toggleComment()">
     <div class="loe-container">
-      <img src="./assets/loe_icons/{{medicationRecommendation.grade_of_recommendation}}{{medicationRecommendation.grade_of_evidence}}.svg" />
+      <e1-loe-icon [levelOfEvidence]="this.freeTextRecommendation.gradeOfEvidence" [levelOfRecommendation]="this.medicationRecommendation.levelOfRecommendation"></e1-loe-icon>
     </div>
     <div class="medication-recommendation-right">
       <h4 class="medication-recommendation-medication-title">{{medicationRecommendation.name}}</h4>
-      <div class="medication-recommendation-specific-dosage-schema" *ngIf="medicationRecommendation.use_specific_dosage_schema && medicationRecommendation.dosage_amount > 0">
+      <div class="medication-recommendation-specific-dosage-schema" *ngIf="medicationRecommendation.useSpecificDosageSchema && medicationRecommendation.dosageAmount > 0">
         <div class="medication-distribution">
             <span>{{medicationRecommendation.dosageAmount}}{{medicationRecommendation.dosageUnit}}</span>
             <span></span>
@@ -21,7 +21,7 @@
 
         <span class="medication-recommendation-specific-text">{{this.descriptionText}}</span>
       </div>
-      <div class="medication-recommendation-simple-dosage-schema" *ngIf="!medicationRecommendation.use_specific_dosage_schema">
+      <div class="medication-recommendation-simple-dosage-schema" *ngIf="!medicationRecommendation.useSpecificDosageSchema">
         {{this.descriptionText}}
       </div>
       <p class="medication-recommendation-comment" *ngIf="this.commentShown && this.medicationRecommendation.comment?.length > 0" [innerHtml]="medicationRecommendation.comment"></p>

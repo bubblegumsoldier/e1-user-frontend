@@ -23,6 +23,7 @@ import { SyntaxParserService } from './services/syntax-parser/syntax-parser.serv
 import { GenericRecommendationComponent } from './components/generic-recommendation/generic-recommendation.component';
 import { GroupRecommendationComponent } from './components/group-recommendation/group-recommendation.component';
 import { SyntaxRecommendationComponent } from './components/syntax-recommendation/syntax-recommendation.component';
+import { LoeIconComponent } from './components/loe-icon/loe-icon.component';
 
 const appRoutes :Routes = [
   {
@@ -54,7 +55,8 @@ const appRoutes :Routes = [
     MedicationRecommendationComponent,
     GenericRecommendationComponent,
     GroupRecommendationComponent,
-    SyntaxRecommendationComponent
+    SyntaxRecommendationComponent,
+    LoeIconComponent
   ],
   imports: [
     BrowserModule,
