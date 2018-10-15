@@ -20,7 +20,7 @@ export class ResultListComponent implements OnInit {
 
   linkToGuidelineID :number = 123;
 
-  guidelines :any[] = [];
+  guidelines :any[] = undefined;
 
   constructor(private route: ActivatedRoute, private searchHandler :SearchHandlerService) { }
 
@@ -29,10 +29,6 @@ export class ResultListComponent implements OnInit {
         this.guidelines = [];
         this.query = queryParams['query'];
         this.retrieveGuidelineResults();
-    
-        /*setTimeout(() => {
-          this.initializeGuidelines([dummyGuideline, dummyGuideline, dummyGuideline]);
-        }, 100);*/
     });
   }
 
@@ -43,11 +39,8 @@ export class ResultListComponent implements OnInit {
 
   retrieveGuidelineResults()
   {
-    //this.searchHandler.getSearchResultsFor(this.query).subscribe(this.initializeGuidelines);
     this.searchHandler.getSearchResultsFor(this.query).subscribe(
-      (data:Guideline[])=>{
-        this.guidelines=data;
-      }
+      (resultList :Guideline[]) => this.initializeGuidelines(resultList)
     );
   }
 

@@ -29,7 +29,7 @@ export class SearchHandlerService {
       //const params = new HttpParams().set('queryString', queryString);
       //queryString=cancer
       
-      return this.http.get<Guideline[]>(environment.configuration.apiUrl + 'api/Search/'+queryString);
+      return this.http.get<Guideline[]>(environment.configuration.apiUrl + 'services/'+queryString);
       
       //, {data: queryString}
    
