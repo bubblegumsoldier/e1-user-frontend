@@ -19,7 +19,9 @@ export class LevelComponent implements OnInit {
 
   @ViewChild('nextlevel') nextLevel;
 
-  constructor() {}
+  constructor() {
+    
+  }
   
   resetSelections()
   {
@@ -60,7 +62,7 @@ export class LevelComponent implements OnInit {
 
   ngOnInit()
   {
-
+    console.log(this.level);
   }
 
   definitionClicked(event, id)
