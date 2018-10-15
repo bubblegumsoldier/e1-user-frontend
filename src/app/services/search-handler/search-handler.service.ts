@@ -38,8 +38,8 @@ export class SearchHandlerService {
     getGuidelineFor(id :String) : Observable<Guideline>
     {
       console.log("Executing this");
-      console.log(environment.configuration.apiUrl + 'api/'+id);
-      return this.http.get<Guideline>(environment.configuration.apiUrl + 'api/'+id);
+      console.log(environment.configuration.apiUrl + 'guidelines/'+id);
+      return this.http.get<Guideline>(environment.configuration.apiUrl + 'guidelines/'+id);
     }
 
     getDummyGuideline()
