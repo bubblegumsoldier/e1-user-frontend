@@ -4,11 +4,17 @@ pipeline {
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
-    agent any
+    agent {
+        docker {
+            image 'node'
+            args '-p 8080:8080'
+        }
+        docker 'alpine'
+    }
     stages {
         stage('Prepare Dependencies') { 
             steps {
-                sh '/usr/local/bin/npm install'
+                sh 'npm install'
             }
         }
         stage('Build Devevelopment') {
