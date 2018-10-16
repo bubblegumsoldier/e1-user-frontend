@@ -33,9 +33,7 @@ pipeline {
         {
             steps
             {
-                script {
-                    dockerImage = docker.build registry + ':$BUILD_NUMBER'
-                }
+                sh 'docker build -t bubblegumsoldier/e1-user-frontend:43'
             }
         }
         stage('Deploy Image') {
