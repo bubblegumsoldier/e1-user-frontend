@@ -44,13 +44,12 @@ pipeline {
         }
         stage('Build Docker Image')
         {
-            agent {
-                // Equivalent to "docker build -f Dockerfile.build --build-arg version=1.0.2 ./build/
-                dockerfile {
-                    filename 'Dockerfile.build'
-                    dir ''
-                    label 'some-label'
-                    args '-v /tmp:/tmp'
+            
+            steps
+            {
+                sh 'echo $PATH'
+                script {
+                    dockerImage = docker.build(registry + ':${env.BUILD_ID}', "--build-arg x=y .")
                 }
             }
         }
