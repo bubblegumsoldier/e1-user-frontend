@@ -48,7 +48,7 @@ pipeline {
             steps
             {
                 script {
-                    dockerImage = docker.build(registry + ':${env.BUILD_ID}', "--build-arg x=y .")
+                    dockerImage = docker.build(registry + ':$BUILD_NUMBER', "--build-arg x=y .")
                 }
             }
         }
