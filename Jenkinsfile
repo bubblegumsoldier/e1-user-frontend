@@ -4,24 +4,37 @@ pipeline {
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
-    agent {
-        docker {
-            image 'node'
-            args '-p 8080:8080'
-        }
-    }
+    agent none
     stages {
-        stage('Prepare Dependencies') { 
+        stage('Prepare Dependencies') {
+            agent {
+                docker {
+                    image 'node'
+                    args '-p 8080:8080'
+                }
+            }
             steps {
                 sh 'npm install'
             }
         }
         stage('Build Devevelopment') {
+            agent {
+                docker {
+                    image 'node'
+                    args '-p 8080:8080'
+                }
+            }
             steps {
                 sh './node_modules/.bin/ng build'
             }
         }
         stage('Build Production') {
+            agent {
+                docker {
+                    image 'node'
+                    args '-p 8080:8080'
+                }
+            }
             steps {
                 dir ('dist') {
                     deleteDir()
@@ -31,12 +44,14 @@ pipeline {
         }
         stage('Build Docker Image')
         {
+            agent any
             steps
             {
                 sh 'docker build -t bubblegumsoldier/e1-user-frontend:43'
             }
         }
         stage('Deploy Image') {
+            agent any
             steps{
                 script {
                     docker.withRegistry('', registryCredential ) {
