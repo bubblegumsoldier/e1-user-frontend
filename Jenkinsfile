@@ -9,7 +9,6 @@ pipeline {
             image 'node'
             args '-p 8080:8080'
         }
-        docker 'alpine'
     }
     stages {
         stage('Prepare Dependencies') { 
