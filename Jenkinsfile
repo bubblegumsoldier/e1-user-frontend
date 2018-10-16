@@ -44,10 +44,9 @@ pipeline {
         }
         stage('Build Docker Image')
         {
-            
+            agent any
             steps
             {
-                sh 'echo $PATH'
                 script {
                     dockerImage = docker.build(registry + ':${env.BUILD_ID}', "--build-arg x=y .")
                 }
