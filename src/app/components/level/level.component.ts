@@ -8,8 +8,8 @@ import { Component, OnInit , Input, ViewChild} from '@angular/core';
 export class LevelComponent implements OnInit {
 
   private _level = null;
-  private selectedSubLevel = null;
-  private selectedSubLevelID :number;
+  public selectedSubLevel = null;
+  public selectedSubLevelID :number;
 
   private definitionVisible :number;
 
