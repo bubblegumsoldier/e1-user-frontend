@@ -4,12 +4,7 @@ pipeline {
         registryCredential = 'dockerhub'
         dockerImage = ''
     }
-    agent {
-        docker {
-            image 'node'
-            args '-p 8080:8080'
-        }
-    }
+    agent any
     stages {
         stage('Prepare Dependencies') { 
             steps {
