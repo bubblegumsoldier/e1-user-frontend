@@ -47,7 +47,9 @@ pipeline {
             agent any
             steps
             {
-                sh 'docker build -t bubblegumsoldier/e1-user-frontend:43'
+                script {
+                    dockerImage = docker.build registry + ':$BUILD_NUMBER'
+                }
             }
         }
         stage('Deploy Image') {
