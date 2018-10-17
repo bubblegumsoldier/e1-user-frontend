@@ -127,7 +127,7 @@ span.distribution-text
 
 .definition-toggler
 {
-    background-image: url(/src/assets/down-arrow.svg);
+    background-image: url(/assets/down-arrow.svg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: 50%;

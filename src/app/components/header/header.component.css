@@ -14,7 +14,7 @@
 .logo
 {
     width: auto;
-    background-image: url('/src/assets/logo.png');
+    background-image: url('/assets/logo.png');
     height: 100%;
     width: 200px;
     margin-left: 30px;
@@ -70,7 +70,7 @@ Design for large header
     margin: auto;
     display: block;
     position: relative;
-    background-image: url('/src/assets/logo_dark.png');
+    background-image: url('/assets/logo_dark.png');
     margin-bottom: 20px;
     width: 250px;
 }

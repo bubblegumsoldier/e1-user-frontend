@@ -113,7 +113,7 @@ div.level-container.selected ul
     background-position: top left;
     background-size: 8%;
     background-repeat: no-repeat;
-    background-image: url('/src/assets/level_down_arrow_dark_blue.svg');
+    background-image: url('/assets/level_down_arrow_dark_blue.svg');
 }
 
 div.level-container.selected ul li.selected-item .title
@@ -137,17 +137,17 @@ div.level-container.selected.is-dark
 
 div.level-container.selected.is-dark ul
 {
-    background-image: url('/src/assets/level_down_arrow_light_blue.svg');
+    background-image: url('/level_down_arrow_light_blue.svg');
 }
 
 div.level-container.selected.white-arrow ul
 {
-    background-image: url('/src/assets/level_down_arrow_white.svg');
+    background-image: url('/assets/level_down_arrow_white.svg');
 }
 
 div.level-container.selected.white-arrow ul
 {
-    background-image: url('/src/assets/level_down_arrow_grey.svg');
+    background-image: url('/assets/level_down_arrow_grey.svg');
 }
 
 .level-container.selected:hover .title

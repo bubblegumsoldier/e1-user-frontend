@@ -94,7 +94,7 @@ to {
 
 .loading-animation
 {
-    background-image: url(/src/assets/loadingAnimation.svg);
+    background-image: url(/assets/loadingAnimation.svg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
