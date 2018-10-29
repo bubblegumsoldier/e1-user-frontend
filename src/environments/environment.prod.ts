@@ -2,6 +2,6 @@ export const environment = {
   production: true,
   configuration: 
   {
-    apiUrl: "http://api-v1_0.evid.one/"
+    apiUrl: "http://35.242.181.70/"
   }
 };
