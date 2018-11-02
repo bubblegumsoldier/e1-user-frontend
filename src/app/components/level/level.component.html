@@ -6,8 +6,8 @@
           {{cLevel.levelName}}
       </span>
       <button (click)="this.definitionClicked($event, i)" *ngIf="this.definitionVisible != i && cLevel.definition !== undefined && cLevel.definition.length > 0 && !this.subLevelSelected">Definition</button>
-      <span class="definition" *ngIf="this.definitionVisible == i && cLevel.definition !== undefined && cLevel.definition.length > 0" (click)="this.closeDefinition($event)">
-        {{cLevel.definition}}
+      <span [innerHtml]="cLevel.definition" class="definition" *ngIf="this.definitionVisible == i && cLevel.definition !== undefined && cLevel.definition.length > 0" (click)="this.closeDefinition($event)">
+        
       </span>
     </li>
   </ul>
