@@ -24,6 +24,7 @@ import { GenericRecommendationComponent } from './components/generic-recommendat
 import { GroupRecommendationComponent } from './components/group-recommendation/group-recommendation.component';
 import { SyntaxRecommendationComponent } from './components/syntax-recommendation/syntax-recommendation.component';
 import { LoeIconComponent } from './components/loe-icon/loe-icon.component';
+import { OriginalDocumentReferenceComponent } from './components/original-document-reference/original-document-reference.component';
 
 const appRoutes :Routes = [
   {
@@ -56,7 +57,8 @@ const appRoutes :Routes = [
     GenericRecommendationComponent,
     GroupRecommendationComponent,
     SyntaxRecommendationComponent,
-    LoeIconComponent
+    LoeIconComponent,
+    OriginalDocumentReferenceComponent
   ],
   imports: [
     BrowserModule,

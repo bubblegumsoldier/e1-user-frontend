@@ -14,4 +14,6 @@
   <e1-syntax-recommendation [syntaxRecommendation]="this.recommendation" *ngIf="this.recommendation['type'] == RECOMMENDATION_TYPE_SYNTAX">
     
   </e1-syntax-recommendation>
+
+  <e1-original-document-reference [url]="'https://google.de'" [page]="this.recommendation['refPage']" ></e1-original-document-reference>
 </div>
