@@ -17,6 +17,8 @@ export class LevelComponent implements OnInit {
 
   arrowColor :string = "";
 
+  @Input() parentGuideline = null;
+
   @ViewChild('nextlevel') nextLevel;
 
   constructor() {
@@ -62,7 +64,8 @@ export class LevelComponent implements OnInit {
 
   ngOnInit()
   {
-    console.log(this.level);
+    console.log("parentGuideline:");
+    console.log(this.parentGuideline);
   }
 
   definitionClicked(event, id)

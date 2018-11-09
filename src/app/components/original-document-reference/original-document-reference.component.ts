@@ -8,8 +8,8 @@ import { Input } from '@angular/core';
 })
 export class OriginalDocumentReferenceComponent implements OnInit {
 
-  @Input() url = undefined;
-  @Input() page = undefined;
+  @Input() sourceUrl = undefined;
+  @Input() sourceRef = undefined;
 
   constructor() { }
 
@@ -18,7 +18,7 @@ export class OriginalDocumentReferenceComponent implements OnInit {
 
   get fullLink() :string
   {
-    return this.url + "?page=" + this.page;
+    return this.sourceUrl + "#" + this.sourceRef;
   }
 
 }

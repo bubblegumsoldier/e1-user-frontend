@@ -23,6 +23,8 @@ export class GroupRecommendationComponent implements OnInit {
 
   @Output() arrowColorChanged: EventEmitter < string > = new EventEmitter < string > ();
 
+  @Input() parentGuideline = null;
+
   alternativesShown: boolean = false;
 
   constructor() {}
@@ -30,6 +32,8 @@ export class GroupRecommendationComponent implements OnInit {
   ngOnInit() {
     this.arrowColorChanged.emit(this.getNextArrowColor());
     this.updateRecommendationsToShow();
+    console.log("parentGuideline 2:");
+    console.log(this.parentGuideline);
   }
 
   updateRecommendationsToShow() {

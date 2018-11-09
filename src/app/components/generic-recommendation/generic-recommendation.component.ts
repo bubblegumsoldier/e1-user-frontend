@@ -13,6 +13,7 @@ export class GenericRecommendationComponent implements OnInit {
 
   @Input() backgroundGray :boolean = false;
   
+  @Input() parentGuideline = null;
 
   RECOMMENDATION_TYPE_MEDICATION :string = "medication";
   RECOMMENDATION_TYPE_FREETEXT :string = "freeText";
