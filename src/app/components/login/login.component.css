@@ -1,0 +1,177 @@
+.login-wrapper
+{
+    margin: auto;
+    width: 80%;
+    max-width: 600px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+}
+
+.login-wrapper h3.title
+{
+    margin: 0;
+    padding: 0;
+    margin-top: 10px;
+    display: block;
+    min-width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+label
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display:block;
+}
+
+input
+{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    outline: 0;
+    border: 0;
+    padding-left: 20px;
+    box-sizing: border-box;
+    -webkit-box-shadow: 1px 3px 3px 0 rgba(0,0,0,0.1);
+    box-shadow: 1px 3px 3px 0 rgba(0,0,0,0.1);
+    border: 1px solid #D1D1D1;
+    height: 44px;
+    margin-bottom: 20px;
+}
+
+button
+{
+    width: 40%;
+    margin: auto;
+    height: 44px;
+    margin-left: 30%;
+    margin-top: 20px;
+    outline: 0;
+    border: 0;
+    background: #1b74a0; /* Old browsers */
+    border-bottom: 2px solid #1A4D6B;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s all ease-in-out;
+}
+
+button:hover
+{
+    background-color: #1D7FAD;
+}
+
+button:active
+{
+    border-bottom: 0;
+}
+
+form.loading
+{
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+.loading-animation
+{
+    background-image: url(/assets/loadingAnimation.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    margin-top: 20px;
+    opacity: 0.7;
+}
+
+p
+{
+    text-align: center;
+    color: #8b0000;
+    margin-top: 40px;
+}
+
+ul
+{
+    list-style: none;
+    margin: 0;
+    display: flex;
+    padding: 0;
+    margin:auto;
+}
+
+ul li
+{
+    margin-left: 20px;
+}
+
+ul li:first-child
+{
+    margin-left: 0;
+}
+
+ul li a
+{
+    color: #aaa;
+    text-decoration: none;
+}
+
+ul li a:hover
+{
+    color: #666;
+}
+
+.ul_wrapper
+{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-flow: column;
+    align-content: flex-end;
+    position: absolute;
+    bottom: 50px;
+
+}
+
+.copyright
+{
+    font-size: 14px;
+    width: auto;
+    margin: auto;
+    color: #aaa;
+    padding-top: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+
+    ul
+    {
+        display: block;
+    }
+
+    ul li
+    {
+        display: block;
+        margin: 0;
+        margin-top: 10px;
+        text-align: center;
+    }
+
+    .copyright
+    {
+        text-align: center;
+    }    
+}
+
+@media only screen and (max-height: 500px)
+{
+    .ul_wrapper
+    {
+        position: absolute;
+        top: 300px;
+    }
+}

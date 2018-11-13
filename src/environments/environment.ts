@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   configuration: 
   {
-    apiUrl: "http://pilot.evid.one:8080/"
+    apiUrl: "http://localhost:8080/"
   }
 };
 

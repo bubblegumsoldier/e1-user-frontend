@@ -20,11 +20,16 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { SearchHandlerService } from './services/search-handler/search-handler.service';
 import { SyntaxParserService } from './services/syntax-parser/syntax-parser.service';
+import { AuthService } from './services/auth/auth.service';
 import { GenericRecommendationComponent } from './components/generic-recommendation/generic-recommendation.component';
 import { GroupRecommendationComponent } from './components/group-recommendation/group-recommendation.component';
 import { SyntaxRecommendationComponent } from './components/syntax-recommendation/syntax-recommendation.component';
 import { LoeIconComponent } from './components/loe-icon/loe-icon.component';
 import { OriginalDocumentReferenceComponent } from './components/original-document-reference/original-document-reference.component';
+import { CookieService } from 'ngx-cookie-service';
+import { ProtectedDirective } from './directives/protected/protected.directive';
+import { LoginComponent } from './components/login/login.component';
+
 
 const appRoutes :Routes = [
   {
@@ -34,6 +39,16 @@ const appRoutes :Routes = [
   {
     path: 'guideline/:id',
     component: GuidelineComponent
+  },
+  {
+    path: "auth/login",
+    pathMatch: "full",
+    component: LoginComponent
+  },
+  {
+    path: "auth",
+    pathMatch: "full",
+    redirectTo: "auth/login"
   },
   {
     path: '',
@@ -58,7 +73,9 @@ const appRoutes :Routes = [
     GroupRecommendationComponent,
     SyntaxRecommendationComponent,
     LoeIconComponent,
-    OriginalDocumentReferenceComponent
+    OriginalDocumentReferenceComponent,
+    ProtectedDirective,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +89,9 @@ const appRoutes :Routes = [
   providers: [
     HttpClientModule,
     SearchHandlerService,
-    SyntaxParserService
+    SyntaxParserService,
+    AuthService,
+    CookieService
   ],
   bootstrap: [AppComponent]
 })

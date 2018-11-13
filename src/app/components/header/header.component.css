@@ -93,6 +93,16 @@ Design for large header
     right: 20px;
 }
 
+.header-content.logged-out-header e1-search-input
+{
+    display: none;
+}
+
+.header-content.logged-out-header .vertical-spacer
+{
+    height: 20vh;
+}
+
 @media only screen and (max-width: 800px) {
     .header-content.large-header .logo
     {
@@ -160,6 +170,10 @@ Design for large header
     {
         height: 20vh;
     }
+    .header-content.logged-out-header .vertical-spacer
+    {
+        height: 2vh;
+    }
     .header-content.large-header e1-search-input
     {
         top: 20px;
@@ -170,6 +184,10 @@ Design for large header
     .header-content.large-header .vertical-spacer
     {
         height: 5vh;
+    }
+    .header-content.logged-out-header .vertical-spacer
+    {
+        height: 2vh;
     }
     .header-content.large-header e1-search-input
     {

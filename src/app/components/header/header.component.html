@@ -1,4 +1,8 @@
-<div class="header-content" [class.large-header]="headerType == 0" [class.small-header]="headerType == 1">
+<div class="header-content"
+[class.large-header]="headerType == 0 || headerType == 2"
+[class.small-header]="headerType == 1"
+[class.logged-out-header]="headerType == 2"
+  >
   <div class="vertical-spacer"></div>
   <div class="logo" (click)="onLogoClicked()"></div>
   <e1-search-input></e1-search-input>

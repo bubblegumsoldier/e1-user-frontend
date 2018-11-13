@@ -25,6 +25,11 @@ export class HeaderComponent implements OnInit {
     {
       this.headerType = 1;
     }
+
+    if(this.router.url.startsWith("/auth"))
+    {
+      this.headerType = 2;
+    }
   }
 
   onLogoClicked()
