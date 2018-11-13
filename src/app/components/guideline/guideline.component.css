@@ -61,7 +61,8 @@
     border-bottom: 1px solid white;
 }
 
-.guideline-inner-wrapper
+.guideline-inner-wrapper,
+.loading-wrapper
 {
     margin-left: 260px;
     width: 50%;
@@ -162,7 +163,8 @@
 
 
 @media only screen and (max-width: 1100px) {
-    .guideline-header .guideline-inner-wrapper
+    .guideline-header .guideline-inner-wrapper,
+    .loading-wrapper
     {
         max-width: none;
         width: 90%;
@@ -190,4 +192,18 @@
         top: 20px;
         right: 10px;
     }
+}
+
+.loading-animation
+{
+    background-image: url(/assets/loadingAnimation.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    margin-top: 20px;
+    opacity: 0.7;
 }

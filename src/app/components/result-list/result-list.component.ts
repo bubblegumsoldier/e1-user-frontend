@@ -22,10 +22,13 @@ export class ResultListComponent implements OnInit {
 
   guidelines :any[] = undefined;
 
+  loading : boolean = false;
+
   constructor(private route: ActivatedRoute, private searchHandler :SearchHandlerService) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(queryParams => {
+        this.loading = true;
         this.guidelines = [];
         this.query = queryParams['query'];
         this.retrieveGuidelineResults();
@@ -47,6 +50,7 @@ export class ResultListComponent implements OnInit {
   initializeGuidelines(guidelines :any[])
   {
     this.guidelines = guidelines;
+    this.loading = false;
   }
 
 }

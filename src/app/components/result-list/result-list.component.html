@@ -1,5 +1,5 @@
 <div class="result-wrapper" protected>
-  <div class="loading-animation" *ngIf="guidelines === undefined"></div>
+  <div class="loading-animation" *ngIf="this.loading"></div>
   <ul>
     <div *ngFor="let guideline of guidelines; let i = index">
       <a [routerLink]="['/guideline', guideline._id]" [preserveQueryParams]="true">
@@ -14,5 +14,5 @@
       </a>
     </div>
   </ul>
-  <p *ngIf="this.guidelines?.length == 0">Keine Ergebnisse gefunden...</p>
+  <p *ngIf="this.guidelines?.length == 0 && !this.loading">Keine Ergebnisse gefunden...</p>
 </div>

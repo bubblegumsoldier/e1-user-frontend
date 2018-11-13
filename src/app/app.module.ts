@@ -16,7 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { LevelComponent } from './components/level/level.component';
 import { FreeTextRecommendationComponent } from './components/free-text-recommendation/free-text-recommendation.component';
 import { MedicationRecommendationComponent } from './components/medication-recommendation/medication-recommendation.component';
-import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { SearchHandlerService } from './services/search-handler/search-handler.service';
 import { SyntaxParserService } from './services/syntax-parser/syntax-parser.service';
@@ -29,6 +29,7 @@ import { OriginalDocumentReferenceComponent } from './components/original-docume
 import { CookieService } from 'ngx-cookie-service';
 import { ProtectedDirective } from './directives/protected/protected.directive';
 import { LoginComponent } from './components/login/login.component';
+import { AuthInterceptor } from './services/auth-interceptor/auth.interceptor';
 
 
 const appRoutes :Routes = [
@@ -91,7 +92,12 @@ const appRoutes :Routes = [
     SearchHandlerService,
     SyntaxParserService,
     AuthService,
-    CookieService
+    CookieService,
+    {
+      provide : HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi   : true,
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
-import { Http, Response } from '@angular/http';
+import { Response } from '@angular/http';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 
@@ -56,7 +56,7 @@ export class AuthService {
         'Authorization': "Bearer " + this.currentTokenCookieValue
       })
       return this.http
-        .get<any>(environment.configuration.apiUrl + "/" + AuthService.CHECK_ENDPOINT, { headers: headers })
+        .get<any>(environment.configuration.apiUrl + AuthService.CHECK_ENDPOINT, { headers: headers })
         .subscribe((response :HttpResponse<any>) => {
           if(response.status == 200)
           {
@@ -106,5 +106,12 @@ export class AuthService {
   {
     this.currentTokenCookieValue = token;
     this.cookieService.set(AuthService.COOKIE_KEY, token);
+  }
+
+  getToken() :string
+  {
+    if(this.currentTokenCookieValue) return this.currentTokenCookieValue;
+
+    return this.cookieService.get(AuthService.COOKIE_KEY);
   }
 }

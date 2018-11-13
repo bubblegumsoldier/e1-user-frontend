@@ -17,6 +17,8 @@ export class GuidelineComponent implements OnInit {
 
   levelSelectionInput = null;
 
+  loading :boolean = false;
+
   @ViewChild('firstlevel') firstLevel;
 
   constructor(private route: ActivatedRoute, private router :Router, private searchHandler :SearchHandlerService)
@@ -24,6 +26,7 @@ export class GuidelineComponent implements OnInit {
    }
 
   ngOnInit() {
+    this.loading = true;
       this.route.params.subscribe(params => {
           this.id = params['id'];
           console.log(this.id);
@@ -39,6 +42,7 @@ export class GuidelineComponent implements OnInit {
   }
 
   setGuideline(guideline :Guideline){
+    this.loading = false;
     console.log(guideline);
     this.guideline = guideline;
     this.levelSelectionInput = {

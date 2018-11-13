@@ -3,8 +3,8 @@ import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpParams,HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Guideline } from '../../model/Guideline';
 import { dummyGuideline } from '../../model/dummyGuideline';
-import { Http, Response } from '@angular/http';
-
+import { Response } from '@angular/http';
+import {AuthService} from "../../services/auth/auth.service";
 import { environment } from '../../../environments/environment';
 
 const apiUrl = "/api";
@@ -15,7 +15,7 @@ const apiUrl = "/api";
 
 export class SearchHandlerService {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private authService: AuthService) {
 
     
    }
@@ -37,8 +37,6 @@ export class SearchHandlerService {
 
     getGuidelineFor(id :String) : Observable<Guideline>
     {
-      console.log("Executing this");
-      console.log(environment.configuration.apiUrl + 'guidelines/'+id);
       return this.http.get<Guideline>(environment.configuration.apiUrl + 'guidelines/'+id);
     }
 

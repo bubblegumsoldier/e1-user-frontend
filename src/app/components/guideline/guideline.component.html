@@ -8,6 +8,9 @@
       <h3>{{guideline?.nameOfGuideline}}</h3>
     </div>
   </div>
+
 </div>
+<div class="loading-wrapper"><div class="loading-animation" *ngIf="this.loading"></div></div>
+
 
 <e1-level #firstlevel *ngIf="levelSelectionInput !== null" [level]="levelSelectionInput" [isDark]="false" [parentGuideline]="guideline"></e1-level>
