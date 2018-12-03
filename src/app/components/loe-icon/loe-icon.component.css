@@ -1,0 +1,35 @@
+.lor {
+    font-size: 40px;
+    position: absolute;
+    margin-left: 50px;
+    font-weight: bold;
+    color: #474747;
+    top: 0;
+}
+
+.loe {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: #CECECE;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.wrapper
+{
+    position: relative;
+}
+
+.loe_system
+{
+    position: absolute;
+    top: 50PX;
+    font-size: 12px;
+    text-align: center;
+}

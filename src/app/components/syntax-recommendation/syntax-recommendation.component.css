@@ -27,8 +27,10 @@
 
 .syntax-recommendation-inner-group .loe-container
 {
-    width: 40px;
-    height: 40px;
+    width: 80px;
+    height: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .syntax-recommendation-inner-group .syntax-recommendation-right
@@ -100,6 +102,7 @@
     border-left: 1px solid #ccc;
     animation: slidein;
     animation-duration: 0.2s;
+    margin-bottom: 20px;
 }
 
 .definition-toggler
@@ -116,7 +119,7 @@
     opacity: 0.8;
     transition: all 0.3s ease-out;
     cursor: pointer;
-    align-self: flex-start;
+    align-self: center;
 }
 
 
