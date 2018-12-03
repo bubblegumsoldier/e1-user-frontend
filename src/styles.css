@@ -11,3 +11,10 @@ body
 {
     font-family: 'Source Sans Pro', sans-serif;
 }
+
+@media only screen and (max-width: 400px) {
+    p
+    {
+        padding-bottom: 20px;
+    }
+}

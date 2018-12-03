@@ -165,3 +165,10 @@ span.distribution-text
         max-width: none;
     }
 }
+
+@media only screen and (max-width: 400px) {
+    .medication-recommendation-inner-group
+    {
+        flex-flow: column;
+    }
+}
