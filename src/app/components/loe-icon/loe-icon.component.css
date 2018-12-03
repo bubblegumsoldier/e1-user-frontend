@@ -1,10 +1,12 @@
 .lor {
-    font-size: 40px;
     position: absolute;
-    margin-left: 50px;
+    width: 100%;
+    text-align: center;
     font-weight: bold;
     color: #474747;
-    top: 0;
+    top: -5px;
+    opacity: 0.8;
+    font-size: 50px;
 }
 
 .loe {
@@ -19,6 +21,7 @@
     align-content: center;
     justify-content: center;
     align-items: center;
+    opacity: 0.9;
 }
 
 .wrapper
