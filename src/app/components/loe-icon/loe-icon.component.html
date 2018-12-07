@@ -1,7 +1,7 @@
 <div class="wrapper">
     <div [ngClass]="['lor', this.levelOfRecommendation]" *ngIf="this.levelOfRecommendation">{{this.levelOfRecommendation}}</div>
-    <div [ngClass]="['lor', 'unkown']" *ngIf="!this.levelOfRecommendation">A</div>
-    <div [ngClass]="['loe', this.levelOfEvidence]" *ngIf="this.levelOfEvidence">2b</div>
-    <div [ngClass]="['loe', 'unknown']" *ngIf="!this.levelOfEvidence">2b</div>
+    <div [ngClass]="['lor', 'unkown']" *ngIf="!this.levelOfRecommendation">?</div>
+    <div [ngClass]="['loe', this.levelOfEvidence]" *ngIf="this.levelOfEvidence">{{this.levelOfEvidence}}</div>
+    <div [ngClass]="['loe', 'unknown']" *ngIf="!this.levelOfEvidence">?</div>
     <div class="loe_system">nach {{this.currentSystem}}</div>
 </div>
