@@ -2,7 +2,7 @@
   <h3 class="title" *ngIf="freeTextRecommendation.title?.length > 0">{{freeTextRecommendation.title}}</h3>
   <div class="ft-recommendation-inner-group" (click)="this.toggleComment()">
     <div class="loe-container">
-      <e1-loe-icon [levelOfEvidence]="this.freeTextRecommendation.gradeOfEvidence" [levelOfRecommendation]="this.freeTextRecommendation.levelOfRecommendation"></e1-loe-icon>
+      <e1-loe-icon [levelOfEvidence]="this.freeTextRecommendation.gradeOfEvidence" [levelOfRecommendation]="this.freeTextRecommendation.gradeOfRecommendation"></e1-loe-icon>
     </div>
     <div class="ft-recommendation-right">
       <p class="ft-recommendation-ft-content">{{freeTextRecommendation.content}}</p>
