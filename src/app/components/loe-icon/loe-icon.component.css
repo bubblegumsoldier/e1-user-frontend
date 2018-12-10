@@ -1,12 +1,12 @@
 .lor {
     position: absolute;
     width: 100%;
-    text-align: center;
+    text-align: right;
     font-weight: bold;
     color: #474747;
     opacity: 0.8;
     font-size: 30px;
-    top: 20px;
+    top: 10px;
 }
 
 .loe {
@@ -16,12 +16,13 @@
     top: 0;
     left: 0;
     border-radius: 50%;
-    background-color: #CECECE;
+    background-color: #333333aa;
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
-    opacity: 0.9;
+    opacity: .9;
+    color: white;
 }
 
 .wrapper
