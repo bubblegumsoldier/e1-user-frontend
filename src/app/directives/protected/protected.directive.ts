@@ -10,7 +10,7 @@ import {Location} from "@angular/common";
 export class ProtectedDirective {
 
     constructor(private authService: AuthService, private router: Router, private location: Location) {
-        authService.isAuthenticated().catch(_ => {
+        authService.isAuthenticated().then().catch(_ => {
           this.location.replaceState('/');
           this.router.navigateByUrl('auth');
         });

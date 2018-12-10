@@ -3,6 +3,8 @@ import { CookieService } from 'ngx-cookie-service';
 import { Response } from '@angular/http';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
+import { Router } from '@angular/router';
+import {Location} from "@angular/common";
 
 
 @Injectable({
@@ -18,7 +20,7 @@ export class AuthService {
   currentTokenCookieValue :string = undefined;
 
 
-  constructor(private cookieService: CookieService,private http: HttpClient) { }
+  constructor(private cookieService: CookieService,private http: HttpClient, private router: Router, private location: Location) { }
 
   isAuthenticated() :Promise<void>
   {
@@ -58,13 +60,10 @@ export class AuthService {
       return this.http
         .get<any>(environment.configuration.apiUrl + AuthService.CHECK_ENDPOINT, { headers: headers })
         .subscribe((response :HttpResponse<any>) => {
-          if(response.status == 200)
-          {
-            resolve(true);
-          }else
-          {
-            resolve(false);
-          }
+          resolve(true);
+        }, (response :HttpResponse<any>) => {
+          console.log(response);
+          reject();
         });
     });
     return p;
@@ -113,5 +112,12 @@ export class AuthService {
     if(this.currentTokenCookieValue) return this.currentTokenCookieValue;
 
     return this.cookieService.get(AuthService.COOKIE_KEY);
+  }
+
+  redirectToLoginAndReset()
+  {
+    this.location.replaceState('/');
+    this.router.navigateByUrl('auth');
+    this.setToken("");
   }
 }
