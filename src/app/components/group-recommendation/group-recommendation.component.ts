@@ -27,6 +27,8 @@ export class GroupRecommendationComponent implements OnInit {
 
   alternativesShown: boolean = false;
 
+  _isExpanded :boolean = false;
+
   constructor() {}
 
   ngOnInit() {
@@ -109,6 +111,31 @@ export class GroupRecommendationComponent implements OnInit {
     });
 
     return hasAlternatives;
+  }
+
+  isExpandable()
+  {
+    if(this.groupRecommendation.expandable && this.groupRecommendation.expandable == true)
+    {
+      return true;
+    }
+    return false;
+  }
+
+  toggleExpand()
+  {
+    this._isExpanded = !this._isExpanded;
+  }
+
+  isExpanded()
+  {
+    if(this.groupRecommendation.expandable)
+    {
+      return this._isExpanded;
+    }else
+    {
+      return true;
+    }
   }
 
 }

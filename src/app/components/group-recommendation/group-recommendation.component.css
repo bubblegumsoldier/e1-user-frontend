@@ -76,7 +76,7 @@ h3.title
     padding: 0;
     margin-top: 10px;
     display: block;
-    min-width: 100%;
+    width: 100%;
     font-weight: 600;
     font-size: 16px;
     margin-bottom: 10px;
@@ -88,7 +88,14 @@ h3.title
     width: 50%;
     max-width: 700px;
     padding-top: 20px;
+    display: flex;
+    padding-bottom: 20px;
 }
+.group-recommendation-wrapper-title.toggled
+{
+    padding-bottom: 0px;
+}
+
 
 @media only screen and (max-width: 1100px) {
     .group-recommendation-wrapper-title
@@ -111,4 +118,51 @@ h3.title
     {
         margin: 0;
     }
+}
+
+
+.expand-toggler
+{
+    background-image: url(/assets/down-arrow.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    outline: 0;
+    border : 0;
+    opacity: 0.8;
+    transition: all 0.3s ease-out;
+    cursor: pointer;
+    align-self: center;
+}
+
+
+.expand-toggler:hover
+{
+    opacity: 1;
+}
+
+.expand-toggler.toggled
+{
+    transform: rotateZ(180deg);
+}
+
+@keyframes slidein {
+    from {
+        transform: translateY(-10px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+.group-expand-wrapper
+{
+    animation: slidein;
+    animation-duration: 0.2s;
 }

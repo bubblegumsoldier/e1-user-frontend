@@ -1,19 +1,22 @@
 <div class="group-recommendation-wrapper" [class.root-group]="this.isRoot" *ngIf="!(groupRecommendation['hideOnSublevelSelect'] == true && this.subLevelSelected)">
-  <div class="group-recommendation-wrapper-title" *ngIf="groupRecommendation.title?.length > 0">
+  <div class="group-recommendation-wrapper-title" *ngIf="groupRecommendation.title?.length > 0" (click)="toggleExpand()" [class.toggled]="this.isExpanded()">
     <h3 class="title">{{groupRecommendation.title}}</h3>
+    <button class="expand-toggler" *ngIf="this.isExpandable()" [class.toggled]="this.isExpanded()"></button>
   </div>
-  <div class="medication-recommendation-wrapper" *ngFor="let recommendation of this.recommendationsToShow; let i = index">
-    <div class="separator-wrapper" *ngIf="!this.isRoot && i > 0 && !groupRecommendation.hideAnd">
-      <div class="separator-and">UND</div>
-    </div>
-    <div class="separator-wrapper" *ngIf="this.isRoot && i > 0">
-      <div class="separator-or">
-        <div class="line-before"></div>
-        <div class="or-text">ODER</div>
-        <div class="line-after"></div>
+  <div class="group-expand-wrapper" *ngIf="this.isExpanded()">
+    <div class="medication-recommendation-wrapper" *ngFor="let recommendation of this.recommendationsToShow; let i = index">
+      <div class="separator-wrapper" *ngIf="!this.isRoot && i > 0 && !groupRecommendation.hideAnd">
+        <div class="separator-and">UND</div>
       </div>
+      <div class="separator-wrapper" *ngIf="this.isRoot && i > 0">
+        <div class="separator-or">
+          <div class="line-before"></div>
+          <div class="or-text">ODER</div>
+          <div class="line-after"></div>
+        </div>
+      </div>
+      <e1-generic-recommendation [parentGuideline]="this.parentGuideline" [backgroundGray]="this.isRoot && i % 2 == 1" [subLevelSelected]="this.subLevelSelected" [recommendation]="recommendation"></e1-generic-recommendation>
     </div>
-    <e1-generic-recommendation [parentGuideline]="this.parentGuideline" [backgroundGray]="this.isRoot && i % 2 == 1" [subLevelSelected]="this.subLevelSelected" [recommendation]="recommendation"></e1-generic-recommendation>
   </div>
 </div>
 <div class="show-alternatives-wrapper">
