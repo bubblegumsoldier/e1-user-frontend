@@ -1,6 +1,6 @@
 <div class="wrapper">
     <div [ngClass]="['lor', this.levelOfRecommendation]" *ngIf="this.levelOfRecommendation" [innerHtml]="this.getColoredLevelOfRecommendation() | safeHtml"></div>
-    <div [ngClass]="['lor', 'unknown']" *ngIf="!this.levelOfRecommendation">?</div>
+    <div [ngClass]="['lor', 'unknown']" *ngIf="!this.levelOfRecommendation">-</div>
     <div [ngClass]="['loe', '_' + this.levelOfEvidence]" *ngIf="this.levelOfEvidence">{{this.levelOfEvidence}}</div>
     <!-- <div [ngClass]="['loe', 'unknown']" *ngIf="!this.levelOfEvidence">?</div> !-->
     <!-- <div class="loe_system">nach {{this.currentSystem}}</div> !-->
