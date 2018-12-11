@@ -30,6 +30,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ProtectedDirective } from './directives/protected/protected.directive';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './services/auth-interceptor/auth.interceptor';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 
 const appRoutes :Routes = [
@@ -76,7 +77,8 @@ const appRoutes :Routes = [
     LoeIconComponent,
     OriginalDocumentReferenceComponent,
     ProtectedDirective,
-    LoginComponent
+    LoginComponent,
+    SafeHtmlPipe
   ],
   imports: [
     BrowserModule,

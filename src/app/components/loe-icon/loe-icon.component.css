@@ -1,33 +1,35 @@
 .lor {
-    position: absolute;
-    width: 100%;
-    text-align: right;
-    font-weight: bold;
-    color: #474747;
-    opacity: 0.8;
-    font-size: 30px;
-    top: 10px;
+    position: relative;
+    text-align: left;
+    font-weight: 700;
+    color: #222f3eaa;
+    opacity: .8;
+    font-size: 35px;
+    margin-left: 10px;
+    flex: 1;
 }
 
 .loe {
-    width: 30px;
+    min-width: 30px;
     height: 30px;
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: flex;
+    position: relative;
     border-radius: 50%;
-    background-color: #333333aa;
+    background-color: #222f3eaa;
     display: flex;
     align-content: center;
     justify-content: center;
     align-items: center;
-    opacity: .9;
-    color: white;
+    opacity: .3;
+    color: #fff;
 }
 
 .wrapper
 {
-    position: relative;
+    display: flex;
+    flex-flow: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
 }
 
 .loe_system
@@ -36,4 +38,28 @@
     top: 50PX;
     font-size: 12px;
     text-align: center;
+}
+
+.loe._1a,
+.loe._1b,
+.loe._1c
+{
+    background-color: #222f3e;
+    opacity: 0.8;
+}
+
+.loe._2a,
+.loe._2b,
+.loe._2c
+{
+    background-color: #222f3eaa;
+    opacity: 0.74;
+}
+
+.loe._2a,
+.loe._2b,
+.loe._2c
+{
+    background-color: #222f3eaa;
+    opacity: 0.6;
 }
