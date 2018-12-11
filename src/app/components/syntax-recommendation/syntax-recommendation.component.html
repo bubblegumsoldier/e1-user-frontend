@@ -2,7 +2,7 @@
   <h3 class="title" *ngIf="syntaxRecommendation.title?.length > 0">{{syntaxRecommendation.title}}</h3>
   <div class="syntax-recommendation-inner-group" (click)="this.toggleComment()">
     <div class="loe-container">
-      <e1-loe-icon [levelOfEvidence]="this.syntaxRecommendation.gradeOfEvidence" [levelOfRecommendation]="this.syntaxRecommendation.levelOfRecommendation"></e1-loe-icon>
+      <e1-loe-icon [levelOfEvidence]="this.syntaxRecommendation.gradeOfEvidence" [levelOfRecommendation]="this.syntaxRecommendation.gradeOfRecommendation"></e1-loe-icon>
     </div>
     <div class="syntax-recommendation-right">
       <p class="syntax-recommendation-syntax-content" [innerHTML]="contentHtml"></p>

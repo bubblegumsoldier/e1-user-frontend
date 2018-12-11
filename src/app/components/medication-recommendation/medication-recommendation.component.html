@@ -2,7 +2,7 @@
   <h3 class="title" *ngIf="medicationRecommendation.title?.length > 0">{{medicationRecommendation.title}}</h3>
   <div class="medication-recommendation-inner-group" (click)="this.toggleComment()">
     <div class="loe-container">
-      <e1-loe-icon [levelOfEvidence]="this.medicationRecommendation.gradeOfEvidence" [levelOfRecommendation]="this.medicationRecommendation.levelOfRecommendation"></e1-loe-icon>
+      <e1-loe-icon [levelOfEvidence]="this.medicationRecommendation.gradeOfEvidence" [levelOfRecommendation]="this.medicationRecommendation.gradeOfRecommendation"></e1-loe-icon>
     </div>
     <div class="medication-recommendation-right">
       <h4 class="medication-recommendation-medication-title">{{medicationRecommendation.name}}</h4>
