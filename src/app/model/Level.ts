@@ -1,3 +1,4 @@
+import { Recommendation } from "./Recommendation";
 
 export class Level {
     levelName?:String;

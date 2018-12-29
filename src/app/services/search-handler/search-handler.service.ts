@@ -40,6 +40,11 @@ export class SearchHandlerService {
       return this.http.get<Guideline>(environment.configuration.apiUrl + 'guidelines/'+id);
     }
 
+    getAllGuidelines() : Observable<Guideline[]>
+    {
+      return this.getSearchResultsFor("");
+    }
+
     getDummyGuideline()
     {
       return dummyGuideline;

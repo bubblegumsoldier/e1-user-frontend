@@ -1,0 +1,145 @@
+
+ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+}
+
+ul a
+{
+    text-decoration: none;
+}
+
+ul li
+{
+    display: grid;
+    width: 100%;
+    background-color: #fff;
+    color: #666;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 30px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    margin-top: 20px;
+    animation-duration: 0.5s;
+    animation-name: slidein;
+    animation-timing-function: ease-in-out;
+    font-size: 14px;
+}
+
+.result-header
+{
+    display: block;
+    width: 100%;
+}
+
+.result-header span
+{
+    display: inline-block;
+}
+
+.result-header .publisher
+{
+    margin-left: 20px;
+}
+
+ul li:hover
+{
+    color: #272727;
+
+}
+
+
+.visibility
+{
+    border: 1px solid #272727;
+    font-size: 11px;
+    padding: 3px;
+    text-transform: uppercase;
+    margin-left: 20px;
+    display: inline-block;
+}
+
+ul li h3
+{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+@keyframes slidein {
+from {
+    transform: translateY(-10px);
+    opacity: 0;
+}
+
+to {
+    transform: translateY(0px);
+    opacity: 1;
+}
+}
+
+
+@media only screen and (max-width: 1100px) {
+    .result-wrapper
+    {
+        width: 90%;
+        margin: 0;
+        margin-left: 5%;
+        max-width: none;
+    }
+    .result-wrapper li
+    {
+        display: flex;
+        padding-bottom: 20px;
+        flex-flow: column-reverse;
+        margin-top: 20px;
+    }
+    .result-wrapper li .result-header
+    {
+        font-size: 12px;
+        margin-top: 5px;
+    }
+    
+    ul li h3
+    {
+        margin-top: 0px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .result-wrapper li
+    {
+        position: relative;
+    }
+
+    .result-wrapper li .result-header
+    {
+        display: block;
+    }
+
+    .result-wrapper li .result-header span.publisher,
+    .result-wrapper li .result-header span.date
+    {
+        display: block;
+        margin-left: 0;
+    }
+
+    .result-wrapper li .result-header span.publisher
+    {
+        margin-top: 5px;
+    }
+
+    .result-wrapper li .result-header .visibility
+    {
+        position: absolute;
+        bottom: 20px;
+        right: 10px;
+    }
+}

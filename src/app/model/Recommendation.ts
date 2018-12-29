@@ -1,4 +1,4 @@
-export class CommonRecommendation{
+export class Recommendation{
     name?:String;
     gradeOfEvidence?:String;
     gradeOfRecommendation?:String;
@@ -6,7 +6,6 @@ export class CommonRecommendation{
     comment?:String;
     content?:String;
     type?:String;
-    title?:String;
     hideOnSublevelSelect?:Boolean;
 }
 

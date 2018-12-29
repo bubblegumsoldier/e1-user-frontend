@@ -1,18 +1,5 @@
 <div class="result-wrapper" protected>
   <div class="loading-animation" *ngIf="this.loading"></div>
-  <ul>
-    <div *ngFor="let guideline of guidelines; let i = index">
-      <a [routerLink]="['/guideline', guideline._id]" [preserveQueryParams]="true">
-        <li>
-          <div class="result-header">
-            <span class="date">Gültig bis {{guideline.validity | date:'dd. MMMM yyyy'}}</span>
-            <span class="publisher">{{guideline.publisher}}</span>
-            <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
-          </div>
-          <h3>{{guideline.nameOfGuideline}}</h3>
-        </li>
-      </a>
-    </div>
-  </ul>
+  <e1-abstract-guideline-list [guidelines]="guidelines" (onGuidelineSelected)="guidelineWasSelected($event)"></e1-abstract-guideline-list>
   <p *ngIf="this.guidelines?.length == 0 && !this.loading">Keine Ergebnisse gefunden...</p>
 </div>

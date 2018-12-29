@@ -18,13 +18,11 @@ export class ResultListComponent implements OnInit {
 
   allPublic :boolean = true;
 
-  linkToGuidelineID :number = 123;
-
   guidelines :any[] = undefined;
 
   loading : boolean = false;
 
-  constructor(private route: ActivatedRoute, private searchHandler :SearchHandlerService) { }
+  constructor(private route: ActivatedRoute, private searchHandler :SearchHandlerService, private router :Router) { }
 
   ngOnInit() {
     this.route.queryParams.subscribe(queryParams => {
@@ -51,6 +49,11 @@ export class ResultListComponent implements OnInit {
   {
     this.guidelines = guidelines;
     this.loading = false;
+  }
+
+  guidelineWasSelected(guideline)
+  {
+    this.router.navigate(['guideline', guideline._id], { preserveQueryParams: true });
   }
 
 }

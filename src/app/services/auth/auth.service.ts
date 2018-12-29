@@ -12,15 +12,44 @@ import {Location} from "@angular/common";
 })
 export class AuthService {
 
-  static CHECK_ENDPOINT :string = "isAuthenticatedForRead";
+  static CHECK_READ_ENDPOINT :string = "isAuthenticatedForRead";
+  static CHECK_WRITE_ENDPOINT :string = "isAuthenticatedForWrite";
   static LOGIN_ENDPOINT :string = "login";
 
-  static COOKIE_KEY = "e1-token-cookie"
+  static COOKIE_KEY = "e1-token-cookie";
+
+  static COOKIE_KEY_HAS_WRITE = "e1-may-write-cache";
 
   currentTokenCookieValue :string = undefined;
 
 
   constructor(private cookieService: CookieService,private http: HttpClient, private router: Router, private location: Location) { }
+
+  isAuthenticatedForWrite() :Promise<void>
+  {
+    const p = new Promise<void>((resolve, reject) => {
+      if(this.getLocalHasWriteCache())
+      {
+        resolve();
+        return;
+      }
+      const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + this.currentTokenCookieValue
+      })
+      return this.http
+        .get<any>(environment.configuration.apiUrl + AuthService.CHECK_WRITE_ENDPOINT, { headers: headers })
+        .subscribe((response :HttpResponse<any>) => {
+          this.setLocalHasWriteCache(true);
+          resolve();
+        }, (response :HttpResponse<any>) => {
+          console.log(response);
+          this.setLocalHasWriteCache(false);
+          reject();
+        });
+    });
+    return p;
+  }
 
   isAuthenticated() :Promise<void>
   {
@@ -58,7 +87,7 @@ export class AuthService {
         'Authorization': "Bearer " + this.currentTokenCookieValue
       })
       return this.http
-        .get<any>(environment.configuration.apiUrl + AuthService.CHECK_ENDPOINT, { headers: headers })
+        .get<any>(environment.configuration.apiUrl + AuthService.CHECK_READ_ENDPOINT, { headers: headers })
         .subscribe((response :HttpResponse<any>) => {
           resolve(true);
         }, (response :HttpResponse<any>) => {
@@ -112,6 +141,16 @@ export class AuthService {
     if(this.currentTokenCookieValue) return this.currentTokenCookieValue;
 
     return this.cookieService.get(AuthService.COOKIE_KEY);
+  }
+
+  setLocalHasWriteCache(val :boolean)
+  {
+    this.cookieService.set(AuthService.COOKIE_KEY_HAS_WRITE, val.toString());
+  }
+
+  getLocalHasWriteCache() :boolean
+  {
+    return this.cookieService.get(AuthService.COOKIE_KEY_HAS_WRITE) === "true";
   }
 
   redirectToLoginAndReset()

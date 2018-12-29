@@ -1,0 +1,14 @@
+<div class="level-list-wrapper form-style-7">
+  <label>Levels:</label>
+  <button class="add_level" (click)="addNewEmptyLevel()">+</button>
+  <ul>
+    <li *ngFor="let level of this.levels; index as i">
+      <div class="level-header" (click)="toggleLevelWithIndex(i)">
+        <span class="title">{{level.levelName}}</span>
+        <button class="remove" (click)="this.removeLevelWithIndex(i)"></button>
+      </div>
+      <e1-edit-level [level]="level" *ngIf="this.expanded.includes(i)"></e1-edit-level>
+    </li>
+  </ul>
+  <p class="no_levels" *ngIf="this.levels && this.levels?.length <= 0">Keine Levels definiert</p>
+</div>

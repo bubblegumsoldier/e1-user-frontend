@@ -1,5 +1,5 @@
-import {CommonRecommendation} from './CommonRecommendation';
-export class Medicine extends CommonRecommendation{
+import {Recommendation} from './Recommendation';
+export class MedicationRecommendation extends Recommendation{
     /*Name?:String;
     GradeOfEvidence?:String;
     LevelOfRecommendation?:String;

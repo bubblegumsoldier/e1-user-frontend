@@ -1,0 +1,43 @@
+<div class="guideline-header form-style-7" *ngIf="this.guideline">
+    <div class="guideline-inner-wrapper" >
+      <button class="back-button" (click)="onBackButtonClicked()">&larr; &nbsp; &nbsp; Zurück</button>
+      <div class="guideline-description">
+          <h2>{{guideline?.nameOfGuideline}}</h2>
+          <ul>
+            <li>
+                <label for="name">Name</label>
+                <input type="text" [(ngModel)]="guideline.nameOfGuideline" name="nameOfGuideline">
+            </li>
+            <li>
+              <label for="name">Öffentlich?</label>
+              <input type="checkbox">
+            </li>
+            <li>
+                <label for="name">Interner Autor</label>
+                <input type="text" name="internalAuthor" [(ngModel)]="guideline.internalAuthor">
+            </li>
+            <li>
+                <label for="name">Gültig bis</label>
+                <input type="date" name="validity" [(ngModel)]="guideline.validity" maxlength="100">
+            </li>
+            <li>
+                <label for="name">Publisher</label>
+                <input type="text" name="name"  [(ngModel)]="guideline.publisher" maxlength="200">
+            </li>
+            <li>
+                <label for="name">PDF URL</label>
+                <input type="text" name="source" [(ngModel)]="guideline.source">
+            </li>
+            <li>
+                <label for="name">Keywords</label>
+                <tag-input [(ngModel)]='guideline.keywords' [editable]="true"></tag-input>
+            </li>
+        </ul>
+      </div>
+      <e1-edit-level-list [levels]="this.guideline.levels"></e1-edit-level-list>
+      <div class="button-area">
+          <button class="cancel" (click)="cancel()">Abbrechen</button>
+          <button class="save" (click)="save()">Speichern</button>
+    </div>
+</div>
+<div class="loading-wrapper"><div class="loading-animation" *ngIf="this.loading"></div></div>

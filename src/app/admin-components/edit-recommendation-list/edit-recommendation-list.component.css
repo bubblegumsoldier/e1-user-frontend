@@ -1,0 +1,106 @@
+.recommendation-header {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: black;
+    box-sizing: border-box;
+    padding-left: 20px;
+    padding-right: 10px;
+    border-left: 3px solid #4D88A6;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    margin-left: -1px;
+    cursor: pointer;
+}
+
+.recommendation-header:hover
+{
+    background-color: #eeeeee;
+}
+
+.recommendation-list-wrapper
+{
+    margin-right: 0;
+    padding-right: 0;
+    margin-top: 20px;
+}
+
+span.title {
+    flex: 1;
+}
+
+label
+{
+    margin-left: 10px;
+}
+
+button.remove
+{
+    height: 20px;
+    width: 20px;
+    background: transparent;
+    outline: 0;
+    border: 0;
+    background-image: url(/assets/remove_icon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+
+
+
+button.remove:hover
+{
+    opacity: 1;
+    transform: rotate(90deg) scale(1.2);
+}
+
+.no_recommendations
+{
+    margin-left: 40px;
+
+}
+
+button.add_recommendation
+{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: block;
+    background-color: #666;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    outline: 0;
+    border: 0;
+    opacity: 0.8;
+    margin-bottom: 5px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    margin-left: 9px;
+    margin-top: 10px;
+}
+
+button.add_recommendation:hover
+{
+    opacity: 1;
+}
+
+li
+{
+    border-left: 1px dashed #4D88A6;
+}
+
+ul
+{
+    list-style: none;
+    padding-left: 9px;
+}

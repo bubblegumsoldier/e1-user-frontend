@@ -194,3 +194,35 @@ Design for large header
         top: 0px;
     }
 }
+
+.header-content.large-header .admin-access
+{
+    outline: 0;
+    border: 0;
+    background: none;
+    position: absolute;
+    right: 20px;
+    top: 35px;
+    color: #272727;
+    cursor: pointer;
+    
+}
+.header-content.large-header .admin-access:hover
+{
+    color: black;
+    text-decoration: underline;
+}
+
+.admin-access
+{
+    color: white;
+    position: relative;
+    top: 0;
+    right: 0;
+    text-decoration: none;
+}
+
+.admin-access:hover
+{
+    text-decoration: underline;
+}

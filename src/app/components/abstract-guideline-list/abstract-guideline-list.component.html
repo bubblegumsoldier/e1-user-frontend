@@ -1,0 +1,14 @@
+<ul>
+  <div *ngFor="let guideline of guidelines; let i = index">
+    <a (click)="guidelineWasSelected(guideline)">
+      <li>
+        <div class="result-header">
+          <span class="date">Gültig bis {{guideline.validity | date:'dd. MMMM yyyy'}}</span>
+          <span class="publisher">{{guideline.publisher}}</span>
+          <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">Öffentlich</div>
+        </div>
+        <h3>{{guideline.nameOfGuideline}}</h3>
+      </li>
+    </a>
+  </div>
+</ul>

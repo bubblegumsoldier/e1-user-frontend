@@ -1,0 +1,14 @@
+<div class="recommendation-list-wrapper form-style-7">
+    <label>Recommendations:</label>
+    <button class="add_recommendation" (click)="addNewRecommendation()">+</button>
+    <ul>
+      <li *ngFor="let recommendation of this.recommendations; index as i">
+        <div class="recommendation-header" (click)="toggleRecommendationWithIndex(i)">
+          <span class="title">{{getReadableRecommendationTypeForRecommendation(recommendation)}}</span>
+          <button class="remove" (click)="this.removeRecommendationWithIndex(i)"></button>
+        </div>
+        
+      </li>
+    </ul>
+    <p class="no_recommendations" *ngIf="this.recommendations && this.recommendations?.length <= 0">Keine Recommendations definiert</p>
+  </div>
