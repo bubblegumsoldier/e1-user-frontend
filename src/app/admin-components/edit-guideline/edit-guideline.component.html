@@ -5,15 +5,15 @@
         <h2>{{guideline?.nameOfGuideline}}</h2>
         <label for="name">Name</label>
         <input type="text" [(ngModel)]="guideline.nameOfGuideline" name="nameOfGuideline">
-        <label for="name">Öffentlich?</label>
-        <input type="checkbox">
-        <label for="name">Interner Autor</label>
+        <label for="active">Öffentlich?</label>
+        <input type="checkbox" name="active" [(ngModel)]="guideline.active">
+        <label for="internalAuthor">Interner Autor</label>
         <input type="text" name="internalAuthor" [(ngModel)]="guideline.internalAuthor">
-        <label for="name">Gültig bis</label>
+        <label for="validity">Gültig bis</label>
         <input type="date" name="validity" [(ngModel)]="guideline.validity" maxlength="100">
-        <label for="name">Publisher</label>
-        <input type="text" name="name"  [(ngModel)]="guideline.publisher" maxlength="200">
-        <label for="name">PDF URL</label>
+        <label for="publisher">Publisher</label>
+        <input type="text" name="publisher"  [(ngModel)]="guideline.publisher" maxlength="200">
+        <label for="source">PDF URL</label>
         <input type="text" name="source" [(ngModel)]="guideline.source">
         <label for="name">Keywords</label>
         <tag-input [(ngModel)]='guideline.keywords' [editable]="true"></tag-input>

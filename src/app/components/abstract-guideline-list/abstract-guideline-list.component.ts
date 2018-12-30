@@ -21,4 +21,14 @@ export class AbstractGuidelineListComponent implements OnInit {
     this.onGuidelineSelected.emit(guideline);
   }
 
+  isPublicText(guideline)
+  {
+    if(guideline.active)
+    {
+      return "Öffentlich";
+    }else{
+      return "Privat";
+    }
+  }
+
 }

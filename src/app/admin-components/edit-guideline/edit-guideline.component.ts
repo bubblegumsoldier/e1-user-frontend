@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { SearchHandlerService } from '../../services/search-handler/search-handler.service';
 import { Guideline } from '../../model/Guideline';
+import { InsertionService } from '../../services/insertion/insertion.service';
 
 @Component({
   selector: 'e1-edit-guideline',
@@ -17,7 +18,7 @@ export class EditGuidelineComponent implements OnInit {
 
   loading :boolean = false;
 
-  constructor(private route: ActivatedRoute, private router :Router, private searchHandler :SearchHandlerService)
+  constructor(private route: ActivatedRoute, private router :Router, private searchHandler :SearchHandlerService, private insertionService :InsertionService)
   {
   }
 
@@ -41,6 +42,10 @@ export class EditGuidelineComponent implements OnInit {
     this.loading = false;
     console.log(guideline);
     this.guideline = guideline;
+    if(this.guideline.levels === undefined)
+    {
+      this.guideline.levels = [];
+    }
   }
 
   initializeGuideline()
@@ -48,8 +53,7 @@ export class EditGuidelineComponent implements OnInit {
    // this.guideline = this.searchHandler.getGuidelineFor(this.id);
     if(this.id === "new")
     {
-      this.guideline = new Guideline();
-      this.loading = false;
+      this.setGuideline(new Guideline());
       return;
     }
     this.searchHandler.getGuidelineFor(this.id).subscribe((guideline :Guideline) => this.setGuideline(guideline));
@@ -76,12 +80,19 @@ export class EditGuidelineComponent implements OnInit {
 
   private createNew()
   {
-
+    this.loading = true;
+    this.insertionService.createNewGuideline(this.guideline).then(guideline => {
+      this.guideline = guideline;
+      this.loading = false;
+    });
   }
 
   private saveCurrent()
   {
-
+    this.loading = true;
+    this.insertionService.updateGuideline(this.guideline).then(_ => {
+      this.loading = false;
+    });
   }
 
 }

@@ -30,6 +30,7 @@ import { CookieService } from 'ngx-cookie-service';
 import { ProtectedDirective } from './directives/protected/protected.directive';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './services/auth-interceptor/auth.interceptor';
+import { InsertionService } from './services/insertion/insertion.service';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { WriteProtectedDirective } from './directives/write-protected/write-protected.directive';
 import { AdminComponent } from './components/admin/admin.component';
@@ -49,6 +50,7 @@ import { EditFreeTextRecommendationComponent } from './admin-components/edit-fre
 import { EditGroupRecommendationComponent } from './admin-components/edit-group-recommendation/edit-group-recommendation.component';
 import { EditSyntaxRecommendationComponent } from './admin-components/edit-syntax-recommendation/edit-syntax-recommendation.component';
 import { EditPreDefListComponent } from './admin-components/edit-pre-def-list/edit-pre-def-list.component';
+
 const appRoutes :Routes = [
   {
     path: 'results',
@@ -141,7 +143,8 @@ const appRoutes :Routes = [
       provide : HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi   : true,
-    }
+    },
+    InsertionService
   ],
   bootstrap: [AppComponent]
 })
