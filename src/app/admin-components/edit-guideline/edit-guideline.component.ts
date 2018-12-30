@@ -16,6 +16,8 @@ export class EditGuidelineComponent implements OnInit {
 
   guideline = null;
 
+  transferGuideline = null;
+
   loading :boolean = false;
 
   constructor(private route: ActivatedRoute, private router :Router, private searchHandler :SearchHandlerService, private insertionService :InsertionService)
@@ -29,6 +31,16 @@ export class EditGuidelineComponent implements OnInit {
           console.log(this.id);
           this.initializeGuideline();
       });
+  }
+
+  updatePreview()
+  {
+    console.log("changes!");
+    this.transferGuideline = undefined;
+    setTimeout(_ => {
+      this.transferGuideline = this.guideline;
+      console.log(this.guideline);
+    }, 500);
   }
 
   onBackButtonClicked()

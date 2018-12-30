@@ -11,7 +11,7 @@ export class Guideline{
     source?:String;
     validity?:String;
     internalAuthor?:String;
-    levels?:[Level];
+    levels?:Level[];
 }
 
 

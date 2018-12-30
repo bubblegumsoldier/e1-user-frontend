@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { SearchHandlerService } from '../../services/search-handler/search-handler.service';
 import { Guideline } from '../../model/Guideline';
@@ -13,7 +13,7 @@ export class GuidelineComponent implements OnInit {
 
   id :String = "";
 
-  guideline = null;
+  @Input() guideline = null;
 
   levelSelectionInput = null;
 
@@ -26,6 +26,11 @@ export class GuidelineComponent implements OnInit {
    }
 
   ngOnInit() {
+    if(this.guideline !== null)
+    {
+      this.setGuideline(this.guideline);
+      return;
+    }
     this.loading = true;
       this.route.params.subscribe(params => {
           this.id = params['id'];
@@ -52,8 +57,18 @@ export class GuidelineComponent implements OnInit {
 
   initializeGuideline()
   {
-   // this.guideline = this.searchHandler.getGuidelineFor(this.id);
-    this.searchHandler.getGuidelineFor(this.id).subscribe((guideline :Guideline) => this.setGuideline(guideline));
+    // this.guideline = this.searchHandler.getGuidelineFor(this.id);
+    if(this.id === undefined)
+    {
+      return;
+    }
+    this.searchHandler.getGuidelineFor(this.id).subscribe((guideline :Guideline) => {
+      if(this.guideline !== null)
+      {
+        return;
+      }
+      this.setGuideline(guideline)
+    });
    
     
     console.log("Added the levels");

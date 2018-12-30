@@ -17,6 +17,9 @@
     <label for="hideOnSublevelSelect">Hide On Sublevel Select?</label>
     <input type="checkbox" [(ngModel)]="recommendation.hideOnSublevelSelect" name="hideOnSublevelSelect">
 
+    <label for="sourceRef">Referenz in Originaldokument:</label>
+    <input type="text" [(ngModel)]="recommendation.sourceRef" name="sourceRef" placeholder="page=?">
+
   <e1-edit-free-text-recommendation [recommendation]="this.recommendation" *ngIf="this.recommendation?.type === 'freeText'"></e1-edit-free-text-recommendation>
   <e1-edit-syntax-recommendation [recommendation]="this.recommendation" *ngIf="this.recommendation?.type === 'syntax'"></e1-edit-syntax-recommendation>
   <e1-edit-medication-recommendation [recommendation]="this.recommendation" *ngIf="this.recommendation?.type === 'medication'"></e1-edit-medication-recommendation>

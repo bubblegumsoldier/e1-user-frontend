@@ -16,12 +16,18 @@
         <label for="source">PDF URL</label>
         <input type="text" name="source" [(ngModel)]="guideline.source">
         <label for="name">Keywords</label>
-        <tag-input [(ngModel)]='guideline.keywords' [editable]="true"></tag-input>
+        <tag-input [(ngModel)]='guideline.keywords' [modelAsStrings]="true" [editable]="true"></tag-input>
       </div>
       <e1-edit-level-list [levels]="this.guideline.levels"></e1-edit-level-list>
       <div class="button-area">
           <button class="cancel" (click)="cancel()">Abbrechen</button>
+          <button class="cancel" (click)="updatePreview()">Vorschau</button>
           <button class="save" (click)="save()">Speichern</button>
     </div>
+    <div class="loading-animation" *ngIf="this.loading"></div>
+    <h2 style="text-align:center;">Vorschau</h2>
 </div>
-<div class="loading-wrapper"><div class="loading-animation" *ngIf="this.loading"></div></div>
+
+<br><br><br>
+
+<e1-guideline [guideline]="transferGuideline" *ngIf="transferGuideline !== undefined"></e1-guideline>
