@@ -19,7 +19,9 @@ export class EditRecommendationListComponent implements OnInit {
 
   addNewRecommendation()
   {
-
+    let recommendation = new Recommendation();
+    recommendation.type = "freeText";
+    this.recommendations.push(recommendation);
   }
 
   removeRecommendationWithIndex(i :number)

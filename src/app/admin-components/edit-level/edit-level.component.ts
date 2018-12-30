@@ -15,4 +15,16 @@ export class EditLevelComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges()
+  {
+    if(this.level.levels === undefined)
+    {
+      this.level.levels = [];
+    }
+    if(this.level.recommendations === undefined)
+    {
+      this.level.recommendations = [];
+    }
+  }
+
 }

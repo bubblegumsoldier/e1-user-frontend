@@ -1,3 +1,6 @@
-<p>
-  edit-free-text-recommendation works!
-</p>
+<div class="group-wrapper form-style">
+  <label for="content">Inhalt</label>
+  <input type="text" [(ngModel)]="recommendation.content" name="content">
+  <label for="comment">Details:</label>
+  <angular-editor [(ngModel)]="recommendation.comment"></angular-editor>
+</div>

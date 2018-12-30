@@ -1,3 +1,40 @@
-<p>
-  edit-medication-recommendation works!
-</p>
+<div class="form-style">
+  <label for="name">Name</label>
+  <input type="text" [(ngModel)]="recommendation.name" name="name">
+
+  <label for="useSpecificDosageSchema">Spezifisches Dosierungsschema verwenden?</label>
+  <input type="checkbox" [(ngModel)]="recommendation.useSpecificDosageSchema" name="useSpecificDosageSchema">
+
+  <label for="dosageAmount">Dosierungsmenge?</label>
+  <div class="one-row">
+      <input type="number" [(ngModel)]="recommendation.dosageAmount" name="dosageAmount">
+      <select [(ngModel)]="recommendation.dosageUnit">
+        <option *ngFor="let c of dosageUnits" [ngValue]="c"> {{c}} </option>
+      </select>
+  </div>
+  
+
+  <label *ngIf="this.recommendation.useSpecificDosageSchema === true">Dosierungsschema:</label>
+  <div class="one-row" *ngIf="this.recommendation.useSpecificDosageSchema === true">
+      <input type="number" [(ngModel)]="recommendation.morningDosage" name="morningDosage">
+      <input type="number" [(ngModel)]="recommendation.noonDosage" name="noonDosage">
+      <input type="number" [(ngModel)]="recommendation.eveningDosage" name="eveningDosage">
+      <input type="number" [(ngModel)]="recommendation.nightDosage" name="nightDosage"> 
+  </div>
+
+  <label for="unlimitedApplicationDuration">Keine spezifische Dauer</label>
+  <input type="checkbox" [(ngModel)]="recommendation.unlimitedApplicationDuration" name="unlimitedApplicationDuration">
+  
+  <label *ngIf="this.recommendation.unlimitedApplicationDuration !== true">Dosierungsdauer:</label>
+  <div class="one-row" *ngIf="this.recommendation.unlimitedApplicationDuration !== true">
+      <input type="number" [(ngModel)]="recommendation.dosageDuration" name="dosageDuration">
+      <select [(ngModel)]="recommendation.dosageDurationUnit">
+        <option *ngFor="let c of dosageDurationUnits" [ngValue]="c"> {{c}} </option>
+      </select>
+  </div>
+
+  <label for="dosageFrequency">Frequenz</label>
+  <div class="one-row">
+    Jeden <input type="text" [(ngModel)]="recommendation.dosageFrequency" name="dosageFrequency" style="margin-left:10px;margin-right:10px;">. Tag
+  </div>
+</div>

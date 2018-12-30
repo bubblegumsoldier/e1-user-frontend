@@ -1,14 +1,8 @@
-<div class="level-wrapper form-style-7">
-  <ul>
-    <li>
-      <label for="name">Level-Name:</label>
-      <input type="text" [(ngModel)]="level.levelName" name="levelName">
-    </li>
-    <li>
-      <label for="name">Definition:</label>
-      <angular-editor [(ngModel)]="level.definition"></angular-editor>
-    </li>
-  </ul>
+<div class="level-wrapper form-style">
+  <label for="name">Level-Name:</label>
+  <input type="text" [(ngModel)]="level.levelName" name="levelName">
+  <label for="name">Definition:</label>
+  <angular-editor [(ngModel)]="level.definition"></angular-editor>
   <e1-edit-level-list [levels]="this.level.levels"></e1-edit-level-list>
   <e1-edit-recommendation-list [recommendations]="this.level.recommendations"></e1-edit-recommendation-list>
 </div>

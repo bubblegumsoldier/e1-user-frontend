@@ -28,3 +28,42 @@ h1
     color: #666666;
 }
 
+
+.form-style label
+{
+	margin-left: 10px;
+	font-size: 16px;
+	color: #666;
+	margin-bottom: 5px;
+	display: block;
+	margin-top: 10px;
+}
+
+.form-style input[type="text"],
+.form-style input[type="date"],
+.form-style input[type="number"],
+.form-style select
+{
+    width: 100%;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+	box-sizing: border-box;
+	margin-bottom: 15px;
+}
+
+.form-style input[type="number"]
+{
+	text-align: center;
+}
+
+.form-style input[type="checkbox"] {
+    text-align: left;
+    width: auto;
+    width: 20px;
+    margin-left: 5px;
+}

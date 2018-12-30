@@ -48,6 +48,7 @@ import { EditMedicationRecommendationComponent } from './admin-components/edit-m
 import { EditFreeTextRecommendationComponent } from './admin-components/edit-free-text-recommendation/edit-free-text-recommendation.component';
 import { EditGroupRecommendationComponent } from './admin-components/edit-group-recommendation/edit-group-recommendation.component';
 import { EditSyntaxRecommendationComponent } from './admin-components/edit-syntax-recommendation/edit-syntax-recommendation.component';
+import { EditPreDefListComponent } from './admin-components/edit-pre-def-list/edit-pre-def-list.component';
 const appRoutes :Routes = [
   {
     path: 'results',
@@ -114,7 +115,8 @@ const appRoutes :Routes = [
     EditMedicationRecommendationComponent,
     EditFreeTextRecommendationComponent,
     EditGroupRecommendationComponent,
-    EditSyntaxRecommendationComponent
+    EditSyntaxRecommendationComponent,
+    EditPreDefListComponent
     
   ],
   imports: [

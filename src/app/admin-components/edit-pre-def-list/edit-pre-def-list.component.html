@@ -1,0 +1,18 @@
+<div class="recommendation-list-wrapper form-style-7">
+  <label>Referenz-Medikationen:</label>
+  <button class="add_recommendation" (click)="addNewRecommendation()">+</button>
+  <ul>
+    <li *ngFor="let recommendation of this.preDefs; index as i">
+      <div class="recommendation-header" (click)="toggleRecommendationWithIndex(i)">
+        <span class="title">{{recommendation.name}} ({{recommendation.refId}})</span>
+        <button class="remove" (click)="this.removeRecommendationWithIndex(i)"></button>
+      </div>
+      <div class="ref_wrapper" *ngIf="this.expanded.includes(i)">
+        <label for="refId" *ngIf="this.expanded.includes(i)">Referenz-ID:</label>
+        <input type="text" *ngIf="this.expanded.includes(i)" [(ngModel)]="recommendation.refId" name="refId">
+        <e1-edit-medication-recommendation [recommendation]="recommendation" ></e1-edit-medication-recommendation>
+      </div>
+    </li>
+  </ul>
+  <p class="no_recommendations" *ngIf="this.preDefs && this.preDefs?.length <= 0">Keine Referenz-Medikationen definiert</p>
+</div>

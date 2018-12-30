@@ -1,3 +1,7 @@
-<p>
-  edit-syntax-recommendation works!
-</p>
+<div class="group-wrapper form-style">
+  <e1-edit-pre-def-list [preDefs]="recommendation.preDefs"></e1-edit-pre-def-list>
+  <label for="content">Inhalt</label>
+  <angular-editor [(ngModel)]="recommendation.content"></angular-editor>
+  <label for="comment">Details:</label>
+  <angular-editor [(ngModel)]="recommendation.comment"></angular-editor>
+  </div>

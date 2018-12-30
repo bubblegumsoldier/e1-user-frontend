@@ -7,7 +7,7 @@
           <span class="title">{{getReadableRecommendationTypeForRecommendation(recommendation)}}</span>
           <button class="remove" (click)="this.removeRecommendationWithIndex(i)"></button>
         </div>
-        
+        <e1-edit-generic-recommendation [recommendation]="recommendation" *ngIf="this.expanded.includes(i)"></e1-edit-generic-recommendation>
       </li>
     </ul>
     <p class="no_recommendations" *ngIf="this.recommendations && this.recommendations?.length <= 0">Keine Recommendations definiert</p>

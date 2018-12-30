@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'e1-edit-group-recommendation',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-group-recommendation.component.css']
 })
 export class EditGroupRecommendationComponent implements OnInit {
+
+  @Input() recommendation;
 
   constructor() { }
 

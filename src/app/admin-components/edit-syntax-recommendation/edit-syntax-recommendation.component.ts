@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { SyntaxRecommendation } from '../../model/SyntaxRecommendation';
 
 @Component({
   selector: 'e1-edit-syntax-recommendation',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditSyntaxRecommendationComponent implements OnInit {
 
+  @Input() recommendation;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  ngOnChanges()
+  {
+    if(this.recommendation.preDefs === undefined)
+    {
+      this.recommendation.preDefs = [];
+    }
   }
 
 }

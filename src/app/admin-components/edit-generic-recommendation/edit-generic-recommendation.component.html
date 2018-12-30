@@ -1,3 +1,25 @@
-<p>
-  edit-generic-recommendation works!
-</p>
+<div class="recommendation_wrapper">
+
+    <label for="gradeOfRecommendation">Empfehlungsart:</label>
+    <select [(ngModel)]="recommendation.type" (ngModelChange)="onTypeChange($event)">
+      <option *ngFor="let c of types" [ngValue]="c"> {{getReadableTextForType(c)}} </option>
+    </select>
+
+    <label for="gradeOfRecommendation">Level of Recommendation:</label>
+    <input type="text" [(ngModel)]="recommendation.gradeOfRecommendation" name="gradeOfRecommendation">
+  
+    <label for="gradeOfEvidence">Level of Evidence:</label>
+    <input type="text" [(ngModel)]="recommendation.gradeOfEvidence" name="gradeOfEvidence">
+  
+    <label for="primaryRecommendation">Primäre Empfehlung?</label>
+    <input type="checkbox" [(ngModel)]="recommendation.primaryRecommendation" name="primaryRecommendation">
+
+    <label for="hideOnSublevelSelect">Hide On Sublevel Select?</label>
+    <input type="checkbox" [(ngModel)]="recommendation.hideOnSublevelSelect" name="hideOnSublevelSelect">
+
+  <e1-edit-free-text-recommendation [recommendation]="this.recommendation" *ngIf="this.recommendation?.type === 'freeText'"></e1-edit-free-text-recommendation>
+  <e1-edit-syntax-recommendation [recommendation]="this.recommendation" *ngIf="this.recommendation?.type === 'syntax'"></e1-edit-syntax-recommendation>
+  <e1-edit-medication-recommendation [recommendation]="this.recommendation" *ngIf="this.recommendation?.type === 'medication'"></e1-edit-medication-recommendation>
+  <e1-edit-group-recommendation [recommendation]="this.recommendation" *ngIf="this.recommendation?.type === 'group'"></e1-edit-group-recommendation>
+
+</div>

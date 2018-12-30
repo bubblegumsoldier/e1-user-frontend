@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'e1-edit-medication-recommendation',
@@ -6,6 +6,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./edit-medication-recommendation.component.css']
 })
 export class EditMedicationRecommendationComponent implements OnInit {
+  @Input() recommendation;
+
+  dosageUnits = [
+    "mg",
+    "g",
+    "ml",
+    "l",
+    ""
+  ];
+
+  dosageDurationUnits = [
+    "Sekunden",
+    "Minuten",
+    "Stunden",
+    "Tage",
+    "Wochen",
+    "Monate",
+    "Jahre"
+  ]
 
   constructor() { }
 
