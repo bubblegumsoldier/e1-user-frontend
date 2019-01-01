@@ -14,4 +14,12 @@ export class EditGroupRecommendationComponent implements OnInit {
   ngOnInit() {
   }
 
+  ngOnChanges()
+  {
+    if(this.recommendation.recommendations === undefined)
+    {
+      this.recommendation.recommendations = [];
+    }
+  }
+
 }
