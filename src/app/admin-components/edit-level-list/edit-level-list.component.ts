@@ -54,4 +54,46 @@ export class EditLevelListComponent implements OnInit {
     }
   }
 
+  onItemDrop(element)
+  {
+    console.log(element);
+    this.levels.push(element.dragData);
+  }
+
+  moveDown(i)
+  {
+    let newIndex = i + 1;
+    if(newIndex >= this.levels.length)
+    {
+      return;
+    }
+    this.swapPositions(i, newIndex);
+  }
+
+  moveUp(i)
+  {
+    let newIndex = i - 1;
+    if(newIndex < 0)
+    {
+      return;
+    }
+    this.swapPositions(i, newIndex);
+    console.log("swapping positions from " + i + " to " + newIndex);
+  }
+
+  swapPositions(old_index, new_index) {
+      if (new_index >= this.levels.length) {
+          var k = new_index - this.levels.length + 1;
+          while (k--) {
+            this.levels.push(undefined);
+          }
+      }
+      this.levels.splice(new_index, 0, this.levels.splice(old_index, 1)[0]);
+      if(this.expanded.includes(old_index) && !this.expanded.includes(new_index))
+      {
+        this.expanded[this.expanded.indexOf(old_index)] = new_index;
+      }
+      return this.levels; // for testing
+  };
+
 }

@@ -50,6 +50,7 @@ import { EditFreeTextRecommendationComponent } from './admin-components/edit-fre
 import { EditGroupRecommendationComponent } from './admin-components/edit-group-recommendation/edit-group-recommendation.component';
 import { EditSyntaxRecommendationComponent } from './admin-components/edit-syntax-recommendation/edit-syntax-recommendation.component';
 import { EditPreDefListComponent } from './admin-components/edit-pre-def-list/edit-pre-def-list.component';
+import { NgDragDropModule } from 'ng-drag-drop';
 
 const appRoutes :Routes = [
   {
@@ -131,7 +132,9 @@ const appRoutes :Routes = [
     HttpModule,
     TagInputModule,
     BrowserAnimationsModule,
-    AngularEditorModule
+    AngularEditorModule,
+    NgDragDropModule.forRoot()
+
   ],
   providers: [
     HttpClientModule,
