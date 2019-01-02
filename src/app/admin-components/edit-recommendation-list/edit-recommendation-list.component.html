@@ -1,10 +1,13 @@
 <div class="recommendation-list-wrapper form-style-7">
     <label>Recommendations:</label>
     <button class="add_recommendation" (click)="addNewRecommendation()">+</button>
-    <ul>
-      <li *ngFor="let recommendation of this.recommendations; index as i">
+    <ul droppable (onDrop)="onItemDrop($event)" [dropScope]="'recommendation'">
+      <li *ngFor="let recommendation of this.recommendations; index as i" draggable [dragScope]="'recommendation'" [dragData]="recommendation" [dragHandle]="'.drag-handle'">
         <div class="recommendation-header" (click)="toggleRecommendationWithIndex(i)">
+            <button class="drag-handle"></button>
           <span class="title">{{getReadableRecommendationTypeForRecommendation(recommendation)}}</span>
+          <button class="move-up" (click)="moveUp(i);$event.stopPropagation()"></button>
+          <button class="move-down" (click)="moveDown(i);$event.stopPropagation()"></button>
           <button class="remove" (click)="this.removeRecommendationWithIndex(i)"></button>
         </div>
         <e1-edit-generic-recommendation [recommendation]="recommendation" *ngIf="this.expanded.includes(i)"></e1-edit-generic-recommendation>

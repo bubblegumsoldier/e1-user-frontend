@@ -1,8 +1,8 @@
 <div class="level-list-wrapper form-style-7">
   <label>Levels:</label>
   <button class="add_level" (click)="addNewEmptyLevel()">+</button>
-  <ul droppable (onDrop)="onItemDrop($event)">
-    <li *ngFor="let level of this.levels; index as i" draggable [dragData]="level" [dragHandle]="'.drag-handle'">
+  <ul droppable (onDrop)="onItemDrop($event)" [dropScope]="'level'">
+    <li *ngFor="let level of this.levels; index as i" draggable [dragData]="level" [dragScope]="'level'" [dragHandle]="'.drag-handle'">
       <div class="level-header" (click)="toggleLevelWithIndex(i)">
         <button class="drag-handle"></button>
         <span class="title">{{level.levelName}}</span>
