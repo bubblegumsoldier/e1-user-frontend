@@ -169,6 +169,6 @@ span.distribution-text
 @media only screen and (max-width: 400px) {
     .medication-recommendation-inner-group
     {
-        flex-flow: column;
+        flex-flow: row;
     }
 }

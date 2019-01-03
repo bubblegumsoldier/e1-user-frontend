@@ -87,21 +87,15 @@ to {
 
 
 @media only screen and (max-width: 1100px) {
-    .result-wrapper
-    {
-        width: 90%;
-        margin: 0;
-        margin-left: 5%;
-        max-width: none;
-    }
-    .result-wrapper li
+
+    li
     {
         display: flex;
         padding-bottom: 20px;
         flex-flow: column-reverse;
         margin-top: 20px;
     }
-    .result-wrapper li .result-header
+    li .result-header
     {
         font-size: 12px;
         margin-top: 5px;
@@ -114,29 +108,29 @@ to {
 }
 
 @media only screen and (max-width: 600px) {
-    .result-wrapper li
+    li
     {
         position: relative;
     }
 
-    .result-wrapper li .result-header
+    li .result-header
     {
         display: block;
     }
 
-    .result-wrapper li .result-header span.publisher,
-    .result-wrapper li .result-header span.date
+    li .result-header span.publisher,
+    li .result-header span.date
     {
         display: block;
         margin-left: 0;
     }
 
-    .result-wrapper li .result-header span.publisher
+    li .result-header span.publisher
     {
         margin-top: 5px;
     }
 
-    .result-wrapper li .result-header .visibility
+    li .result-header .visibility
     {
         position: absolute;
         bottom: 20px;

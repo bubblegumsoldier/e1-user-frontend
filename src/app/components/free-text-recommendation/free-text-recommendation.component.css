@@ -110,6 +110,6 @@
 @media only screen and (max-width: 400px) {
     .ft-recommendation-inner-group
     {
-        flex-flow: column;
+        flex-flow: row;
     }
 }
