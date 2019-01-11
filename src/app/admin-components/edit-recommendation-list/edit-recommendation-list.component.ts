@@ -106,6 +106,6 @@ export class EditRecommendationListComponent implements OnInit {
   onItemDrop(element)
   {
     console.log(element);
-    this.recommendations.push(element.dragData);
+    this.recommendations.push(JSON.parse(JSON.stringify(element.dragData)));
   }
 }

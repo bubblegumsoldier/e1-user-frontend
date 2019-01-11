@@ -57,7 +57,7 @@ export class EditLevelListComponent implements OnInit {
   onItemDrop(element)
   {
     console.log(element);
-    this.levels.push(element.dragData);
+    this.levels.push(JSON.parse(JSON.stringify(element.dragData)));
   }
 
   moveDown(i)
