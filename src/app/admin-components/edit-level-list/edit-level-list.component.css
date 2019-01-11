@@ -157,7 +157,7 @@ ul
     padding-left: 9px;
 }
 
-ul.drag-hint-border.drag-over-border
+.drag-hint-border.drag-over-border
 {
     outline: 3px solid #4d88a6;
 }

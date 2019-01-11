@@ -1,7 +1,7 @@
-<div class="recommendation-list-wrapper form-style-7">
+<div class="recommendation-list-wrapper form-style-7" (onDrop)="onItemDrop($event)" [dropScope]="'recommendation'" droppable>
     <label>Recommendations:</label>
     <button class="add_recommendation" (click)="addNewRecommendation()">+</button>
-    <ul droppable (onDrop)="onItemDrop($event)" [dropScope]="'recommendation'">
+    <ul >
       <li *ngFor="let recommendation of this.recommendations; index as i" draggable [dragScope]="'recommendation'" [dragData]="recommendation" [dragHandle]="'.drag-handle'">
         <div class="recommendation-header" (click)="toggleRecommendationWithIndex(i)">
             <button class="drag-handle"></button>
