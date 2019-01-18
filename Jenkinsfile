@@ -39,7 +39,7 @@ pipeline {
                 dir ('dist') {
                     deleteDir()
                 }
-                sh './node_modules/.bin/ng build --prod'
+                sh './node_modules/.bin/ng build --prod --base-href /app/'
             }
         }
         stage('Build Docker Image')
