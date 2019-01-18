@@ -21,6 +21,7 @@ export class EditRecommendationListComponent implements OnInit {
   {
     let recommendation = new Recommendation();
     recommendation.type = "freeText";
+    recommendation.primaryRecommendation = true;
     this.recommendations.push(recommendation);
   }
 
