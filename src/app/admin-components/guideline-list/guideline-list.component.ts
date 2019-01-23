@@ -25,7 +25,7 @@ export class GuidelineListComponent implements OnInit {
   retrieveGuidelineResults()
   {
     this.loading = true;
-    this.searchHandler.getAllGuidelines().subscribe(
+    this.searchHandler.getAllGuidelines(true).subscribe(
       (resultList :Guideline[]) => this.initializeGuidelines(resultList)
     );
   }

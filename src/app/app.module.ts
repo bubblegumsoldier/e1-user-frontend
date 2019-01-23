@@ -51,8 +51,13 @@ import { EditGroupRecommendationComponent } from './admin-components/edit-group-
 import { EditSyntaxRecommendationComponent } from './admin-components/edit-syntax-recommendation/edit-syntax-recommendation.component';
 import { EditPreDefListComponent } from './admin-components/edit-pre-def-list/edit-pre-def-list.component';
 import { NgDragDropModule } from 'ng-drag-drop';
+import { AllGuidelinesComponent } from './components/all-guidelines/all-guidelines.component';
 
 const appRoutes :Routes = [
+  {
+    path: 'results/all',
+    component: AllGuidelinesComponent
+  },
   {
     path: 'results',
     component: ResultListComponent
@@ -119,7 +124,8 @@ const appRoutes :Routes = [
     EditFreeTextRecommendationComponent,
     EditGroupRecommendationComponent,
     EditSyntaxRecommendationComponent,
-    EditPreDefListComponent
+    EditPreDefListComponent,
+    AllGuidelinesComponent
     
   ],
   imports: [

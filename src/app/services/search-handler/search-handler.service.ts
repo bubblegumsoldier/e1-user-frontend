@@ -40,8 +40,12 @@ export class SearchHandlerService {
       return this.http.get<Guideline>(environment.configuration.apiUrl + 'guidelines/'+id);
     }
 
-    getAllGuidelines() : Observable<Guideline[]>
+    getAllGuidelines(includePrivate :boolean = false) : Observable<Guideline[]>
     {
+      if(includePrivate)
+      {
+        return this.http.get<Guideline[]>(environment.configuration.apiUrl + 'guidelines/');
+      }
       return this.getSearchResultsFor("");
     }
 

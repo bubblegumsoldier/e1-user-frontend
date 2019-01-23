@@ -49,6 +49,23 @@ ul li a:hover
     padding-top: 20px;
 }
 
+.right_below_search
+{
+    text-align: center;
+    padding-top: 20px;
+}
+
+.right_below_search a
+{
+    font-size: 14px;
+    color: #aaa;
+    text-decoration: none;
+}
+.right_below_search a:hover
+{
+    color: #666;
+}
+
 @media only screen and (max-width: 600px) {
 
     ul

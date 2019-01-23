@@ -1,0 +1,5 @@
+<div class="result-wrapper" protected>
+  <div class="loading-animation" *ngIf="this.loading"></div>
+  <e1-abstract-guideline-list [guidelines]="guidelines" (onGuidelineSelected)="guidelineWasSelected($event)"></e1-abstract-guideline-list>
+  <p *ngIf="this.guidelines?.length == 0 && !this.loading">Keine Ergebnisse gefunden...</p>
+</div>
