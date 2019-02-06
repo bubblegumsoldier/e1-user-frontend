@@ -7,4 +7,5 @@ import { Recommendation } from "./Recommendation";
 export class GroupRecommendation extends Recommendation{
 hideAnd:Boolean;
 recommendations:[SyntaxRecommendation|FreeTextRecommendation|MedicationRecommendation];
+andOr? :String;
 }

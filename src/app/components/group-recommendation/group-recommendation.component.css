@@ -11,6 +11,11 @@
 
 }
 
+.separator-wrapper.separator-wrapper-and
+{
+    margin-top: -8px;
+}
+
 button.show-alternatives
 {
     margin-left: 260px;

@@ -1,5 +1,11 @@
 <div class="group-wrapper form-style">
   <label for="name">Gruppen-Titel:</label>
   <input type="text" [(ngModel)]="recommendation.title" name="title">
+  <label for="name">Logische Verknüpfung:</label>
+  <select [(ngModel)]="recommendation.andOr">
+    <option [ngValue]="'and'"> UND </option>
+    <option [ngValue]="'or'"> ODER </option>
+    <option [ngValue]="''"> - nichts anzeigen - </option>
+  </select>
   <e1-edit-recommendation-list [recommendations]="this.recommendation.recommendations"></e1-edit-recommendation-list>
 </div>

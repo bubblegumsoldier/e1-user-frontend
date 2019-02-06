@@ -8,4 +8,5 @@ export class Level {
     levelId?:String;
     toBeDeleted?:Boolean;
     levels?:Level[] = [];
+    andOr? :String;
 }

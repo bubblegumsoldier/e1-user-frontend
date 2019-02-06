@@ -5,10 +5,10 @@
   </div>
   <div class="group-expand-wrapper" *ngIf="this.isExpanded()">
     <div class="medication-recommendation-wrapper" *ngFor="let recommendation of this.recommendationsToShow; let i = index">
-      <div class="separator-wrapper" *ngIf="!this.isRoot && i > 0 && !groupRecommendation.hideAnd">
+      <div class="separator-wrapper separator-wrapper-and" *ngIf="i > 0 && this.groupRecommendation?.andOr !== '' && (this.groupRecommendation?.andOr === 'and' || (!this.isRoot && !groupRecommendation.hideAnd) && this.groupRecommendation?.andOr !== 'or')">
         <div class="separator-and">UND</div>
       </div>
-      <div class="separator-wrapper" *ngIf="this.isRoot && i > 0">
+      <div class="separator-wrapper separator-wrapper-or" *ngIf="i > 0 && this.groupRecommendation?.andOr !== '' && (this.groupRecommendation?.andOr === 'or' || this.isRoot && this.groupRecommendation?.andOr !== 'and')">
         <div class="separator-or">
           <div class="line-before"></div>
           <div class="or-text">ODER</div>

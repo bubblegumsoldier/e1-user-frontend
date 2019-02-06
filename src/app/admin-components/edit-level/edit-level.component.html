@@ -4,5 +4,11 @@
   <label for="name">Definition:</label>
   <angular-editor [(ngModel)]="level.definition"></angular-editor>
   <e1-edit-level-list [levels]="this.level.levels"></e1-edit-level-list>
+  <label for="name">Logische Verknüpfung:</label>
+  <select [(ngModel)]="this.level.andOr">
+    <option [ngValue]="'and'"> UND </option>
+    <option [ngValue]="'or'"> ODER </option>
+    <option [ngValue]="''"> - nichts anzeigen - </option>
+  </select>
   <e1-edit-recommendation-list [recommendations]="this.level.recommendations"></e1-edit-recommendation-list>
 </div>
