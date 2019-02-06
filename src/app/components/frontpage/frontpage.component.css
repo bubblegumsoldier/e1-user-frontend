@@ -45,10 +45,13 @@ ul
 .copyright
 {
     font-size: 14px;
-    width: auto;
     margin: auto;
     color: #aaa;
     padding-top: 20px;
+    bottom:30px;
+    position:absolute;
+    width: 100%;
+    text-align: center;
 }
 
 .right_below_search

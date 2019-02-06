@@ -78,3 +78,6 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 /***************************************************************************************************
  * APPLICATION IMPORTS
  */
+
+import './custom_polyfills/arrayIncludes'
+import './custom_polyfills/stringIncludes'
