@@ -16,8 +16,11 @@ export class ProtectedDirective {
         this.hide();
         authService.isAuthenticated().then(_ => {
             this.show();
-        }).catch(_ => {
-          this.location.replaceState('/');
+            console.log("authenticated");
+            this.router.navigateByUrl("/");
+        }).catch(e => {
+            console.log("not authenticated " + e);
+          //this.location.replaceState('/');
           this.router.navigateByUrl('auth');
         });
     }

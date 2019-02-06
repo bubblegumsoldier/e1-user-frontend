@@ -1,4 +1,4 @@
-<div class="result-wrapper" protected>
+<div class="result-wrapper">
   <button class="add_guideline" (click)="addGuideline()">+</button>
   <div class="loading-animation" *ngIf="this.loading"></div>
   <e1-abstract-guideline-list  (onGuidelineSelected)="guidelineWasSelected($event)" [guidelines]="guidelines"></e1-abstract-guideline-list>

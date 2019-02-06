@@ -1,11 +1,11 @@
-import { Injectable } from '@angular/core';
 import { CookieService } from 'ngx-cookie-service';
 import { Response } from '@angular/http';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {Location} from "@angular/common";
-
+import { DOCUMENT } from '@angular/common';
+import { Inject, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class AuthService {
   currentTokenCookieValue :string = undefined;
 
 
-  constructor(private cookieService: CookieService,private http: HttpClient, private router: Router, private location: Location) { }
+  constructor(private cookieService: CookieService,private http: HttpClient, private router: Router, private location: Location, @Inject(DOCUMENT) private document: Document) { }
 
   isAuthenticatedForWrite() :Promise<void>
   {
@@ -56,24 +56,34 @@ export class AuthService {
     const p = new Promise<void>((resolve, reject) => {
       if(this.currentTokenCookieValue && this.currentTokenCookieValue.length > 0)
       {
+        console.log("we have a cookie");
         this.checkCurrentTokenValue().then(_ => resolve()).catch(_ => {
           console.log("had token (" + this.currentTokenCookieValue + "), now resetting...");
           this.currentTokenCookieValue = undefined;
           return this.isAuthenticated();
         });
       }
-
+      var theCookies = this.document.cookie.split(';');
+      var aString = '';
+      for (var i = 1 ; i <= theCookies.length; i++) {
+          aString += i + ' ' + theCookies[i-1] + "\n";
+      }
+      console.log("COOKIES:");
+      console.log(aString);
+      console.log(this.document);
+      console.log(this.document.cookie);
       let tokenCookieValue = this.cookieService.get(AuthService.COOKIE_KEY);
       if(!tokenCookieValue || tokenCookieValue.length <= 0)
       {
+        console.log("no cookie!");
         reject();
         return;
       }
 
       //TokenCookieValueIsSet
       this.currentTokenCookieValue = tokenCookieValue;
-      this.checkCurrentTokenValue().then(_ => resolve()).catch(_ => {
-        reject();
+      this.checkCurrentTokenValue().then(_ => resolve()).catch(e => {
+        reject(e);
       });
     });
     return p;
@@ -92,7 +102,7 @@ export class AuthService {
           resolve(true);
         }, (response :HttpResponse<any>) => {
           console.log(response);
-          reject();
+          reject(response);
         });
     });
     return p;
@@ -133,7 +143,7 @@ export class AuthService {
   setToken(token :string)
   {
     this.currentTokenCookieValue = token;
-    this.cookieService.set(AuthService.COOKIE_KEY, token);
+    this.cookieService.set(AuthService.COOKIE_KEY, token, 1, '/');
   }
 
   getToken() :string
