@@ -4,8 +4,7 @@ import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import {Location} from "@angular/common";
-import { DOCUMENT } from '@angular/common';
-import { Inject, Injectable } from '@angular/core';
+import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +22,7 @@ export class AuthService {
   currentTokenCookieValue :string = undefined;
 
 
-  constructor(private cookieService: CookieService,private http: HttpClient, private router: Router, private location: Location, @Inject(DOCUMENT) private document: Document) { }
+  constructor(private cookieService: CookieService,private http: HttpClient, private router: Router, private location: Location) { }
 
   isAuthenticatedForWrite() :Promise<void>
   {
@@ -63,15 +62,7 @@ export class AuthService {
           return this.isAuthenticated();
         });
       }
-      var theCookies = this.document.cookie.split(';');
-      var aString = '';
-      for (var i = 1 ; i <= theCookies.length; i++) {
-          aString += i + ' ' + theCookies[i-1] + "\n";
-      }
-      console.log("COOKIES:");
-      console.log(aString);
-      console.log(this.document);
-      console.log(this.document.cookie);
+      
       let tokenCookieValue = this.cookieService.get(AuthService.COOKIE_KEY);
       if(!tokenCookieValue || tokenCookieValue.length <= 0)
       {
