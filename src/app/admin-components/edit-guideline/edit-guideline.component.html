@@ -18,6 +18,14 @@
         <label for="name">Keywords</label>
         <tag-input [(ngModel)]='guideline.keywords' [modelAsStrings]="true" [editable]="true"></tag-input>
       </div>
+      <label for="selectionTitle">Level-Auswahl-Titel:</label>
+      <input type="text" [(ngModel)]="guideline.selectionTitle" name="selectionTitle">
+
+      <label for="sublevelDisplayType">Sublevel-Darstellung:</label>
+      <select [(ngModel)]="this.guideline.sublevelDisplayType">
+        <option [ngValue]="'vertical'"> Vertikale Liste </option>
+        <option [ngValue]="'horizontal'"> Horizontale Kacheln </option>
+      </select>
       <e1-edit-level-list [levels]="this.guideline.levels"></e1-edit-level-list>
       <div class="button-area">
           <button class="cancel" (click)="cancel()">Abbrechen</button>

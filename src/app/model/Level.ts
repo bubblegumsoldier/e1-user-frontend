@@ -9,4 +9,6 @@ export class Level {
     toBeDeleted?:Boolean;
     levels?:Level[] = [];
     andOr? :String;
+    selectionTitle:String;
+    sublevelDisplayType:String;
 }

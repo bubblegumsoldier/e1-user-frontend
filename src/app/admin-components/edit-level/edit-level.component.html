@@ -5,6 +5,15 @@
   <angular-editor [(ngModel)]="level.definition"></angular-editor>
   <e1-edit-level-list [levels]="this.level.levels"></e1-edit-level-list>
   
+  <label for="selectionTitle">Level-Auswahl-Titel:</label>
+  <input type="text" [(ngModel)]="level.selectionTitle" name="selectionTitle">
+
+  <label for="sublevelDisplayType">Sublevel-Darstellung:</label>
+  <select [(ngModel)]="this.level.sublevelDisplayType">
+    <option [ngValue]="'vertical'"> Vertikale Liste </option>
+    <option [ngValue]="'horizontal'"> Horizontale Kacheln </option>
+  </select>
+
   <e1-edit-recommendation-list [recommendations]="this.level.recommendations"></e1-edit-recommendation-list>
 
   <label for="name">Logische Verknüpfung:</label>

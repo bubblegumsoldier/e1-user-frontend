@@ -12,6 +12,8 @@ export class Guideline{
     validity?:String;
     internalAuthor?:String;
     levels?:Level[];
+    selectionTitle:String;
+    sublevelDisplayType:String;
 }
 
 
