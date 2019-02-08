@@ -231,7 +231,7 @@ ul.selection-box.horizontal li {
     min-width: 150px;
     height: 150px;
     border: 1px solid #ccc;
-    border-radius: 20px;
+    border-radius: 8px;
     box-sizing: border-box;
     padding: 10px;
     overflow: hidden;
