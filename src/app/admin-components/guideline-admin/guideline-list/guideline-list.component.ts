@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { SearchHandlerService } from '../../services/search-handler/search-handler.service';
+import { SearchHandlerService } from '../../../services/search-handler/search-handler.service';
 
-import { Guideline } from '../../model/Guideline';
+import { Guideline } from '../../../model/Guideline';
 import { Router } from '@angular/router';
 
 @Component({

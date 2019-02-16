@@ -10,6 +10,7 @@ import { Parse } from 'parse';
 import { LocalStorage } from '@ngx-pwa/local-storage';
 
 import { UserCapability } from '../../model/capabilities/UserCapability';
+import { User } from '../../model/User';
 
 @Injectable({
   providedIn: 'root'
@@ -18,41 +19,36 @@ export class AuthService {
 
   static CAPABILITIES_ENDPOINT :string = "capabilities";
 
-  static LOCAL_STORAGE_USER_CAPABILITY :string = "userCapability";
-  static LOCAL_STORAGE_SESSION_TEMP :string = "sessionId";
+  static LOCAL_STORAGE_FULL_USER :string = "e1/user";
+  static LOCAL_STORAGE_SESSION_TEMP :string = "e1/sessionId";
 
   userCapability :UserCapability = null;
 
   getLSCapabilityPromise :Promise<any> = null;
-
-  tempSessionToken :string = null;
   
   constructor(private cookieService: CookieService,private http: HttpClient, private router: Router, private location: Location, protected asyncLocalStorage: LocalStorage) {
     Parse.setAsyncStorage(asyncLocalStorage);
     Parse.initialize("e1");
     Parse.serverURL = environment.configuration.apiUrl + '/backend/parse';
-    if(this.isLoggedIn())
-    {
-      this.initializeUserCapabilityFromLS();
-    }
   }
 
-  private initializeUserCapabilityFromLS()
+  private getFullUser()
   {
-    let raw :string = localStorage.getItem(AuthService.LOCAL_STORAGE_USER_CAPABILITY);
+    let raw :string = localStorage.getItem(AuthService.LOCAL_STORAGE_FULL_USER);
     console.log(raw);
-    this.userCapability = JSON.parse(raw);
+    return JSON.parse(raw);
   }
 
-  private saveUserCapability()
+  private setFullUser(fullUser)
   {
-    localStorage.setItem(AuthService.LOCAL_STORAGE_USER_CAPABILITY, JSON.stringify(this.userCapability));
+    localStorage.setItem(AuthService.LOCAL_STORAGE_FULL_USER, JSON.stringify(fullUser));
   }
 
   logOut()
   {
     this.userCapability = null;
-    localStorage.setItem(AuthService.LOCAL_STORAGE_USER_CAPABILITY, null);
+    this.setFullUser(null);
+    this.setSessionToken(null);
     Parse.User.logOut();
   }
 
@@ -71,25 +67,24 @@ export class AuthService {
     return this.userCapability.writeTags.length > 0;
   }
 
+  getSessionToken() :string
+  {
+    return localStorage.getItem(AuthService.LOCAL_STORAGE_SESSION_TEMP);
+  }
+
+  private setSessionToken(sessionToken :string)
+  {
+    localStorage.setItem(AuthService.LOCAL_STORAGE_SESSION_TEMP, sessionToken);
+  }
+
   initializeSession() :Promise<any>
   {
     return new Promise<boolean>((resolve, reject) => {
       Parse.Session.current().then((session) => {
-        this.tempSessionToken = session.getSessionToken();
-        this.saveTempSession();
+        this.setSessionToken(session.getSessionToken());
         resolve();
       });
     });
-  }
-
-  saveTempSession() :void
-  {
-    localStorage.setItem(AuthService.LOCAL_STORAGE_SESSION_TEMP, this.tempSessionToken);
-  }
-
-  initializeTempSessionFromLS() :void
-  {
-    this.tempSessionToken = localStorage.getItem(AuthService.LOCAL_STORAGE_SESSION_TEMP);
   }
 
   loginWithCredentials(username: string, password: string) :Promise<boolean>
@@ -97,30 +92,35 @@ export class AuthService {
     return new Promise<boolean>((resolve, reject) => {
       Parse.User.logIn(username, password).then(_ => {
           this.initializeSession().then(_ => {
-            this.receiveNewCapabilities().then(userCapability => {
-              this.userCapability = userCapability;
-              console.log(JSON.stringify(this.userCapability));
-              this.saveUserCapability();
+            this.receiveNewFullUser().then(fullUser => {
+              this.setFullUser(fullUser);
               resolve();
-            }).catch(reject);
+            }).catch(e => {
+              this.logOut();
+              reject(e);
+            });
+          }).catch(e => {
+            this.logOut();
+            reject(e);
           });
-        }).catch(reject);
+        }).catch(e => {
+          this.logOut();
+          reject(e);
+        });
     });
   }
 
-  getToken() :string
+  receiveNewFullUser() :Promise<User>
   {
-    return this.tempSessionToken;
-  }
-
-  receiveNewCapabilities() :Promise<UserCapability>
-  {
-    return new Promise<UserCapability>((resolve, reject) => {
-      let dummyCapability = new UserCapability();
-      dummyCapability.writeTags = ["public"];
-      dummyCapability.readTags = ["public"];
-      let userCapability = dummyCapability;
-      resolve(userCapability);
+    return new Promise<User>((resolve, reject) => {
+      let user :User;
+      this.http.get(environment.configuration.apiUrl + '/users/me').subscribe((result :User) => {
+        user = result;
+        resolve(user);
+      }, e => {
+        console.log(e);
+        reject(e);
+      });
     });
   }
 

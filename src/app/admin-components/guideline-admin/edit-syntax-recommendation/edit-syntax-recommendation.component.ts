@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { SyntaxRecommendation } from '../../model/SyntaxRecommendation';
+import { SyntaxRecommendation } from '../../../model/SyntaxRecommendation';
 
 @Component({
   selector: 'e1-edit-syntax-recommendation',

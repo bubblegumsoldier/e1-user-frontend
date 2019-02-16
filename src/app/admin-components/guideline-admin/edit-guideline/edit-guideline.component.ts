@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { SearchHandlerService } from '../../services/search-handler/search-handler.service';
-import { Guideline } from '../../model/Guideline';
-import { InsertionService } from '../../services/insertion/insertion.service';
+import { SearchHandlerService } from '../../../services/search-handler/search-handler.service';
+import { Guideline } from '../../../model/Guideline';
+import { InsertionService } from '../../../services/insertion/insertion.service';
 
 @Component({
   selector: 'e1-edit-guideline',

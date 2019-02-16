@@ -12,7 +12,7 @@ export class AuthInterceptor implements HttpInterceptor {
     
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>>
   {
-    let token = this.auth.getToken();
+    let token = this.auth.getSessionToken();
     req = req.clone({
       setHeaders: {
         'Content-Type' : 'application/json; charset=utf-8',

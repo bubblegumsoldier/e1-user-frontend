@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Level } from '../../model/Level';
+import { Level } from '../../../model/Level';
 
 @Component({
   selector: 'e1-edit-level-list',

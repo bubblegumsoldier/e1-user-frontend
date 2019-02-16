@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MedicationRecommendation } from '../../model/MedicationRecommendation';
+import { MedicationRecommendation } from '../../../model/MedicationRecommendation';
 
 @Component({
   selector: 'e1-edit-pre-def-list',

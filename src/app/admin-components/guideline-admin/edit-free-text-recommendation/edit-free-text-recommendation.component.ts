@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FreeTextRecommendation } from '../../model/FreeTextRecommendation';
+import { FreeTextRecommendation } from '../../../model/FreeTextRecommendation';
 
 @Component({
   selector: 'e1-edit-free-text-recommendation',

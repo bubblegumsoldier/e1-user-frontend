@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   configuration: 
   {
-    apiUrl: "http://pilot.evid.one/api"
+    apiUrl: "https://dev.evid.one/api"
   }
 };
 

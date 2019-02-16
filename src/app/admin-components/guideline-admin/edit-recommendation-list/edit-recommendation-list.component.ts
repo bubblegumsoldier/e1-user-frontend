@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Recommendation } from '../../model/Recommendation';
+import { Recommendation } from '../../../model/Recommendation';
 
 @Component({
   selector: 'e1-edit-recommendation-list',
