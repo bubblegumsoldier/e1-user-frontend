@@ -2,6 +2,6 @@ export const environment = {
   production: true,
   configuration: 
   {
-    apiUrl: "/api/"
+    apiUrl: "/api"
   }
 };
