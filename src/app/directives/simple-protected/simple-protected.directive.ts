@@ -5,10 +5,10 @@ import {Location} from "@angular/common";
 import { filter } from 'rxjs/operators';
 
 @Directive({
-    selector: '[protected]'
+    selector: '[simple-protected]'
 })
 
-export class ProtectedDirective {
+export class SimpleProtectedDirective {
 
     private el :ElementRef;
 
@@ -17,7 +17,7 @@ export class ProtectedDirective {
         this.authService = authService;
         this.router = router;
         this.location = location;
-        this.check();
+        this.check(true);
         this.router.events
             .pipe(filter(e => e instanceof NavigationEnd))
             .subscribe(e => this.ngOnChanges());
@@ -43,13 +43,13 @@ export class ProtectedDirective {
 
     private hide() :void
     {
-        this.el.nativeElement.style.opacity = "0.5";
+        this.el.nativeElement.style.display = "none";
         this.el.nativeElement.style.pointerEvents = "none";
     }
 
     private show() :void
     {
-        this.el.nativeElement.style.opacity = "1";
+        this.el.nativeElement.style.display = "initial";
         this.el.nativeElement.style.pointerEvents = "auto";
     }
 

@@ -28,6 +28,7 @@ import { LoeIconComponent } from './components/loe-icon/loe-icon.component';
 import { OriginalDocumentReferenceComponent } from './components/original-document-reference/original-document-reference.component';
 import { CookieService } from 'ngx-cookie-service';
 import { ProtectedDirective } from './directives/protected/protected.directive';
+import { SimpleProtectedDirective } from './directives/simple-protected/simple-protected.directive';
 import { LoginComponent } from './components/login/login.component';
 import { AuthInterceptor } from './services/auth-interceptor/auth.interceptor';
 import { InsertionService } from './services/insertion/insertion.service';
@@ -112,6 +113,7 @@ const appRoutes :Routes = [
     LoginComponent,
     SafeHtmlPipe,
     WriteProtectedDirective,
+    SimpleProtectedDirective,
     AdminComponent,
     AbstractGuidelineListComponent,
     GuidelineListComponent,

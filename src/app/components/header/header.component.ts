@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from '../../services/auth/auth.service';
 
 @Component({
   selector: 'e1-header',
@@ -10,7 +11,7 @@ export class HeaderComponent implements OnInit {
 
   @Input() headerType :number = 0;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private authService :AuthService) { }
 
   ngOnInit() {
     this.router.events.subscribe(event => this.onRouterUpdated(event));
@@ -30,6 +31,12 @@ export class HeaderComponent implements OnInit {
     {
       this.headerType = 2;
     }
+  }
+
+  logout()
+  {
+    this.authService.logOut();
+    this.router.navigateByUrl("/auth");
   }
 
   onLogoClicked()

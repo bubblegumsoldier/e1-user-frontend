@@ -18,6 +18,7 @@ export class LoginComponent implements OnInit {
   constructor(private authService :AuthService, private router :Router) { }
 
   ngOnInit() {
+    console.log("on login page");
   }
 
   keyDown(event) {
@@ -36,7 +37,7 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl("/");
       })
       .catch(err => {
-        console.log("CATCH!");
+        console.log("CATCH! " + err);
         this.loading = false;
         this.errorMsg = "Falscher Benutzername oder Passwort"
       });

@@ -13,14 +13,6 @@ export class FrontpageComponent implements OnInit {
 
   ngOnInit() {
     console.log("ngOnInitFrontpageComponent");
-    this.authService.isAuthenticated().then(_ => {
-        console.log("authenticated");
-        //this.router.navigateByUrl("/");
-    }).catch(e => {
-        console.log("not authenticated " + e);
-      //this.location.replaceState('/');
-      this.router.navigateByUrl('auth');
-    });
   }
 
 }

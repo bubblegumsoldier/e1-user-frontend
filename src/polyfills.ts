@@ -81,3 +81,6 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
 
 import './custom_polyfills/arrayIncludes'
 import './custom_polyfills/stringIncludes'
+
+import 'babel-core/register'
+import 'babel-polyfill'

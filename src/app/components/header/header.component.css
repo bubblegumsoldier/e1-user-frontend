@@ -195,34 +195,46 @@ Design for large header
     }
 }
 
-.header-content.large-header .admin-access
+.header-content.large-header .admin-access,
+.header-content.large-header .logout
 {
     outline: 0;
     border: 0;
     background: none;
-    position: absolute;
-    right: 20px;
-    top: 35px;
     color: #272727;
     cursor: pointer;
+    display: inline;
+    margin-right: 20px;
+    text-decoration: none;
     
 }
-.header-content.large-header .admin-access:hover
+
+.admin-access, .logout
+{
+    text-decoration: none;
+    display: inline;
+    margin-right: 20px;
+    color: white;
+}
+
+.header-content.large-header .admin-access:hover,
+.header-content.large-header .logout:hover
 {
     color: black;
     text-decoration: underline;
 }
 
-.admin-access
+.top-right
 {
     color: white;
-    position: relative;
-    top: 0;
-    right: 0;
+    position: absolute;
+    right: 20px;
+    top: 35px;
     text-decoration: none;
 }
 
-.admin-access:hover
+.admin-access:hover,
+.logout:hover
 {
     text-decoration: underline;
 }

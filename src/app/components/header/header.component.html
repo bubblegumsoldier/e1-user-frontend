@@ -5,8 +5,11 @@
   >
   <div class="vertical-spacer"></div>
   <div class="logo" (click)="onLogoClicked()"></div>
-  <e1-search-input></e1-search-input>
+  <e1-search-input protected></e1-search-input>
   <div class="spacer"></div>
-  <a class="admin-access" routerLink="admin" e1WriteProtected>Admin-Panel</a>
+  <div class="top-right">
+    <a class="admin-access" routerLink="admin" e1WriteProtected>Admin-Panel</a>
+    <a class="logout" (click)="this.logout()" simple-protected>Logout</a>
+  </div>
   <e1-account-quick-access></e1-account-quick-access>
 </div>

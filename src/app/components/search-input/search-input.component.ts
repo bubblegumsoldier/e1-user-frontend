@@ -25,7 +25,6 @@ export class SearchInputComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.onSearch('');
   }
 
   onSearch(query: string) {

@@ -6,158 +6,127 @@ import { Router } from '@angular/router';
 import {Location} from "@angular/common";
 import { Injectable } from '@angular/core';
 
+import { Parse } from 'parse';
+import { LocalStorage } from '@ngx-pwa/local-storage';
+
+import { UserCapability } from '../../model/capabilities/UserCapability';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  static CHECK_READ_ENDPOINT :string = "isAuthenticatedForRead";
-  static CHECK_WRITE_ENDPOINT :string = "isAuthenticatedForWrite";
-  static LOGIN_ENDPOINT :string = "login";
+  static CAPABILITIES_ENDPOINT :string = "capabilities";
 
-  static COOKIE_KEY = "e1-token-cookie";
+  static LOCAL_STORAGE_USER_CAPABILITY :string = "userCapability";
+  static LOCAL_STORAGE_SESSION_TEMP :string = "sessionId";
 
-  static COOKIE_KEY_HAS_WRITE = "e1-may-write-cache";
+  userCapability :UserCapability = null;
 
-  currentTokenCookieValue :string = undefined;
+  getLSCapabilityPromise :Promise<any> = null;
 
-
-  constructor(private cookieService: CookieService,private http: HttpClient, private router: Router, private location: Location) { }
-
-  isAuthenticatedForWrite() :Promise<void>
-  {
-    const p = new Promise<void>((resolve, reject) => {
-      if(this.getLocalHasWriteCache())
-      {
-        resolve();
-        return;
-      }
-      const headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': "Bearer " + this.currentTokenCookieValue
-      })
-      return this.http
-        .get<any>(environment.configuration.apiUrl + AuthService.CHECK_WRITE_ENDPOINT, { headers: headers })
-        .subscribe((response :HttpResponse<any>) => {
-          this.setLocalHasWriteCache(true);
-          resolve();
-        }, (response :HttpResponse<any>) => {
-          console.log(response);
-          this.setLocalHasWriteCache(false);
-          reject();
-        });
-    });
-    return p;
+  tempSessionToken :string = null;
+  
+  constructor(private cookieService: CookieService,private http: HttpClient, private router: Router, private location: Location, protected asyncLocalStorage: LocalStorage) {
+    Parse.setAsyncStorage(asyncLocalStorage);
+    Parse.initialize("e1");
+    Parse.serverURL = environment.configuration.apiUrl + '/backend/parse';
+    if(this.isLoggedIn())
+    {
+      this.initializeUserCapabilityFromLS();
+    }
   }
 
-  isAuthenticated() :Promise<void>
+  private initializeUserCapabilityFromLS()
   {
-    const p = new Promise<void>((resolve, reject) => {
-      if(this.currentTokenCookieValue && this.currentTokenCookieValue.length > 0)
-      {
-        console.log("we have a cookie");
-        this.checkCurrentTokenValue().then(_ => resolve()).catch(_ => {
-          console.log("had token (" + this.currentTokenCookieValue + "), now resetting...");
-          this.currentTokenCookieValue = undefined;
-          return this.isAuthenticated();
-        });
-      }
-      
-      let tokenCookieValue = this.cookieService.get(AuthService.COOKIE_KEY);
-      if(!tokenCookieValue || tokenCookieValue.length <= 0)
-      {
-        console.log("no cookie!");
-        reject();
-        return;
-      }
+    let raw :string = localStorage.getItem(AuthService.LOCAL_STORAGE_USER_CAPABILITY);
+    console.log(raw);
+    this.userCapability = JSON.parse(raw);
+  }
 
-      //TokenCookieValueIsSet
-      this.currentTokenCookieValue = tokenCookieValue;
-      this.checkCurrentTokenValue().then(_ => resolve()).catch(e => {
-        reject(e);
+  private saveUserCapability()
+  {
+    localStorage.setItem(AuthService.LOCAL_STORAGE_USER_CAPABILITY, JSON.stringify(this.userCapability));
+  }
+
+  logOut()
+  {
+    this.userCapability = null;
+    localStorage.setItem(AuthService.LOCAL_STORAGE_USER_CAPABILITY, null);
+    Parse.User.logOut();
+  }
+
+  isLoggedIn()
+  {
+    return Parse.User.current() !== null;
+  }
+
+  hasAnyWriteCapability() : boolean
+  {
+    if(!this.isLoggedIn() || this.userCapability === null || this.userCapability.writeTags === undefined)
+    {
+      return false
+    }
+
+    return this.userCapability.writeTags.length > 0;
+  }
+
+  initializeSession() :Promise<any>
+  {
+    return new Promise<boolean>((resolve, reject) => {
+      Parse.Session.current().then((session) => {
+        this.tempSessionToken = session.getSessionToken();
+        this.saveTempSession();
+        resolve();
       });
     });
-    return p;
   }
 
-  checkCurrentTokenValue() :Promise<boolean>
+  saveTempSession() :void
   {
-    const p = new Promise<boolean>((resolve, reject) => {
-      const headers = new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Authorization': "Bearer " + this.currentTokenCookieValue
-      })
-      return this.http
-        .get<any>(environment.configuration.apiUrl + AuthService.CHECK_READ_ENDPOINT, { headers: headers })
-        .subscribe((response :HttpResponse<any>) => {
-          resolve(true);
-        }, (response :HttpResponse<any>) => {
-          console.log(response);
-          reject(response);
-        });
-    });
-    return p;
+    localStorage.setItem(AuthService.LOCAL_STORAGE_SESSION_TEMP, this.tempSessionToken);
+  }
+
+  initializeTempSessionFromLS() :void
+  {
+    this.tempSessionToken = localStorage.getItem(AuthService.LOCAL_STORAGE_SESSION_TEMP);
   }
 
   loginWithCredentials(username: string, password: string) :Promise<boolean>
   {
-    const p = new Promise<boolean>((resolve, reject) => {
-      var fullUrl = environment.configuration.apiUrl + AuthService.LOGIN_ENDPOINT;
-
-      var data = {
-        username: username,
-        password: password
-      };
-      const options = {headers: {'Content-Type': 'application/json'}};
-      
-      return this.http
-      .post(fullUrl, JSON.stringify(data), options)
-      .subscribe((response :any) => {
-        console.log(response);
-        if(response.token)
-        {
-          this.setToken(response.token);
-          resolve(true);
-        }else
-        {
-          reject();
-        }
-      },
-      (err) => {
-        reject()
-      } 
-      );
+    return new Promise<boolean>((resolve, reject) => {
+      Parse.User.logIn(username, password).then(_ => {
+          this.initializeSession().then(_ => {
+            this.receiveNewCapabilities().then(userCapability => {
+              this.userCapability = userCapability;
+              console.log(JSON.stringify(this.userCapability));
+              this.saveUserCapability();
+              resolve();
+            }).catch(reject);
+          });
+        }).catch(reject);
     });
-    return p;
-  }
-
-  setToken(token :string)
-  {
-    this.currentTokenCookieValue = token;
-    this.cookieService.set(AuthService.COOKIE_KEY, token, 1, '/');
   }
 
   getToken() :string
   {
-    if(this.currentTokenCookieValue) return this.currentTokenCookieValue;
-
-    return this.cookieService.get(AuthService.COOKIE_KEY);
+    return this.tempSessionToken;
   }
 
-  setLocalHasWriteCache(val :boolean)
+  receiveNewCapabilities() :Promise<UserCapability>
   {
-    this.cookieService.set(AuthService.COOKIE_KEY_HAS_WRITE, val.toString());
-  }
-
-  getLocalHasWriteCache() :boolean
-  {
-    return this.cookieService.get(AuthService.COOKIE_KEY_HAS_WRITE) === "true";
+    return new Promise<UserCapability>((resolve, reject) => {
+      let dummyCapability = new UserCapability();
+      dummyCapability.writeTags = ["public"];
+      dummyCapability.readTags = ["public"];
+      let userCapability = dummyCapability;
+      resolve(userCapability);
+    });
   }
 
   redirectToLoginAndReset()
   {
     this.location.replaceState('/');
     this.router.navigateByUrl('auth');
-    this.setToken("");
   }
 }
