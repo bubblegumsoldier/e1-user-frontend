@@ -1,5 +1,12 @@
 <div class="admin-wrapper">
-  <h1>Alle Leitlinien</h1>
+  <ul class="horizontal-tabs">
+    <li>
+      <a [routerLink]="['/admin/guidelines']" routerLinkActive="active">Guidelines</a>
+    </li>
+    <li e1-admin-protected>
+      <a [routerLink]="['/admin/accessUnits']" routerLinkActive="active">Access Units</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
   
-  <e1-guideline-list></e1-guideline-list>
 </div>

@@ -57,6 +57,16 @@ export class AuthService {
     return Parse.User.current() !== null;
   }
 
+  isAdmin() :boolean
+  {
+    if(!this.isLoggedIn())
+    {
+      return false
+    }
+
+    return this.getFullUser().ACL["*"].write === true;
+  }
+
   hasAnyWriteCapability() : boolean
   {
     if(!this.isLoggedIn())

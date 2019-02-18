@@ -3,6 +3,8 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { SearchHandlerService } from '../../../services/search-handler/search-handler.service';
 import { Guideline } from '../../../model/Guideline';
 import { InsertionService } from '../../../services/insertion/insertion.service';
+import { AccessUnit } from '../../../model/AccessUnit';
+import { AccessUnitManagerService } from '../../../services/access-unit-manager/access-unit-manager.service';
 
 @Component({
   selector: 'e1-edit-guideline',
@@ -14,23 +16,30 @@ export class EditGuidelineComponent implements OnInit {
 
   id :String = "";
 
+  accessUnits :any[]= [];
+
   guideline = null;
 
   transferGuideline = null;
 
   loading :boolean = false;
 
-  constructor(private route: ActivatedRoute, private router :Router, private searchHandler :SearchHandlerService, private insertionService :InsertionService)
+  customAvailableFor :any[] = [];
+
+  constructor(private route: ActivatedRoute, private accessUnitManagerService :AccessUnitManagerService, private router :Router, private searchHandler :SearchHandlerService, private insertionService :InsertionService)
   {
+    
   }
 
   ngOnInit() {
     this.loading = true;
-      this.route.params.subscribe(params => {
-          this.id = params['id'];
-          console.log(this.id);
-          this.initializeGuideline();
-      });
+    this.route.params.subscribe(params => {
+        this.id = params['id'];
+        console.log(this.id);
+        this.initializeGuideline();
+    });
+    console.log("getting access units");
+    
   }
 
   updatePreview()
@@ -58,6 +67,19 @@ export class EditGuidelineComponent implements OnInit {
     {
       this.guideline.levels = [];
     }
+    this.accessUnitManagerService.getAllAccessUnits().toPromise().then(accessUnits => {
+      console.log(accessUnits);
+      for(var i = 0;i < accessUnits.length; ++i)
+      {
+        this.accessUnits.push({
+          value: accessUnits[i]._id,
+          display: accessUnits[i].name
+        });
+        this.initializeAvailableForDropdown();
+      }
+    }).catch(error => {
+      alert(error.message);
+    });
   }
 
   initializeGuideline()
@@ -90,9 +112,31 @@ export class EditGuidelineComponent implements OnInit {
     }
   }
 
+  private preprocessGuideline()
+  {
+    this.guideline.availableFor = [];
+    for(var i = 0;i < this.customAvailableFor.length; ++i)
+    {
+      this.guideline.availableFor.push(this.customAvailableFor[i].value);
+    }
+  }
+
+  private initializeAvailableForDropdown()
+  {
+    this.customAvailableFor = [];
+    for(var i = 0;i < this.guideline.availableFor.length; ++i)
+    {
+      let currentAccessUnit = this.accessUnits.find(value => {
+        return value.value === this.guideline.availableFor[i];
+      });
+      this.customAvailableFor.push(currentAccessUnit);
+    }
+  }
+
   private createNew()
   {
     this.loading = true;
+    this.preprocessGuideline();
     this.insertionService.createNewGuideline(this.guideline).then(guideline => {
       this.guideline = guideline;
       this.loading = false;
@@ -102,6 +146,7 @@ export class EditGuidelineComponent implements OnInit {
   private saveCurrent()
   {
     this.loading = true;
+    this.preprocessGuideline();
     this.insertionService.updateGuideline(this.guideline).then(_ => {
       this.loading = false;
     });

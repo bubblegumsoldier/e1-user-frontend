@@ -1,10 +1,15 @@
-<div class="guideline-header form-style" *ngIf="this.guideline">
+<div class="guideline-header form-style" *ngIf="this.guideline && this.accessUnits">
     <div class="guideline-inner-wrapper" >
       <button class="back-button" (click)="onBackButtonClicked()">&larr; &nbsp; &nbsp; Zurück</button>
       <div class="guideline-description">
         <h2>{{guideline?.nameOfGuideline}}</h2>
         <label for="name">Name</label>
         <input type="text" [(ngModel)]="guideline.nameOfGuideline" name="nameOfGuideline">
+        <label for="name">Verfügbar für folgende Gruppen:</label>
+        <tag-input [(ngModel)]='this.customAvailableFor' [onlyFromAutocomplete]="true" [placeholder]="'+ Access Unit'">
+          <tag-input-dropdown [showDropdownIfEmpty]="true" [autocompleteItems]="this.accessUnits" >
+          </tag-input-dropdown>
+        </tag-input>
         <label for="active">Öffentlich?</label>
         <input type="checkbox" name="active" [(ngModel)]="guideline.active">
         <label for="internalAuthor">Interner Autor</label>

@@ -1,0 +1,11 @@
+<button class="add_access_unit" (click)="addAccessUnit()">+</button>
+<div class="loading-animation" *ngIf="!this.accessUnits && this.statusMessage?.length <= 0"></div>
+<ul class="access-unit-list">
+  <div  *ngFor="let accessUnit of this.accessUnits">
+    <li [routerLink]="['/admin/edit/accessUnit/', accessUnit._id]">
+      {{accessUnit.name}}
+    </li>
+  </div>
+</ul>
+<p *ngIf="this.statusMessage.length > 0">{{statusMessage}}</p>
+<p *ngIf="this.accessUnits && this.accessUnits.length == 0">Keine Ergebnisse</p>

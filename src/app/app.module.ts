@@ -53,7 +53,11 @@ import { EditSyntaxRecommendationComponent } from './admin-components/guideline-
 import { EditPreDefListComponent } from './admin-components/guideline-admin/edit-pre-def-list/edit-pre-def-list.component';
 import { NgDragDropModule } from 'ng-drag-drop';
 import { AllGuidelinesComponent } from './components/all-guidelines/all-guidelines.component';
-import { AccessUnitAdministratorService } from './services/access-unit-administrator/access-unit-administrator.service';
+import { GuidelinesEditOverviewComponent } from './admin-components/guideline-admin/guidelines-edit-overview/guidelines-edit-overview.component';
+import { AccessUnitEditOverviewComponent } from './admin-components/access-unit-admin/access-unit-edit-overview/access-unit-edit-overview.component';
+import { AccessUnitListComponent } from './admin-components/access-unit-admin/access-unit-list/access-unit-list.component';
+import { AccessUnitManagerService } from './services/access-unit-manager/access-unit-manager.service';
+import { EditAccessUnitComponent } from './admin-components/access-unit-admin/edit-access-unit/edit-access-unit.component';
 
 const appRoutes :Routes = [
   {
@@ -83,8 +87,27 @@ const appRoutes :Routes = [
     component: EditGuidelineComponent
   },
   {
+    path: 'admin/edit/accessUnit/:id',
+    component: EditAccessUnitComponent
+  },
+  {
     path: 'admin',
-    component: AdminComponent
+    component: AdminComponent,
+    children: [
+      {
+        path: "",
+        pathMatch: "full",
+        redirectTo: "guidelines"
+      },
+      {
+        path: 'guidelines',
+        component: GuidelinesEditOverviewComponent,
+      },
+      {
+        path: 'accessUnits',
+        component: AccessUnitEditOverviewComponent,
+      }
+    ]
   },
   {
     path: '',
@@ -128,8 +151,11 @@ const appRoutes :Routes = [
     EditGroupRecommendationComponent,
     EditSyntaxRecommendationComponent,
     EditPreDefListComponent,
-    AllGuidelinesComponent
-    
+    AllGuidelinesComponent,
+    GuidelinesEditOverviewComponent,
+    AccessUnitEditOverviewComponent,
+    AccessUnitListComponent,
+    EditAccessUnitComponent
   ],
   imports: [
     BrowserModule,
@@ -157,7 +183,7 @@ const appRoutes :Routes = [
       multi   : true,
     },
     InsertionService,
-    AccessUnitAdministratorService
+    AccessUnitManagerService
   ],
   bootstrap: [AppComponent]
 })

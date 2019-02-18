@@ -1,0 +1,17 @@
+<div class="au-inner-wrapper form-style">
+  <div *ngIf="this.accessUnit">
+    <h2>{{this.accessUnit?.name}}</h2>
+
+    <label for="name">Name</label>
+    <input type="text" [(ngModel)]="this.accessUnit.name" name="name">
+    
+    <label for="description">Beschreibung</label>
+    <input type="text" [(ngModel)]="this.accessUnit.description" name="description">
+  </div>
+    <div class="loading-animation" *ngIf="this.loading"></div>
+    <p *ngIf="this.statusMessage.length > 0">{{statusMessage}}</p>
+    <div class="button-area">
+        <button class="cancel" [routerLink]="['/admin/accessUnits/']">Abbrechen</button>
+        <button class="save" (click)="save()">Speichern</button>
+  </div>
+</div>
