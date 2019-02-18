@@ -32,7 +32,7 @@ export class AuthService {
     Parse.serverURL = environment.configuration.apiUrl + '/backend/parse';
   }
 
-  private getFullUser()
+  getFullUser()
   {
     let raw :string = localStorage.getItem(AuthService.LOCAL_STORAGE_FULL_USER);
     console.log(raw);
@@ -59,12 +59,12 @@ export class AuthService {
 
   hasAnyWriteCapability() : boolean
   {
-    if(!this.isLoggedIn() || this.userCapability === null || this.userCapability.writeTags === undefined)
+    if(!this.isLoggedIn())
     {
       return false
     }
 
-    return this.userCapability.writeTags.length > 0;
+    return this.getFullUser().ACL["*"].write === true || this.getFullUser().rights.write.length > 0;
   }
 
   getSessionToken() :string
@@ -91,8 +91,11 @@ export class AuthService {
   {
     return new Promise<boolean>((resolve, reject) => {
       Parse.User.logIn(username, password).then(_ => {
+        console.log("logged in with parse");
           this.initializeSession().then(_ => {
+            console.log("initialized session");
             this.receiveNewFullUser().then(fullUser => {
+              console.log("received full user");
               this.setFullUser(fullUser);
               resolve();
             }).catch(e => {
