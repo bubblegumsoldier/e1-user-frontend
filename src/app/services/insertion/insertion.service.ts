@@ -13,7 +13,7 @@ export class InsertionService {
   public createNewGuideline(guideline :any) :Promise<any>
   {
     const p :Promise<any> = new Promise<any>((resolve, reject) => {
-      this.http.post(environment.configuration.apiUrl + 'guidelines', guideline).subscribe(guideline => {
+      this.http.post(environment.configuration.apiUrl + '/guidelines', guideline).subscribe(guideline => {
         resolve(guideline);
       }, e => {
         console.log(e);
@@ -26,7 +26,7 @@ export class InsertionService {
   public updateGuideline(guideline :any) :Promise<void>
   {
     const p :Promise<void> = new Promise<void>((resolve, reject) => {
-      this.http.put(environment.configuration.apiUrl + 'guidelines/' + guideline._id, guideline).subscribe(_ => {
+      this.http.put(environment.configuration.apiUrl + '/guidelines/' + guideline._id, guideline).subscribe(_ => {
         resolve();
       }, e => {
         console.log(e);

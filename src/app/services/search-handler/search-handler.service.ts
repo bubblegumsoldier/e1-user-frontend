@@ -29,7 +29,7 @@ export class SearchHandlerService {
       //const params = new HttpParams().set('queryString', queryString);
       //queryString=cancer
       
-      return this.http.get<Guideline[]>(environment.configuration.apiUrl + 'services/search/' + encodeURI(queryString));
+      return this.http.get<Guideline[]>(environment.configuration.apiUrl + '/services/search/' + encodeURI(queryString));
       
       //, {data: queryString}
    
@@ -37,14 +37,14 @@ export class SearchHandlerService {
 
     getGuidelineFor(id :String) : Observable<Guideline>
     {
-      return this.http.get<Guideline>(environment.configuration.apiUrl + 'guidelines/'+id);
+      return this.http.get<Guideline>(environment.configuration.apiUrl + '/guidelines/'+id);
     }
 
     getAllGuidelines(includePrivate :boolean = false) : Observable<Guideline[]>
     {
       if(includePrivate)
       {
-        return this.http.get<Guideline[]>(environment.configuration.apiUrl + 'guidelines/');
+        return this.http.get<Guideline[]>(environment.configuration.apiUrl + '/guidelines/');
       }
       return this.getSearchResultsFor("");
     }
