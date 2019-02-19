@@ -2,6 +2,9 @@
   <label for="name">Gruppen-Titel:</label>
   <input type="text" [(ngModel)]="recommendation.title" name="title">
   
+  <label for="expandable">Ausklappbar</label>
+  <input type="checkbox" name="expandable" [(ngModel)]="recommendation.expandable">
+
   <e1-edit-recommendation-list [recommendations]="this.recommendation.recommendations"></e1-edit-recommendation-list>
 
   <label for="name">Logische Verknüpfung:</label>

@@ -68,10 +68,10 @@ export class GroupRecommendationComponent implements OnInit {
     {
       return false;
     }
-    if (!this.isRoot)
-    {
-      return true;
-    }
+    // if (!this.isRoot)
+    // {
+    //   return true;
+    // }
     if (this.alternativesShown) {
       return true;
     } else if (recommendation["primaryRecommendation"] == true) {
