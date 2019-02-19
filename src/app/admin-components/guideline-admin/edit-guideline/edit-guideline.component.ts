@@ -16,17 +16,14 @@ export class EditGuidelineComponent implements OnInit {
 
   id :String = "";
 
-  accessUnits :any[]= [];
-
   guideline = null;
 
   transferGuideline = null;
 
   loading :boolean = false;
 
-  customAvailableFor :any[] = [];
 
-  constructor(private route: ActivatedRoute, private accessUnitManagerService :AccessUnitManagerService, private router :Router, private searchHandler :SearchHandlerService, private insertionService :InsertionService)
+  constructor(private route: ActivatedRoute, private router :Router, private searchHandler :SearchHandlerService, private insertionService :InsertionService)
   {
     
   }
@@ -67,19 +64,6 @@ export class EditGuidelineComponent implements OnInit {
     {
       this.guideline.levels = [];
     }
-    this.accessUnitManagerService.getAllAccessUnits().toPromise().then(accessUnits => {
-      console.log(accessUnits);
-      for(var i = 0;i < accessUnits.length; ++i)
-      {
-        this.accessUnits.push({
-          value: accessUnits[i]._id,
-          display: accessUnits[i].name
-        });
-        this.initializeAvailableForDropdown();
-      }
-    }).catch(error => {
-      alert(error.message);
-    });
   }
 
   initializeGuideline()
@@ -112,31 +96,9 @@ export class EditGuidelineComponent implements OnInit {
     }
   }
 
-  private preprocessGuideline()
-  {
-    this.guideline.availableFor = [];
-    for(var i = 0;i < this.customAvailableFor.length; ++i)
-    {
-      this.guideline.availableFor.push(this.customAvailableFor[i].value);
-    }
-  }
-
-  private initializeAvailableForDropdown()
-  {
-    this.customAvailableFor = [];
-    for(var i = 0;i < this.guideline.availableFor.length; ++i)
-    {
-      let currentAccessUnit = this.accessUnits.find(value => {
-        return value.value === this.guideline.availableFor[i];
-      });
-      this.customAvailableFor.push(currentAccessUnit);
-    }
-  }
-
   private createNew()
   {
     this.loading = true;
-    this.preprocessGuideline();
     this.insertionService.createNewGuideline(this.guideline).then(guideline => {
       this.guideline = guideline;
       this.loading = false;
@@ -146,7 +108,6 @@ export class EditGuidelineComponent implements OnInit {
   private saveCurrent()
   {
     this.loading = true;
-    this.preprocessGuideline();
     this.insertionService.updateGuideline(this.guideline).then(_ => {
       this.loading = false;
     });

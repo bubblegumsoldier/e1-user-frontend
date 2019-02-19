@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   configuration: 
   {
-    apiUrl: "https://dev.evid.one/api"
+    apiUrl: "http://localhost:8080"
   }
 };
 

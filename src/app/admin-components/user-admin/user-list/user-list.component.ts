@@ -28,6 +28,7 @@ export class UserListComponent implements OnInit {
       this.allUsers = users;
       this.updateByQuery("");
     }).catch(error => {
+      console.error(error);
       this.statusMessage = error.message;
     });
   }
@@ -54,7 +55,7 @@ export class UserListComponent implements OnInit {
     console.log(query);
     // filter our data
     this.users = this.allUsers.filter(d => {
-      return d.email.toLowerCase().indexOf(query.toLowerCase()) !== -1 || d.objectId.toLowerCase().indexOf(query.toLowerCase()) !== -1  || d.username.toLowerCase().indexOf(query.toLowerCase()) !== -1 ;
+      return d.email && d.email.toLowerCase().indexOf(query.toLowerCase()) !== -1 || d.objectId.toLowerCase().indexOf(query.toLowerCase()) !== -1  || d.username.toLowerCase().indexOf(query.toLowerCase()) !== -1 ;
     });
     console.log(this.users);
     // Whenever the filter changes, always go back to the first page

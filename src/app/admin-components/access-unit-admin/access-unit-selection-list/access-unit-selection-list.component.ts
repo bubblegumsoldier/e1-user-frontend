@@ -8,7 +8,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   templateUrl: './access-unit-selection-list.component.html',
   styleUrls: ['./access-unit-selection-list.component.css'],
   providers: [
-    { 
+    {
       provide: NG_VALUE_ACCESSOR,
       multi: true,
       useExisting: forwardRef(() => AccessUnitSelectionListComponent),
@@ -31,6 +31,8 @@ export class AccessUnitSelectionListComponent implements OnInit, ControlValueAcc
 
   writeValue(obj: any): void {
     this.model = obj;
+    console.log("model");
+    console.log(this.model);
     this.modelUpdatedExternally();
   }
   registerOnChange(fn: any): void {
@@ -48,6 +50,8 @@ export class AccessUnitSelectionListComponent implements OnInit, ControlValueAcc
     }).catch(error => {
       console.error(error);
     });
+    console.log("model");
+    console.log(this.model);
   }
 
   allAccessUnitsLoaded()
@@ -81,14 +85,18 @@ export class AccessUnitSelectionListComponent implements OnInit, ControlValueAcc
     {
       return;
     }
+    console.log("initializing model");
+    console.log(this.model);
     this.customSelection = [];
     for(var i = 0;i < this.model.length; ++i)
     {
       let correspondingFormattedAccessUnit = this.formattedAccessUnits.find(unit => {
         return unit.value == this.model[i]
       });
-      this.customSelection.push(correspondingFormattedAccessUnit);
+      if(correspondingFormattedAccessUnit)
+        this.customSelection.push(correspondingFormattedAccessUnit);
     }
+    console.log(this.customSelection);
   }
 
   updateModelByCustomSelection()
