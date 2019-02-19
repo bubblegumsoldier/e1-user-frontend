@@ -65,6 +65,7 @@ import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import { EditUserComponent } from './admin-components/user-admin/edit-user/edit-user.component';
 import { UserManagerService } from './services/user-manager/user-manager.service';
 import { AccessUnitSelectionListComponent } from './admin-components/access-unit-admin/access-unit-selection-list/access-unit-selection-list.component';
+import { AdminProtectedDirective } from './directives/admin-protected/admin-protected.directive';
 
 const appRoutes :Routes = [
   {
@@ -174,7 +175,8 @@ const appRoutes :Routes = [
     UserAdminOverviewComponent,
     UserListComponent,
     EditUserComponent,
-    AccessUnitSelectionListComponent
+    AccessUnitSelectionListComponent,
+    AdminProtectedDirective
   ],
   imports: [
     BrowserModule,
