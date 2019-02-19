@@ -2,9 +2,10 @@ import { UserCapability } from "./capabilities/UserCapability";
 
 export class User
 {
-    id :string;
-    name :string;
+    objectId :string;
+    username :string;
     email :string;
     ACL :any;
     rights :UserCapability;
+    password :string;
 }

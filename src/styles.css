@@ -41,6 +41,8 @@ h1
 
 .form-style input[type="text"],
 .form-style input[type="date"],
+.form-style input[type="email"],
+.form-style input[type="password"],
 .form-style input[type="number"],
 .form-style select
 {

@@ -1,10 +1,13 @@
 <div class="admin-wrapper">
   <ul class="horizontal-tabs">
     <li>
-      <a [routerLink]="['/admin/guidelines']" routerLinkActive="active">Guidelines</a>
+      <a [routerLink]="['/admin/guidelines']" routerLinkActive="active">Leitlinien</a>
     </li>
     <li e1-admin-protected>
       <a [routerLink]="['/admin/accessUnits']" routerLinkActive="active">Access Units</a>
+    </li>
+    <li e1-admin-protected>
+      <a [routerLink]="['/admin/users']" routerLinkActive="active">Benutzer</a>
     </li>
   </ul>
   <router-outlet></router-outlet>

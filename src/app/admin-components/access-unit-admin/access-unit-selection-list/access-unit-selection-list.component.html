@@ -1,0 +1,4 @@
+<tag-input [(ngModel)]='this.customSelection' (onAdd)="onAdd($event)" (onRemove)="onRemove($event)" [onlyFromAutocomplete]="true" [placeholder]="'+ Access Unit'">
+  <tag-input-dropdown [showDropdownIfEmpty]="true" [autocompleteItems]="this.formattedAccessUnits" >
+  </tag-input-dropdown>
+</tag-input>

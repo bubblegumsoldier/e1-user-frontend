@@ -1,0 +1,26 @@
+<div class="user-inner-wrapper form-style">
+  <div *ngIf="this.user">
+    <h2>{{this.user?.username}}</h2>
+
+    <label for="username">Username</label>
+    <input type="text" [(ngModel)]="this.user.username" name="username">
+    
+    <label for="email">E-Mail</label>
+    <input type="text" [(ngModel)]="this.user.email" name="email">
+
+    <label for="password">Passwort (bei Bedarf leer lassen)</label>
+    <input type="password" [(ngModel)]="this.user.password" name="password">
+
+    <label for="write">Write-Rights</label>
+    <e1-access-unit-selection-list [(ngModel)]="this.user.rights.write" name="write"></e1-access-unit-selection-list>
+
+    <label for="read">Read-Rights</label>
+    <e1-access-unit-selection-list [(ngModel)]="this.user.rights.read" name="read"></e1-access-unit-selection-list>
+  </div>
+  <div class="loading-animation" *ngIf="this.loading"></div>
+  <p *ngIf="this.statusMessage.length > 0">{{statusMessage}}</p>
+  <div class="button-area">
+      <button class="cancel" [routerLink]="['/admin/users/']">Abbrechen</button>
+      <button class="save" (click)="save()">Speichern</button>
+  </div>
+</div>

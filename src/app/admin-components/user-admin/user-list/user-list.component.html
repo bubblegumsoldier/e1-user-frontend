@@ -1,0 +1,27 @@
+<button class="add_user" [routerLink]="['/admin/edit/user/new']">+</button>
+<input
+  type='text'
+  style='padding:8px;margin:15px auto;width:30%;'
+  placeholder='Type to filter the name column...'
+  (keyup)='updateFilter($event)'
+/>
+<ngx-datatable
+#table
+class="ngx-datatable fixed-header material"
+[rows]="this.users"
+[columns]="[{'name': 'objectId'}, {'name': 'username'}, {'name': 'email'}]"
+[columnMode]="'force'"
+[headerHeight]="50"
+[footerHeight]="50"
+[rowHeight]="'auto'"
+[limit]="10"
+[selectionType]="'single'"
+(select)='onSelect($event)'
+>
+
+</ngx-datatable>
+
+<p *ngIf="this.allUsers && this.users.length == 0">Keine Ergebnisse</p>
+
+<div class="loading-animation" *ngIf="this.loading"></div>
+<p *ngIf="this.statusMessage.length > 0">{{statusMessage}}</p>

@@ -58,6 +58,13 @@ import { AccessUnitEditOverviewComponent } from './admin-components/access-unit-
 import { AccessUnitListComponent } from './admin-components/access-unit-admin/access-unit-list/access-unit-list.component';
 import { AccessUnitManagerService } from './services/access-unit-manager/access-unit-manager.service';
 import { EditAccessUnitComponent } from './admin-components/access-unit-admin/edit-access-unit/edit-access-unit.component';
+import { UserAdminOverviewComponent } from './admin-components/user-admin/user-admin-overview/user-admin-overview.component';
+import { UserListComponent } from './admin-components/user-admin/user-list/user-list.component';
+
+import {NgxDatatableModule} from '@swimlane/ngx-datatable';
+import { EditUserComponent } from './admin-components/user-admin/edit-user/edit-user.component';
+import { UserManagerService } from './services/user-manager/user-manager.service';
+import { AccessUnitSelectionListComponent } from './admin-components/access-unit-admin/access-unit-selection-list/access-unit-selection-list.component';
 
 const appRoutes :Routes = [
   {
@@ -91,6 +98,10 @@ const appRoutes :Routes = [
     component: EditAccessUnitComponent
   },
   {
+    path: 'admin/edit/user/:id',
+    component: EditUserComponent
+  },
+  {
     path: 'admin',
     component: AdminComponent,
     children: [
@@ -106,6 +117,10 @@ const appRoutes :Routes = [
       {
         path: 'accessUnits',
         component: AccessUnitEditOverviewComponent,
+      },
+      {
+        path: 'users',
+        component: UserAdminOverviewComponent
       }
     ]
   },
@@ -155,7 +170,11 @@ const appRoutes :Routes = [
     GuidelinesEditOverviewComponent,
     AccessUnitEditOverviewComponent,
     AccessUnitListComponent,
-    EditAccessUnitComponent
+    EditAccessUnitComponent,
+    UserAdminOverviewComponent,
+    UserListComponent,
+    EditUserComponent,
+    AccessUnitSelectionListComponent
   ],
   imports: [
     BrowserModule,
@@ -168,8 +187,8 @@ const appRoutes :Routes = [
     TagInputModule,
     BrowserAnimationsModule,
     AngularEditorModule,
-    NgDragDropModule.forRoot()
-
+    NgDragDropModule.forRoot(),
+    NgxDatatableModule
   ],
   providers: [
     HttpClientModule,
@@ -183,7 +202,8 @@ const appRoutes :Routes = [
       multi   : true,
     },
     InsertionService,
-    AccessUnitManagerService
+    AccessUnitManagerService,
+    UserManagerService
   ],
   bootstrap: [AppComponent]
 })

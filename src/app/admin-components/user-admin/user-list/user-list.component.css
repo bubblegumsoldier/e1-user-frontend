@@ -1,0 +1,44 @@
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+
+
+button.add_user
+{
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: block;
+    background-color: #666;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    outline: 0;
+    border: 0;
+    opacity: 0.8;
+    margin-bottom: 5px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button.add_user:hover
+{
+    opacity: 1;
+}
+
+.loading-animation
+{
+    background-image: url(/assets/loadingAnimation.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    margin-top: 20px;
+    opacity: 0.7;
+}
