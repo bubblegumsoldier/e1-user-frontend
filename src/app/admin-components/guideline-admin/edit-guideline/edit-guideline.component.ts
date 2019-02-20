@@ -113,4 +113,22 @@ export class EditGuidelineComponent implements OnInit {
     });
   }
 
+  delete()
+  {
+    if(this.guideline._id === undefined)
+    {
+      return;
+    }
+    if(!confirm("Sind Sie sicher, dass Sie die Leitlinie " + this.guideline.nameOfGuideline + " löschen möchten? Dieser Vorgang kann nicht mehr rückgängig gemacht werden."))
+    {
+      return;
+    }
+    this.insertionService.deleteGuideline(this.guideline._id).toPromise().then(_ => {
+      alert("Erfolgreich gelöscht");
+      this.router.navigate(['admin', 'guidelines'], { preserveQueryParams: true });
+    }).catch(error => {
+      alert(error.message);
+    });
+  }
+
 }

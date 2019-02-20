@@ -71,4 +71,22 @@ export class EditAccessUnitComponent implements OnInit {
       this.statusMessage = error.message;
     })
   }
+
+  delete()
+  {
+    if(this.id === "new")
+    {
+      return;
+    }
+    if(!confirm("Sind Sie sicher, dass Sie die Access Unit " + this.accessUnit.name + " löschen möchten? Dieser Vorgang kann nicht mehr rückgängig gemacht werden."))
+    {
+      return;
+    }
+    this.accessUnitManagerService.deleteAccessUnit(this.id).toPromise().then(_ => {
+      alert("Erfolgreich gelöscht");
+      this.router.navigate(['admin', 'accessUnits'], { preserveQueryParams: true });
+    }).catch(error => {
+      this.statusMessage = error.message;
+    });
+  }
 }

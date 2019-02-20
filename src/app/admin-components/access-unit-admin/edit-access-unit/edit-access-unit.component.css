@@ -35,7 +35,8 @@ button.save
 }
 
 button.save,
-button.cancel
+button.cancel,
+button.delete
 {
     padding: 20px;
     font-size: 16px;
@@ -53,8 +54,21 @@ button.cancel
     cursor: pointer;
 }
 
+
+
 button.save:hover,
 button.cancel:hover
 {
     background-color: #1c6c96;
+}
+
+button.delete
+{
+    background-color: #ff5252;
+    border-color: #b33939;
+}
+
+button.delete:hover
+{
+    background-color: #ff6666
 }

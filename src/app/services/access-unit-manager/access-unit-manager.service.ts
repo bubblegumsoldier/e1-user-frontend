@@ -30,4 +30,9 @@ export class AccessUnitManagerService {
   {
     return this.http.post<AccessUnit>(environment.configuration.apiUrl + '/accessUnits/', accessUnit);
   }
+
+  deleteAccessUnit(id :string) :Observable<void>
+  {
+    return this.http.delete<void>(environment.configuration.apiUrl + '/accessUnits/' + id);
+  }
 }

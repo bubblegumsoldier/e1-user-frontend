@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Guideline } from '../../model/Guideline';
 import { environment } from '../../../environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -34,5 +35,10 @@ export class InsertionService {
       });
     });
     return p;
+  }
+
+  public deleteGuideline(guidelineId :string) :Observable<void>
+  {
+    return this.http.delete<void>(environment.configuration.apiUrl + '/guidelines/' + guidelineId);
   }
 }

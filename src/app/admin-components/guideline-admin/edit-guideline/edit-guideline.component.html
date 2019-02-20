@@ -31,7 +31,8 @@
       <e1-edit-level-list [levels]="this.guideline.levels"></e1-edit-level-list>
       <div class="button-area">
           <button class="cancel" (click)="cancel()">Abbrechen</button>
-          <button class="cancel" (click)="updatePreview()">Vorschau</button>
+          <button class="delete" *ngIf="this.guideline._id !== undefined" (click)="delete()">Löschen</button>
+          <button class="update_preview" (click)="updatePreview()">Vorschau</button>
           <button class="save" (click)="save()">Speichern</button>
     </div>
     <div class="loading-animation" *ngIf="this.loading"></div>

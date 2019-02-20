@@ -12,6 +12,7 @@
     <p *ngIf="this.statusMessage.length > 0">{{statusMessage}}</p>
     <div class="button-area">
         <button class="cancel" [routerLink]="['/admin/accessUnits/']">Abbrechen</button>
+        <button class="delete" *ngIf="this.id !== 'new'" (click)="delete()">Löschen</button>
         <button class="save" (click)="save()">Speichern</button>
   </div>
 </div>
