@@ -29,7 +29,7 @@ export class AuthService {
   constructor(private cookieService: CookieService,private http: HttpClient, private router: Router, private location: Location, protected asyncLocalStorage: LocalStorage) {
     Parse.setAsyncStorage(asyncLocalStorage);
     Parse.initialize("e1");
-    Parse.serverURL = 'https://dev.evid.one/api/backend/parse';
+    Parse.serverURL = environment.configuration.apiUrl + '/backend/parse';
   }
 
   getFullUser()
