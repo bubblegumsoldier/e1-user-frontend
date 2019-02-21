@@ -66,6 +66,7 @@ import { EditUserComponent } from './admin-components/user-admin/edit-user/edit-
 import { UserManagerService } from './services/user-manager/user-manager.service';
 import { AccessUnitSelectionListComponent } from './admin-components/access-unit-admin/access-unit-selection-list/access-unit-selection-list.component';
 import { AdminProtectedDirective } from './directives/admin-protected/admin-protected.directive';
+import { DiagramEditorModule } from './lib/modules/diagram-editor/diagram-editor.module';
 
 const appRoutes :Routes = [
   {
@@ -190,7 +191,8 @@ const appRoutes :Routes = [
     BrowserAnimationsModule,
     AngularEditorModule,
     NgDragDropModule.forRoot(),
-    NgxDatatableModule
+    NgxDatatableModule,
+    DiagramEditorModule
   ],
   providers: [
     HttpClientModule,

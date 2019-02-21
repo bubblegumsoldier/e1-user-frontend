@@ -31,6 +31,7 @@
     "core-js": "^2.5.4",
     "express": "^4.16.3",
     "jquery": "^3.3.1",
+    "jsplumb": "^2.9.0",
     "mongoose": "^5.2.13",
     "ng-drag-drop": "^5.0.0",
     "ngx-chips": "^2.0.0-beta.0",

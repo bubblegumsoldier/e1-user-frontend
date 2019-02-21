@@ -8,6 +8,9 @@
   <label for="selectionTitle">Level-Auswahl-Titel:</label>
   <input type="text" [(ngModel)]="level.selectionTitle" name="selectionTitle">
 
+  <label for="diagram">Diagramm</label>
+  <e1-diagram-editor></e1-diagram-editor>
+
   <label for="sublevelDisplayType">Sublevel-Darstellung:</label>
   <select [(ngModel)]="this.level.sublevelDisplayType">
     <option [ngValue]="'vertical'"> Vertikale Liste </option>
