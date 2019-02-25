@@ -1,0 +1,30 @@
+ul
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li
+{
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+    margin: 5px;
+}
+
+ul li button
+{
+    width: auto;
+    padding: 30px;
+    display: inline-block;
+    border: 1px solid #ddd;
+    text-align: center;
+    background: none;
+    outline: 0;
+}
+
+ul li button:hover
+{
+    background-color: #ddd;
+}

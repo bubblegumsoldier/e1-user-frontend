@@ -3,13 +3,19 @@
   <input type="text" [(ngModel)]="level.levelName" name="levelName">
   <label for="name">Definition:</label>
   <angular-editor [(ngModel)]="level.definition"></angular-editor>
+
+  <hr>
+
+  <label for="diagram">Diagramm anzeigen</label>
+  <input type="checkbox" name="active" [(ngModel)]="this.level.showDiagram" (ngModelChange)="onShowDiagramChange($event)">
+  <e1-diagram-editor *ngIf="this.level.showDiagram" [(ngModel)]="this.level.diagramContent"></e1-diagram-editor>
+
+  <hr>
+
   <e1-edit-level-list [levels]="this.level.levels"></e1-edit-level-list>
   
   <label for="selectionTitle">Level-Auswahl-Titel:</label>
   <input type="text" [(ngModel)]="level.selectionTitle" name="selectionTitle">
-
-  <label for="diagram">Diagramm</label>
-  <e1-diagram-editor></e1-diagram-editor>
 
   <label for="sublevelDisplayType">Sublevel-Darstellung:</label>
   <select [(ngModel)]="this.level.sublevelDisplayType">
@@ -17,6 +23,13 @@
     <option [ngValue]="'horizontal'"> Horizontale Kacheln </option>
   </select>
 
+  <hr>
+
+  <label for="selectionTitle"><b>Unsichtbare Levels:</b></label>
+  <e1-edit-level-list [levels]="this.level.invisibleLevels"></e1-edit-level-list>
+  
+  <hr>
+  
   <e1-edit-recommendation-list [recommendations]="this.level.recommendations"></e1-edit-recommendation-list>
 
   <label for="name">Logische Verknüpfung:</label>

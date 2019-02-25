@@ -32,11 +32,14 @@ export class DiagramNode extends DiagramElement
         x :number,
         y: number
     };
+    textStyle :String = "normal";
+    textSize :number = 18;
+    additionalCSS :any;
 }
 
 export class DiagramVertice extends DiagramElement
 {
-    style :DiagramVerticeStyle;
+    style :string;
     fromId :string;
     toId :string;
 }

@@ -4,10 +4,12 @@
   <div class="editor-background-overlay" (click)="toggleDialog()">
     <div class="editor-inner-wrapper" (click)="$event.stopPropagation()">
       <button class="close" (click)="toggleDialog()">+</button>
-      <div class="diagram-wrapper" id="canvas" #canvas>
+      <div class="diagram-outer-wrapper">
+        <div class="diagram-wrapper" id="canvas" #canvas>
+        </div>
       </div>
       <div class="detail-wrapper" *ngIf="this.currentlySelectedElement">
-        <e1-diagram-element-editor></e1-diagram-element-editor>
+        <e1-diagram-element-editor [(ngModel)]="this.currentlySelectedElement" (ngModelChange)="onChange($event)"></e1-diagram-element-editor>
       </div>
       <div class="bottom-toolbar">
         <ul>

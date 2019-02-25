@@ -1,0 +1,14 @@
+.form-style
+{
+    padding: 20px;
+    display: flex;
+    flex-flow: row;
+    max-height: 250px;
+    overflow: auto;
+}
+
+.column
+{
+    flex: 1;
+    margin: 20px;
+}

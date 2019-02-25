@@ -1,4 +1,5 @@
 import { Recommendation } from "./Recommendation";
+import { DiagramContent } from "../lib/modules/diagram-editor/model/DiagramContent";
 
 export class Level {
     levelName?:String = "";
@@ -11,4 +12,7 @@ export class Level {
     andOr? :String;
     selectionTitle:String;
     sublevelDisplayType:String;
+    diagramContent :DiagramContent;
+    showDiagram :Boolean = false;
+    invisibleLevels? :Level[] = [];
 }

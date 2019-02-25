@@ -1,5 +1,45 @@
-<div class="wrapper">
+<div class="wrapper" *ngIf="diagramElement">
   <div class="form-style">
+    <div class="column">
+      <label for="label">Label</label>
+      <textarea type="text" [(ngModel)]="diagramElement.label" name="label" (ngModelChange)="onChange($event)"></textarea>
 
+      <label for="shape">Form</label>
+      <select [(ngModel)]="diagramElement.shape" (ngModelChange)="onChange($event)">
+        <option [ngValue]="'square'"> Viereck </option>
+        <option [ngValue]="'circle'"> Ellipse </option>
+        <option [ngValue]="'diamond'"> Raute </option>
+      </select>
+
+      <label for="color">Farbe</label>
+      <select [(ngModel)]="diagramElement.color" (ngModelChange)="onChange($event)">
+        <option [ngValue]="'white'"> Weiß </option>
+        <option [ngValue]="'black'"> Schwarz </option>
+        <option [ngValue]="'red'"> Rot </option>
+        <option [ngValue]="'green'"> Grün </option>
+        <option [ngValue]="'blue'"> Blau </option>
+        <option [ngValue]="'invisible'"> Weiß-transparent </option>
+      </select>
+
+      <label for="textStyle">Text Style</label>
+      <select [(ngModel)]="diagramElement.textStyle" (ngModelChange)="onChange($event)">
+        <option [ngValue]="'bold'"> Bold </option>
+        <option [ngValue]="'normal'"> Normal </option>
+      </select>
+
+      <label for="textSize">Text Style</label>
+      <select [(ngModel)]="diagramElement.textSize" (ngModelChange)="onChange($event)">
+        <option [ngValue]="i" *ngFor="let i of [12,14,16,18,20,24,28,32,40,48]">{{i}}px</option>
+      </select>
+
+      <label for="style" *ngIf="this.isVertice">Style</label>
+      <select [(ngModel)]="diagramElement.style" *ngIf="this.isVertice">
+        <option [ngValue]="'dashed'"> Dashed </option>
+        <option [ngValue]="'basic'"> Basic </option>
+      </select>
+    </div>
+    <div class="column">
+      <e1-diagram-element-template-selector [(ngModel)]="this.diagramElement" (ngModelChange)="onChange($event)"></e1-diagram-element-template-selector>
+    </div>
   </div>
 </div>

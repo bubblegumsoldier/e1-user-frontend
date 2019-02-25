@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Level } from '../../../model/Level';
+import { DiagramContent } from '../../../lib/modules/diagram-editor/model/DiagramContent';
 
 @Component({
   selector: 'e1-edit-level',
@@ -21,9 +22,22 @@ export class EditLevelComponent implements OnInit {
     {
       this.level.levels = [];
     }
+    if(this.level.invisibleLevels === undefined)
+    {
+      this.level.invisibleLevels = [];
+    }
     if(this.level.recommendations === undefined)
     {
       this.level.recommendations = [];
+    }
+  }
+
+  onShowDiagramChange()
+  {
+    if(this.level.showDiagram)
+    {
+      this.level.diagramContent = this.level.diagramContent || new DiagramContent();
+      console.log(this.level);
     }
   }
 
