@@ -67,6 +67,8 @@ import { UserManagerService } from './services/user-manager/user-manager.service
 import { AccessUnitSelectionListComponent } from './admin-components/access-unit-admin/access-unit-selection-list/access-unit-selection-list.component';
 import { AdminProtectedDirective } from './directives/admin-protected/admin-protected.directive';
 import { DiagramEditorModule } from './lib/modules/diagram-editor/diagram-editor.module';
+import { EditLevelLinkComponent } from './admin-components/guideline-admin/edit-level-link/edit-level-link.component';
+import { GuidelineLevelIteratorService } from './services/guideline-level-iterator/guideline-level-iterator.service';
 
 const appRoutes :Routes = [
   {
@@ -177,7 +179,8 @@ const appRoutes :Routes = [
     UserListComponent,
     EditUserComponent,
     AccessUnitSelectionListComponent,
-    AdminProtectedDirective
+    AdminProtectedDirective,
+    EditLevelLinkComponent
   ],
   imports: [
     BrowserModule,
@@ -207,7 +210,8 @@ const appRoutes :Routes = [
     },
     InsertionService,
     AccessUnitManagerService,
-    UserManagerService
+    UserManagerService,
+    GuidelineLevelIteratorService
   ],
   bootstrap: [AppComponent]
 })

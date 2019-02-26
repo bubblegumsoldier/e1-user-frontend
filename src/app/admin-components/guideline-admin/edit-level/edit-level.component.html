@@ -1,6 +1,12 @@
 <div class="level-wrapper form-style">
+  <span class="id">{{level.levelId}}</span>
+
   <label for="name">Level-Name:</label>
   <input type="text" [(ngModel)]="level.levelName" name="levelName">
+
+  <label for="levelId">Level-Id:</label>
+  <input type="text" [(ngModel)]="level.levelId" name="levelId" style="font-family: monospace;">
+
   <label for="name">Definition:</label>
   <angular-editor [(ngModel)]="level.definition"></angular-editor>
 

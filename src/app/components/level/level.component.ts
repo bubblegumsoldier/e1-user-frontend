@@ -1,4 +1,6 @@
 import { Component, OnInit , Input, ViewChild} from '@angular/core';
+import { GuidelineLevelIteratorService } from '../../services/guideline-level-iterator/guideline-level-iterator.service';
+import { Level } from '../../model/Level';
 
 @Component({
   selector: 'e1-level',
@@ -21,8 +23,15 @@ export class LevelComponent implements OnInit {
 
   @ViewChild('nextlevel') nextLevel;
 
-  constructor() {
+  private _linkedLevel :Level;
+
+  constructor(private guidelineLevelIterator :GuidelineLevelIteratorService) {
     
+  }
+
+  isNormalLevel()
+  {
+    return !this._level.useLink;
   }
   
   resetSelections()
@@ -32,8 +41,22 @@ export class LevelComponent implements OnInit {
   }
 
   get level() {
-    // transform value for display
-    return this._level;
+    if(this.isNormalLevel())
+    {
+      return this._level;
+    }
+    else if(this._linkedLevel)
+    {
+      return this._linkedLevel
+    }else
+    {
+      this._linkedLevel = this.guidelineLevelIterator.findLevelByLevelId(this._level.linkedLevelId, this.parentGuideline);
+      if(!this._linkedLevel)
+      {
+        this._linkedLevel = new Level();
+      }
+      return this._linkedLevel;
+    }
   }
   
   @Input()

@@ -8,11 +8,13 @@ export class Level {
     checked?:Boolean;
     levelId?:String;
     toBeDeleted?:Boolean;
-    levels?:Level[] = [];
+    levels?:(Level)[] = [];
     andOr? :String;
     selectionTitle:String;
     sublevelDisplayType:String;
     diagramContent :DiagramContent;
     showDiagram :Boolean = false;
     invisibleLevels? :Level[] = [];
+    linkedLevelId :String;
+    useLink :boolean;
 }

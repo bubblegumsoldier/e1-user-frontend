@@ -67,12 +67,12 @@ button.remove:hover
 
 }
 
-button.add_level
+button.add_level,
+button.add_link
 {
     border-radius: 50%;
     height: 40px;
     width: 40px;
-    display: block;
     background-color: #666;
     font-size: 30px;
     display: flex;
@@ -87,9 +87,22 @@ button.add_level
     cursor: pointer;
     margin-left: 9px;
     margin-top: 10px;
+    display: inline-block;
+    margin-bottom: 0;
+    margin-top: 0;
+    vertical-align: top;
 }
 
-button.add_level:hover
+button.add_link
+{
+    background-image: url(/assets/link-symbol.svg);
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+button.add_level:hover,
+button.add_link:hover
 {
     opacity: 1;
 }
@@ -160,4 +173,25 @@ ul
 .drag-hint-border.drag-over-border
 {
     outline: 3px solid #4d88a6;
+}
+
+span.linkedLevelId
+{
+    color: #666;
+    font-weight: bold;
+    font-size: 14px;
+    float: right;
+    font-family: monospace;
+    margin-left: 10px;
+    background-image: url(/assets/link-symbol_grey.svg);
+    background-size: contain;
+    background-position: left;
+    background-repeat: no-repeat;
+    padding-left: 25px;
+}
+
+.level-header.level-link-header
+{
+    border-left-color: #ccae62;
+    background-color: #ffda79;
 }

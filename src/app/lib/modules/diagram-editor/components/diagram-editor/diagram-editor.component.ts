@@ -44,6 +44,8 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
   //Inputs
   @Input() zIndex = 5;
 
+  @Input() readOnly = false;
+
   dataModel :DiagramContent = new DiagramContent();
 
   shapes :any = [
@@ -148,6 +150,11 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
   initNode(el, node) {
 
     // initialise draggable elements.
+    if(this.readOnly)
+    {
+      return;
+    }
+    
     this.jsPlumbInstance.draggable(el, {
       containment:true,
       grid: [DiagramEditorComponent.GRID_SIZE, DiagramEditorComponent.GRID_SIZE],
@@ -159,6 +166,7 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
         }
       }
     });
+    
 
     var flag = 0;
     el.addEventListener("mousedown", _ => {
@@ -261,7 +269,11 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     d.className = "diagram-item shape-" + node.shape + " color-" + node.color + " text-style-" + node.textStyle;
     d.id = id;
     console.log(node.label);
-    d.innerHTML = node.label.replace(/(?:\r\n|\r|\n)/g, "<br>") + "<div class=\"ep\"></div>";
+    d.innerHTML = node.label.replace(/(?:\r\n|\r|\n)/g, "<br>");
+    if(!this.readOnly)
+    {
+      d.innerHTML += "<div class=\"ep\"></div>";
+    }
     d.style.left = node.position.x + "px";
     d.style.top = node.position.y + "px";
     d.style.fontSize = node.textSize + "px";

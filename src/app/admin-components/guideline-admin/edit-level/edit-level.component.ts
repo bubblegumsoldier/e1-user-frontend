@@ -2,6 +2,8 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Level } from '../../../model/Level';
 import { DiagramContent } from '../../../lib/modules/diagram-editor/model/DiagramContent';
 
+import * as uuid  from 'uuid';
+
 @Component({
   selector: 'e1-edit-level',
   templateUrl: './edit-level.component.html',
@@ -29,6 +31,10 @@ export class EditLevelComponent implements OnInit {
     if(this.level.recommendations === undefined)
     {
       this.level.recommendations = [];
+    }
+    if(!this.level.levelId)
+    {
+      this.level.levelId = uuid.v1();
     }
   }
 

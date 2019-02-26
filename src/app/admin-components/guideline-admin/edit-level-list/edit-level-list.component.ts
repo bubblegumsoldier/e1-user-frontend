@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Level } from '../../../model/Level';
 
+import * as uuid  from 'uuid';
+
 @Component({
   selector: 'e1-edit-level-list',
   templateUrl: './edit-level-list.component.html',
@@ -24,8 +26,28 @@ export class EditLevelListComponent implements OnInit {
     {
       this.levels = [];
     }
+    level.levelId = uuid.v1();
     this.levels.push(level);
     this.expanded.push(this.levels.length-1);
+  }
+
+  addNewEmptyLink()
+  {
+    let levelLink = new Level();
+    levelLink.useLink = true;
+    if(this.levels === undefined)
+    {
+      this.levels = [];
+    }
+    console.log(levelLink);
+    levelLink.levelId = uuid.v1();
+    this.levels.push(levelLink);
+    this.expanded.push(this.levels.length-1);
+  }
+
+  isNormalLevel(level)
+  {
+    return !level.useLink;
   }
 
   removeLevelWithIndex(i :number)
@@ -57,7 +79,9 @@ export class EditLevelListComponent implements OnInit {
   onItemDrop(element)
   {
     console.log(element);
-    this.levels.push(JSON.parse(JSON.stringify(element.dragData)));
+    let level :Level = JSON.parse(JSON.stringify(element.dragData));
+    level.levelId = uuid.v1();
+    this.levels.push(level);
   }
 
   moveDown(i)
