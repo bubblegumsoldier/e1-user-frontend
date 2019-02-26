@@ -1,6 +1,16 @@
 <div class="wrapper" *ngIf="diagramElement">
   <div class="form-style">
     <div class="column">
+        <h2>Level-Link</h2>
+        <label for="linkLevelId">Level-Link ID</label>
+        <input type="text" [(ngModel)]="this.diagramElement.levelLinkId" name="levelLinkId" style="font-family: monospace;">
+    </div>
+    <div class="column">
+      <h2>Templates (empfohlen)</h2>
+      <e1-diagram-element-template-selector [(ngModel)]="this.diagramElement" (ngModelChange)="onChange($event)"></e1-diagram-element-template-selector>
+    </div>
+    <div class="column">
+      <h2>Weitere Anpassungen</h2>
       <label for="label">Label</label>
       <textarea type="text" [(ngModel)]="diagramElement.label" name="label" (ngModelChange)="onChange($event)"></textarea>
 
@@ -37,9 +47,6 @@
         <option [ngValue]="'dashed'"> Dashed </option>
         <option [ngValue]="'basic'"> Basic </option>
       </select>
-    </div>
-    <div class="column">
-      <e1-diagram-element-template-selector [(ngModel)]="this.diagramElement" (ngModelChange)="onChange($event)"></e1-diagram-element-template-selector>
     </div>
   </div>
 </div>

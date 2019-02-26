@@ -53,8 +53,6 @@ button.close:hover
 
 .diagram-wrapper
 {
-    min-width: 2000px;
-    min-height: 2000px;
     position: absolute;
     top: 0px;
     left: 0px;
@@ -105,5 +103,48 @@ button.close:hover
 {
     flex: 1;
     overflow: auto;
+    position: relative;
+}
+
+.editor.readonly
+{
+    position: relative;
+}
+
+.editor.readonly .bottom-toolbar
+{
+    display: none;
+}
+
+.editor.readonly button.close
+{
+    display: none;
+}
+
+.editor.readonly .diagram-wrapper
+{
+    position: relative;
+    margin: auto;
+}
+
+.editor.readonly .diagram-outer-wrapper
+{
+    height: auto;
+    width: 100%;
+    display: block;
+    justify-content: center;
+    overflow: auto;
+}
+
+.editor.readonly .editor-inner-wrapper
+{
+    height: auto;
+    width: 100%;
+    box-shadow: none;
+    position: relative;
+}
+
+.editor.readonly .editor-background-overlay
+{
     position: relative;
 }

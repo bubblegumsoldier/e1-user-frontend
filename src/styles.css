@@ -580,7 +580,7 @@ Assigned to tile images in a tiled background
 .jtk-dialog-button:hover {
     color: white;
     background-color: #5184a0;
-    border-color:white;
+    /*border-color:white;*/
 }
 
 /*
@@ -847,7 +847,7 @@ added to the elements drawn to show where a certain anchor may be relocated to (
 
 .aLabel.jtk-hover, .jtk-source-hover, .jtk-target-hover {
     background-color: #1e8151;
-    color: white;
+    /*color: white;*/
 }
 
 .aLabel {
@@ -952,4 +952,13 @@ path, .jtk-endpoint { cursor:pointer; }
     background-color: transparent;
     background-repeat: no-repeat;
     padding: 40px;
+}
+
+.editor.readonly .diagram-item
+{
+    cursor: pointer;
+}
+
+.editor .diagram-item:hover {
+    opacity: 0.6;
 }

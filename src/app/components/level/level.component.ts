@@ -26,7 +26,6 @@ export class LevelComponent implements OnInit {
   private _linkedLevel :Level;
 
   constructor(private guidelineLevelIterator :GuidelineLevelIteratorService) {
-    
   }
 
   isNormalLevel()
@@ -58,6 +57,40 @@ export class LevelComponent implements OnInit {
       return this._linkedLevel;
     }
   }
+
+  diagramLevelSelected(levelId)
+  {
+    console.log(this.level);
+    let selectedIndex = -1;
+    for(var i = 0;i < this.level.levels.length; ++i)
+    {
+      let cLevelId = this.level.levels[i].levelId;
+      
+      if(cLevelId === levelId)
+      {
+        selectedIndex = i;
+        break;
+      }
+    }
+    for(var i = 0;i < this.level.invisibleLevels.length; ++i)
+    {
+      let cLevelId = this.level.invisibleLevels[i].levelId;
+      console.log("checking level id");
+      console.log(cLevelId);
+      console.log(levelId);
+      if(cLevelId === levelId)
+      {
+        selectedIndex = i + this.level.levels.length;
+        break;
+      }
+    }
+    if(selectedIndex >= 0)
+    {
+      console.log("selected " + selectedIndex);
+      this.levelSelected(null, selectedIndex);
+      return;
+    }
+  }
   
   @Input()
   set level(level) {
@@ -73,22 +106,34 @@ export class LevelComponent implements OnInit {
     {
       console.log("closing definition");
       this.closeDefinition();
-      event.stopPropagation();
+      if(event)
+      {
+        event.stopPropagation();
+      }
       return;
     }
     if(this.subLevelSelected)
     {
       return;
     }
-    this.selectedSubLevel = this.level.levels[levelID];
+    if(levelID >= this.level.levels.length)
+    {
+      this.selectedSubLevel = this.level.invisibleLevels[levelID - this.level.levels.length];
+    }else
+    {
+      this.selectedSubLevel = this.level.levels[levelID];
+    }
     this.selectedSubLevelID = levelID;
-    event.stopPropagation();
+    if(event)
+    {
+      event.stopPropagation();
+    }
   }
 
   ngOnInit()
   {
-    console.log("parentGuideline:");
-    console.log(this.parentGuideline);
+    console.log("LEVEL:");
+    console.log(this.level)
   }
 
   definitionClicked(event, id)
@@ -119,7 +164,10 @@ export class LevelComponent implements OnInit {
 
   selectedUl()
   {
-    console.log("Selected UL");
+    if(!this.nextLevel)
+    {
+      return;
+    }
     this.nextLevel.resetSelections();
   }
 }

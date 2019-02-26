@@ -9,6 +9,7 @@ export class DiagramElement
     color :string;
     label :string;
     id :string;
+    levelLinkId :string;
 }
 
 export enum DiagramNodeShape

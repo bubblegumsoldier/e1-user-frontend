@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Input, ViewChild, forwardRef } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, ViewChild, forwardRef, EventEmitter, Output } from '@angular/core';
 import { jsPlumb, jsPlumbUtil } from 'jsplumb';
 import { DiagramContent, DiagramNode, DiagramNodeShape, DiagramElement, DiagramVertice, DiagramVerticeStyle } from '../../model/DiagramContent';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
@@ -25,6 +25,14 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
 
   writeValue(obj: DiagramContent): void {
     this.dataModel = obj;
+    console.log("DATA MODEL");
+    console.log(this.dataModel)
+    if(!this.dataModel)
+    {
+      return;
+    }
+    this.initJSPlumb();
+    this.updateByModel();
   }
   registerOnChange(fn: any): void {
     this.onChangeEvent.push(fn);
@@ -72,6 +80,8 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
 
   currentlySelectedElement :DiagramElement;
 
+  @Output() levelSelected = new EventEmitter<string>();
+
   connectionTypes :any = {
     "dashed": { anchor:"Continuous", connector: ["Flowchart", {cornerRadius: 8}], endpoint: "Blank", overlays: [
       [ "Arrow", {
@@ -101,7 +111,7 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     if(this.jsPlumbInstance)
     {
       //resetting jsplumb
-      console.log("resetting");
+      
       
     }
     this.jsPlumbInstance = jsPlumb.getInstance({
@@ -110,6 +120,8 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     
     this.jsPlumbInstance.registerConnectionTypes(this.connectionTypes);
     this.reinitJSPlumb();
+
+    this.dialogVisible = this.readOnly;
   }
 
   reinitJSPlumb()
@@ -130,8 +142,8 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     });
 
     this.jsPlumbInstance.bind('click', (connection, e) => {
-      console.log("connection deletion");
-      console.log(connection);
+      
+      
       this.jsPlumbInstance.deleteConnection(connection);
       let index = this.dataModel.vertices.findIndex(element => {return element.id === connection.id});
       this.dataModel.vertices.splice(index, 1);
@@ -139,7 +151,7 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
   }
 
   ngAfterViewInit() {
-    this.initJSPlumb();
+    
   }
 
   connectionWasMade(connection :DiagramVertice)
@@ -152,6 +164,9 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     // initialise draggable elements.
     if(this.readOnly)
     {
+      el.addEventListener("mouseup", e => {
+        this.emitLevelSelectedForNodeIfNecessary(node);
+      });
       return;
     }
     
@@ -169,13 +184,13 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     
 
     var flag = 0;
-    el.addEventListener("mousedown", _ => {
+    el.addEventListener("mousedown", e => {
         flag = 0;
     }, false);
     el.addEventListener("mousemove", _ => {
         flag = 1;
     }, false);
-    el.addEventListener("mouseup", _ => {
+    el.addEventListener("mouseup", e => {
         if(flag === 0){
             
             this.nodeSelected(node);
@@ -234,6 +249,20 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     this.currentlySelectedElement = node;
   }
 
+  emitLevelSelectedForNodeIfNecessary(node :DiagramNode)
+  {
+    
+    if(!node.levelLinkId)
+    {
+      
+      return;
+    }
+    if(this.levelSelected)
+    {
+      this.levelSelected.emit(node.levelLinkId);
+    }
+  }
+
   updateByModel()
   {
     while(this.canvas.nativeElement.firstChild)
@@ -248,12 +277,12 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     this.dataModel.vertices.forEach((vertice :DiagramVertice) => {
       this.addVertice(vertice);
     });
+    this.jsPlumbInstance.repaintEverything();
   }
   
 
   addVertice(vertice :DiagramVertice)
   {
-    console.log(vertice.style);
     this.jsPlumbInstance.connect({
       source: vertice.fromId,
       target: vertice.toId,
@@ -268,7 +297,7 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     var id = node.id;
     d.className = "diagram-item shape-" + node.shape + " color-" + node.color + " text-style-" + node.textStyle;
     d.id = id;
-    console.log(node.label);
+    
     d.innerHTML = node.label.replace(/(?:\r\n|\r|\n)/g, "<br>");
     if(!this.readOnly)
     {
@@ -290,6 +319,54 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
   {
     this.dialogVisible = !this.dialogVisible;
     this.updateByModel();
+  }
+
+  maxWidth = 0;
+  maxHeight = 0;
+
+  getMaxWidth()
+  {
+    if(!this.readOnly)
+    {
+      return 2000;
+    }
+    if(this.maxWidth > 0)
+    {
+      return this.maxWidth;
+    }
+    let lastMaxWidth :number = 0;
+    let children = Array.from(this.canvas.nativeElement.children);
+    for(var i = 0;i < children.length; ++i)
+    {
+      let child :any = children[i];
+      let rightEdge = child.offsetLeft + child.clientWidth;
+      if(rightEdge > lastMaxWidth) lastMaxWidth = rightEdge;
+    }
+    this.maxWidth = lastMaxWidth;
+    return lastMaxWidth;
+  }
+
+  getMaxHeight()
+  {
+    if(!this.readOnly)
+    {
+      return 2000;
+    }
+    if(this.maxHeight > 0)
+    {
+      return this.maxHeight;
+    }
+
+    let lastMaxHeight :number = 0;
+    let children = Array.from(this.canvas.nativeElement.children);
+    for(var i = 0;i < children.length; ++i)
+    {
+      let child :any = children[i];
+      let bottomEdge = child.offsetTop + child.clientHeight;
+      if(bottomEdge > lastMaxHeight) lastMaxHeight = bottomEdge;
+    }
+    this.maxHeight = lastMaxHeight;
+    return lastMaxHeight;
   }
 
 }

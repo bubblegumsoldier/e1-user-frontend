@@ -1,11 +1,11 @@
-<button class="open-editor" (click)="toggleDialog()">Open Editor</button>
+<button class="open-editor" (click)="toggleDialog()" *ngIf="!this.readOnly">Open Editor</button>
 
-<div class="editor" [style.z-index]="this.zIndex" [style.visibility]="this.dialogVisible ? 'visible' : 'hidden'">
+<div class="editor" [class.readonly]="this.readOnly" [style.z-index]="this.zIndex" [style.visibility]="(this.dialogVisible || this.readOnly) ? 'visible' : 'hidden'">
   <div class="editor-background-overlay" (click)="toggleDialog()">
     <div class="editor-inner-wrapper" (click)="$event.stopPropagation()">
       <button class="close" (click)="toggleDialog()">+</button>
       <div class="diagram-outer-wrapper">
-        <div class="diagram-wrapper" id="canvas" #canvas>
+        <div class="diagram-wrapper" id="canvas" #canvas [style.height]="getMaxHeight() + 'px'" [style.width]="getMaxWidth() + 'px'">
         </div>
       </div>
       <div class="detail-wrapper" *ngIf="this.currentlySelectedElement">
