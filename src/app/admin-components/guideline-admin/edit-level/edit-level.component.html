@@ -13,7 +13,7 @@
   <hr>
 
   <label for="diagram">Diagramm anzeigen</label>
-  <input type="checkbox" name="active" [(ngModel)]="this.level.showDiagram" (ngModelChange)="onShowDiagramChange($event)">
+  <input type="checkbox" name="active" [(ngModel)]="this.level.showDiagram" (ngModelChange)="onShowDiagramChange()">
   <e1-diagram-editor *ngIf="this.level.showDiagram" [(ngModel)]="this.level.diagramContent"></e1-diagram-editor>
 
   <hr>
