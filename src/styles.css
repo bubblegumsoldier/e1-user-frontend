@@ -833,6 +833,7 @@ added to the elements drawn to show where a certain anchor may be relocated to (
     padding-right: 30px;
     padding-top: 20px;
     padding-bottom: 20px;
+    white-space: nowrap;
 }
 
 .diagram-item:hover {
@@ -962,3 +963,4 @@ path, .jtk-endpoint { cursor:pointer; }
 .editor .diagram-item:hover {
     opacity: 0.6;
 }
+

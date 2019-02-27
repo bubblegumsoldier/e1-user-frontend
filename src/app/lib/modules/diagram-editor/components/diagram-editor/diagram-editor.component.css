@@ -133,7 +133,7 @@ button.close:hover
     width: 100%;
     display: block;
     justify-content: center;
-    overflow: auto;
+    overflow: visible;
 }
 
 .editor.readonly .editor-inner-wrapper
