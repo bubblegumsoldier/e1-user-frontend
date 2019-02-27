@@ -281,10 +281,12 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     this.dataModel.nodes.forEach((node :DiagramNode) => {
       this.addNode(node);
     });
-    this.dataModel.vertices.forEach((vertice :DiagramVertice) => {
-      this.addVertice(vertice);
-    });
-    this.jsPlumbInstance.repaintEverything();
+    setTimeout(_ => {
+      this.dataModel.vertices.forEach((vertice :DiagramVertice) => {
+        this.addVertice(vertice);
+      });
+      this.jsPlumbInstance.repaintEverything();
+    }, 200);
   }
   
 
