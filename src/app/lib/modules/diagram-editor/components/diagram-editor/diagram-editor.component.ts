@@ -31,8 +31,7 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     {
       return;
     }
-    this.initJSPlumb();
-    this.updateByModel();
+    this.initJSPlumb(true);
   }
   registerOnChange(fn: any): void {
     this.onChangeEvent.push(fn);
@@ -106,7 +105,7 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     this.debouncedValueUpdated.subscribe( _ => this.onDelayedChange());
   }
 
-  initJSPlumb()
+  initJSPlumb(updateByModel = false)
   {
     if(this.jsPlumbInstance)
     {
@@ -117,11 +116,19 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     this.jsPlumbInstance = jsPlumb.getInstance({
       Container: "canvas"
     });
-    
-    this.jsPlumbInstance.registerConnectionTypes(this.connectionTypes);
-    this.reinitJSPlumb();
+    this.jsPlumbInstance.ready(_ => {
+      this.jsPlumbInstance.registerConnectionTypes(this.connectionTypes);
+      this.reinitJSPlumb();
 
-    this.dialogVisible = this.readOnly;
+      this.dialogVisible = this.readOnly;
+
+      if(updateByModel)
+      {
+        this.updateByModel();
+      }
+    });
+    
+    
   }
 
   reinitJSPlumb()
