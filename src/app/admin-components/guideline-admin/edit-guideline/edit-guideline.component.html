@@ -7,12 +7,10 @@
         <input type="text" [(ngModel)]="guideline.nameOfGuideline" name="nameOfGuideline">
         <label for="name">Verfügbar für folgende Gruppen:</label>
         <e1-access-unit-selection-list [(ngModel)]="this.guideline.availableFor" name="read"></e1-access-unit-selection-list>
-        <label for="active">Öffentlich?</label>
-        <input type="checkbox" name="active" [(ngModel)]="guideline.active">
         <label for="internalAuthor">Interner Autor</label>
         <input type="text" name="internalAuthor" [(ngModel)]="guideline.internalAuthor">
         <label for="validity">Gültig bis</label>
-        <input type="date" name="validity" [(ngModel)]="guideline.validity" maxlength="100">
+        <input type="date" name="validity" [ngModel]="guideline.validity | date:'yyyy-MM-dd'" (ngModelChange)="guideline.validity = $event">
         <label for="publisher">Publisher</label>
         <input type="text" name="publisher"  [(ngModel)]="guideline.publisher" maxlength="200">
         <label for="source">PDF URL</label>
