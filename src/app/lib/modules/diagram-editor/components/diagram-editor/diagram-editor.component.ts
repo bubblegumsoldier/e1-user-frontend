@@ -153,8 +153,14 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
       {
         return;
       }
+      let index = this.dataModel.vertices.findIndex((element :DiagramVertice)=> {
+        console.log(connection.id);
+        console.log(connection.sourceId);
+        console.log(connection.targetId);
+        console.log(element);
+        return element.fromId === connection.sourceId && element.toId === connection.targetId;
+      });
       this.jsPlumbInstance.deleteConnection(connection);
-      let index = this.dataModel.vertices.findIndex(element => {return element.id === connection.id});
       console.log("Deleting index " + index);
       this.dataModel.vertices.splice(index, 1);
       this.updateByModel();
