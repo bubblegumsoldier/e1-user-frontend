@@ -69,6 +69,7 @@ import { AdminProtectedDirective } from './directives/admin-protected/admin-prot
 import { DiagramEditorModule } from './lib/modules/diagram-editor/diagram-editor.module';
 import { EditLevelLinkComponent } from './admin-components/guideline-admin/edit-level-link/edit-level-link.component';
 import { GuidelineLevelIteratorService } from './services/guideline-level-iterator/guideline-level-iterator.service';
+import { EllipsisPipe } from './pipes/ellipsis.pipe';
 
 const appRoutes :Routes = [
   {
@@ -180,7 +181,8 @@ const appRoutes :Routes = [
     EditUserComponent,
     AccessUnitSelectionListComponent,
     AdminProtectedDirective,
-    EditLevelLinkComponent
+    EditLevelLinkComponent,
+    EllipsisPipe
   ],
   imports: [
     BrowserModule,

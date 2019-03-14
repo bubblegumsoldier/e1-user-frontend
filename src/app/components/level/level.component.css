@@ -296,3 +296,31 @@ e1-diagram-editor
         height: 100px;
     }
 }
+
+
+ul.selection-box.horizontal li
+{
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    min-height: none;
+}
+
+ul.selection-box.horizontal li span.title
+{
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: center;
+}
+
+ul.selection-box.horizontal li button
+{
+    height: auto;
+}
+
+ul.selection-box.horizontal li.definition-visible
+{
+    overflow-y: auto;
+    justify-content: flex-start;
+}
