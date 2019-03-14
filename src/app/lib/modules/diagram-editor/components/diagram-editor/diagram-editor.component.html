@@ -9,7 +9,7 @@
         </div>
       </div>
       <div class="detail-wrapper" *ngIf="this.currentlySelectedElement">
-        <e1-diagram-element-editor [(ngModel)]="this.currentlySelectedElement" (ngModelChange)="onChange($event)"></e1-diagram-element-editor>
+        <e1-diagram-element-editor [(ngModel)]="this.currentlySelectedElement" (ngModelChange)="onChange($event)" (onDelete)="onDelete()"></e1-diagram-element-editor>
       </div>
       <div class="bottom-toolbar">
         <ul>

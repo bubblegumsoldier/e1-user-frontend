@@ -149,12 +149,29 @@ export class DiagramEditorComponent implements AfterViewInit, OnInit, ControlVal
     });
 
     this.jsPlumbInstance.bind('click', (connection, e) => {
-      
-      
+      if(this.readOnly)
+      {
+        return;
+      }
       this.jsPlumbInstance.deleteConnection(connection);
       let index = this.dataModel.vertices.findIndex(element => {return element.id === connection.id});
+      console.log("Deleting index " + index);
       this.dataModel.vertices.splice(index, 1);
+      this.updateByModel();
     });
+  }
+
+  onDelete()
+  {
+    if(!this.currentlySelectedElement)
+    {
+      return;
+    }
+    this.dataModel.nodes = this.dataModel.nodes.filter((diagramNode :DiagramNode) => {
+      return this.currentlySelectedElement.id !== diagramNode.id;
+    });
+    this.currentlySelectedElement = undefined;
+    this.updateByModel();
   }
 
   ngAfterViewInit() {

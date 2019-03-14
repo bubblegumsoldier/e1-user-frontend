@@ -12,3 +12,34 @@
     flex: 1;
     margin: 20px;
 }
+
+button.delete
+{
+    padding: 20px;
+    font-size: 16px;
+    background: transparent;
+    border: 0;
+    /* border: 1px solid #eee; */
+    border-bottom: 3px solid #2e5f77;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: #4D88A6;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+button.delete
+{
+    background-color: #ff5252;
+    border-color: #b33939;
+    width: auto;
+    margin-left: 40px;
+}
+
+button.delete:hover
+{
+    background-color: #ff6666
+}

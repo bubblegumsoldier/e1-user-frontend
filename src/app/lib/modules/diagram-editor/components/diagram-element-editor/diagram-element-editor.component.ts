@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, forwardRef } from '@angular/core';
+import { Component, OnInit, Input, forwardRef, EventEmitter, Output } from '@angular/core';
 import { DiagramElement, DiagramNode, DiagramVertice } from '../../model/DiagramContent';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -16,6 +16,9 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class DiagramElementEditorComponent implements OnInit, ControlValueAccessor {
   
+  @Output()
+  onDelete :EventEmitter<void> = new EventEmitter<void>();
+
   onChangeEvent :any[] = [];
   onTouchedEvent :any[] = [];
   
@@ -49,6 +52,11 @@ export class DiagramElementEditorComponent implements OnInit, ControlValueAccess
   get isVertice()
   {
     return this.diagramElement instanceof DiagramVertice;
+  }
+
+  onDeleteRequest()
+  {
+    this.onDelete.emit();
   }
 
 }
