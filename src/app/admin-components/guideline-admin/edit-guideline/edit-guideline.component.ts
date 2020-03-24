@@ -27,7 +27,7 @@ export class EditGuidelineComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private router :Router, private searchHandler :SearchHandlerService, private insertionService :InsertionService)
   {
-    
+    this.guideline.levels = []; 
   }
 
   ngOnInit() {
