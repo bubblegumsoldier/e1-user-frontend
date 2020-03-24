@@ -35,6 +35,15 @@ export class AuthService {
   {
     let raw :string = localStorage.getItem(AuthService.LOCAL_STORAGE_FULL_USER);
     console.log(raw);
+    return {
+      username: "test",
+      ACL: {
+        "*": {
+          write: true,
+          read: true
+        }
+      }
+    }
     return JSON.parse(raw);
   }
 

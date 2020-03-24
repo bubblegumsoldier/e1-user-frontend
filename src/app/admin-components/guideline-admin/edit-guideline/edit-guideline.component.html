@@ -35,10 +35,14 @@
           <button class="update_preview" (click)="updatePreview()">Vorschau</button>
           <button class="save" (click)="save()">Speichern</button>
     </div>
-    <div class="loading-animation" *ngIf="this.loading"></div>
+    <textarea class="code" [(ngModel)]="currentCode" (ngModelChange)="currentCodeChangedManually($event)">
+    </textarea>
+    <!-- <div class="loading-animation" *ngIf="this.loading"></div> -->
     <h2 style="text-align:center;">Vorschau</h2>
 </div>
 
 <br><br><br>
+
+
 
 <e1-guideline [guideline]="transferGuideline" *ngIf="transferGuideline !== undefined"></e1-guideline>

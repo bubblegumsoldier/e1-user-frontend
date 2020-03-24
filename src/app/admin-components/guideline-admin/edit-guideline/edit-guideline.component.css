@@ -115,3 +115,21 @@ button.delete:hover
 {
     background-color: #ff6666
 }
+
+.code
+{
+    font-family:"Consolas";
+    color: white;
+    background-color: #333;
+    border: #888;
+    width: 80%;
+    height: 220px;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    box-sizing: border-box;
+    display: flex;
+}

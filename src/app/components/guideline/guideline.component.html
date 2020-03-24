@@ -1,8 +1,8 @@
 <div class="guideline-header" (click)="resetSelections()">
   <div class="guideline-inner-wrapper">
-    <button class="back-button" (click)="onBackButtonClicked()">&larr; &nbsp; &nbsp; Zurück</button>
+    <button class="back-button" (click)="onBackButtonClicked()"></button>
     <div class="guideline-description">
-      <span class="date">Gültig bis {{guideline?.validity | date:'dd. MMMM yyyy'}}</span>
+      <span class="date">Zuletzt upgedated am {{guideline?.validity | date:'dd. MMMM yyyy'}}</span>
       <span class="publisher">{{guideline?.publisher}}</span>
       <div class="visibility" class="public">Öffentlich</div>
       <h3>{{guideline?.nameOfGuideline}}</h3>

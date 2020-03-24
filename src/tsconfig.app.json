@@ -4,10 +4,13 @@
     "outDir": "../out-tsc/app",
     "types": [],
     "resolveJsonModule": true,
-    "esModuleInterop": true  
+    "esModuleInterop": true  ,
   },
   "exclude": [
     "src/test.ts",
     "**/*.spec.ts"
-  ]
+  ],
+  "angularCompilerOptions": {
+    "enableIvy": false
+  }
 }

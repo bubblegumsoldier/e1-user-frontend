@@ -9,7 +9,7 @@ import { AuthService } from '../../services/auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  @Input() headerType :number = 0;
+  @Input() headerType :number = 1;
 
   constructor(private router: Router, private authService :AuthService) { }
 
@@ -19,18 +19,18 @@ export class HeaderComponent implements OnInit {
 
   onRouterUpdated(event)
   {
-    if(this.router.url == "/")
-    {
-      this.headerType = 0;
-    }else
-    {
-      this.headerType = 1;
-    }
+    // if(this.router.url == "/")
+    // {
+    //   this.headerType = 0;
+    // }else
+    // {
+    //   this.headerType = 1;
+    // }
 
-    if(this.router.url.startsWith("/auth"))
-    {
-      this.headerType = 2;
-    }
+    // if(this.router.url.startsWith("/auth"))
+    // {
+    //   this.headerType = 2;
+    // }
   }
 
   logout()

@@ -16,11 +16,13 @@ export class EditGuidelineComponent implements OnInit {
 
   id :String = "";
 
-  guideline = null;
+  guideline = new Guideline();
 
   transferGuideline = null;
 
   loading :boolean = false;
+
+  currentCode :string = "";
 
 
   constructor(private route: ActivatedRoute, private router :Router, private searchHandler :SearchHandlerService, private insertionService :InsertionService)
@@ -33,7 +35,7 @@ export class EditGuidelineComponent implements OnInit {
     this.route.params.subscribe(params => {
         this.id = params['id'];
         console.log(this.id);
-        this.initializeGuideline();
+        // this.initializeGuideline();
     });
     console.log("getting access units");
     
@@ -41,6 +43,7 @@ export class EditGuidelineComponent implements OnInit {
 
   updatePreview()
   {
+    this.currentCode = JSON.stringify(this.guideline);
     console.log("changes!");
     this.transferGuideline = undefined;
     setTimeout(_ => {
@@ -94,6 +97,11 @@ export class EditGuidelineComponent implements OnInit {
     {
       this.saveCurrent();
     }
+  }
+
+  currentCodeChangedManually()
+  {
+    this.guideline = JSON.parse(this.currentCode)
   }
 
   private createNew()

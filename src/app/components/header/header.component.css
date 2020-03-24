@@ -112,6 +112,11 @@ Design for large header
     {
         width: 80%;
     }
+    .top-right
+    {
+        display: flex;
+        flex-flow: column;
+    }
 }
 
 @media only screen and (max-width: 400px) {
@@ -133,7 +138,7 @@ Design for large header
     .header-content.small-header
     {
         display:block;
-        height: 160px;
+        /* height: 160px; */
         position: relative;
     }
     .header-content .logo
