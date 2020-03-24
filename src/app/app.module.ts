@@ -70,6 +70,7 @@ import { EditLevelLinkComponent } from './admin-components/guideline-admin/edit-
 import { GuidelineLevelIteratorService } from './services/guideline-level-iterator/guideline-level-iterator.service';
 import { ImpressumComponent } from './components/impressum/impressum.component';
 import { DatenschutzComponent } from './components/datenschutz/datenschutz.component';
+import { CookieNoticeComponent } from './components/cookie-notice/cookie-notice.component';
 
 const appRoutes :Routes = [
   {
@@ -191,7 +192,8 @@ const appRoutes :Routes = [
     AdminProtectedDirective,
     EditLevelLinkComponent,
     ImpressumComponent,
-    DatenschutzComponent
+    DatenschutzComponent,
+    CookieNoticeComponent
   ],
   imports: [
     BrowserModule,
