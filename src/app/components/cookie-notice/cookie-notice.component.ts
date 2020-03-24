@@ -10,14 +10,7 @@ export class CookieNoticeComponent implements OnInit {
 
   code :string = `
   <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116288587-5"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-116288587-5');
-    </script>
+    
   `;
 
   confirmed :boolean = false;
@@ -35,7 +28,6 @@ export class CookieNoticeComponent implements OnInit {
   {
     this.confirmed = true;
     this.cookieService.set("cookie_confirmed", "1");
-    document.head.innerHTML = document.head.innerHTML + this.code;
   }
 
 }
