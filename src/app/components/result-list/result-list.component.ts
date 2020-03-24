@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
@@ -14,7 +14,8 @@ import { dummyGuideline } from 'src/app/model/dummyGuideline';
   providers: [SearchHandlerService]
 })
 export class ResultListComponent implements OnInit {
-  query :string;
+  @Input()
+  query :string = "";
 
   allPublic :boolean = true;
 
@@ -25,6 +26,11 @@ export class ResultListComponent implements OnInit {
   constructor(private route: ActivatedRoute, private searchHandler :SearchHandlerService, private router :Router) { }
 
   ngOnInit() {
+    if(this.query)
+    {
+      this.retrieveGuidelineResults();
+      return;
+    }
     this.route.queryParams.subscribe(queryParams => {
         this.loading = true;
         this.guidelines = [];

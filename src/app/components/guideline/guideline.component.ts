@@ -76,6 +76,10 @@ export class GuidelineComponent implements OnInit {
 
   resetSelections()
   {
+    if(!this.firstLevel)
+    {
+      return;
+    }
     this.firstLevel.resetSelections();
   }
 

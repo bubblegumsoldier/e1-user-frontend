@@ -120,6 +120,10 @@ export class LevelComponent implements OnInit {
   selectedUl()
   {
     console.log("Selected UL");
+    if(!this.nextLevel)
+    {
+      return;
+    }
     this.nextLevel.resetSelections();
   }
 }

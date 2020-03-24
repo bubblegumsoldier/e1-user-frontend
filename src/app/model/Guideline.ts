@@ -1,6 +1,7 @@
 import { Level } from './Level';
 
 export class Guideline{
+    _id :string;
     active?: String;
     institutionName?:String;
     recommendedFor?:String;

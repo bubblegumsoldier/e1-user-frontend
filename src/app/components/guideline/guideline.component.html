@@ -1,16 +1,22 @@
 <div class="guideline-header" (click)="resetSelections()">
   <div class="guideline-inner-wrapper">
-    <button class="back-button" (click)="onBackButtonClicked()"></button>
+    <button class="back-button" (click)="onBackButtonClicked()"> &larr; &nbsp; &nbsp; Zurück</button>
     <div class="guideline-description">
-      <span class="date">Zuletzt upgedated am {{guideline?.validity | date:'dd. MMMM yyyy'}}</span>
+      <span class="date">Zuletzt aktualisiert am {{guideline?.validity | date:'dd. MMMM yyyy'}}</span>
       <span class="publisher">{{guideline?.publisher}}</span>
-      <div class="visibility" class="public">Öffentlich</div>
       <h3>{{guideline?.nameOfGuideline}}</h3>
+      <p><b>Achtung:</b> Trotz regelmäßiger Aktualisierung der Inhalte kann nicht immer garantiert werden, dass die
+        Empfehlungen den neuesten Vorgaben entsprechen. Alle Angaben sind daher ohne Gewähr. Bitte informieren Sie sich
+        zusätzlich umfassend selbst. Weiterhin arbeiten wir mit diesem Projekt nicht gewinnorientiert und erhalten zum
+        aktuellen Zeitpunkt auch keine finanzielle Unterstützung von Dritten.</p>
     </div>
   </div>
 
 </div>
-<div class="loading-wrapper"><div class="loading-animation" *ngIf="this.loading"></div></div>
+<div class="loading-wrapper">
+  <div class="loading-animation" *ngIf="this.loading"></div>
+</div>
 
 
-<e1-level #firstlevel *ngIf="levelSelectionInput !== null" [level]="this.guideline" [isDark]="false" [parentGuideline]="this.guideline"></e1-level>
+<e1-level #firstlevel *ngIf="levelSelectionInput !== null" [level]="this.guideline" [isDark]="false"
+  [parentGuideline]="this.guideline"></e1-level>

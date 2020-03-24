@@ -31,7 +31,7 @@ export class DiagramElementEditorComponent implements OnInit, ControlValueAccess
     this.onTouchedEvent.push(fn);
   }
 
-  private diagramElement :DiagramElement;
+  diagramElement :DiagramElement;
 
   ngOnInit() {
   }

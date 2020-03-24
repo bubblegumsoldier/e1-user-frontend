@@ -68,12 +68,21 @@ import { AdminProtectedDirective } from './directives/admin-protected/admin-prot
 import { DiagramEditorModule } from './lib/modules/diagram-editor/diagram-editor.module';
 import { EditLevelLinkComponent } from './admin-components/guideline-admin/edit-level-link/edit-level-link.component';
 import { GuidelineLevelIteratorService } from './services/guideline-level-iterator/guideline-level-iterator.service';
-import { CovidGuidelineComponent } from './components/covid-guideline/covid-guideline.component';
+import { ImpressumComponent } from './components/impressum/impressum.component';
+import { DatenschutzComponent } from './components/datenschutz/datenschutz.component';
 
 const appRoutes :Routes = [
   {
     path: 'results/all',
     component: AllGuidelinesComponent
+  },
+  {
+    path: 'datenschutz',
+    component: DatenschutzComponent
+  },
+  {
+    path: 'impressum',
+    component: ImpressumComponent
   },
   {
     path: 'results',
@@ -130,7 +139,7 @@ const appRoutes :Routes = [
   },
   {
     path: '',
-    component: CovidGuidelineComponent
+    component: ResultListComponent
   }
 ];
 
@@ -181,7 +190,8 @@ const appRoutes :Routes = [
     AccessUnitSelectionListComponent,
     AdminProtectedDirective,
     EditLevelLinkComponent,
-    CovidGuidelineComponent
+    ImpressumComponent,
+    DatenschutzComponent
   ],
   imports: [
     BrowserModule,
