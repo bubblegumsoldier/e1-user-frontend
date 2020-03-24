@@ -14,7 +14,7 @@ import { AccessUnitManagerService } from '../../../services/access-unit-manager/
 
 export class EditGuidelineComponent implements OnInit {
 
-  id :String = "";
+  id :string = "";
 
   guideline = new Guideline();
 

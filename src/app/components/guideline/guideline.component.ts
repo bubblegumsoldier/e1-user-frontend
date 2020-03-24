@@ -11,7 +11,7 @@ import { Guideline } from '../../model/Guideline';
 })
 export class GuidelineComponent implements OnInit {
 
-  id :String = "";
+  id :string = "";
 
   @Input() guideline = null;
 

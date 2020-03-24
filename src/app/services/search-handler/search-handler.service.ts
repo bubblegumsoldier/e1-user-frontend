@@ -60,7 +60,7 @@ export class SearchHandlerService {
     getGuidelineFor(id :string) : Observable<Guideline>
     {
       let returnVal = this.allGuidelines[id];
-      return Observable.create((observer :Observer<Guideline>) => {
+      return Observable.create(observer => {
         // Yield a single value and complete
         observer.next(returnVal);
         observer.complete();
