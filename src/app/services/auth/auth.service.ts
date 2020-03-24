@@ -54,7 +54,8 @@ export class AuthService {
 
   isLoggedIn()
   {
-    return Parse.User.current() !== null;
+    return true;
+    // return Parse.User.current() !== null;
   }
 
   isAdmin() :boolean
