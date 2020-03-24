@@ -1,5 +1,4 @@
 import { CookieService } from 'ngx-cookie-service';
-import { Response } from '@angular/http';
 import { environment } from '../../../environments/environment';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Router } from '@angular/router';

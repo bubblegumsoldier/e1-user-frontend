@@ -3,7 +3,6 @@ import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpParams,HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Guideline } from '../../model/Guideline';
 import { dummyGuideline } from '../../model/dummyGuideline';
-import { Response } from '@angular/http';
 import {AuthService} from "../../services/auth/auth.service";
 import { environment } from '../../../environments/environment';
 

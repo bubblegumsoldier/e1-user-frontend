@@ -17,7 +17,6 @@ import { LevelComponent } from './components/level/level.component';
 import { FreeTextRecommendationComponent } from './components/free-text-recommendation/free-text-recommendation.component';
 import { MedicationRecommendationComponent } from './components/medication-recommendation/medication-recommendation.component';
 import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { HttpModule } from '@angular/http';
 import { SearchHandlerService } from './services/search-handler/search-handler.service';
 import { SyntaxParserService } from './services/syntax-parser/syntax-parser.service';
 import { AuthService } from './services/auth/auth.service';
@@ -191,7 +190,6 @@ const appRoutes :Routes = [
     ),
     FormsModule,
     HttpClientModule,
-    HttpModule,
     TagInputModule,
     BrowserAnimationsModule,
     AngularEditorModule,
