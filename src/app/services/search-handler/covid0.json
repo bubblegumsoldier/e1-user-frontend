@@ -1,697 +1,301 @@
 {
-    "keywords" : [
-            "diabetes",
-            "diabetes mellitus",
-            "zucker",
-            "typ-2",
-            "typ 2",
-            "typ-2-diabetes"
-    ],
-    "active" : "true",
-    "publisher" : "Programm für Nationale Versorgung",
-    "diagnosis" : "Typ-2-Diabetes",
-    "nameOfGuideline" : "Therapie des Typ-2-Diabetes",
-    "source" : "http://evid.one/guideline-repository/nvl-001gk_S3_Typ-2-Diabetes_Therapie_2014-11-abgelaufen.pdf",
-    "validity" : "2018-08-01",
-    "internalAuthor" : "Johann Rink",
-    "levels" : [
+    "levels": [
         {
-            "levels" : [
-                
-            ],
-            "recommendations": [
-                {
-                    "type": "group",
-                    "title": "Basistherapie (Schulung, Ernährungstherapie, körperliche Aktivität, Raucher-Entwöhnung, Behandlung weiterer Risikofaktoren)",
-                    "primaryRecommendation": true,
-                    "recommendations": 
-                    [
-                        {
-                            "type": "freeText",
-                            "title": "",
-                            "content": "Strukturiertes, evaluiertes Zielgruppen und Themenspezifisches Schulungs- und Behandlungszentrum",
-                            "gradeOfEvidence": "",
-                            "gradeOfRecommendation": "A",
-                            "primaryRecommendation": true,
-                            "comment": "<b>0</b>: Rezidivierende Schulungsangebote",
-                            "hideOnSublevelSelect": false
-                        },
-                        {
-                            "type": "freeText",
-                            "title": "",
-                            "content": "Ernährungsempfehlungen (gesunde, ausgewogene Kostform, keine Diabetesnahrung)",
-                            "gradeOfEvidence": "",
-                            "gradeOfRecommendation": "A",
-                            "primaryRecommendation": true,
-                            "comment": "",
-                            "hideOnSublevelSelect": false,
-                            "sourceRef": "page=34"
-                        },
-                        {
-                            "type": "freeText",
-                            "title": "",
-                            "content": "Ernährungsberatung: Individuelle Ernährungsberatung anbieten",
-                            "gradeOfEvidence": "",
-                            "gradeOfRecommendation": "A",
-                            "primaryRecommendation": true,
-                            "comment": "",
-                            "hideOnSublevelSelect": false
-                        },
-                        {
-                            "type": "freeText",
-                            "title": "",
-                            "content": "Ausarbeitung eines individuellen Selbstmanagementplans",
-                            "gradeOfEvidence": "",
-                            "gradeOfRecommendation": "B",
-                            "primaryRecommendation": true,
-                            "comment": "",
-                            "hideOnSublevelSelect": false
-                        },
-                        {
-                            "type": "freeText",
-                            "title": "",
-                            "content": "Körperliche Aktivität: Individuelle Zielfestlegung",
-                            "gradeOfEvidence": "",
-                            "gradeOfRecommendation": "B",
-                            "primaryRecommendation": true,
-                            "comment": "<ul><li><b>B</b> Aufklärung</li><li><b>A</b> Teilnahme Strukturierte Bewegungsprogramme, individuelle Entscheidung</li><li><b>B</b> Training</li></ul>",
-                            "hideOnSublevelSelect": false
-                        },
-                        {
-                            "type": "freeText",
-                            "title": "",
-                            "content": "Tabakentwöhnung",
-                            "gradeOfEvidence": "",
-                            "gradeOfRecommendation": "A",
-                            "primaryRecommendation": true,
-                            "comment": "<ul><li><b>A</b> Aufklärung</li><li><b>A</b> Regelmäßige Beratung</li></ul>",
-                            "hideOnSublevelSelect": false,
-                            "sourceRef": "page=39"
-                        }
-                    ]
-                },
-                {
-                    "type": "freeText",
-                    "title": "",
-                    "content": "Kein Erfolg zu erwarten: Direkt Stufe 2",
-                    "gradeOfEvidence": "",
-                    "gradeOfRecommendation": "0",
-                    "primaryRecommendation": true,
-                    "comment": "",
-                    "hideOnSublevelSelect": false
-                },
-                {
-                    "type": "freeText",
-                    "title": "",
-                    "content": "Minimale Wirkstoffdosis erfolgreich: Auslassversuch unter HbA1C Kontrolle",
-                    "gradeOfEvidence": "",
-                    "gradeOfRecommendation": "B",
-                    "primaryRecommendation": true,
-                    "comment": "",
-                    "hideOnSublevelSelect": false
-                },
-                {
-                    "type": "freeText",
-                    "title": "",
-                    "content": "Indikation für Plasmaglukose-Selbstmessung prüfen (Link S. 33)",
-                    "gradeOfEvidence": "",
-                    "gradeOfRecommendation": "B",
-                    "primaryRecommendation": true,
-                    "comment": "",
-                    "hideOnSublevelSelect": false,
-                    "sourceRef": "page=39"
-                }
-            ],
-            "levelName" : "Stufe 1: Diagnostizierter Typ-2-Diabetes Mellitus",
-            "levelId" : "06781160-b732-11e8-8097-87b5bf74cf76",
-            "definition": "Diagnosekriterien über klinische Untersuchung oder über Algorithmus zur Diagnose eines Typ-2-Diabetes (Link S.27)"
-        },
-        {
+            "levelName": "Akute respiratorische Symptome",
+            "definition": "",
+            "recommendations": [],
             "levels": [
                 {
-                    "levelName" : "Metformin Unverträglichkeit / Kontraindikationen?",
-                    "levelId" : "06781160-b732-11e8-8097-87b5bf74cf76",
+                    "levelName": "Mit Kontakt zu bestätigtem COVID-19-Fall bis max. 14 Tage vor Erkrankungsbeginn",
                     "definition": "",
                     "recommendations": [
                         {
-                            "type": "freeText",
-                            "title": "Empfohlen von DEGAM/AkdÄ",
+                            "type": "group",
                             "primaryRecommendation": true,
-                            "hideOnSublevelSelect": true,
-                            "content": "Basistherapie mit Humaninsulin",
-                            "gradeOfEvidence" : "",
-                            "comment": "(positiver Nutzennachweiß)",
-                            "gradeOfRecommendation" : ""
-                        },
-                        {
-                            "type": "syntax",
-                            "title": "Empfohlen von DEGAM/AkdÄ",
-                            "primaryRecommendation": true,
-                            "hideOnSublevelSelect": true,
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "content": "Basistherapie mit {0}",
-                            "comment": "(positiver Nutzennachweiß)",
-                            "preDefs": 
-                            [
+                            "recommendations": [
                                 {
-                                    "type": "medication",
-                                    "name" : "Glibenclamid (Sulfonylharnstoff)",
-                                    "refId": 0,
-                                    "comment" : "(positiver Nutzennachweiß)",
-                                    "activeSubstance" : "",
-                                    "dosageAmount" : "0",
-                                    "dosageUnit" : "ml",
-                                    "useSpecificDosageSchema": true,
-                                    "morningDosage" : "0",
-                                    "noonDosage" : "0",
-                                    "eveningDosage" : "0",
-                                    "nightDosage" : "0",
-                                    "dosageFrequency" : "0",
-                                    "dosageDuration" : "0",
-                                    "dosageDurationUnit" : "days",
-                                    "unlimitedApplicationDuration": true
-                                }
-                            ]
-                        },
-                        {
-                            "type": "syntax",
-                            "title": "Empfohlen von DEGAM/AkdÄ",
-                            "primaryRecommendation": false,
-                            "hideOnSublevelSelect": true,
-                            "content": "Basistherapie mit DPP-4-Inhibitor",
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "comment": "(Kein Nutzennachweiß)"
-                        },
-                        {
-                            "type": "syntax",
-                            "title": "Empfohlen von DEGAM/AkdÄ",
-                            "primaryRecommendation": false,
-                            "hideOnSublevelSelect": true,
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "content": "Basistherapie mit weitere Sulfonylharnstoffe / Glinid"
-                        },
-                        {
-                            "type": "syntax",
-                            "title": "Empfohlen von DDG/DGIM",
-                            "primaryRecommendation": true,
-                            "hideOnSublevelSelect": true,
-                            "content": "Basistherapie mit DPP-4-Inhibitor",
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : ""
-                        },
-                        {
-                            "type": "syntax",
-                            "title": "Empfohlen von DDG/DGIM",
-                            "primaryRecommendation": true,
-                            "hideOnSublevelSelect": true,
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "content": "Basistherapie mit Insulin (häufig Verzögerungsinsuline)"
-                        },
-                        {
-                            "type": "syntax",
-                            "title": "Empfohlen von DDG/DGIM",
-                            "primaryRecommendation": true,
-                            "hideOnSublevelSelect": true,
-                            "content": "Basistherapie mit SGLT-2-Inhibitor",
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : ""
-                        },
-                        {
-                            "type": "syntax",
-                            "title": "Empfohlen von DDG/DGIM",
-                            "primaryRecommendation": true,
-                            "hideOnSublevelSelect": true,
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "content": "Basistherapie mit Sulfonylharnstoff / Glinid"
-                        },
-                        {
-                            "type": "syntax",
-                            "title": "Empfohlen von DDG/DGIM",
-                            "primaryRecommendation": false,
-                            "hideOnSublevelSelect": true,
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "content": "Basistherapie mit Glukosidasehemmer"
-                        },
-                        {
-                            "type": "syntax",
-                            "title": "Empfohlen von DDG/DGIM",
-                            "primaryRecommendation": false,
-                            "hideOnSublevelSelect": true,
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "content": "Basistherapie mit {0}",
-                            "preDefs": 
-                            [
-                                {
-                                    "refId": 0,
-                                    "type": "medication",
-                                    "name" : "Pioglitazon",
-                                    "comment" : "",
-                                    "activeSubstance" : "Metformin",
-                                    "dosageAmount" : "0",
-                                    "dosageUnit" : "ml",
-                                    "useSpecificDosageSchema": true,
-                                    "morningDosage" : "0",
-                                    "noonDosage" : "0",
-                                    "eveningDosage" : "0",
-                                    "nightDosage" : "0",
-                                    "dosageFrequency" : "0",
-                                    "dosageDuration" : "0",
-                                    "dosageDurationUnit" : "days",
-                                    "unlimitedApplicationDuration": true
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ],
-            "recommendations" : [
-                {
-                    "type": "syntax",
-                    "title": "",
-                    "primaryRecommendation": true,
-                    "hideOnSublevelSelect": true,
-                    "gradeOfEvidence" : "",
-                    "gradeOfRecommendation" : "A",
-                    "content": "Basistherapie mit {0}",
-                    "preDefs": 
-                    [
-                        {
-                            "refId": 0,
-                            "type": "medication",
-                            "name" : "Metformin",
-                            "gradeOfEvidence" : "a",
-                            "gradeOfRecommendation" : "2",
-                            "comment" : "",
-                            "activeSubstance" : "Metformin",
-                            "dosageAmount" : "0",
-                            "dosageUnit" : "ml",
-                            "useSpecificDosageSchema": true,
-                            "morningDosage" : "0",
-                            "noonDosage" : "0",
-                            "eveningDosage" : "0",
-                            "nightDosage" : "0",
-                            "dosageFrequency" : "0",
-                            "dosageDuration" : "0",
-                            "dosageDurationUnit" : "days",
-                            "unlimitedApplicationDuration": true
-                        }
-                    ]
-                }
-            ],
-            "levelName" : "Stufe 2: Therapierefraktärer Typ-2-Diabetes Mellitus auf Basistherapie über 3-6 Monate",
-            "levelId" : "06781160-b732-11e8-8097-87b5bf74cf76",
-            "definition": "Individueller HbA1c nach 3-6 Monaten nicht erreicht oder primär aussichtslos"
-        },
-        {
-            "levels" : [
-                
-            ],
-            "recommendations": [
-                {
-                    "type": "medication",
-                    "name" : "Insulin",
-                    "gradeOfEvidence" : "",
-                    "gradeOfRecommendation" : "",
-                    "comment" : "",
-                    "activeSubstance" : "Metformin",
-                    "dosageAmount" : "0",
-                    "dosageUnit" : "ml",
-                    "useSpecificDosageSchema": true,
-                    "morningDosage" : "0",
-                    "noonDosage" : "0",
-                    "eveningDosage" : "0",
-                    "nightDosage" : "0",
-                    "dosageFrequency" : "0",
-                    "dosageDuration" : "0",
-                    "dosageDurationUnit" : "days",
-                    "unlimitedApplicationDuration": true
-                },
-                {
-                    "type": "group",
-                    "title": "Empfohlen von DEGAM/AkdÄ",
-                    "primaryRecommendation": true,
-                    "hideOnSublevelSelect": true,
-                    "comment": "Method. zuverlässige klin. Endpunktstudien, Nachteil Hypoglykämie, Gesichtszunahme",
-                    "recommendations": 
-                    [
-                        {
-                            "type": "medication",
-                            "name" : "Metformin",
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "comment" : "",
-                            "activeSubstance" : "Metformin",
-                            "dosageAmount" : "20",
-                            "dosageUnit" : "mg",
-                            "useSpecificDosageSchema": true,
-                            "morningDosage" : "1",
-                            "noonDosage" : "0",
-                            "eveningDosage" : "1.5",
-                            "nightDosage" : "1",
-                            "dosageFrequency" : "1",
-                            "dosageDuration" : "10",
-                            "dosageDurationUnit" : "days",
-                            "unlimitedApplicationDuration": false
-                        },
-                        {
-                            "type": "syntax",
-                            "preDefs": [
-                                {
-                                    "type": "medication",
-                                    "name" : "Insulin",
-                                    "activeSubstance" : "",
-                                    "dosageAmount" : "0",
-                                    "dosageUnit" : "ml",
-                                    "useSpecificDosageSchema": true,
-                                    "morningDosage" : "0",
-                                    "noonDosage" : "0",
-                                    "eveningDosage" : "0",
-                                    "nightDosage" : "0",
-                                    "dosageFrequency" : "0",
-                                    "dosageDuration" : "0",
-                                    "dosageDurationUnit" : "days",
-                                    "unlimitedApplicationDuration": true,
-                                    "refId": 0
+                                    "type": "freeText",
+                                    "primaryRecommendation": true,
+                                    "content": "Hygiene",
+                                    "comment": "Patient: separater Raum, Mund-Nasen-Schutz&#10;Personal: Schutzkleidung gem&#228;&#223; Risikoabw&#228;gung&#10;siehe www.rki.de/covid-19-hygiene",
+                                    "gradeOfRecommendation": "1."
                                 },
                                 {
-                                    "type": "medication",
-                                    "name" : "Glibenclamid",
-                                    "activeSubstance" : "",
-                                    "dosageAmount" : "0",
-                                    "dosageUnit" : "ml",
-                                    "useSpecificDosageSchema": true,
-                                    "morningDosage" : "0",
-                                    "noonDosage" : "0",
-                                    "eveningDosage" : "0",
-                                    "nightDosage" : "0",
-                                    "dosageFrequency" : "0",
-                                    "dosageDuration" : "0",
-                                    "dosageDurationUnit" : "days",
-                                    "unlimitedApplicationDuration": true,
-                                    "refId": 1
-                                },
-                                {
-                                    "type": "medication",
-                                    "name" : "DPP-4-Inhibitor",
-                                    "activeSubstance" : "",
-                                    "dosageAmount" : "200",
-                                    "dosageUnit" : "ml",
-                                    "useSpecificDosageSchema": true,
-                                    "morningDosage" : "0",
-                                    "noonDosage" : "0",
-                                    "eveningDosage" : "0",
-                                    "nightDosage" : "0",
-                                    "dosageFrequency" : "0",
-                                    "dosageDuration" : "0",
-                                    "dosageDurationUnit" : "days",
-                                    "unlimitedApplicationDuration": true,
-                                    "refId": 2
+                                    "type": "freeText",
+                                    "primaryRecommendation": true,
+                                    "content": "Meldung des Verdachts",
+                                    "comment": "Meldung an zust&#228;ndiges Gesundheitsamt&#10;Suche via PLZ https://tools.rki.de/PLZTool/",
+                                    "gradeOfRecommendation": "2."
                                 }
                             ],
-                            
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "comment" : "<b>Bei Insulin</b>: Methodisch zuverlässige klinische Endpunktstudien, Nachteil Hypoglykämie, Gewichtszunahme<br><br><b>Bei Glibenclamid</b>: Vorteil: Orale Gabe, Nachteil: höhere CVD Mortalität in methodisch nicht sehr guten Studien, Hypoglykämie, Gewichtszunahme<br><br><b>Bei DPP4-Inhibitor</b>: Vorteil: Orale Gabe, kaum Hypoglykämien, Gewichtsneutral, Nachteil: Keine Daten zu klinischen Endpunkten, Studien mit Hinweisen auf Zunahme von Pankreatitis, Pankreastumoren",
-                            "content": "Entweder Insulin, {1|name} oder DPP-4-Inhibitor"
+                            "title": "Begründeter Verdachtsfall",
+                            "expandable": false,
+                            "hideOnSublevelSelect": true
                         }
-                    ]
+                    ],
+                    "levels": [
+                        {
+                            "levelName": "Ja, ambulant möglich",
+                            "definition": "",
+                            "recommendations": [
+                                {
+                                    "type": "group",
+                                    "primaryRecommendation": true,
+                                    "recommendations": [
+                                        {
+                                            "type": "freeText",
+                                            "primaryRecommendation": true,
+                                            "content": "Ambulante Diagnostik",
+                                            "comment": "COVID-19 Diagnostik, weitere Diagnostik, z.B.&#10;Infl uenza, je nach Symptomatik und&#10;Grunderkrankung&#10;<a href=\"www.rki.de/covid-19-diagnostik\">www.rki.de/covid-19-diagnostik</a>",
+                                            "gradeOfRecommendation": "1.",
+                                            "gradeOfEvidence": ""
+                                        },
+                                        {
+                                            "type": "freeText",
+                                            "primaryRecommendation": true,
+                                            "content": "Ambulante Betreuung",
+                                            "comment": "Kontaktreduktion im h&#228;uslichen Umfeld&#10;bis Befundeingang;&#10;weiterf&#252;hrende Informtionen siehe&#10;<a href=\"www.rki.de/covid-19-ambulant\">www.rki.de/covid-19-ambulant</a><div><br></div><div><b>Ggf. station&#228;re Einweisung je nach Schwere</b><br></div>",
+                                            "gradeOfRecommendation": "2."
+                                        },
+                                        {
+                                            "type": "freeText",
+                                            "primaryRecommendation": true,
+                                            "gradeOfRecommendation": "3.",
+                                            "content": "Bei Bestätigung: Meldung",
+                                            "comment": "Meldung an zust&#228;ndiges Gesundheitsamt&#10;Gesundheitsamt via PLZ suchen:&#10; https://tools.rki.de/PLZTool/&#160;"
+                                        }
+                                    ],
+                                    "andOr": "and"
+                                }
+                            ],
+                            "levels": [],
+                            "showDiagram": false,
+                            "invisibleLevels": [],
+                            "levelId": "a5423360-6e11-11ea-bd94-0f683186a6ac"
+                        },
+                        {
+                            "levelName": "Nein, stationär notwendig",
+                            "definition": "",
+                            "recommendations": [
+                                {
+                                    "type": "group",
+                                    "primaryRecommendation": true,
+                                    "recommendations": [
+                                        {
+                                            "type": "freeText",
+                                            "primaryRecommendation": true,
+                                            "gradeOfRecommendation": "1.",
+                                            "content": "Stationäre Einweisung",
+                                            "comment": "Vorabinformation des Krankenhauses&#10; Transport gem&#228;&#223;&#10;www.rki.de/covid-19-hygiene"
+                                        },
+                                        {
+                                            "type": "freeText",
+                                            "primaryRecommendation": true,
+                                            "gradeOfRecommendation": "2.",
+                                            "content": "Stationäre Diagnostik",
+                                            "comment": "COVID-19 PCR aus Naso-/Oropharyngealabstrich&#10;und Sputum/Trachealsekret / BAL;&#10;ggf. Serum-Asservierung f&#252;r AK-Nachweis"
+                                        },
+                                        {
+                                            "type": "freeText",
+                                            "primaryRecommendation": true,
+                                            "comment": "Meldung an zust&#228;ndiges Gesundheitsamt&#10;Gesundheitsamt via PLZ suchen:&#10; https://tools.rki.de/PLZTool/&#160;",
+                                            "content": "Meldung bestätigter Fall",
+                                            "gradeOfRecommendation": "3."
+                                        },
+                                        {
+                                            "type": "freeText",
+                                            "primaryRecommendation": true,
+                                            "gradeOfRecommendation": "4.",
+                                            "content": "Stationäre Behandlung"
+                                        }
+                                    ],
+                                    "gradeOfRecommendation": "",
+                                    "title": "",
+                                    "hideOnSublevelSelect": true
+                                }
+                            ],
+                            "levels": [
+                                {
+                                    "levelName": "Hinweise zur stationären Versorgung eines COVID-19-Falls",
+                                    "definition": "",
+                                    "recommendations": [
+                                        {
+                                            "type": "group",
+                                            "primaryRecommendation": true,
+                                            "content": "Hinweise zur stationären Versorgung eines COVID-19-Falls",
+                                            "recommendations": [
+                                                {
+                                                    "type": "freeText",
+                                                    "primaryRecommendation": true,
+                                                    "content": "Therapie",
+                                                    "comment": "Supportive Ma&#223;nahmen entsprechend Schwere der Erkrankung&#10;Beratung zu klinischen Fragen &#252;ber das zust&#228;ndige STAKOB-Behandlungszentrum&#10;Kontakt unter: www.rki.de/covid-19-therapie",
+                                                    "gradeOfRecommendation": "1."
+                                                },
+                                                {
+                                                    "type": "freeText",
+                                                    "primaryRecommendation": true,
+                                                    "content": "Hygiene",
+                                                    "comment": "Patient in Isolierzimmer, m&#246;glichst mit Vorraum&#10;Schutzkleidung: Einmalschutzkittel, Handschuhe, Schutzbrille, geeigneter Atemschutz&#10;www.rki.de/covid-19-hygiene",
+                                                    "gradeOfRecommendation": "2."
+                                                },
+                                                {
+                                                    "type": "freeText",
+                                                    "primaryRecommendation": true,
+                                                    "gradeOfRecommendation": "3.",
+                                                    "content": "Patiententransport im Krankenhaus",
+                                                    "comment": "Beschr&#228;nkung auf unvermeidbare Transporte; Patient mit Mund-Nasen-Schutz&#10;Schutzkleidung: Einmalschutzkittel, Handschuhe, geeigneter Atemschutz, ggf. Schutzbrille&#10;www.rki.de/covid-19-hygiene"
+                                                },
+                                                {
+                                                    "type": "freeText",
+                                                    "primaryRecommendation": true,
+                                                    "gradeOfRecommendation": "4.",
+                                                    "content": "Reinigung und Desinfektion",
+                                                    "comment": "T&#228;gliche Wischdesinfektion mit Mittel mit begrenzt viruzidem Wirkungsbereich&#10;www.rki.de/desinfektionsmittelliste, www.rki.de/covid-19-hygiene"
+                                                },
+                                                {
+                                                    "type": "freeText",
+                                                    "primaryRecommendation": true,
+                                                    "gradeOfRecommendation": "5.",
+                                                    "content": "Abfallentsorgung",
+                                                    "comment": "Gem&#228;&#223; LAGA-Vollzugshilfe 18 nach Abfallschl&#252;ssel 180103 als &#8222;infekti&#246;se Krankenhausabf&#228;lle&#8220;&#10;www.rki.de/laga-18"
+                                                },
+                                                {
+                                                    "type": "freeText",
+                                                    "primaryRecommendation": true,
+                                                    "gradeOfRecommendation": "6.",
+                                                    "content": "Entlassung und Entisolierung",
+                                                    "comment": "https://www.rki.de/covid-19-entlassungskriterien"
+                                                }
+                                            ],
+                                            "title": "Hinweise zur stationären Versorgung eines COVID-19-Falls",
+                                            "expandable": false
+                                        }
+                                    ],
+                                    "levels": [],
+                                    "showDiagram": false,
+                                    "invisibleLevels": [],
+                                    "levelId": "840414d0-6e15-11ea-bd94-0f683186a6ac",
+                                    "sublevelDisplayType": "horizontal"
+                                }
+                            ],
+                            "showDiagram": false,
+                            "invisibleLevels": [],
+                            "levelId": "aa8f9f60-6e11-11ea-bd94-0f683186a6ac"
+                        }
+                    ],
+                    "showDiagram": false,
+                    "invisibleLevels": [],
+                    "levelId": "6a835c60-6e0f-11ea-bd94-0f683186a6ac",
+                    "selectionTitle": "Ambulantes Management möglich?",
+                    "andOr": "and",
+                    "sublevelDisplayType": "horizontal"
                 },
                 {
-                    "type": "group",
-                    "title": "Empfohlen von DDG/DGIM: 2-fach Kombi aus",
-                    "primaryRecommendation": true,
-                    "hideOnSublevelSelect": true,
-                    "comment": "",
-                    "hideAnd": true,
-                    "recommendations": 
-                    [
-                        {
-                            "type": "medication",
-                            "name" : "DPP-4-Inhibitor",
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "comment" : "",
-                            "activeSubstance" : "",
-                            "dosageAmount" : "0",
-                            "dosageUnit" : "ml",
-                            "useSpecificDosageSchema": true,
-                            "morningDosage" : "0",
-                            "noonDosage" : "0",
-                            "eveningDosage" : "0",
-                            "nightDosage" : "0",
-                            "dosageFrequency" : "0",
-                            "dosageDuration" : "0",
-                            "dosageDurationUnit" : "days",
-                            "unlimitedApplicationDuration": true
-                        },
-                        {
-                            "type": "medication",
-                            "name" : "GLP-1-Rezeptoragonist",
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "comment" : "",
-                            "activeSubstance" : "",
-                            "dosageAmount" : "0",
-                            "dosageUnit" : "ml",
-                            "useSpecificDosageSchema": true,
-                            "morningDosage" : "0",
-                            "noonDosage" : "0",
-                            "eveningDosage" : "0",
-                            "nightDosage" : "0",
-                            "dosageFrequency" : "0",
-                            "dosageDuration" : "0",
-                            "dosageDurationUnit" : "days",
-                            "unlimitedApplicationDuration": true
-                        },
-                        {
-                            "type": "medication",
-                            "name" : "Glukosidasehemmer",
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "comment" : "",
-                            "activeSubstance" : "",
-                            "dosageAmount" : "0",
-                            "dosageUnit" : "ml",
-                            "useSpecificDosageSchema": true,
-                            "morningDosage" : "0",
-                            "noonDosage" : "0",
-                            "eveningDosage" : "0",
-                            "nightDosage" : "0",
-                            "dosageFrequency" : "0",
-                            "dosageDuration" : "0",
-                            "dosageDurationUnit" : "days",
-                            "unlimitedApplicationDuration": true
-                        },
-                        {
-                            "type": "medication",
-                            "name" : "Insulin (häufig Verzögerungsinsulin)",
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "comment" : "",
-                            "activeSubstance" : "",
-                            "dosageAmount" : "0",
-                            "dosageUnit" : "ml",
-                            "useSpecificDosageSchema": true,
-                            "morningDosage" : "0",
-                            "noonDosage" : "0",
-                            "eveningDosage" : "0",
-                            "nightDosage" : "0",
-                            "dosageFrequency" : "0",
-                            "dosageDuration" : "0",
-                            "dosageDurationUnit" : "days",
-                            "unlimitedApplicationDuration": true
-                        },
-                        {
-                            "type": "medication",
-                            "name" : "SGLT2-Inhibtor",
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "comment" : "",
-                            "activeSubstance" : "",
-                            "dosageAmount" : "0",
-                            "dosageUnit" : "ml",
-                            "useSpecificDosageSchema": true,
-                            "morningDosage" : "0",
-                            "noonDosage" : "0",
-                            "eveningDosage" : "0",
-                            "nightDosage" : "0",
-                            "dosageFrequency" : "0",
-                            "dosageDuration" : "0",
-                            "dosageDurationUnit" : "days",
-                            "unlimitedApplicationDuration": true
-                        },
-                        {
-                            "type": "medication",
-                            "name" : "Sulfonylharnstoff / Glinid",
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "comment" : "",
-                            "activeSubstance" : "",
-                            "dosageAmount" : "0",
-                            "dosageUnit" : "ml",
-                            "useSpecificDosageSchema": true,
-                            "morningDosage" : "0",
-                            "noonDosage" : "0",
-                            "eveningDosage" : "0",
-                            "nightDosage" : "0",
-                            "dosageFrequency" : "0",
-                            "dosageDuration" : "0",
-                            "dosageDurationUnit" : "days",
-                            "unlimitedApplicationDuration": true
-                        }
-                    ]
+                    "levelName": "Ohne Kontakt zu bestätigtem COVID-19 Fall, dafür Tätigkeit in Pflege, Arztpraxis oder Krankenhaus;  oder Zugehörigkeit zu Risikogruppe; oder ohne bekannte Risikofaktoren (COVID-19 Diagnostik nur bei hinreichender Testkapazität)",
+                    "definition": "",
+                    "recommendations": [],
+                    "levels": [],
+                    "showDiagram": false,
+                    "invisibleLevels": [],
+                    "useLink": true,
+                    "levelId": "bb582280-6e17-11ea-bd94-0f683186a6ac",
+                    "linkedLevelId": "d2f41dc0-6e0f-11ea-bd94-0f683186a6ac"
                 }
             ],
-            "levelName" : "Stufe 3: Therapierefraktärer Typ-2-DM auf Basis + Pharmako-Monotherapie über 3-6 Monate",
-            "levelId" : "06781160-b732-11e8-8097-87b5bf74cf76",
-            "definition": "Individueller HbA1c nach 3-6 Monaten nicht erreicht"
+            "showDiagram": false,
+            "invisibleLevels": [],
+            "levelId": "3f8ef640-6e0f-11ea-bd94-0f683186a6ac",
+            "selectionTitle": "",
+            "sublevelDisplayType": "vertical"
         },
         {
-            "recommendations": [
+            "levelName": "Klinische oder radiologische Hinweise auf eine virale Pneumonie",
+            "definition": "",
+            "recommendations": [],
+            "levels": [
                 {
-                    "type": "freeText",
-                    "title": "",
-                    "content": "(Intensivierte) Insulintherapie (SIT, CT, ICT, CSII, Verzögerungsinsulin)",
-                    "gradeOfEvidence": "",
-                    "gradeOfRecommendation": "",
-                    "primaryRecommendation": true,
-                    "comment": "",
-                    "hideOnSublevelSelect": true
-                },
-                {
-                    "type": "group",
-                    "title": "Empfohlen von DDG / DGIM",
-                    "primaryRecommendation": true,
-                    "hideOnSublevelSelect": false,
-                    "comment": "",
-                    "recommendations": 
-                    [
-                        {
-                            "type": "freeText",
-                            "title": "",
-                            "content": "(Intensivierte) Insulintherapie (SIT, CT, ICT, CSII, Verzögerungsinsulin)",
-                            "gradeOfEvidence": "",
-                            "gradeOfRecommendation": "",
-                            "primaryRecommendation": true,
-                            "comment": ""
-                        },
-                        {
-                            "type": "syntax",
-                            "preDefs": 
-                            [
-                                {
-                                    "refId": 0,
-                                    "type": "medication",
-                                    "name" : "Metformin",
-                                    "gradeOfEvidence" : "",
-                                    "gradeOfRecommendation" : "",
-                                    "comment" : "",
-                                    "activeSubstance" : "Metformin",
-                                    "dosageAmount" : "0",
-                                    "dosageUnit" : "ml",
-                                    "useSpecificDosageSchema": true,
-                                    "morningDosage" : "0",
-                                    "noonDosage" : "0",
-                                    "eveningDosage" : "0",
-                                    "nightDosage" : "0",
-                                    "dosageFrequency" : "0",
-                                    "dosageDuration" : "0",
-                                    "dosageDurationUnit" : "days",
-                                    "unlimitedApplicationDuration": true
-                                }
-                            ],
-                            "content" : "Orale Antidiabetika ({0}, Dpp-4-Inhibtor, SGLT-2-Inhibitor)",
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "comment" : ""
-                        }
-                    ]
-                },
-                {
-                    "type": "group",
-                    "title": "Empfohlen von DDG / DGIM",
-                    "primaryRecommendation": true,
-                    "hideOnSublevelSelect": false,
-                    "comment": "",
-                    "recommendations": 
-                    [
-                        {
-                            "type": "freeText",
-                            "title": "",
-                            "content": "Verzögerungsinsulin",
-                            "gradeOfEvidence": "",
-                            "gradeOfRecommendation": "",
-                            "primaryRecommendation": true,
-                            "comment": ""
-                        },
-                        {
-                            "type": "freeText",
-                            "content" : "GLP-1-Rezeptorantagonist",
-                            "gradeOfEvidence" : "",
-                            "gradeOfRecommendation" : "",
-                            "comment" : ""
-                        }
-                    ]
-                }
-            ],
-            "levels" : [
-                {
-                    "levelName": "Adipös?",
-                    "levelId": "lkjhsdflkbl1kjh412l34",
-                    "recommendations": 
-                    [
+                    "levelName": "Ohne Kontakt zu bestätigtem COVID-19 Fall",
+                    "definition": "",
+                    "recommendations": [
                         {
                             "type": "group",
                             "primaryRecommendation": true,
-                            "hideOnSublevelSelect": false,
-                            "comment": "",
-                            "title": "Empfehlung bei Adipositas nach DEGAM / AkdÄ",
-                            "recommendations": 
-                            [
+                            "recommendations": [
                                 {
                                     "type": "freeText",
-                                    "title": "",
-                                    "content": "Insulin (SIT, CT, ICT)",
-                                    "gradeOfEvidence": "",
-                                    "gradeOfRecommendation": "",
                                     "primaryRecommendation": true,
-                                    "comment": ""
+                                    "gradeOfRecommendation": "1.",
+                                    "content": "Hygiene",
+                                    "comment": "Patient: Mund-Nasen-Schutz&#10;Personal: Schutzkleidung gem&#228;&#223; Risikoabw&#228;gung&#10;siehe www.rki.de/covid-19-hygiene"
                                 },
                                 {
-                                    "type": "medication",
-                                    "name" : "Metformin",
-                                    "gradeOfEvidence" : "",
-                                    "gradeOfRecommendation" : "",
-                                    "comment" : "",
-                                    "activeSubstance" : "Metformin",
-                                    "dosageAmount" : "0",
-                                    "dosageUnit" : "ml",
-                                    "useSpecificDosageSchema": true,
-                                    "morningDosage" : "0",
-                                    "noonDosage" : "0",
-                                    "eveningDosage" : "0",
-                                    "nightDosage" : "0",
-                                    "dosageFrequency" : "0",
-                                    "dosageDuration" : "0",
-                                    "dosageDurationUnit" : "days",
-                                    "unlimitedApplicationDuration": true
+                                    "type": "freeText",
+                                    "primaryRecommendation": true,
+                                    "gradeOfRecommendation": "2.",
+                                    "content": "Keine Meldung des Verdachts"
                                 }
-                            ]
+                            ],
+                            "title": "Fall unter differenzialdiagnostischer Abklärung",
+                            "hideOnSublevelSelect": true
                         }
-                    ]
+                    ],
+                    "levels": [
+                        {
+                            "levelName": "Ja, ambulantes Management möglich",
+                            "definition": "",
+                            "recommendations": [],
+                            "levels": [],
+                            "showDiagram": false,
+                            "invisibleLevels": [],
+                            "useLink": true,
+                            "levelId": "1ae09350-6e17-11ea-bd94-0f683186a6ac",
+                            "linkedLevelId": "a5423360-6e11-11ea-bd94-0f683186a6ac"
+                        },
+                        {
+                            "levelName": "Nein, kein ambulantes Management möglich",
+                            "definition": "",
+                            "recommendations": [],
+                            "levels": [],
+                            "showDiagram": false,
+                            "invisibleLevels": [],
+                            "useLink": true,
+                            "levelId": "57591320-6e17-11ea-bd94-0f683186a6ac",
+                            "linkedLevelId": "aa8f9f60-6e11-11ea-bd94-0f683186a6ac"
+                        }
+                    ],
+                    "showDiagram": false,
+                    "invisibleLevels": [],
+                    "levelId": "d2f41dc0-6e0f-11ea-bd94-0f683186a6ac",
+                    "selectionTitle": "Ambulantes Management möglich?",
+                    "sublevelDisplayType": "horizontal"
+                },
+                {
+                    "levelName": "Bei einer Häufung von Pneumonien in Kranken- / Pflegeeinrichtung",
+                    "definition": "",
+                    "recommendations": [],
+                    "levels": [],
+                    "showDiagram": false,
+                    "invisibleLevels": [],
+                    "useLink": true,
+                    "levelId": "28d77650-6e11-11ea-bd94-0f683186a6ac",
+                    "linkedLevelId": "6a835c60-6e0f-11ea-bd94-0f683186a6ac"
                 }
             ],
-            "levelName" : "Stufe 4: Therapierefraktärer auf Insulin alleine / Pharmako 2-fach Kombi",
-            "levelId" : "06781160-b732-11e8-8097-87b5bf74cf76",
-            "definition": "Individueller HbA1c nach 3-6 Monaten nicht erreicht"
+            "showDiagram": false,
+            "invisibleLevels": [],
+            "levelId": "996a0b50-6e0f-11ea-bd94-0f683186a6ac",
+            "sublevelDisplayType": "vertical"
         }
-    ]
- 
+    ],
+    "nameOfGuideline": "COVID-19: Verdachtsabklärung und Maßnahmen",
+    "internalAuthor": "Johann Rink",
+    "validity": "2020-03-24",
+    "publisher": "Robert Koch Institut (RKI)",
+    "source": "https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Massnahmen_Verdachtsfall_Infografik_DINA3.pdf?__blob=publicationFile",
+    "keywords": [
+        "covid"
+    ],
+    "active": true,
+    "selectionTitle": "Erste Prüfung klinisch-epidemiologischer Kriterien",
+    "sublevelDisplayType": "horizontal"
 }

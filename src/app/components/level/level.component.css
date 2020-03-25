@@ -277,6 +277,7 @@ ul.selection-box.horizontal li:first-child {
     }
     .level-container.selected h3
     {
+        margin-top: 10px;
         text-align: center;
     }
 }
@@ -286,6 +287,21 @@ ul.selection-box.horizontal li:first-child {
     {
         width: 100px;
         min-width: 100px;
-        height: 100px;
+        min-height: 100px;
+    }
+
+    ul.selection-box.horizontal li .title
+    {
+        font-size: 13px;
+    }
+
+    div.level-container.selected ul.selection-box.horizontal li
+    {
+        min-height: 0;
+        padding-bottom: 8px;
+    }
+    div.level-container.selected ul li.selected-item .title
+    {
+        padding-bottom: 10px;
     }
 }

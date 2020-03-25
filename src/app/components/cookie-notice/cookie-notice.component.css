@@ -10,7 +10,7 @@
     width: 100%;
     background-color: #ccc;
     color: black;
-    
+    z-index: 10;
 }
 
 button
@@ -33,15 +33,6 @@ button:hover{
     opacity: 0.8;
 }
 
-@media only screen and (max-width: 1100px) {
-    .wrapper
-    {
-        max-width: none;
-        width: 90%;
-        margin-left: 5%;
-    }
-}
-
 .wrapper
 {
     margin-left: 260px;
@@ -51,4 +42,15 @@ button:hover{
     align-items: center;
     justify-content: center;
     flex-flow: row;
+}
+
+@media only screen and (max-width: 1100px) {
+    .wrapper
+    {
+        margin: 0;
+        max-width: none;
+        width: 90%;
+        margin-left: 5%;
+        font-size: 11px;
+    }
 }

@@ -3,7 +3,7 @@
     <a (click)="guidelineWasSelected(guideline)">
       <li>
         <div class="result-header">
-          <span class="date">Gültig bis {{guideline.validity | date:'dd. MMMM yyyy'}}</span>
+          <span class="date">Zuletzt aktualisiert am {{guideline.validity | date:'dd. MMMM yyyy'}}</span>
           <span class="publisher">{{guideline.publisher}}</span>
           <div class="visibility" [class.public]="allPublic" [class.private]="!allPublic">{{isPublicText(guideline)}}</div>
         </div>
