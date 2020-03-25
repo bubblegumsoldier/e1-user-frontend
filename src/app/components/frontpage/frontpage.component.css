@@ -78,6 +78,10 @@ p a:hover
         font-size: 11px;
         padding-bottom: 60px;
     }
+    .header .wrapper
+    {
+        padding-bottom: 0px;
+    }
     img
     {
         position: relative;
