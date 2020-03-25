@@ -48,24 +48,28 @@
                                             "content": "Ambulante Diagnostik",
                                             "comment": "COVID-19 Diagnostik, weitere Diagnostik, z.B.&#10;Infl uenza, je nach Symptomatik und&#10;Grunderkrankung&#10;<a href=\"www.rki.de/covid-19-diagnostik\">www.rki.de/covid-19-diagnostik</a>",
                                             "gradeOfRecommendation": "1.",
-                                            "gradeOfEvidence": ""
+                                            "gradeOfEvidence": "",
+                                            "sourceRef": "page=1"
                                         },
                                         {
                                             "type": "freeText",
                                             "primaryRecommendation": true,
                                             "content": "Ambulante Betreuung",
                                             "comment": "Kontaktreduktion im h&#228;uslichen Umfeld&#10;bis Befundeingang;&#10;weiterf&#252;hrende Informtionen siehe&#10;<a href=\"www.rki.de/covid-19-ambulant\">www.rki.de/covid-19-ambulant</a><div><br></div><div><b>Ggf. station&#228;re Einweisung je nach Schwere</b><br></div>",
-                                            "gradeOfRecommendation": "2."
+                                            "gradeOfRecommendation": "2.",
+                                            "sourceRef": "page=1"
                                         },
                                         {
                                             "type": "freeText",
                                             "primaryRecommendation": true,
                                             "gradeOfRecommendation": "3.",
                                             "content": "Bei Bestätigung: Meldung",
-                                            "comment": "Meldung an zust&#228;ndiges Gesundheitsamt&#10;Gesundheitsamt via PLZ suchen:&#10; https://tools.rki.de/PLZTool/&#160;"
+                                            "comment": "Meldung an zust&#228;ndiges Gesundheitsamt&#10;Gesundheitsamt via PLZ suchen:&#10; https://tools.rki.de/PLZTool/&#160;",
+                                            "sourceRef": "page=1"
                                         }
                                     ],
-                                    "andOr": "and"
+                                    "andOr": "and",
+                                    "sourceRef": "page=1"
                                 }
                             ],
                             "levels": [],
@@ -86,32 +90,37 @@
                                             "primaryRecommendation": true,
                                             "gradeOfRecommendation": "1.",
                                             "content": "Stationäre Einweisung",
-                                            "comment": "Vorabinformation des Krankenhauses&#10; Transport gem&#228;&#223;&#10;www.rki.de/covid-19-hygiene"
+                                            "comment": "Vorabinformation des Krankenhauses&#10; Transport gem&#228;&#223;&#10;www.rki.de/covid-19-hygiene",
+                                            "sourceRef": "page=1"
                                         },
                                         {
                                             "type": "freeText",
                                             "primaryRecommendation": true,
                                             "gradeOfRecommendation": "2.",
                                             "content": "Stationäre Diagnostik",
-                                            "comment": "COVID-19 PCR aus Naso-/Oropharyngealabstrich&#10;und Sputum/Trachealsekret / BAL;&#10;ggf. Serum-Asservierung f&#252;r AK-Nachweis"
+                                            "comment": "COVID-19 PCR aus Naso-/Oropharyngealabstrich&#10;und Sputum/Trachealsekret / BAL;&#10;ggf. Serum-Asservierung f&#252;r AK-Nachweis",
+                                            "sourceRef": "page=1"
                                         },
                                         {
                                             "type": "freeText",
                                             "primaryRecommendation": true,
                                             "comment": "Meldung an zust&#228;ndiges Gesundheitsamt&#10;Gesundheitsamt via PLZ suchen:&#10; https://tools.rki.de/PLZTool/&#160;",
                                             "content": "Meldung bestätigter Fall",
-                                            "gradeOfRecommendation": "3."
+                                            "gradeOfRecommendation": "3.",
+                                            "sourceRef": "page=1"
                                         },
                                         {
                                             "type": "freeText",
                                             "primaryRecommendation": true,
                                             "gradeOfRecommendation": "4.",
-                                            "content": "Stationäre Behandlung"
+                                            "content": "Stationäre Behandlung",
+                                            "sourceRef": "page=1"
                                         }
                                     ],
                                     "gradeOfRecommendation": "",
                                     "title": "",
-                                    "hideOnSublevelSelect": true
+                                    "hideOnSublevelSelect": true,
+                                    "sourceRef": ""
                                 }
                             ],
                             "levels": [
@@ -129,46 +138,53 @@
                                                     "primaryRecommendation": true,
                                                     "content": "Therapie",
                                                     "comment": "Supportive Ma&#223;nahmen entsprechend Schwere der Erkrankung&#10;Beratung zu klinischen Fragen &#252;ber das zust&#228;ndige STAKOB-Behandlungszentrum&#10;Kontakt unter: www.rki.de/covid-19-therapie",
-                                                    "gradeOfRecommendation": "1."
+                                                    "gradeOfRecommendation": "1.",
+                                                    "sourceRef": "page=2"
                                                 },
                                                 {
                                                     "type": "freeText",
                                                     "primaryRecommendation": true,
                                                     "content": "Hygiene",
                                                     "comment": "Patient in Isolierzimmer, m&#246;glichst mit Vorraum&#10;Schutzkleidung: Einmalschutzkittel, Handschuhe, Schutzbrille, geeigneter Atemschutz&#10;www.rki.de/covid-19-hygiene",
-                                                    "gradeOfRecommendation": "2."
+                                                    "gradeOfRecommendation": "2.",
+                                                    "sourceRef": "page=2"
                                                 },
                                                 {
                                                     "type": "freeText",
                                                     "primaryRecommendation": true,
                                                     "gradeOfRecommendation": "3.",
                                                     "content": "Patiententransport im Krankenhaus",
-                                                    "comment": "Beschr&#228;nkung auf unvermeidbare Transporte; Patient mit Mund-Nasen-Schutz&#10;Schutzkleidung: Einmalschutzkittel, Handschuhe, geeigneter Atemschutz, ggf. Schutzbrille&#10;www.rki.de/covid-19-hygiene"
+                                                    "comment": "Beschr&#228;nkung auf unvermeidbare Transporte; Patient mit Mund-Nasen-Schutz&#10;Schutzkleidung: Einmalschutzkittel, Handschuhe, geeigneter Atemschutz, ggf. Schutzbrille&#10;www.rki.de/covid-19-hygiene",
+                                                    "sourceRef": "page=2"
                                                 },
                                                 {
                                                     "type": "freeText",
                                                     "primaryRecommendation": true,
                                                     "gradeOfRecommendation": "4.",
                                                     "content": "Reinigung und Desinfektion",
-                                                    "comment": "T&#228;gliche Wischdesinfektion mit Mittel mit begrenzt viruzidem Wirkungsbereich&#10;www.rki.de/desinfektionsmittelliste, www.rki.de/covid-19-hygiene"
+                                                    "comment": "T&#228;gliche Wischdesinfektion mit Mittel mit begrenzt viruzidem Wirkungsbereich&#10;www.rki.de/desinfektionsmittelliste, www.rki.de/covid-19-hygiene",
+                                                    "sourceRef": "page=2"
                                                 },
                                                 {
                                                     "type": "freeText",
                                                     "primaryRecommendation": true,
                                                     "gradeOfRecommendation": "5.",
                                                     "content": "Abfallentsorgung",
-                                                    "comment": "Gem&#228;&#223; LAGA-Vollzugshilfe 18 nach Abfallschl&#252;ssel 180103 als &#8222;infekti&#246;se Krankenhausabf&#228;lle&#8220;&#10;www.rki.de/laga-18"
+                                                    "comment": "Gem&#228;&#223; LAGA-Vollzugshilfe 18 nach Abfallschl&#252;ssel 180103 als &#8222;infekti&#246;se Krankenhausabf&#228;lle&#8220;&#10;www.rki.de/laga-18",
+                                                    "sourceRef": "page=2"
                                                 },
                                                 {
                                                     "type": "freeText",
                                                     "primaryRecommendation": true,
                                                     "gradeOfRecommendation": "6.",
                                                     "content": "Entlassung und Entisolierung",
-                                                    "comment": "https://www.rki.de/covid-19-entlassungskriterien"
+                                                    "comment": "https://www.rki.de/covid-19-entlassungskriterien",
+                                                    "sourceRef": "page=2"
                                                 }
                                             ],
                                             "title": "Hinweise zur stationären Versorgung eines COVID-19-Falls",
-                                            "expandable": false
+                                            "expandable": false,
+                                            "sourceRef": ""
                                         }
                                     ],
                                     "levels": [],
@@ -226,13 +242,15 @@
                                     "primaryRecommendation": true,
                                     "gradeOfRecommendation": "1.",
                                     "content": "Hygiene",
-                                    "comment": "Patient: Mund-Nasen-Schutz&#10;Personal: Schutzkleidung gem&#228;&#223; Risikoabw&#228;gung&#10;siehe www.rki.de/covid-19-hygiene"
+                                    "comment": "Patient: Mund-Nasen-Schutz&#10;Personal: Schutzkleidung gem&#228;&#223; Risikoabw&#228;gung&#10;siehe www.rki.de/covid-19-hygiene",
+                                    "sourceRef": "page=1"
                                 },
                                 {
                                     "type": "freeText",
                                     "primaryRecommendation": true,
                                     "gradeOfRecommendation": "2.",
-                                    "content": "Keine Meldung des Verdachts"
+                                    "content": "Keine Meldung des Verdachts",
+                                    "sourceRef": "page=1"
                                 }
                             ],
                             "title": "Fall unter differenzialdiagnostischer Abklärung",

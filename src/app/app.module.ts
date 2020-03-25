@@ -139,8 +139,12 @@ const appRoutes :Routes = [
     ]
   },
   {
-    path: '',
+    path: 'overview',
     component: ResultListComponent
+  },
+  {
+    path: '',
+    component: FrontpageComponent
   }
 ];
 

@@ -21,9 +21,6 @@ export class SearchHandlerService {
 
   allGuidelines :any = {
     "0": <any>covid0,
-    "1": <any>covid1,
-    "2": <any>covid2,
-    "3": <any>covid3
   };
 
   allGuidelinesList :any[] = [];
