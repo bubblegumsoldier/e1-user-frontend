@@ -7,7 +7,7 @@ import {AuthService} from "../../services/auth/auth.service";
 import { environment } from '../../../environments/environment';
 import covid0 from './covid0.json';
 import covid1 from './covid1.json';
-import covid2 from './covid0.json';
+import covid2 from './covid2.json';
 import covid3 from './covid0.json';
 import { Observer } from 'rx';
 
@@ -22,6 +22,7 @@ export class SearchHandlerService {
   allGuidelines :any = {
     "0": <any>covid0,
     "1": <any>covid1,
+    "2": <any>covid2
   };
 
   allGuidelinesList :any[] = [];

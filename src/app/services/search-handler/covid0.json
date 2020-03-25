@@ -14,21 +14,24 @@
                             "primaryRecommendation": true,
                             "recommendations": [
                                 {
-                                    "type": "freeText",
+                                    "type": "syntax",
                                     "primaryRecommendation": true,
-                                    "content": "Hygiene",
-                                    "comment": "Patient: separater Raum, Mund-Nasen-Schutz&#10;Personal: Schutzkleidung gem&#228;&#223; Risikoabw&#228;gung&#10;siehe www.rki.de/covid-19-hygiene",
-                                    "gradeOfRecommendation": "1."
+                                    "content": "Einleitung <b>Hygiene-Ma&#223;nahmen&#160;</b>",
+                                    "comment": "Patient: separater Raum, Mund-Nasen-Schutz&#10;Personal: Schutzkleidung gem&#228;&#223; Risikoabw&#228;gung&#10;siehe&#160;<a href=\"https://www.rki.de/covid-19-hygiene\" target=\"_blank\">www.rki.de/covid-19-hygiene</a>",
+                                    "gradeOfRecommendation": "1.",
+                                    "preDefs": [],
+                                    "sourceRef": "page=1"
                                 },
                                 {
-                                    "type": "freeText",
+                                    "type": "syntax",
                                     "primaryRecommendation": true,
-                                    "content": "Meldung des Verdachts",
-                                    "comment": "Meldung an zust&#228;ndiges Gesundheitsamt&#10;Suche via PLZ https://tools.rki.de/PLZTool/",
-                                    "gradeOfRecommendation": "2."
+                                    "content": "<b>Meldung</b> des Verdachts",
+                                    "comment": "Meldung an zust&#228;ndiges Gesundheitsamt; Suche via PLZ&#160;<a href=\"https://tools.rki.de/PLZTool/\" target=\"_blank\">https://tools.rki.de/PLZTool/</a>",
+                                    "gradeOfRecommendation": "2.",
+                                    "preDefs": []
                                 }
                             ],
-                            "title": "Begründeter Verdachtsfall",
+                            "title": "Begründeter Verdachtsfall!",
                             "expandable": false,
                             "hideOnSublevelSelect": true
                         }
@@ -43,29 +46,32 @@
                                     "primaryRecommendation": true,
                                     "recommendations": [
                                         {
-                                            "type": "freeText",
+                                            "type": "syntax",
                                             "primaryRecommendation": true,
-                                            "content": "Ambulante Diagnostik",
-                                            "comment": "COVID-19 Diagnostik, weitere Diagnostik, z.B.&#10;Infl uenza, je nach Symptomatik und&#10;Grunderkrankung&#10;<a href=\"www.rki.de/covid-19-diagnostik\">www.rki.de/covid-19-diagnostik</a>",
+                                            "content": "Ambulante <b>Diagnostik</b>",
+                                            "comment": "COVID-19 Diagnostik, weitere Diagnostik, z.B.&#10;Influenza, je nach Symptomatik und&#10;Grunderkrankung&#10;<a href=\"www.rki.de/covid-19-diagnostik\">www.rki.de/covid-19-diagnostik</a>",
                                             "gradeOfRecommendation": "1.",
                                             "gradeOfEvidence": "",
-                                            "sourceRef": "page=1"
+                                            "sourceRef": "page=1",
+                                            "preDefs": []
                                         },
                                         {
-                                            "type": "freeText",
+                                            "type": "syntax",
                                             "primaryRecommendation": true,
-                                            "content": "Ambulante Betreuung",
+                                            "content": "Ambulante <b>Betreuung</b>",
                                             "comment": "Kontaktreduktion im h&#228;uslichen Umfeld&#10;bis Befundeingang;&#10;weiterf&#252;hrende Informtionen siehe&#10;<a href=\"www.rki.de/covid-19-ambulant\">www.rki.de/covid-19-ambulant</a><div><br></div><div><b>Ggf. station&#228;re Einweisung je nach Schwere</b><br></div>",
                                             "gradeOfRecommendation": "2.",
-                                            "sourceRef": "page=1"
+                                            "sourceRef": "page=1",
+                                            "preDefs": []
                                         },
                                         {
-                                            "type": "freeText",
+                                            "type": "syntax",
                                             "primaryRecommendation": true,
                                             "gradeOfRecommendation": "3.",
-                                            "content": "Bei Bestätigung: Meldung",
-                                            "comment": "Meldung an zust&#228;ndiges Gesundheitsamt&#10;Gesundheitsamt via PLZ suchen:&#10; https://tools.rki.de/PLZTool/&#160;",
-                                            "sourceRef": "page=1"
+                                            "content": "<b>Bei Best&#228;tigung: Meldung</b>",
+                                            "comment": "Meldung an zust&#228;ndiges Gesundheitsamt&#10;Gesundheitsamt via PLZ suchen:&#160;<a href=\"https://tools.rki.de/PLZTool/\" target=\"_blank\">https://tools.rki.de/PLZTool/&#160;</a>",
+                                            "sourceRef": "page=1",
+                                            "preDefs": []
                                         }
                                     ],
                                     "andOr": "and",
@@ -78,7 +84,7 @@
                             "levelId": "a5423360-6e11-11ea-bd94-0f683186a6ac"
                         },
                         {
-                            "levelName": "Nein, stationär notwendig",
+                            "levelName": "Nein, stationäre Behandlung notwendig",
                             "definition": "",
                             "recommendations": [
                                 {
@@ -86,41 +92,54 @@
                                     "primaryRecommendation": true,
                                     "recommendations": [
                                         {
-                                            "type": "freeText",
+                                            "type": "syntax",
                                             "primaryRecommendation": true,
                                             "gradeOfRecommendation": "1.",
-                                            "content": "Stationäre Einweisung",
+                                            "content": "<b>Station&#228;re Einweisung </b>mit vorab-Information des Zielkrankenhauses",
                                             "comment": "Vorabinformation des Krankenhauses&#10; Transport gem&#228;&#223;&#10;www.rki.de/covid-19-hygiene",
-                                            "sourceRef": "page=1"
+                                            "sourceRef": "page=1",
+                                            "preDefs": []
                                         },
                                         {
-                                            "type": "freeText",
+                                            "type": "syntax",
                                             "primaryRecommendation": true,
                                             "gradeOfRecommendation": "2.",
-                                            "content": "Stationäre Diagnostik",
-                                            "comment": "COVID-19 PCR aus Naso-/Oropharyngealabstrich&#10;und Sputum/Trachealsekret / BAL;&#10;ggf. Serum-Asservierung f&#252;r AK-Nachweis",
-                                            "sourceRef": "page=1"
+                                            "content": "Station&#228;re <b>Diagnostik </b>(COVID-19 PCR)",
+                                            "comment": "COVID-19 PCR aus Naso-/Oropharyngealabstrich&#10;und Sputum/Trachealsekret / BAL;&#10;ggf. Serum-Asservierung f&#252;r AK-Nachweis<div><br></div><div>Weitere Informationen:</div><div><a href=\"https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Vorl_Testung_nCoV.html\" target=\"_blank\">https://www.rki.de/DE/Content/InfAZ/N/Neuartiges_Coronavirus/Vorl_Testung_nCoV.html</a><br></div>",
+                                            "sourceRef": "page=1",
+                                            "preDefs": []
                                         },
                                         {
-                                            "type": "freeText",
+                                            "type": "syntax",
                                             "primaryRecommendation": true,
-                                            "comment": "Meldung an zust&#228;ndiges Gesundheitsamt&#10;Gesundheitsamt via PLZ suchen:&#10; https://tools.rki.de/PLZTool/&#160;",
-                                            "content": "Meldung bestätigter Fall",
+                                            "comment": "Meldung an zust&#228;ndiges Gesundheitsamt&#10;Gesundheitsamt via PLZ suchen:&#160;<a href=\"https://tools.rki.de/PLZTool/\" target=\"_blank\">https://tools.rki.de/PLZTool/&#160;</a>",
+                                            "content": "<b>Meldung</b>&#160;des best&#228;tigten Falls",
                                             "gradeOfRecommendation": "3.",
-                                            "sourceRef": "page=1"
+                                            "sourceRef": "page=1",
+                                            "preDefs": []
                                         },
                                         {
-                                            "type": "freeText",
+                                            "type": "syntax",
                                             "primaryRecommendation": true,
                                             "gradeOfRecommendation": "4.",
-                                            "content": "Stationäre Behandlung",
-                                            "sourceRef": "page=1"
+                                            "content": "Station&#228;re <b>Behandlung</b>",
+                                            "sourceRef": "page=1",
+                                            "preDefs": []
+                                        },
+                                        {
+                                            "type": "syntax",
+                                            "primaryRecommendation": true,
+                                            "gradeOfRecommendation": "ITS",
+                                            "preDefs": [],
+                                            "content": "Empfehlungen zur <b>intensivmedizinischen Therapie </b>von Patienten mit COVID-19",
+                                            "comment": "Empfehlungen zur intensivmedizinischen Therapie von COVID-19 Patienten:<div><br></div><div><a href=\"https://link.springer.com/article/10.1007/s00063-020-00674-3\" target=\"_blank\">https://link.springer.com/article/10.1007/s00063-020-00674-3</a><br></div>"
                                         }
                                     ],
                                     "gradeOfRecommendation": "",
                                     "title": "",
                                     "hideOnSublevelSelect": true,
-                                    "sourceRef": ""
+                                    "sourceRef": "",
+                                    "andOr": "and"
                                 }
                             ],
                             "levels": [
@@ -134,52 +153,58 @@
                                             "content": "Hinweise zur stationären Versorgung eines COVID-19-Falls",
                                             "recommendations": [
                                                 {
-                                                    "type": "freeText",
+                                                    "type": "syntax",
                                                     "primaryRecommendation": true,
-                                                    "content": "Therapie",
-                                                    "comment": "Supportive Ma&#223;nahmen entsprechend Schwere der Erkrankung&#10;Beratung zu klinischen Fragen &#252;ber das zust&#228;ndige STAKOB-Behandlungszentrum&#10;Kontakt unter: www.rki.de/covid-19-therapie",
+                                                    "content": "<b>Therapie</b>",
+                                                    "comment": "Supportive Ma&#223;nahmen entsprechend Schwere der Erkrankung&#10;Beratung zu klinischen Fragen &#252;ber das zust&#228;ndige STAKOB-Behandlungszentrum&#10;Kontakt unter:&#160;<a href=\"https://www.rki.de/covid-19-therapie\" target=\"_blank\">www.rki.de/covid-19-therapie</a>",
                                                     "gradeOfRecommendation": "1.",
-                                                    "sourceRef": "page=2"
+                                                    "sourceRef": "page=2",
+                                                    "preDefs": []
                                                 },
                                                 {
-                                                    "type": "freeText",
+                                                    "type": "syntax",
                                                     "primaryRecommendation": true,
-                                                    "content": "Hygiene",
-                                                    "comment": "Patient in Isolierzimmer, m&#246;glichst mit Vorraum&#10;Schutzkleidung: Einmalschutzkittel, Handschuhe, Schutzbrille, geeigneter Atemschutz&#10;www.rki.de/covid-19-hygiene",
+                                                    "content": "<b>Hygiene </b>Ma&#223;nahmen",
+                                                    "comment": "Patient in Isolierzimmer, m&#246;glichst mit Vorraum&#10;Schutzkleidung: Einmalschutzkittel, Handschuhe, Schutzbrille, geeigneter Atemschutz&#160;<a href=\"https://www.rki.de/covid-19-hygiene\" target=\"_blank\">www.rki.de/covid-19-hygiene</a>",
                                                     "gradeOfRecommendation": "2.",
-                                                    "sourceRef": "page=2"
+                                                    "sourceRef": "page=2",
+                                                    "preDefs": []
                                                 },
                                                 {
-                                                    "type": "freeText",
+                                                    "type": "syntax",
                                                     "primaryRecommendation": true,
                                                     "gradeOfRecommendation": "3.",
-                                                    "content": "Patiententransport im Krankenhaus",
-                                                    "comment": "Beschr&#228;nkung auf unvermeidbare Transporte; Patient mit Mund-Nasen-Schutz&#10;Schutzkleidung: Einmalschutzkittel, Handschuhe, geeigneter Atemschutz, ggf. Schutzbrille&#10;www.rki.de/covid-19-hygiene",
-                                                    "sourceRef": "page=2"
+                                                    "content": "<b>Patiententransport </b>im Krankenhaus - Schutzma&#223;nahmen",
+                                                    "comment": "Beschr&#228;nkung auf unvermeidbare Transporte; Patient mit Mund-Nasen-Schutz&#10;Schutzkleidung: Einmalschutzkittel, Handschuhe, geeigneter Atemschutz, ggf. Schutzbrille&#160;<a href=\"https://www.rki.de/covid-19-hygiene\" target=\"_blank\">www.rki.de/covid-19-hygiene</a>",
+                                                    "sourceRef": "page=2",
+                                                    "preDefs": []
                                                 },
                                                 {
-                                                    "type": "freeText",
+                                                    "type": "syntax",
                                                     "primaryRecommendation": true,
                                                     "gradeOfRecommendation": "4.",
-                                                    "content": "Reinigung und Desinfektion",
-                                                    "comment": "T&#228;gliche Wischdesinfektion mit Mittel mit begrenzt viruzidem Wirkungsbereich&#10;www.rki.de/desinfektionsmittelliste, www.rki.de/covid-19-hygiene",
-                                                    "sourceRef": "page=2"
+                                                    "content": "<b>Reinigung </b>und <b>Desinfektion</b>",
+                                                    "comment": "T&#228;gliche Wischdesinfektion mit Mittel mit begrenzt viruzidem Wirkungsbereich&#160;<a href=\"https://www.rki.de/desinfektionsmittelliste\" target=\"_blank\">www.rki.de/desinfektionsmittelliste</a>,&#160;<a href=\"https://www.rki.de/covid-19-hygiene\" target=\"_blank\">www.rki.de/covid-19-hygiene</a>",
+                                                    "sourceRef": "page=2",
+                                                    "preDefs": []
                                                 },
                                                 {
-                                                    "type": "freeText",
+                                                    "type": "syntax",
                                                     "primaryRecommendation": true,
                                                     "gradeOfRecommendation": "5.",
-                                                    "content": "Abfallentsorgung",
-                                                    "comment": "Gem&#228;&#223; LAGA-Vollzugshilfe 18 nach Abfallschl&#252;ssel 180103 als &#8222;infekti&#246;se Krankenhausabf&#228;lle&#8220;&#10;www.rki.de/laga-18",
-                                                    "sourceRef": "page=2"
+                                                    "content": "Ma&#223;nahmen der <b>Abfallentsorgung</b>",
+                                                    "comment": "Gem&#228;&#223; LAGA-Vollzugshilfe 18 nach Abfallschl&#252;ssel 180103 als &#8222;infekti&#246;se Krankenhausabf&#228;lle&#8220;&#160;<a href=\"https://www.rki.de/laga-18\" target=\"_blank\">www.rki.de/laga-18</a>",
+                                                    "sourceRef": "page=2",
+                                                    "preDefs": []
                                                 },
                                                 {
-                                                    "type": "freeText",
+                                                    "type": "syntax",
                                                     "primaryRecommendation": true,
                                                     "gradeOfRecommendation": "6.",
-                                                    "content": "Entlassung und Entisolierung",
-                                                    "comment": "https://www.rki.de/covid-19-entlassungskriterien",
-                                                    "sourceRef": "page=2"
+                                                    "content": "<b>Entlassung </b>und <b>Entisolierung</b>",
+                                                    "comment": "<div>Siehe gesonderte Leitlinie (oben auf Zur&#252;ck) sowie:&#160;<a href=\"https://www.rki.de/covid-19-entlassungskriterien\" target=\"_blank\">https://www.rki.de/covid-19-entlassungskriterien</a></div>",
+                                                    "sourceRef": "page=2",
+                                                    "preDefs": []
                                                 }
                                             ],
                                             "title": "Hinweise zur stationären Versorgung eines COVID-19-Falls",
@@ -207,7 +232,7 @@
                     "sublevelDisplayType": "horizontal"
                 },
                 {
-                    "levelName": "Ohne Kontakt zu bestätigtem COVID-19 Fall, dafür Tätigkeit in Pflege, Arztpraxis oder Krankenhaus;  oder Zugehörigkeit zu Risikogruppe; oder ohne bekannte Risikofaktoren (COVID-19 Diagnostik nur bei hinreichender Testkapazität)",
+                    "levelName": "Ohne Kontakt, mit Risikofaktoren: Tätigkeit in Pflege / Arztpraxis / Krankenhaus ODER Zugehörigkeit zur Risikogruppe",
                     "definition": "",
                     "recommendations": [],
                     "levels": [],
@@ -216,6 +241,23 @@
                     "useLink": true,
                     "levelId": "bb582280-6e17-11ea-bd94-0f683186a6ac",
                     "linkedLevelId": "d2f41dc0-6e0f-11ea-bd94-0f683186a6ac"
+                },
+                {
+                    "levelName": "Ohne Kontakt, ohne Risikofaktoren",
+                    "definition": "",
+                    "recommendations": [
+                        {
+                            "type": "freeText",
+                            "primaryRecommendation": true,
+                            "gradeOfRecommendation": "1.",
+                            "sourceRef": "page=1",
+                            "content": "COVID-19 Diagnostik nur bei Vorhandensein ausreichender Testkapazität!"
+                        }
+                    ],
+                    "levels": [],
+                    "showDiagram": false,
+                    "invisibleLevels": [],
+                    "levelId": "ce264820-6eb6-11ea-b130-6b5b25129e73"
                 }
             ],
             "showDiagram": false,
@@ -238,22 +280,24 @@
                             "primaryRecommendation": true,
                             "recommendations": [
                                 {
-                                    "type": "freeText",
+                                    "type": "syntax",
                                     "primaryRecommendation": true,
                                     "gradeOfRecommendation": "1.",
-                                    "content": "Hygiene",
-                                    "comment": "Patient: Mund-Nasen-Schutz&#10;Personal: Schutzkleidung gem&#228;&#223; Risikoabw&#228;gung&#10;siehe www.rki.de/covid-19-hygiene",
-                                    "sourceRef": "page=1"
+                                    "content": "Einhaltung von <b>Hygiene-Ma&#223;nahmen</b>",
+                                    "comment": "Patient: Mund-Nasen-Schutz&#10;Personal: Schutzkleidung gem&#228;&#223; Risikoabw&#228;gung&#10;siehe&#160;<a href=\"https://www.rki.de/covid-19-hygiene\" target=\"_blank\">www.rki.de/covid-19-hygiene</a>",
+                                    "sourceRef": "page=1",
+                                    "preDefs": []
                                 },
                                 {
-                                    "type": "freeText",
+                                    "type": "syntax",
                                     "primaryRecommendation": true,
                                     "gradeOfRecommendation": "2.",
-                                    "content": "Keine Meldung des Verdachts",
-                                    "sourceRef": "page=1"
+                                    "content": "<b>Keine Meldung </b>des Verdachts",
+                                    "sourceRef": "page=1",
+                                    "preDefs": []
                                 }
                             ],
-                            "title": "Fall unter differenzialdiagnostischer Abklärung",
+                            "title": "Fall unter differenzialdiagnostischer Abklärung!",
                             "hideOnSublevelSelect": true
                         }
                     ],
@@ -288,7 +332,7 @@
                     "sublevelDisplayType": "horizontal"
                 },
                 {
-                    "levelName": "Bei einer Häufung von Pneumonien in Kranken- / Pflegeeinrichtung",
+                    "levelName": "Bei Häufung von Pneumonien in Kranken- / Pflegeeinrichtung",
                     "definition": "",
                     "recommendations": [],
                     "levels": [],
@@ -305,7 +349,7 @@
             "sublevelDisplayType": "vertical"
         }
     ],
-    "nameOfGuideline": "COVID-19: Verdachtsabklärung und Maßnahmen",
+    "nameOfGuideline": "COVID-19: Verdachtsabklärung und Maßnahmen (RKI)",
     "internalAuthor": "Johann Rink",
     "validity": "2020-03-24",
     "publisher": "Robert Koch Institut (RKI)",
@@ -314,6 +358,6 @@
         "covid"
     ],
     "active": true,
-    "selectionTitle": "Erste Prüfung klinisch-epidemiologischer Kriterien",
+    "selectionTitle": "Initiale Klinik / Befunde",
     "sublevelDisplayType": "horizontal"
 }
