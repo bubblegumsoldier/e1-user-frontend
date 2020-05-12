@@ -1,7 +1,7 @@
 <e1-group-recommendation [parentGuideline]="this.parentGuideline" [isRoot]="true" (arrowColorChanged)="this.arrowColorChanged($event)" [groupRecommendation]="this.level" [subLevelSelected]="this.subLevelSelected"></e1-group-recommendation>
 <div class="level-container" [class.selected]="this.subLevelSelected" [class.is-dark]="this.isDark" [class.grey-arrow]="this.arrowColor == 'grey'" [class.white-arrow]="this.arrowColor == 'white'" (click)="this.selectedUl()">
   <div class="responsive-wrapper">
-    <h3 *ngIf="level.selectionTitle?.length > 0">{{level.selectionTitle}}</h3>
+    <h3 *ngIf="level.selectionTitle?.length > 0" class="level-title" [innerHtml]="level.selectionTitle"></h3>
     <ul class="selection-box" [class.horizontal]="level.sublevelDisplayType === 'horizontal'" *ngIf="level !== null">
       <li *ngFor="let cLevel of level['levels']; let i = index" [class.definition-visible]="this.definitionVisible == i" [class.selected-item]="this.selectedSubLevelID == i" (click)="this.levelSelected($event, i)">
         <span class="title" *ngIf="this.definitionVisible != i">

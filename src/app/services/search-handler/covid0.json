@@ -205,6 +205,15 @@
                                                     "comment": "<div>Siehe gesonderte Leitlinie (oben auf Zur&#252;ck) sowie:&#160;<a href=\"https://www.rki.de/covid-19-entlassungskriterien\" target=\"_blank\">https://www.rki.de/covid-19-entlassungskriterien</a></div>",
                                                     "sourceRef": "page=2",
                                                     "preDefs": []
+                                                },
+                                                {
+                                                    "type": "syntax",
+                                                    "primaryRecommendation": true,
+                                                    "preDefs": [],
+                                                    "gradeOfRecommendation": "ITS",
+                                                    "sourceRef": "",
+                                                    "comment": "Empfehlungen zur intensivmedizinischen Therapie von COVID-19 Patienten:<div><br></div><div><a href=\"https://link.springer.com/article/10.1007/s00063-020-00674-3\" target=\"_blank\">https://link.springer.com/article/10.1007/s00063-020-00674-3</a></div>",
+                                                    "content": "<b>Empfehlungen zur intensivmedizinischen Therapie</b> von COVID-19 Patienten"
                                                 }
                                             ],
                                             "title": "Hinweise zur stationären Versorgung eines COVID-19-Falls",
@@ -272,7 +281,7 @@
             "recommendations": [],
             "levels": [
                 {
-                    "levelName": "Ohne Kontakt zu bestätigtem COVID-19 Fall",
+                    "levelName": "Ohne Kontakt zu bestätigtem COVID-19 Fall, keine Alternativdiagnose",
                     "definition": "",
                     "recommendations": [
                         {

@@ -1,1 +1,139 @@
-{"levels":[{"levelName":"JA","definition":"","recommendations":[{"type":"group","primaryRecommendation":true,"recommendations":[{"type":"freeText","primaryRecommendation":true,"gradeOfRecommendation":"1.","content":"Bitte melden Sie sich zunächst telefonisch bei Ihrer Hausärztin oder Ihrem Hausarzt."},{"type":"freeText","primaryRecommendation":true,"gradeOfRecommendation":"2.","content":"Gehen Sie nicht ohne telefonische Voranmeldung in die Praxis."},{"type":"freeText","primaryRecommendation":true,"gradeOfRecommendation":"3.","content":" In dringenden Fällen rufen Sie die 116 117 an. "}]}],"levels":[],"showDiagram":false,"invisibleLevels":[],"levelId":"01677790-6eb7-11ea-9549-f5919e208498"},{"levelName":"NEIN","definition":"","recommendations":[],"levels":[{"levelName":"JA","definition":"","recommendations":[],"levels":[{"levelName":"JA","definition":"","recommendations":[{"type":"group","primaryRecommendation":true,"recommendations":[{"type":"freeText","primaryRecommendation":true,"gradeOfRecommendation":"1.","content":"Bitte melden Sie sich zunächst telefonisch bei Ihrer Hausärztin oder Ihrem Hausarzt."},{"type":"freeText","primaryRecommendation":true,"gradeOfRecommendation":"2.","content":"Gehen Sie nicht ohne telefonische Voranmeldung in die Praxis."},{"type":"freeText","primaryRecommendation":true,"gradeOfRecommendation":"3.","content":" In dringenden Fällen rufen Sie die 116 117 an. "}]}],"levels":[],"showDiagram":false,"invisibleLevels":[],"levelId":"ba4c6220-6eb7-11ea-9549-f5919e208498"},{"levelName":"NEIN","definition":"","recommendations":[{"type":"freeText","primaryRecommendation":true,"content":"Die Wahrscheinlichkeit, dass Sie sich mit dem Coronavirus infiziert haben, ist gering.","gradeOfRecommendation":""}],"levels":[],"showDiagram":false,"invisibleLevels":[],"levelId":"bd778a60-6eb7-11ea-9549-f5919e208498"}],"showDiagram":false,"invisibleLevels":[],"levelId":"7f8d7930-6eb7-11ea-9549-f5919e208498","selectionTitle":"Haben Sie sich in den letzten 14 Tagen in einer Region mit Coronavirus-Fällen aufgehalten?","sublevelDisplayType":"horizontal"},{"levelName":"NEIN","definition":"","recommendations":[{"type":"freeText","primaryRecommendation":true,"content":"Die Wahrscheinlichkeit, dass Sie sich mit dem Coronavirus infiziert haben, ist gering."}],"levels":[],"showDiagram":false,"invisibleLevels":[],"levelId":"8222a300-6eb7-11ea-9549-f5919e208498"}],"showDiagram":false,"invisibleLevels":[],"levelId":"057d4df0-6eb7-11ea-9549-f5919e208498","sublevelDisplayType":"horizontal","selectionTitle":"Haben Sie grippeähnliche Symptome?"}],"nameOfGuideline":"Patienteninformation: Persönlicher Verdacht auf das Coronavirus","source":"https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/C/Coronavirus/BMG_BZgA_Coronavirustest_Plakat_barr.pdf","publisher":"BMG","keywords":["covid"],"selectionTitle":"Hatten Sie in den letzten 14 Tagen Kontakt zu einem bestätigten Coronavirus-Fall?","sublevelDisplayType":"horizontal"}
+{
+    "levels": [
+        {
+            "levelName": "JA",
+            "definition": "",
+            "recommendations": [
+                {
+                    "type": "group",
+                    "primaryRecommendation": true,
+                    "recommendations": [
+                        {
+                            "type": "freeText",
+                            "primaryRecommendation": true,
+                            "gradeOfRecommendation": "1.",
+                            "content": "Bitte melden Sie sich zunächst telefonisch bei Ihrer Hausärztin oder Ihrem Hausarzt."
+                        },
+                        {
+                            "type": "freeText",
+                            "primaryRecommendation": true,
+                            "gradeOfRecommendation": "2.",
+                            "content": "Gehen Sie nicht ohne telefonische Voranmeldung in die Praxis."
+                        },
+                        {
+                            "type": "freeText",
+                            "primaryRecommendation": true,
+                            "gradeOfRecommendation": "3.",
+                            "content": " In dringenden Fällen rufen Sie die 116 117 an. "
+                        }
+                    ],
+                    "sourceRef": "https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/C/Coronavirus/BMG_BZgA_Coronavirustest_Plakat_barr.pdf"
+                }
+            ],
+            "levels": [],
+            "showDiagram": false,
+            "invisibleLevels": [],
+            "levelId": "01677790-6eb7-11ea-9549-f5919e208498"
+        },
+        {
+            "levelName": "NEIN",
+            "definition": "",
+            "recommendations": [],
+            "levels": [
+                {
+                    "levelName": "JA",
+                    "definition": "",
+                    "recommendations": [],
+                    "levels": [
+                        {
+                            "levelName": "JA",
+                            "definition": "",
+                            "recommendations": [
+                                {
+                                    "type": "group",
+                                    "primaryRecommendation": true,
+                                    "recommendations": [
+                                        {
+                                            "type": "freeText",
+                                            "primaryRecommendation": true,
+                                            "gradeOfRecommendation": "1.",
+                                            "content": "Bitte melden Sie sich zunächst telefonisch bei Ihrer Hausärztin oder Ihrem Hausarzt."
+                                        },
+                                        {
+                                            "type": "freeText",
+                                            "primaryRecommendation": true,
+                                            "gradeOfRecommendation": "2.",
+                                            "content": "Gehen Sie nicht ohne telefonische Voranmeldung in die Praxis."
+                                        },
+                                        {
+                                            "type": "freeText",
+                                            "primaryRecommendation": true,
+                                            "gradeOfRecommendation": "3.",
+                                            "content": " In dringenden Fällen rufen Sie die 116 117 an. "
+                                        }
+                                    ],
+                                    "sourceRef": "https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/C/Coronavirus/BMG_BZgA_Coronavirustest_Plakat_barr.pdf"
+                                }
+                            ],
+                            "levels": [],
+                            "showDiagram": false,
+                            "invisibleLevels": [],
+                            "levelId": "ba4c6220-6eb7-11ea-9549-f5919e208498"
+                        },
+                        {
+                            "levelName": "NEIN",
+                            "definition": "",
+                            "recommendations": [
+                                {
+                                    "type": "freeText",
+                                    "primaryRecommendation": true,
+                                    "content": "Die Wahrscheinlichkeit, dass Sie sich mit dem Coronavirus infiziert haben, ist gering.",
+                                    "gradeOfRecommendation": "",
+                                    "sourceRef": "https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/C/Coronavirus/BMG_BZgA_Coronavirustest_Plakat_barr.pdf"
+                                }
+                            ],
+                            "levels": [],
+                            "showDiagram": false,
+                            "invisibleLevels": [],
+                            "levelId": "bd778a60-6eb7-11ea-9549-f5919e208498"
+                        }
+                    ],
+                    "showDiagram": false,
+                    "invisibleLevels": [],
+                    "levelId": "7f8d7930-6eb7-11ea-9549-f5919e208498",
+                    "selectionTitle": "Haben Sie sich in den letzten 14 Tagen in einer Region mit Coronavirus-Fällen aufgehalten?",
+                    "sublevelDisplayType": "horizontal"
+                },
+                {
+                    "levelName": "NEIN",
+                    "definition": "",
+                    "recommendations": [
+                        {
+                            "type": "freeText",
+                            "primaryRecommendation": true,
+                            "content": "Die Wahrscheinlichkeit, dass Sie sich mit dem Coronavirus infiziert haben, ist gering.",
+                            "sourceRef": "https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/C/Coronavirus/BMG_BZgA_Coronavirustest_Plakat_barr.pdf"
+                        }
+                    ],
+                    "levels": [],
+                    "showDiagram": false,
+                    "invisibleLevels": [],
+                    "levelId": "8222a300-6eb7-11ea-9549-f5919e208498"
+                }
+            ],
+            "showDiagram": false,
+            "invisibleLevels": [],
+            "levelId": "057d4df0-6eb7-11ea-9549-f5919e208498",
+            "sublevelDisplayType": "horizontal",
+            "selectionTitle": "Haben Sie grippeähnliche Symptome?"
+        }
+    ],
+    "nameOfGuideline": "Patienteninformation: Persönlicher Verdacht auf das Coronavirus",
+    "source": "https://www.bundesgesundheitsministerium.de/fileadmin/Dateien/3_Downloads/C/Coronavirus/BMG_BZgA_Coronavirustest_Plakat_barr.pdf",
+    "publisher": "BMG",
+    "keywords": [
+        "covid"
+    ],
+    "selectionTitle": "Hatten Sie in den letzten 14 Tagen Kontakt zu einem bestätigten Coronavirus-Fall?",
+    "sublevelDisplayType": "horizontal"
+}
